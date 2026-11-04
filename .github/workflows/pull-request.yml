@@ -1,0 +1,44 @@
+name: Pull request
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  validate-description:
+    name: Validate description
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.pull_request.body ?? "";
+
+            const sectionOf = (title) => {
+              const match = body.match(
+                new RegExp(`## ${title}[ \\t\\r]*\\n([\\s\\S]*?)(?=\\r?\\n## |$)`),
+              );
+              return match ? match[1].trim() : "";
+            };
+
+            const errors = [];
+
+            if (!/Name:[ \t]*\S/.test(sectionOf("Responsible"))) {
+              errors.push('"Responsible" needs a name.');
+            }
+            if (!/GitHub user:[ \t]*@[ \t]*\S/.test(sectionOf("Responsible"))) {
+              errors.push('"Responsible" needs a GitHub user.');
+            }
+            if (!sectionOf("What was done")) {
+              errors.push('"What was done" is empty.');
+            }
+            if (!sectionOf("Why it was done")) {
+              errors.push('"Why it was done" is empty.');
+            }
+
+            if (errors.length > 0) {
+              core.setFailed(errors.join("\n"));
+            }
