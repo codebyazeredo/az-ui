@@ -2,12 +2,12 @@
 
 Fonte: `specifications.md` §15 (complementado com itens da §6 que estavam fora das fases, ver Q-14). **Este é o painel de controle do projeto**: marcar `[x]` ao concluir, na mesma tarefa.
 
-Fase atual: **1 — Fundação** (Fase 0 concluída em 2026-11-04)
+Fase atual: **2 — Componentes básicos**, ainda não iniciada (Fases 0 e 1 concluídas em 2026-11-04)
 
 | Fase | Nome | Status |
 |---|---|---|
 | 0 | Pré-desenvolvimento | Concluída |
-| 1 | Fundação | Implementada, aguardando validação |
+| 1 | Fundação | Concluída (validada); restam configurações do GitHub |
 | 2 | Componentes básicos | Não iniciada |
 | 3 | Componentes interativos | Não iniciada |
 | 4 | Dados e avançados | Não iniciada |
@@ -42,12 +42,16 @@ Começar com análise breve da arquitetura, inconsistências e estrutura final (
 - [x] Utilitários CSS (incluindo variantes responsivas).
 - [x] Núcleo JS mínimo: não necessário na fundação; adiado para a Fase 2/3 (`src/javascript/` ainda não criado).
 - [x] Build inicial (ESM, tipos, CSS, fontes) e testes de exports/CSS/fontes.
-- [x] Página de verificação visual `examples/foundations.html` (conferência visual pendente, ver abaixo).
-- [ ] Habilitar "Private vulnerability reporting" no repositório do GitHub (exigido por `SECURITY.md` e `CODE_OF_CONDUCT.md`).
+- [x] Página de verificação visual `examples/foundations.html`.
 - [x] Workflow `.github/workflows/pull-request.yml` que valida as seções obrigatórias do PR.
-- [ ] Proteção de branch no GitHub exigindo o check "Validate description" (depende de o repositório existir no GitHub).
 - [x] `examples/foundations.html` conferida no navegador: temas claro e escuro, três fontes e utilitário responsivo (2026-11-04).
-- [ ] Validação da fundação pelo mantenedor.
+- [x] Validação da fundação pelo mantenedor (2026-11-04).
+
+Pendências que dependem da criação do repositório no GitHub (não bloqueiam a Fase 2):
+
+- [ ] Criar o repositório e o remoto (`origin`) e enviar o histórico.
+- [ ] Habilitar "Private vulnerability reporting" (exigido por `SECURITY.md` e `CODE_OF_CONDUCT.md`).
+- [ ] Proteção de branch exigindo o check "Validate description" (torna obrigatório o modelo de PR, D-031/D-033). O check só aparece na lista depois de rodar em um PR.
 
 ## Fase 2 — Componentes básicos
 
