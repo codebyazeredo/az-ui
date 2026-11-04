@@ -39,11 +39,17 @@ npm run format:check
 
 Use [Conventional Commits](https://www.conventionalcommits.org/), for example `feat(button): add loading state` or `fix(themes): raise muted text contrast`.
 
-Before opening a pull request, make sure that `npm run lint`, `npm run format:check` and `npm test` pass, and describe:
+Before opening a pull request, make sure that `npm run lint`, `npm run format:check` and `npm test` pass.
 
-1. What changed and why.
-2. How you verified it.
-3. Any impact on the public API or on compatibility.
+Every pull request uses the [pull request template](.github/PULL_REQUEST_TEMPLATE.md). These three sections are required:
+
+1. **Responsible:** your name and GitHub user.
+2. **What was done:** the changes made.
+3. **Why it was done:** the reason for the changes.
+
+Also fill in the type of change, related issue, impact on the public API, verification and checklist. Remove nothing; mark items that do not apply as unchecked.
+
+Pull requests with an empty required section will not be reviewed.
 
 ## License
 
