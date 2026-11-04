@@ -1,18 +1,42 @@
 # AZ UI
 
-Biblioteca de componentes e Design System para aplicações web corporativas, independente de frameworks.
+Component library and Design System for enterprise web applications, independent of frameworks.
 
-- Pacote npm: `az-ui` (ainda não publicado)
-- Prefixo CSS: `az-` · Namespace JavaScript: `AZUI`
+- npm package: `az-ui` (not published yet)
+- CSS prefix: `az-` · JavaScript namespace: `AZUI`
 
 ## Status
 
-Pré-desenvolvimento. Nenhum código implementado; o contexto do projeto está em [`.ai/`](.ai/README.md) e o andamento em [`.ai/development/roadmap.md`](.ai/development/roadmap.md).
+Phase 1 (Foundations) is implemented: tokens, light/dark themes, fonts, opt-in reset, utilities and build. Components do not exist yet. Project context lives in [`.ai/`](.ai/README.md) and progress in [`.ai/development/roadmap.md`](.ai/development/roadmap.md).
 
-## Visão
+## Usage (foundations)
 
-Design System próprio, componentes visuais e de formulário, API declarativa, utilitários CSS, temas claro/escuro, fontes próprias (Inter por padrão) e componentes interativos em TypeScript/JavaScript nativo. Especificação completa: [`.ai/specifications.md`](.ai/specifications.md).
+```ts
+import "az-ui/styles.css"; // tokens, themes, Inter font and utilities
+```
 
-## Instalação e uso
+```html
+<html data-az-theme="light">
+  <body class="az-body">
+    <div class="az-d-flex az-flex-column az-md-flex-row az-gap-3">…</div>
+  </body>
+</html>
+```
 
-Será documentado quando a Fase 1 for concluída.
+- **Theme:** `data-az-theme="light"` (default) or `"dark"` on the root element.
+- **`az-body`:** optional class that applies `box-sizing`, font, color and background. Without it, the library does not change any element of the page.
+- **Alternative fonts:** `import "az-ui/fonts/ibm-plex-sans.css"` and use the `az-font-ibm-plex-sans` class (same for `source-sans-3`). `az-font-system` uses the system font without downloading files.
+- **Customization:** override tokens, for example `:root { --az-font-family: "My Font", sans-serif; }`.
+- **Responsive utilities:** `az-{sm|md|lg|xl}-<utility>` (mobile-first), for example `az-md-d-flex`.
+
+## Development
+
+```bash
+npm install
+npm run dev        # local server; open /examples/foundations.html
+npm run build      # dist/: ESM, types, CSS and fonts
+npm test           # tests (includes dist/ when it exists)
+npm run lint
+```
+
+Full specification: [`.ai/specifications.md`](.ai/specifications.md). License: [MIT](LICENSE); fonts keep their OFL license in `fonts/<family>/`.
