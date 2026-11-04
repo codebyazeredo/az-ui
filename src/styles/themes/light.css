@@ -1,0 +1,30 @@
+:root,
+[data-az-theme="light"] {
+  color-scheme: light;
+
+  --az-color-primary: var(--az-primary-700);
+  --az-color-primary-hover: var(--az-primary-800);
+  --az-color-primary-text: var(--az-primary-700);
+  --az-color-secondary: var(--az-secondary-500);
+  --az-color-success: var(--az-success-600);
+  --az-color-success-text: var(--az-success-700);
+  --az-color-warning: var(--az-warning-500);
+  --az-color-warning-text: var(--az-warning-600);
+  --az-color-danger: var(--az-danger-600);
+  --az-color-danger-text: var(--az-danger-600);
+  --az-color-info: var(--az-info-600);
+  --az-color-info-text: var(--az-info-600);
+
+  --az-color-background: var(--az-gray-100);
+  --az-color-surface: var(--az-white);
+  --az-color-surface-muted: var(--az-gray-50);
+  --az-color-border: var(--az-gray-200);
+  --az-color-border-strong: var(--az-gray-300);
+
+  --az-text-primary: var(--az-gray-800);
+  --az-text-secondary: var(--az-gray-700);
+  --az-text-muted: var(--az-gray-600);
+  --az-text-inverse: var(--az-white);
+
+  --az-focus-ring-color: var(--az-primary-500);
+}
