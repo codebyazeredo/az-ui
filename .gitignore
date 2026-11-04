@@ -29,7 +29,7 @@ Thumbs.db
 !.vscode/settings.json
 
 # Configuração local do Claude Code
-.claude/settings.local.json
+.claude
 
 # Gerado por scripts/generate-utilities.mjs
 src/styles/utilities/utilities.generated.css
