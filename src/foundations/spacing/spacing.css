@@ -1,0 +1,19 @@
+:root {
+  --az-spacing-1: 4px;
+  --az-spacing-2: 8px;
+  --az-spacing-3: 12px;
+  --az-spacing-4: 16px;
+  --az-spacing-5: 20px;
+  --az-spacing-6: 24px;
+  --az-spacing-8: 32px;
+  --az-spacing-10: 40px;
+
+  --az-control-height-sm: 28px;
+  --az-control-height-md: 32px;
+  --az-control-height-lg: 40px;
+
+  --az-max-width-sm: 640px;
+  --az-max-width-md: 768px;
+  --az-max-width-lg: 1024px;
+  --az-max-width-xl: 1280px;
+}

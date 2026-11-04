@@ -1,0 +1,82 @@
+:root {
+  --az-white: #fff;
+
+  --az-primary-50: #eef3f8;
+  --az-primary-100: #d9e4ee;
+  --az-primary-200: #b3c8db;
+  --az-primary-300: #86a6c2;
+  --az-primary-400: #5a82a6;
+  --az-primary-500: #3d6688;
+  --az-primary-600: #2f5272;
+  --az-primary-700: #23415c;
+  --az-primary-800: #1b344a;
+  --az-primary-900: #12222f;
+
+  --az-secondary-50: #f8fafc;
+  --az-secondary-100: #f1f5f9;
+  --az-secondary-200: #e2e8f0;
+  --az-secondary-300: #cbd5e1;
+  --az-secondary-400: #94a3b8;
+  --az-secondary-500: #64748b;
+  --az-secondary-600: #526074;
+  --az-secondary-700: #3f4b5c;
+  --az-secondary-800: #2b3544;
+  --az-secondary-900: #1b2330;
+
+  --az-success-50: #e9f6f0;
+  --az-success-100: #cbeadb;
+  --az-success-200: #9ad5b9;
+  --az-success-300: #66bc96;
+  --az-success-400: #36a173;
+  --az-success-500: #1e9a6c;
+  --az-success-600: #16845b;
+  --az-success-700: #11694a;
+  --az-success-800: #0d5039;
+  --az-success-900: #083526;
+
+  --az-warning-50: #fdf6e7;
+  --az-warning-100: #faebc7;
+  --az-warning-200: #f4d58f;
+  --az-warning-300: #ebbb55;
+  --az-warning-400: #d9a03a;
+  --az-warning-500: #b7791f;
+  --az-warning-600: #965f14;
+  --az-warning-700: #744a10;
+  --az-warning-800: #53350d;
+  --az-warning-900: #36220a;
+
+  --az-danger-50: #fcedeb;
+  --az-danger-100: #f8d3ce;
+  --az-danger-200: #f0a69d;
+  --az-danger-300: #e67a6d;
+  --az-danger-400: #d95a4b;
+  --az-danger-500: #cc4535;
+  --az-danger-600: #c0392b;
+  --az-danger-700: #9c2d21;
+  --az-danger-800: #7a2219;
+  --az-danger-900: #521610;
+
+  --az-info-50: #e8f2f9;
+  --az-info-100: #c9e0ef;
+  --az-info-200: #94c1de;
+  --az-info-300: #5fa1cc;
+  --az-info-400: #3c8bbd;
+  --az-info-500: #3280b2;
+  --az-info-600: #2874a6;
+  --az-info-700: #1f5c85;
+  --az-info-800: #174563;
+  --az-info-900: #0f2e42;
+
+  --az-gray-50: #f8fafc;
+  --az-gray-100: #f5f7f9;
+  --az-gray-200: #dce2e8;
+  --az-gray-300: #c5ced8;
+  --az-gray-400: #a3aebb;
+  --az-gray-500: #8a96a5;
+  --az-gray-600: #637082;
+  --az-gray-700: #4f5d6e;
+  --az-gray-800: #263445;
+  --az-gray-850: #1f2b39;
+  --az-gray-900: #1a2430;
+  --az-gray-950: #121a24;
+}

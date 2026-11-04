@@ -1,0 +1,9 @@
+:root {
+  --az-z-dropdown: 1000;
+  --az-z-sticky: 1100;
+  --az-z-backdrop: 1200;
+  --az-z-modal: 1300;
+  --az-z-popover: 1400;
+  --az-z-toast: 1500;
+  --az-z-tooltip: 1600;
+}

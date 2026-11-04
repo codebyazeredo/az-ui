@@ -1,0 +1,10 @@
+:root,
+[data-az-theme="light"] {
+  --az-shadow-sm: 0 1px 2px rgb(15 23 42 / 5%);
+  --az-shadow-md: 0 4px 12px rgb(15 23 42 / 8%);
+}
+
+[data-az-theme="dark"] {
+  --az-shadow-sm: 0 1px 2px rgb(0 0 0 / 30%);
+  --az-shadow-md: 0 4px 12px rgb(0 0 0 / 40%);
+}

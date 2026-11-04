@@ -1,0 +1,11 @@
+:root {
+  --az-border-width: 1px;
+
+  --az-radius-none: 0;
+  --az-radius-sm: 4px;
+  --az-radius-md: 6px;
+  --az-radius-lg: 8px;
+
+  --az-focus-ring-width: 2px;
+  --az-focus-ring-offset: 2px;
+}

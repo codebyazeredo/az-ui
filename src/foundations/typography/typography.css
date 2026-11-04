@@ -1,0 +1,24 @@
+:root {
+  --az-font-family: "AZ Inter", inter, system-ui, sans-serif;
+
+  --az-font-size-xs: 0.75rem;
+  --az-font-size-sm: 0.8125rem;
+  --az-font-size-md: 0.875rem;
+  --az-font-size-base: 0.9375rem;
+  --az-font-size-lg: 1.125rem;
+  --az-font-size-xl: 1.25rem;
+  --az-font-size-2xl: 1.5rem;
+
+  --az-font-weight-normal: 400;
+  --az-font-weight-medium: 500;
+  --az-font-weight-semibold: 600;
+  --az-font-weight-bold: 700;
+
+  --az-line-height-tight: 1.25;
+  --az-line-height-normal: 1.5;
+  --az-line-height-relaxed: 1.65;
+}
+
+.az-font-system {
+  --az-font-family: system-ui, sans-serif;
+}

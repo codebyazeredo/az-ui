@@ -1,0 +1,14 @@
+:root {
+  --az-duration-fast: 120ms;
+  --az-duration-base: 180ms;
+  --az-duration-slow: 240ms;
+  --az-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --az-duration-fast: 0.01ms;
+    --az-duration-base: 0.01ms;
+    --az-duration-slow: 0.01ms;
+  }
+}
