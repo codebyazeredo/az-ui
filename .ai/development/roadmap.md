@@ -2,11 +2,11 @@
 
 Fonte: `specifications.md` §15 (complementado com itens da §6 que estavam fora das fases, ver Q-14). **Este é o painel de controle do projeto**: marcar `[x]` ao concluir, na mesma tarefa.
 
-Fase atual: **0 — Pré-desenvolvimento**
+Fase atual: **1 — Fundação** (Fase 0 concluída em 2026-11-04)
 
 | Fase | Nome | Status |
 |---|---|---|
-| 0 | Pré-desenvolvimento | Em andamento |
+| 0 | Pré-desenvolvimento | Concluída |
 | 1 | Fundação | Não iniciada |
 | 2 | Componentes básicos | Não iniciada |
 | 3 | Componentes interativos | Não iniciada |
@@ -25,8 +25,8 @@ Fase atual: **0 — Pré-desenvolvimento**
 - [x] IBM Plex Sans em `fonts/ibm-plex-sans/` (Fontsource, subset latino, ~23 KB por peso). Inter e Source Sans 3 ainda são completas (~110 KB); avaliar subset latino na Fase 1.
 - [x] Nome `az-ui` livre no npm em 2026-11-04 (D-019); reconferir antes de publicar.
 - [x] Arquivo `LICENSE` (MIT, D-013) criado na raiz.
-- [ ] Inicializar git (a cargo do mantenedor) e regras de branch.
-- [ ] Validação do mantenedor para iniciar a Fase 1.
+- [x] Git inicializado pelo mantenedor.
+- [x] Validação do mantenedor para iniciar a Fase 1 (2026-11-04).
 
 ## Fase 1 — Fundação
 
