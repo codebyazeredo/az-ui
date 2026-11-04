@@ -12,12 +12,13 @@ Status: o repositório ainda não é git. Este arquivo vale a partir da iniciali
 
 ## Descrição do PR
 
-1. O que mudou e por quê.
-2. Item do roadmap / decisão relacionada.
-3. Checklist de componente (se aplicável).
-4. Testes executados (apenas os reais).
-5. Impacto em API pública / compatibilidade.
-6. Pendências.
+Obrigatória, no modelo `.github/PULL_REQUEST_TEMPLATE.md` (em inglês), com as três seções preenchidas:
+
+1. **Responsible:** nome e usuário do GitHub de quem é responsável.
+2. **What was done:** o que foi feito.
+3. **Why it was done:** por que foi feito.
+
+O modelo ainda traz, como complemento: tipo de mudança, item relacionado, impacto na API pública, verificação (lint, format, testes, conferência visual) e checklist (tokens, acessibilidade, testes, docs e CHANGELOG, sem comentários, inglês). PR com seção obrigatória vazia não é revisado. A obrigatoriedade técnica (checagem automática e proteção de branch) ainda não está configurada.
 
 ## Publicação
 
