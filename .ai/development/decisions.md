@@ -36,6 +36,7 @@ Formato: ID · data · status (`aceita`, `proposta`, `substituída`) · decisão
 | D-030 | 2026-11-04 | aceita | `CODE_OF_CONDUCT.md` (Contributor Covenant 2.1) e `SECURITY.md` na raiz. Canal de contato: reporte privado do GitHub, sem e-mail público. Requer habilitar "Private vulnerability reporting" nas configurações do repositório. | Preparação para open source. |
 | D-031 | 2026-11-04 | aceita | Padrão obrigatório de PR em `.github/PULL_REQUEST_TEMPLATE.md` com três seções: Responsible (nome e usuário do GitHub), What was done e Why it was done. | Rastreabilidade de autoria e motivo de cada mudança. |
 | D-032 | 2026-11-04 | aceita | Modelo de PR ampliado com tipo de mudança, item relacionado, impacto na API pública, verificação e checklist. As seções obrigatórias seguem sendo as três de D-031. | Revisão mais rápida e consistente. |
+| D-033 | 2026-11-04 | aceita | Workflow `pull-request.yml` (GitHub Actions) falha o PR se Responsible (nome e usuário), What was done ou Why it was done estiverem vazios. Para ser obrigatório, a branch principal deve exigir o check "Validate description". | Tornar D-031 verificável. |
 
 ## Candidatas (resolver via `open-questions.md`)
 

@@ -44,8 +44,9 @@ Começar com análise breve da arquitetura, inconsistências e estrutura final (
 - [x] Build inicial (ESM, tipos, CSS, fontes) e testes de exports/CSS/fontes.
 - [x] Página de verificação visual `examples/foundations.html` (conferência visual pendente, ver abaixo).
 - [ ] Habilitar "Private vulnerability reporting" no repositório do GitHub (exigido por `SECURITY.md` e `CODE_OF_CONDUCT.md`).
-- [ ] Tornar o modelo de PR obrigatório de fato: workflow que valida as seções e proteção de branch no GitHub (decidir se será feito).
-- [ ] Conferir `examples/foundations.html` no navegador (`npm run dev`) nos dois temas e nas três fontes.
+- [x] Workflow `.github/workflows/pull-request.yml` que valida as seções obrigatórias do PR.
+- [ ] Proteção de branch no GitHub exigindo o check "Validate description" (depende de o repositório existir no GitHub).
+- [x] `examples/foundations.html` conferida no navegador: temas claro e escuro, três fontes e utilitário responsivo (2026-11-04).
 - [ ] Validação da fundação pelo mantenedor.
 
 ## Fase 2 — Componentes básicos
