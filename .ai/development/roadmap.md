@@ -43,6 +43,7 @@ Começar com análise breve da arquitetura, inconsistências e estrutura final (
 - [x] Núcleo JS mínimo: não necessário na fundação; adiado para a Fase 2/3 (`src/javascript/` ainda não criado).
 - [x] Build inicial (ESM, tipos, CSS, fontes) e testes de exports/CSS/fontes.
 - [x] Página de verificação visual `examples/foundations.html` (conferência visual pendente, ver abaixo).
+- [ ] Habilitar "Private vulnerability reporting" no repositório do GitHub (exigido por `SECURITY.md` e `CODE_OF_CONDUCT.md`).
 - [ ] Conferir `examples/foundations.html` no navegador (`npm run dev`) nos dois temas e nas três fontes.
 - [ ] Validação da fundação pelo mantenedor.
 

@@ -33,6 +33,7 @@ Formato: ID · data · status (`aceita`, `proposta`, `substituída`) · decisão
 | D-027 | 2026-11-04 | aceita | Breakpoints têm fonte única em `src/foundations/breakpoints/breakpoints.json`, lida pelo TypeScript e pelo gerador de utilitários. | Evitar divergência. |
 | D-028 | 2026-11-04 | aceita | Sem comentários no código, exceto quando extremamente necessário para o entendimento. | Regra do mantenedor. |
 | D-029 | 2026-11-04 | aceita | Tudo em inglês (código, mensagens, testes, exemplos, README, CHANGELOG, docs, commits, PRs), exceto `AGENTS.md`, `CLAUDE.md` e `.ai/`, que ficam em português. | Produto open source de uso geral. |
+| D-030 | 2026-11-04 | aceita | `CODE_OF_CONDUCT.md` (Contributor Covenant 2.1) e `SECURITY.md` na raiz. Canal de contato: reporte privado do GitHub, sem e-mail público. Requer habilitar "Private vulnerability reporting" nas configurações do repositório. | Preparação para open source. |
 
 ## Candidatas (resolver via `open-questions.md`)
 
