@@ -34,7 +34,9 @@ Criar escalas completas para Primary, Secondary, Success, Warning, Danger, Info 
 - Sem cores vibrantes em excesso ou grandes áreas saturadas.
 - Tema claro e escuro por `[data-az-theme]`, com os mesmos nomes de token.
 
-## Pendências conhecidas
+## Implementação (Fase 1)
 
-- Contraste: `--az-text-muted` (~3,0:1 sobre branco) e `--az-color-warning` como texto (~3,6:1) ficam abaixo de 4,5:1. Resolver antes da Fase 1 (Q-01).
-- Valores do tema escuro ainda não definidos (Q-09).
+- Escalas primitivas em `src/foundations/colors/scales.css`; tokens semânticos em `src/styles/themes/light.css` e `dark.css`.
+- Ajustes sobre a tabela inicial (D-011, D-023): `--az-text-secondary` = `#4F5D6E`, `--az-text-muted` = `#637082`; tokens `--az-color-*-text` para texto de status; `--az-color-warning` só em fundos/ícones.
+- Contraste verificado automaticamente em `tests/foundations/themes.test.ts` nos dois temas.
+- Ao alterar a paleta, rodar `npm test`: o teste falha se qualquer par de texto ficar abaixo de 4,5:1.

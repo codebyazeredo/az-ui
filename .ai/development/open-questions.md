@@ -4,6 +4,8 @@ Levantadas na leitura de `specifications.md`. Cada item tem **proposta padrão**
 
 **Resolvidas:** Q-01 → D-011 · Q-03 → D-015 · Q-04 → D-016 · Q-09 e Q-10 → D-017 · Q-11 → D-018 · Q-12 → D-012 · Q-16 → D-014 · Q-17 (licença do projeto) → D-013. Em Q-17 continuam pendentes a verificação das licenças das fontes e a do nome `az-ui` no npm.
 
+Na Fase 1: Q-02 → D-022 · Q-18 parcialmente (ESM somente, CJS adiado) → D-025. Q-07 e Q-08 seguem para quando existir JavaScript de componentes.
+
 Linhas abaixo resolvidas permanecem como histórico.
 
 | ID | Fase | Bloqueia | Questão | Proposta padrão |

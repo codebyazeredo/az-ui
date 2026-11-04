@@ -24,6 +24,15 @@ Formato: ID · data · status (`aceita`, `proposta`, `substituída`) · decisão
 | D-018 | 2026-11-04 | aceita | Tipografia (Q-11): corpo `--az-font-size-base` (0,9375rem); controles e tabelas `md` (0,875rem); legendas `sm`/`xs`. | Densidade enterprise. |
 | D-019 | 2026-11-04 | aceita | O nome `az-ui` retornou 404 no registro npm em 2026-11-04 (livre). Reconferir imediatamente antes da publicação. | Disponibilidade do nome. |
 | D-020 | 2026-11-04 | aceita | Inter, IBM Plex Sans e Source Sans 3 estão sob SIL OFL 1.1 (redistribuição e uso comercial permitidos). Nomes reservados ("Inter", "Plex", "Source"): não renomear nem modificar os arquivos sem rever a licença. Incluir o `LICENSE.txt` oficial de cada projeto ao adicionar os arquivos. | Pesquisa em fontes secundárias; confirmação no repositório oficial pendente. |
+| D-021 | 2026-11-04 | aceita | Reset opt-in: `box-sizing` e estilo base (fonte, cor, fundo) só dentro de `.az-body`; nenhum seletor global de elemento. | Regra de estilos não invasivos. |
+| D-022 | 2026-11-04 | aceita | Q-02: `.az-text-primary` = texto principal (`--az-text-primary`); cor de marca = `.az-text-brand`. Utilitários de cor de status usam tokens `*-text`. | Evitar ambiguidade de nomes. |
+| D-023 | 2026-11-04 | aceita | Cada tema define tokens `--az-color-{primary,success,warning,danger,info}-text` para texto sobre superfícies. `text-secondary` = gray-700, `text-muted` = gray-600 (`#637082`), `success-text` = success-700 no claro. Valores validados por teste de contraste (≥4,5:1). | D-011 e resultado dos testes. |
+| D-024 | 2026-11-04 | aceita | Utilitários gerados por `scripts/generate-utilities.mjs` (tabelas no script) para `utilities.generated.css`, ignorado pelo git e regenerado por hooks `pre*` do npm. Media queries em notação `(width >= N px)`. | D-015; fonte única de verdade. |
+| D-025 | 2026-11-04 | aceita | Build: Vite em modo biblioteca, somente ESM (CJS adiado, Q-18); declarações via `tsc`; CSS via PostCSS (`postcss-import`) com reescrita dos `url()` de fontes; fontes copiadas para `dist/fonts`. | D-016; menor pipeline possível. |
+| D-026 | 2026-11-04 | aceita | TypeScript fixado em `~6.0` porque `typescript-eslint` 8.72 exige TypeScript <6.1. Reavaliar quando houver suporte ao 7.x. | Conflito de peer dependency no `npm install`. |
+| D-027 | 2026-11-04 | aceita | Breakpoints têm fonte única em `src/foundations/breakpoints/breakpoints.json`, lida pelo TypeScript e pelo gerador de utilitários. | Evitar divergência. |
+| D-028 | 2026-11-04 | aceita | Sem comentários no código, exceto quando extremamente necessário para o entendimento. | Regra do mantenedor. |
+| D-029 | 2026-11-04 | aceita | Tudo em inglês (código, mensagens, testes, exemplos, README, CHANGELOG, docs, commits, PRs), exceto `AGENTS.md`, `CLAUDE.md` e `.ai/`, que ficam em português. | Produto open source de uso geral. |
 
 ## Candidatas (resolver via `open-questions.md`)
 

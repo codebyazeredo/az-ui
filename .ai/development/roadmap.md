@@ -7,7 +7,7 @@ Fase atual: **1 — Fundação** (Fase 0 concluída em 2026-11-04)
 | Fase | Nome | Status |
 |---|---|---|
 | 0 | Pré-desenvolvimento | Concluída |
-| 1 | Fundação | Não iniciada |
+| 1 | Fundação | Implementada, aguardando validação |
 | 2 | Componentes básicos | Não iniciada |
 | 3 | Componentes interativos | Não iniciada |
 | 4 | Dados e avançados | Não iniciada |
@@ -32,16 +32,18 @@ Fase atual: **1 — Fundação** (Fase 0 concluída em 2026-11-04)
 
 Começar com análise breve da arquitetura, inconsistências e estrutura final (spec §18) e aguardar validação.
 
-- [ ] Configuração do projeto (`package.json`, TypeScript, Vite, PostCSS, Vitest + jsdom).
-- [ ] Estrutura de diretórios.
-- [ ] Tokens: cores e escalas.
-- [ ] Tokens: tipografia, espaçamento, bordas, sombras, breakpoints, motion, z-index, foco, altura de controles, opacidade.
-- [ ] Gerenciamento de fontes (Inter padrão; alternativas com import próprio; licenças).
-- [ ] Reset CSS.
-- [ ] Temas claro e escuro.
-- [ ] Utilitários CSS (incluindo variantes responsivas).
-- [ ] Núcleo JS mínimo (ciclo de vida, DOM, eventos) — apenas se exigido pela fundação.
-- [ ] Build inicial (ESM, tipos, CSS, fontes) e testes de exports/CSS/fontes.
+- [x] Configuração do projeto (`package.json`, TypeScript, Vite, PostCSS, Vitest + jsdom, ESLint, Prettier, Stylelint).
+- [x] Estrutura de diretórios.
+- [x] Tokens: cores e escalas.
+- [x] Tokens: tipografia, espaçamento, bordas, sombras, breakpoints, motion, z-index, foco, altura de controles, opacidade.
+- [x] Gerenciamento de fontes (Inter padrão; alternativas com import próprio; licenças).
+- [x] Reset CSS (opt-in via `.az-body`, D-021).
+- [x] Temas claro e escuro.
+- [x] Utilitários CSS (incluindo variantes responsivas).
+- [x] Núcleo JS mínimo: não necessário na fundação; adiado para a Fase 2/3 (`src/javascript/` ainda não criado).
+- [x] Build inicial (ESM, tipos, CSS, fontes) e testes de exports/CSS/fontes.
+- [x] Página de verificação visual `examples/foundations.html` (conferência visual pendente, ver abaixo).
+- [ ] Conferir `examples/foundations.html` no navegador (`npm run dev`) nos dois temas e nas três fontes.
 - [ ] Validação da fundação pelo mantenedor.
 
 ## Fase 2 — Componentes básicos

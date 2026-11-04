@@ -2,6 +2,19 @@
 
 Fonte: `specifications.md` §12 e §4.2–4.5. Status: **rascunho** — fechar na Fase 1.
 
+## Layout atual de `dist/` (Fase 1)
+
+```text
+dist/
+├── index.js  index.d.ts  foundations/…d.ts
+├── styles.css                    # tokens, temas, reset/base opt-in, fonte Inter, utilitários
+└── fonts/
+    ├── ibm-plex-sans.css  source-sans-3.css
+    └── inter/  ibm-plex-sans/  source-sans-3/   # WOFF2 + licenças
+```
+
+`npm run build` = Vite (ESM) → `tsc` (declarações) → `scripts/build-css.mjs` (CSS e fontes). `npm test` valida também o `dist/` quando ele existe.
+
 ## Pacote
 
 `az-ui`. Funciona com npm, pnpm, yarn e bun. Disponibilidade do nome no npm deve ser verificada antes da primeira publicação (Q-17). **Não publicar sem autorização explícita.**
