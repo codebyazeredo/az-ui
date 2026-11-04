@@ -8,6 +8,7 @@
 - [ ] Testes pertinentes escritos; executados quando autorizado e resultados informados com fidelidade.
 - [ ] Documentação e `CHANGELOG.md` atualizados.
 - [ ] `roadmap.md`, `decisions.md` e `open-questions.md` atualizados quando aplicável.
+- [ ] Sem comentários desnecessários; tudo que não é instrução para IA está em inglês.
 - [ ] Resumo de entrega apresentado (criados, modificados, testes, dependências, pendências).
 
 ## Componente

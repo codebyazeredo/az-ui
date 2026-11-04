@@ -45,6 +45,8 @@ A visão completa do produto está em `.ai/specifications.md`.
 - Não utilizar estilos globais invasivos.
 - Não alterar APIs públicas sem avaliar compatibilidade.
 - Não publicar pacotes sem autorização explícita.
+- Não escrever comentários no código; só quando for extremamente necessário para o entendimento.
+- Escrever em inglês tudo que não seja instrução para IA: código, nomes, mensagens, testes, exemplos, README, CHANGELOG, docs, commits e PRs. `AGENTS.md`, `CLAUDE.md` e `.ai/` permanecem em português.
 - Não instalar dependências, executar build/testes/servidores nem usar git sem autorização do mantenedor.
 
 ## Identidade visual

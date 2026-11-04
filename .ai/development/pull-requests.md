@@ -7,7 +7,7 @@ Status: o repositório ainda não é git. Este arquivo vale a partir da iniciali
 - Commits, pushes, merges e troca de branch somente por solicitação.
 - Um PR por item coeso do roadmap; sem misturar fases.
 - Branches: `feat/<escopo>`, `fix/<escopo>`, `docs/<escopo>`, `chore/<escopo>`.
-- Commits no estilo Conventional Commits (`feat(button): ...`).
+- Commits no estilo Conventional Commits (`feat(button): ...`), mensagens e descrições de PR em inglês.
 - Versionamento semântico; alterações visíveis em `CHANGELOG.md` (Keep a Changelog).
 
 ## Descrição do PR

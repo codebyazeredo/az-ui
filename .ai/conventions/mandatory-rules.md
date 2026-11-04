@@ -34,13 +34,26 @@ Leitura obrigatória antes de qualquer alteração. Em caso de conflito, a ordem
 - Usar fontes sem verificar e incluir a licença.
 - Publicar no npm sem autorização explícita.
 
-## 4. Execução (ambiente do mantenedor)
+## 4. Comentários e idioma
+
+**Comentários**
+
+- Não escrever comentários no código. Só é permitido quando for extremamente necessário para o entendimento (decisão não óbvia, limitação ou contorno que o código não consegue expressar).
+- Se um nome melhor, uma função extraída ou um teste resolve, não comentar.
+- Proibido: comentário que descreve o que o código faz, cabeçalhos de seção, JSDoc redundante, código comentado, "TODO" sem tarefa.
+
+**Idioma (produto open source de uso geral)**
+
+- Tudo em **inglês**: código, nomes de variáveis, funções, tipos, classes CSS, tokens, comentários (quando permitidos), mensagens de erro e de log, nomes e descrições de testes, textos de exemplos e páginas, `README.md`, `CHANGELOG.md`, `docs/`, mensagens de commit e descrições de PR, `package.json`, `LICENSE`.
+- **Exceção:** os arquivos de instrução para IA — `AGENTS.md`, `CLAUDE.md` e tudo em `.ai/` — permanecem em português.
+
+## 5. Execução (ambiente do mantenedor)
 
 - Não instalar dependências, executar build, testes, servidores ou qualquer comando de ambiente sem solicitação ou autorização explícita. Quando uma verificação for necessária, informar o comando e aguardar.
 - Não fazer commit, push, merge ou troca de branch sem solicitação.
 - Não criar servidores, bancos de dados ou infraestrutura.
 
-## 5. Controle do projeto
+## 6. Controle do projeto
 
 Toda tarefa deve deixar rastro nos arquivos de controle:
 
@@ -52,7 +65,7 @@ Toda tarefa deve deixar rastro nos arquivos de controle:
 | Mudança visível ao consumidor | `CHANGELOG.md` (seção Unreleased) |
 | API pública criada ou alterada | `docs/` e o arquivo de `architecture/` correspondente |
 
-## 6. Entrega
+## 7. Entrega
 
 Ao concluir, informar de forma breve:
 

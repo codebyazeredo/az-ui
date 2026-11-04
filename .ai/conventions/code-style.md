@@ -28,4 +28,8 @@
 
 ## Comentários
 
-Somente para explicar decisão, regra de negócio ou limitação não óbvia. Não traduzir o código em comentário.
+Não comentar. Exceção: quando for extremamente necessário para o entendimento (decisão não óbvia ou limitação que o código não consegue expressar), em inglês e em uma linha. Ver `mandatory-rules.md` §4.
+
+## Idioma
+
+Código, nomes, mensagens, testes, exemplos e documentação pública em inglês. Somente `AGENTS.md`, `CLAUDE.md` e `.ai/` ficam em português.
