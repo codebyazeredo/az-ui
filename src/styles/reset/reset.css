@@ -1,0 +1,6 @@
+.az-body,
+.az-body *,
+.az-body *::before,
+.az-body *::after {
+  box-sizing: border-box;
+}

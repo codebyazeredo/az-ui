@@ -1,0 +1,9 @@
+.az-body {
+  margin: 0;
+  font-family: var(--az-font-family);
+  font-size: var(--az-font-size-base);
+  font-weight: var(--az-font-weight-normal);
+  line-height: var(--az-line-height-normal);
+  color: var(--az-text-primary);
+  background-color: var(--az-color-background);
+}
