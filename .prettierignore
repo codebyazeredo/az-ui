@@ -1,0 +1,7 @@
+dist
+node_modules
+coverage
+fonts
+.ai
+package-lock.json
+src/styles/utilities/utilities.generated.css

@@ -1,0 +1,10 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "ignoreFiles": ["src/styles/utilities/utilities.generated.css"],
+  "rules": {
+    "selector-class-pattern": "^az-[a-z0-9]+(-[a-z0-9]+)*$",
+    "custom-property-pattern": "^az-[a-z0-9]+(-[a-z0-9]+)*$",
+    "declaration-no-important": true,
+    "custom-property-empty-line-before": null
+  }
+}

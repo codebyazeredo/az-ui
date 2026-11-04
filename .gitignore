@@ -30,3 +30,6 @@ Thumbs.db
 
 # Configuração local do Claude Code
 .claude/settings.local.json
+
+# Gerado por scripts/generate-utilities.mjs
+src/styles/utilities/utilities.generated.css
