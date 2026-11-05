@@ -49,9 +49,9 @@ Começar com análise breve da arquitetura, inconsistências e estrutura final (
 
 Pendências que dependem da criação do repositório no GitHub (não bloqueiam a Fase 2):
 
-- [ ] Criar o repositório e o remoto (`origin`) e enviar o histórico.
-- [ ] Habilitar "Private vulnerability reporting" (exigido por `SECURITY.md` e `CODE_OF_CONDUCT.md`).
-- [ ] Proteção de branch exigindo o check "Validate description" (torna obrigatório o modelo de PR, D-031/D-033). O check só aparece na lista depois de rodar em um PR.
+- [x] Criar o repositório e o remoto (`origin`) e enviar o histórico (2026-11-05).
+- [ ] Habilitar "Private vulnerability reporting" (exigido por `SECURITY.md` e `CODE_OF_CONDUCT.md`). Indisponível enquanto o repositório for privado; habilitar ao torná-lo público.
+- [x] Proteção de `master` exigindo o check "Validate description" (D-031/D-033), sem bloquear administradores (2026-11-05). Confirmar o comportamento no primeiro PR.
 
 ## Fase 2 — Componentes básicos
 
