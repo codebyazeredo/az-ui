@@ -89,3 +89,7 @@ Pendências que dependem da criação do repositório no GitHub (não bloqueiam 
 ## Futuro (fora do escopo atual)
 
 - Adaptador PHP (`AZForm`) como pacote separado.
+
+## Suporte para uso
+
+- Todos os frameworks frontend e com as linguagens mais populares, Exemplo: React, Next.js, Vue.js, Angular, Svelte, Astro, SvelteKit, Nuxt, Preact, SolidJS, além de outros fortemente usados na indústria.
