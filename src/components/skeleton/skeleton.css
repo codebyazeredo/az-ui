@@ -1,0 +1,28 @@
+.az-skeleton {
+  display: block;
+  min-height: 1em;
+  background-color: var(--az-color-border);
+  border-radius: var(--az-radius-sm);
+  animation: az-skeleton-pulse 1.5s var(--az-easing-standard) infinite;
+}
+
+.az-skeleton-text {
+  height: var(--az-font-size-md);
+}
+
+.az-skeleton-circle {
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+@keyframes az-skeleton-pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .az-skeleton {
+    animation: none;
+  }
+}

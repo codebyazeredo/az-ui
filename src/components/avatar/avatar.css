@@ -1,0 +1,40 @@
+.az-avatar {
+  --az-avatar-size: var(--az-control-height-md);
+
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: var(--az-avatar-size);
+  height: var(--az-avatar-size);
+  overflow: hidden;
+  font-size: var(--az-font-size-sm);
+  font-weight: var(--az-font-weight-semibold);
+  color: var(--az-color-primary-text);
+  text-transform: uppercase;
+  background-color: color-mix(in srgb, var(--az-color-primary) 15%, var(--az-color-surface));
+  border-radius: 50%;
+}
+
+.az-avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.az-avatar-square {
+  border-radius: var(--az-radius-md);
+}
+
+.az-avatar-sm {
+  --az-avatar-size: var(--az-control-height-sm);
+
+  font-size: var(--az-font-size-xs);
+}
+
+.az-avatar-lg {
+  --az-avatar-size: var(--az-control-height-lg);
+
+  font-size: var(--az-font-size-md);
+}

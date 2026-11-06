@@ -1,0 +1,52 @@
+.az-alert {
+  --az-alert-tone: var(--az-color-info);
+  --az-alert-color: var(--az-color-info-text);
+  --az-alert-padding: var(--az-spacing-3) var(--az-spacing-4);
+  --az-alert-font-size: var(--az-font-size-md);
+
+  padding: var(--az-alert-padding);
+  font-size: var(--az-alert-font-size);
+  line-height: var(--az-line-height-normal);
+  color: var(--az-text-primary);
+  background-color: color-mix(in srgb, var(--az-alert-tone) 10%, var(--az-color-surface));
+  border: var(--az-border-width) solid
+    color-mix(in srgb, var(--az-alert-tone) 35%, var(--az-color-surface));
+  border-left: var(--az-spacing-1) solid var(--az-alert-tone);
+  border-radius: var(--az-radius-sm);
+}
+
+.az-alert-title {
+  margin: 0 0 var(--az-spacing-1);
+  font-weight: var(--az-font-weight-semibold);
+  color: var(--az-alert-color);
+}
+
+.az-alert-success {
+  --az-alert-tone: var(--az-color-success);
+  --az-alert-color: var(--az-color-success-text);
+}
+
+.az-alert-warning {
+  --az-alert-tone: var(--az-color-warning);
+  --az-alert-color: var(--az-color-warning-text);
+}
+
+.az-alert-danger {
+  --az-alert-tone: var(--az-color-danger);
+  --az-alert-color: var(--az-color-danger-text);
+}
+
+.az-alert-info {
+  --az-alert-tone: var(--az-color-info);
+  --az-alert-color: var(--az-color-info-text);
+}
+
+.az-alert-sm {
+  --az-alert-padding: var(--az-spacing-2) var(--az-spacing-3);
+  --az-alert-font-size: var(--az-font-size-sm);
+}
+
+.az-alert-lg {
+  --az-alert-padding: var(--az-spacing-4) var(--az-spacing-5);
+  --az-alert-font-size: var(--az-font-size-base);
+}

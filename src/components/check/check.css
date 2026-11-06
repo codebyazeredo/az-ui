@@ -1,0 +1,90 @@
+.az-check {
+  --az-check-size: 1rem;
+  --az-check-font-size: var(--az-font-size-md);
+
+  display: flex;
+  gap: var(--az-spacing-2);
+  align-items: flex-start;
+}
+
+.az-check-input {
+  position: relative;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: var(--az-check-size);
+  height: var(--az-check-size);
+  margin: 1px 0 0;
+  appearance: none;
+  cursor: pointer;
+  background-color: var(--az-color-surface);
+  border: var(--az-border-width) solid var(--az-color-border-strong);
+  border-radius: var(--az-radius-sm);
+  transition:
+    background-color var(--az-duration-fast) var(--az-easing-standard),
+    border-color var(--az-duration-fast) var(--az-easing-standard);
+}
+
+.az-check-input[type="radio"] {
+  border-radius: 50%;
+}
+
+.az-check-input:checked {
+  background-color: var(--az-color-primary);
+  border-color: var(--az-color-primary);
+}
+
+.az-check-input[type="checkbox"]:checked::after {
+  position: absolute;
+  top: calc(var(--az-check-size) * 0.06);
+  left: calc(var(--az-check-size) * 0.3);
+  width: calc(var(--az-check-size) * 0.25);
+  height: calc(var(--az-check-size) * 0.5);
+  content: "";
+  border: solid var(--az-text-inverse);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.az-check-input[type="radio"]:checked::after {
+  position: absolute;
+  inset: calc(var(--az-check-size) * 0.22);
+  content: "";
+  background-color: var(--az-text-inverse);
+  border-radius: 50%;
+}
+
+.az-check-input:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: var(--az-focus-ring-offset);
+}
+
+.az-check-input[aria-invalid="true"] {
+  border-color: var(--az-color-danger);
+}
+
+.az-check-input:disabled {
+  cursor: not-allowed;
+  opacity: var(--az-opacity-disabled);
+}
+
+.az-check-label {
+  font-size: var(--az-check-font-size);
+  line-height: var(--az-line-height-normal);
+  color: var(--az-text-primary);
+  cursor: pointer;
+}
+
+.az-check-input:disabled + .az-check-label {
+  cursor: not-allowed;
+  opacity: var(--az-opacity-disabled);
+}
+
+.az-check-sm {
+  --az-check-size: 0.875rem;
+  --az-check-font-size: var(--az-font-size-sm);
+}
+
+.az-check-lg {
+  --az-check-size: 1.25rem;
+  --az-check-font-size: var(--az-font-size-base);
+}

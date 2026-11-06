@@ -1,0 +1,97 @@
+.az-btn {
+  --az-btn-height: var(--az-control-height-md);
+  --az-btn-font-size: var(--az-font-size-md);
+  --az-btn-background: var(--az-color-surface);
+  --az-btn-background-hover: var(--az-color-surface-muted);
+  --az-btn-color: var(--az-text-primary);
+  --az-btn-border-color: var(--az-color-border-strong);
+
+  display: inline-flex;
+  gap: var(--az-spacing-2);
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: var(--az-btn-height);
+  padding: 0 var(--az-spacing-3);
+  font-family: inherit;
+  font-size: var(--az-btn-font-size);
+  font-weight: var(--az-font-weight-medium);
+  line-height: var(--az-line-height-tight);
+  color: var(--az-btn-color);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: var(--az-btn-background);
+  border: var(--az-border-width) solid var(--az-btn-border-color);
+  border-radius: var(--az-radius-sm);
+  transition:
+    background-color var(--az-duration-fast) var(--az-easing-standard),
+    border-color var(--az-duration-fast) var(--az-easing-standard);
+}
+
+.az-btn:hover {
+  background-color: var(--az-btn-background-hover);
+}
+
+.az-btn:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: var(--az-focus-ring-offset);
+}
+
+.az-btn:disabled,
+.az-btn[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: var(--az-opacity-disabled);
+}
+
+.az-btn-loading {
+  pointer-events: none;
+}
+
+.az-btn-primary {
+  --az-btn-background: var(--az-color-primary);
+  --az-btn-background-hover: var(--az-color-primary-hover);
+  --az-btn-color: var(--az-text-inverse);
+  --az-btn-border-color: var(--az-color-primary);
+}
+
+.az-btn-secondary {
+  --az-btn-background: var(--az-color-secondary);
+  --az-btn-background-hover: var(--az-secondary-600);
+  --az-btn-color: var(--az-text-inverse);
+  --az-btn-border-color: var(--az-color-secondary);
+}
+
+.az-btn-danger {
+  --az-btn-background: var(--az-color-danger);
+  --az-btn-background-hover: var(--az-danger-700);
+  --az-btn-color: var(--az-text-inverse);
+  --az-btn-border-color: var(--az-color-danger);
+}
+
+.az-btn-outline {
+  --az-btn-background: transparent;
+  --az-btn-background-hover: color-mix(in srgb, var(--az-color-primary) 10%, transparent);
+  --az-btn-color: var(--az-color-primary-text);
+  --az-btn-border-color: var(--az-color-primary-text);
+}
+
+.az-btn-ghost {
+  --az-btn-background: transparent;
+  --az-btn-background-hover: color-mix(in srgb, var(--az-color-primary) 10%, transparent);
+  --az-btn-color: var(--az-color-primary-text);
+  --az-btn-border-color: transparent;
+}
+
+.az-btn-sm {
+  --az-btn-height: var(--az-control-height-sm);
+  --az-btn-font-size: var(--az-font-size-sm);
+
+  padding: 0 var(--az-spacing-2);
+}
+
+.az-btn-lg {
+  --az-btn-height: var(--az-control-height-lg);
+
+  padding: 0 var(--az-spacing-4);
+}

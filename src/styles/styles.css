@@ -11,6 +11,18 @@
 @import url("./themes/dark.css");
 @import url("./reset/reset.css");
 @import url("./base/body.css");
+@import url("../components/button/button.css");
+@import url("../components/badge/badge.css");
+@import url("../components/alert/alert.css");
+@import url("../components/spinner/spinner.css");
+@import url("../components/skeleton/skeleton.css");
+@import url("../components/divider/divider.css");
+@import url("../components/card/card.css");
+@import url("../components/avatar/avatar.css");
+@import url("../components/field/field.css");
+@import url("../components/control/control.css");
+@import url("../components/check/check.css");
+@import url("../components/switch/switch.css");
 
 /* Utilities come last so they override components without !important. */
 @import url("./utilities/utilities.generated.css");

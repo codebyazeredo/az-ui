@@ -1,0 +1,44 @@
+.az-card {
+  --az-card-padding-y: var(--az-spacing-3);
+  --az-card-padding-x: var(--az-spacing-4);
+  --az-card-body-padding: var(--az-spacing-4);
+
+  color: var(--az-text-primary);
+  background-color: var(--az-color-surface);
+  border: var(--az-border-width) solid var(--az-color-border);
+  border-radius: var(--az-radius-md);
+  box-shadow: var(--az-shadow-sm);
+}
+
+.az-card-header,
+.az-card-footer {
+  padding: var(--az-card-padding-y) var(--az-card-padding-x);
+  background-color: var(--az-color-surface-muted);
+}
+
+.az-card-header {
+  font-weight: var(--az-font-weight-semibold);
+  border-bottom: var(--az-border-width) solid var(--az-color-border);
+  border-radius: var(--az-radius-md) var(--az-radius-md) 0 0;
+}
+
+.az-card-body {
+  padding: var(--az-card-body-padding);
+}
+
+.az-card-footer {
+  border-top: var(--az-border-width) solid var(--az-color-border);
+  border-radius: 0 0 var(--az-radius-md) var(--az-radius-md);
+}
+
+.az-card-sm {
+  --az-card-padding-y: var(--az-spacing-2);
+  --az-card-padding-x: var(--az-spacing-3);
+  --az-card-body-padding: var(--az-spacing-3);
+}
+
+.az-card-lg {
+  --az-card-padding-y: var(--az-spacing-4);
+  --az-card-padding-x: var(--az-spacing-5);
+  --az-card-body-padding: var(--az-spacing-5);
+}

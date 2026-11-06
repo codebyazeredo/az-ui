@@ -1,0 +1,86 @@
+.az-switch {
+  --az-switch-width: 2rem;
+  --az-switch-height: 1.125rem;
+  --az-switch-knob-size: 0.75rem;
+  --az-switch-knob-gap: calc((var(--az-switch-height) - var(--az-switch-knob-size)) / 2);
+  --az-switch-font-size: var(--az-font-size-md);
+
+  display: flex;
+  gap: var(--az-spacing-2);
+  align-items: flex-start;
+}
+
+.az-switch-input {
+  position: relative;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: var(--az-switch-width);
+  height: var(--az-switch-height);
+  margin: 1px 0 0;
+  appearance: none;
+  cursor: pointer;
+  background-color: var(--az-color-border-strong);
+  border: 0;
+  border-radius: var(--az-switch-height);
+  transition: background-color var(--az-duration-fast) var(--az-easing-standard);
+}
+
+.az-switch-input::after {
+  position: absolute;
+  top: var(--az-switch-knob-gap);
+  left: var(--az-switch-knob-gap);
+  width: var(--az-switch-knob-size);
+  height: var(--az-switch-knob-size);
+  content: "";
+  background-color: var(--az-color-surface);
+  border-radius: 50%;
+  transition: transform var(--az-duration-fast) var(--az-easing-standard);
+}
+
+.az-switch-input:checked {
+  background-color: var(--az-color-primary);
+}
+
+.az-switch-input:checked::after {
+  transform: translateX(calc(var(--az-switch-width) - var(--az-switch-height)));
+}
+
+.az-switch-input:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: var(--az-focus-ring-offset);
+}
+
+.az-switch-input[aria-invalid="true"] {
+  outline: var(--az-border-width) solid var(--az-color-danger);
+}
+
+.az-switch-input:disabled {
+  cursor: not-allowed;
+  opacity: var(--az-opacity-disabled);
+}
+
+.az-switch-label {
+  font-size: var(--az-switch-font-size);
+  line-height: var(--az-line-height-normal);
+  color: var(--az-text-primary);
+  cursor: pointer;
+}
+
+.az-switch-input:disabled + .az-switch-label {
+  cursor: not-allowed;
+  opacity: var(--az-opacity-disabled);
+}
+
+.az-switch-sm {
+  --az-switch-width: 1.625rem;
+  --az-switch-height: 0.9375rem;
+  --az-switch-knob-size: 0.625rem;
+  --az-switch-font-size: var(--az-font-size-sm);
+}
+
+.az-switch-lg {
+  --az-switch-width: 2.5rem;
+  --az-switch-height: 1.375rem;
+  --az-switch-knob-size: 1rem;
+  --az-switch-font-size: var(--az-font-size-base);
+}

@@ -1,0 +1,57 @@
+.az-badge {
+  --az-badge-color: var(--az-text-secondary);
+  --az-badge-tone: var(--az-color-secondary);
+  --az-badge-font-size: var(--az-font-size-xs);
+  --az-badge-line-height: var(--az-spacing-5);
+
+  display: inline-flex;
+  align-items: center;
+  padding: 0 var(--az-spacing-2);
+  font-size: var(--az-badge-font-size);
+  font-weight: var(--az-font-weight-medium);
+  line-height: var(--az-badge-line-height);
+  color: var(--az-badge-color);
+  white-space: nowrap;
+  background-color: color-mix(in srgb, var(--az-badge-tone) 12%, var(--az-color-surface));
+  border: var(--az-border-width) solid
+    color-mix(in srgb, var(--az-badge-tone) 30%, var(--az-color-surface));
+  border-radius: var(--az-radius-sm);
+}
+
+.az-badge-primary {
+  --az-badge-color: var(--az-color-primary-text);
+  --az-badge-tone: var(--az-color-primary);
+}
+
+.az-badge-success {
+  --az-badge-color: var(--az-color-success-text);
+  --az-badge-tone: var(--az-color-success);
+}
+
+.az-badge-warning {
+  --az-badge-color: var(--az-color-warning-text);
+  --az-badge-tone: var(--az-color-warning);
+}
+
+.az-badge-danger {
+  --az-badge-color: var(--az-color-danger-text);
+  --az-badge-tone: var(--az-color-danger);
+}
+
+.az-badge-info {
+  --az-badge-color: var(--az-color-info-text);
+  --az-badge-tone: var(--az-color-info);
+}
+
+.az-badge-sm {
+  --az-badge-line-height: var(--az-spacing-4);
+
+  padding: 0 var(--az-spacing-1);
+}
+
+.az-badge-lg {
+  --az-badge-font-size: var(--az-font-size-sm);
+  --az-badge-line-height: var(--az-spacing-6);
+
+  padding: 0 var(--az-spacing-3);
+}

@@ -1,0 +1,15 @@
+.az-divider {
+  margin: var(--az-spacing-4) 0;
+  border: 0;
+  border-top: var(--az-border-width) solid var(--az-color-border);
+}
+
+.az-divider-vertical {
+  display: inline-block;
+  align-self: stretch;
+  height: auto;
+  min-height: 1em;
+  margin: 0 var(--az-spacing-3);
+  border-top: 0;
+  border-left: var(--az-border-width) solid var(--az-color-border);
+}
