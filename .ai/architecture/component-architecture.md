@@ -10,7 +10,7 @@ Status: **fechado para componentes somente CSS e campos de formulário** (D-034 
 
 Somente o tipo 3 tem classe JS exportada (D-035). Button e demais componentes da Fase 2 são somente CSS.
 
-Tipo 3 (Fase 3): `modal`, `offcanvas`, `toast`, `dropdown`, `tooltip`, `popover`, `tabs`, `datepicker` (cada um com `<nome>.ts`, `<nome>.css` e `index.ts`) e `accordion` (somente CSS).
+Tipo 3 (Fase 3): `context-menu`, `command-menu`, `notification`, `modal`, `offcanvas`, `toast`, `dropdown`, `tooltip`, `popover`, `tabs`, `datepicker` (cada um com `<nome>.ts`, `<nome>.css` e `index.ts`) e `accordion` (somente CSS).
 
 Implementados na Fase 2: `button`, `badge`, `alert`, `spinner`, `skeleton`, `divider`, `card`, `avatar` e os blocos de formulário `field`, `control` (input, textarea, select), `check` (checkbox, radio) e `switch`. Cada um tem `src/components/<nome>/<nome>.css`, importado em `src/styles/styles.css`; o teste `tests/components/components.test.ts` valida o import, o prefixo `az-` e a ausência de cores literais e `!important`.
 

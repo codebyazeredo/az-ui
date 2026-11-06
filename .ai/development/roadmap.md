@@ -2,14 +2,14 @@
 
 Fonte: `specifications.md` §15 (complementado com itens da §6 que estavam fora das fases, ver Q-14). **Este é o painel de controle do projeto**: marcar `[x]` ao concluir, na mesma tarefa.
 
-Fase atual: **4 — Dados e avançados**, ainda não iniciada (Fase 3 concluída e validada em 2026-11-06) (Fases 0 e 1 concluídas em 2026-11-04)
+Fase atual: **3 — Componentes interativos**, reaberta em 2026-11-06 para incluir Notification, Command Menu e Context Menu (Q-14); aguardando revisão com leitor de tela e validação desses três (Fases 0 e 1 concluídas em 2026-11-04)
 
 | Fase | Nome | Status |
 |---|---|---|
 | 0 | Pré-desenvolvimento | Concluída |
 | 1 | Fundação | Concluída (validada); restam configurações do GitHub |
 | 2 | Componentes básicos | Concluída |
-| 3 | Componentes interativos | Concluída |
+| 3 | Componentes interativos | Concluída, exceto validação dos itens Q-14 |
 | 4 | Dados e avançados | Não iniciada |
 | 5 | Layouts | Não iniciada |
 | 6 | Documentação | Não iniciada |
@@ -72,7 +72,7 @@ Pendências que dependem da criação do repositório no GitHub (não bloqueiam 
 - [x] typecheck, lint, format:check, build e 250 testes passando; `examples/interactive.html` conferida no navegador (2026-11-06).
 - [x] Revisão manual com leitor de tela feita pelo mantenedor (2026-11-06).
 - [x] Validação da fase pelo mantenedor (2026-11-06).
-- [ ] (Q-14) Notification · Command Menu · Context Menu — fase a definir.
+- [x] (Q-14) Notification · Command Menu · Context Menu (D-044, D-045); 288 testes passando, ainda sem revisão com leitor de tela e sem validação do mantenedor.
 
 ## Fase 4 — Dados e avançados
 
