@@ -1,0 +1,21 @@
+.az-icon {
+  --az-icon-size: 1.25rem;
+
+  flex: none;
+  width: var(--az-icon-size);
+  height: var(--az-icon-size);
+  vertical-align: middle;
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.az-icon-sm {
+  --az-icon-size: 1rem;
+}
+
+.az-icon-lg {
+  --az-icon-size: 1.5rem;
+}

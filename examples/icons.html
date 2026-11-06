@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en" data-az-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Icons — AZ UI</title>
+    <link rel="stylesheet" href="/src/styles/styles.css" />
+    <style>
+      main {
+        max-width: var(--az-max-width-xl);
+        margin: 0 auto;
+        padding: var(--az-spacing-6);
+      }
+      section {
+        margin-bottom: var(--az-spacing-8);
+      }
+      h1,
+      h2 {
+        margin: 0 0 var(--az-spacing-3);
+        font-weight: var(--az-font-weight-semibold);
+      }
+      h1 {
+        font-size: var(--az-font-size-2xl);
+      }
+      h2 {
+        font-size: var(--az-font-size-lg);
+      }
+      .catalog {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+        gap: var(--az-spacing-2);
+      }
+      .catalog-item {
+        display: flex;
+        flex-direction: column;
+        gap: var(--az-spacing-2);
+        align-items: center;
+        padding: var(--az-spacing-4) var(--az-spacing-2) var(--az-spacing-3);
+        font: inherit;
+        font-size: var(--az-font-size-xs);
+        color: var(--az-text-secondary);
+        cursor: pointer;
+        background: var(--az-color-surface);
+        border: 1px solid var(--az-color-border);
+        border-radius: var(--az-radius-md);
+      }
+      .catalog-item:hover {
+        color: var(--az-text);
+        border-color: var(--az-color-brand);
+      }
+      .catalog-item .az-icon {
+        --az-icon-size: 1.5rem;
+
+        color: var(--az-text);
+      }
+      .sample {
+        padding: var(--az-spacing-4);
+        background: var(--az-color-surface);
+        border: 1px solid var(--az-color-border);
+        border-radius: var(--az-radius-md);
+      }
+      pre {
+        margin: 0;
+        font-size: var(--az-font-size-sm);
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body class="az-body">
+    <main>
+      <div class="az-d-flex az-gap-3 az-mb-3">
+        <h1 class="az-m-0">Icons</h1>
+        <button class="az-btn az-btn-sm" id="toggle-theme" type="button">Toggle theme</button>
+      </div>
+      <p class="az-text-secondary az-mb-4">
+        <span id="count"></span> icons on a 24×24 grid with a 1.5px stroke. They inherit the text
+        color through <code>currentColor</code>. Click an icon to copy its name.
+      </p>
+
+      <section>
+        <label class="az-search" style="max-width: var(--az-max-width-sm)">
+          <input
+            class="az-control"
+            id="filter"
+            type="search"
+            placeholder="Filter icons"
+            aria-label="Filter icons"
+          />
+        </label>
+        <div id="catalog"></div>
+        <p class="az-text-muted az-mt-3" id="empty" hidden>No icons match the filter.</p>
+      </section>
+
+      <section>
+        <h2>Sizes</h2>
+        <div class="sample az-d-flex az-align-center az-gap-4" id="sizes"></div>
+      </section>
+
+      <section>
+        <h2>Inherited color</h2>
+        <div class="sample az-d-flex az-align-center az-gap-4" id="colors"></div>
+      </section>
+
+      <section>
+        <h2>In context</h2>
+        <div class="sample az-d-flex az-flex-wrap az-align-center az-gap-2" id="context"></div>
+      </section>
+
+      <section>
+        <h2>Usage</h2>
+        <div class="sample">
+          <pre><code id="usage"></code></pre>
+        </div>
+      </section>
+    </main>
+
+    <script type="module">
+      import { AZUI } from "/src/index.ts";
+
+      const { Icon } = AZUI;
+      const catalog = document.getElementById("catalog");
+      const filter = document.getElementById("filter");
+      const empty = document.getElementById("empty");
+
+      document.getElementById("count").textContent = Icon.names.length;
+
+      function createItem(name) {
+        const item = document.createElement("button");
+        item.type = "button";
+        item.className = "catalog-item";
+        item.dataset.name = name;
+        item.title = `Copy "${name}"`;
+        item.append(Icon.create(name), name);
+        return item;
+      }
+
+      function createGroup(category, names) {
+        const group = document.createElement("div");
+        group.className = "catalog-group";
+
+        const title = document.createElement("h2");
+        title.className = "az-text-md az-fw-semibold az-mt-4 az-mb-2";
+        title.textContent = `${category[0].toUpperCase()}${category.slice(1)} (${names.length})`;
+
+        const grid = document.createElement("div");
+        grid.className = "catalog";
+        grid.append(...names.map(createItem));
+
+        group.append(title, grid);
+        return group;
+      }
+
+      const groups = Object.entries(Icon.categories).map(([category, names]) =>
+        createGroup(category, names),
+      );
+      catalog.append(...groups);
+
+      filter.addEventListener("input", () => {
+        const term = filter.value.trim().toLowerCase();
+        let visible = 0;
+        for (const group of groups) {
+          const items = group.querySelectorAll(".catalog-item");
+          let visibleInGroup = 0;
+          for (const item of items) {
+            item.hidden = !item.dataset.name.includes(term);
+            if (!item.hidden) visibleInGroup += 1;
+          }
+          group.hidden = visibleInGroup === 0;
+          visible += visibleInGroup;
+        }
+        empty.hidden = visible > 0;
+      });
+
+      document.getElementById("usage").textContent = [
+        'import { AZUI } from "az-ui";',
+        "",
+        'const icon = AZUI.Icon.create("search", { size: "lg", label: "Search" });',
+        "button.append(icon);",
+        "",
+        "document.body.prepend(AZUI.Icon.sprite());",
+        '// <svg class="az-icon" aria-hidden="true"><use href="#az-icon-search"></use></svg>',
+      ].join("\n");
+
+      catalog.addEventListener("click", (event) => {
+        const item = event.target.closest(".catalog-item");
+        if (item) navigator.clipboard?.writeText(item.dataset.name);
+      });
+
+      const sizes = [undefined, "sm", "lg"];
+      document
+        .getElementById("sizes")
+        .append(...sizes.map((size) => Icon.create("settings", size ? { size } : {})));
+
+      const colors = ["az-text-brand", "az-text-success", "az-text-warning", "az-text-danger"];
+      const iconByColor = ["info", "success", "warning", "error"];
+      document.getElementById("colors").append(
+        ...colors.map((className, index) => {
+          const icon = Icon.create(iconByColor[index]);
+          icon.classList.add(className);
+          return icon;
+        }),
+      );
+
+      const context = document.getElementById("context");
+      for (const [name, text, variant] of [
+        ["download", "Export", "az-btn-primary"],
+        ["plus", "New order", "az-btn-outline"],
+        ["trash", "Delete", "az-btn-danger"],
+      ]) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = `az-btn ${variant} az-d-flex az-gap-1`;
+        button.append(Icon.create(name, { size: "sm" }), text);
+        context.append(button);
+      }
+      const iconOnly = document.createElement("button");
+      iconOnly.type = "button";
+      iconOnly.className = "az-btn az-btn-ghost";
+      iconOnly.setAttribute("aria-label", "Notifications");
+      iconOnly.append(Icon.create("bell"));
+      context.append(iconOnly);
+
+      document.getElementById("toggle-theme").addEventListener("click", () => {
+        const root = document.documentElement;
+        root.dataset.azTheme = root.dataset.azTheme === "dark" ? "light" : "dark";
+      });
+    </script>
+  </body>
+</html>

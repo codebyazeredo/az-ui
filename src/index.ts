@@ -22,6 +22,7 @@ export type {
   DatepickerOptions,
 } from "./components/datepicker";
 export { Dropdown } from "./components/dropdown";
+export type { IconCategory, IconName, IconOptions, IconSize } from "./components/icon";
 export { Modal } from "./components/modal";
 export type { ModalOptions } from "./components/modal";
 export { Offcanvas } from "./components/offcanvas";
