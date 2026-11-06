@@ -1,0 +1,22 @@
+.az-container {
+  width: 100%;
+  max-width: var(--az-max-width-xl);
+  padding-inline: var(--az-spacing-4);
+  margin-inline: auto;
+}
+
+.az-container-sm {
+  max-width: var(--az-max-width-sm);
+}
+
+.az-container-md {
+  max-width: var(--az-max-width-md);
+}
+
+.az-container-lg {
+  max-width: var(--az-max-width-lg);
+}
+
+.az-container-fluid {
+  max-width: none;
+}

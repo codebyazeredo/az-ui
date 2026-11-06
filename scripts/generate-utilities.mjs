@@ -10,7 +10,19 @@ const spacingValue = (step) => (step === 0 ? "0" : `var(--az-spacing-${step})`);
 const steps = (prefix, property, values) =>
   values.map((step) => [`${prefix}-${step}`, `${property}: ${spacingValue(step)}`]);
 
+const range = (last) => Array.from({ length: last }, (_, index) => index + 1);
+
+const gridUtilities = [
+  ...[1, 2, 3, 4, 6].map((count) => [
+    `grid-cols-${count}`,
+    `grid-template-columns: repeat(${count}, minmax(0, 1fr))`,
+  ]),
+  ...range(12).map((span) => [`col-${span}`, `grid-column: span ${span}`]),
+];
+
 const responsiveUtilities = [
+  ...gridUtilities,
+
   ["d-none", "display: none"],
   ["d-block", "display: block"],
   ["d-inline", "display: inline"],

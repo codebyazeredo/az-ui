@@ -25,6 +25,17 @@ describe("generated utilities", () => {
     }
   });
 
+  it("generates grid column and span utilities with responsive variants", () => {
+    for (const className of [".az-grid-cols-3", ".az-col-6", ".az-col-12"]) {
+      expect(css, className).toContain(`${className} {\n  grid-`);
+    }
+
+    const mediumStart = css.indexOf(`@media (width >= ${BREAKPOINTS.md}px) {`);
+    expect(css.indexOf(".az-md-grid-cols-3 {", mediumStart)).toBeGreaterThan(mediumStart);
+    expect(css.indexOf(".az-md-col-6 {", mediumStart)).toBeGreaterThan(mediumStart);
+    expect(css).not.toContain(".az-col-13");
+  });
+
   it("does not generate responsive variants for static utilities", () => {
     expect(css).not.toContain(".az-md-text-brand");
     expect(css).not.toContain(".az-md-bg-primary");

@@ -1,0 +1,19 @@
+.az-row {
+  --az-row-gap: var(--az-spacing-4);
+
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--az-row-gap);
+}
+
+.az-row > * {
+  grid-column: span 12;
+}
+
+.az-row-sm {
+  --az-row-gap: var(--az-spacing-2);
+}
+
+.az-row-lg {
+  --az-row-gap: var(--az-spacing-6);
+}

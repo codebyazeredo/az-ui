@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en" data-az-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Layouts — AZ UI</title>
+    <link rel="stylesheet" href="/src/styles/styles.css" />
+  </head>
+  <body class="az-body">
+    <header class="az-navbar az-navbar-sticky">
+      <button
+        class="az-btn az-btn-ghost az-btn-sm az-md-d-none"
+        type="button"
+        data-az-toggle="offcanvas"
+        data-az-target="#mobile-menu"
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
+      <a class="az-navbar-brand" href="#">Acme Admin</a>
+      <nav class="az-navbar-nav az-d-none az-md-d-flex" aria-label="Sections">
+        <ul class="az-navigation-menu az-navigation-menu-horizontal">
+          <li><a class="az-navigation-menu-link" href="#" aria-current="page">Orders</a></li>
+          <li><a class="az-navigation-menu-link" href="#">Customers</a></li>
+          <li><a class="az-navigation-menu-link" href="#">Reports</a></li>
+        </ul>
+      </nav>
+      <div class="az-navbar-actions">
+        <button class="az-btn az-btn-sm" id="toggle-theme" type="button">Toggle theme</button>
+        <span class="az-avatar az-avatar-sm" role="img" aria-label="Signed in as Ana">AN</span>
+      </div>
+    </header>
+
+    <div class="az-d-flex">
+      <aside
+        class="az-sidebar az-sidebar-sticky az-d-none az-md-d-flex"
+        style="--az-sidebar-offset: 2.5rem"
+      >
+        <nav class="az-sidebar-body" aria-label="Orders">
+          <ul class="az-navigation-menu">
+            <li class="az-navigation-menu-heading">Orders</li>
+            <li><a class="az-navigation-menu-link" href="#" aria-current="page">All orders</a></li>
+            <li><a class="az-navigation-menu-link" href="#">Pending approval</a></li>
+            <li>
+              <details class="az-navigation-menu-group" open>
+                <summary class="az-navigation-menu-link">Archive</summary>
+                <ul class="az-navigation-menu-sub">
+                  <li><a class="az-navigation-menu-link" href="#">2025</a></li>
+                  <li><a class="az-navigation-menu-link" href="#">2024</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="az-navigation-menu-heading">Settings</li>
+            <li><a class="az-navigation-menu-link" href="#">Workflows</a></li>
+          </ul>
+        </nav>
+        <div class="az-sidebar-footer az-text-sm az-text-muted">v1.0</div>
+      </aside>
+
+      <main class="az-container az-container-fluid az-py-3 az-min-w-0">
+        <nav aria-label="Breadcrumb">
+          <ol class="az-breadcrumb">
+            <li class="az-breadcrumb-item"><a href="#">Home</a></li>
+            <li class="az-breadcrumb-item"><a href="#">Orders</a></li>
+            <li class="az-breadcrumb-item" aria-current="page">All orders</li>
+          </ol>
+        </nav>
+
+        <div class="az-page-header az-mt-2">
+          <div class="az-page-header-main">
+            <h1 class="az-page-header-title">All orders</h1>
+            <p class="az-page-header-description">Track, approve and export customer orders.</p>
+          </div>
+          <div class="az-page-header-actions">
+            <button class="az-btn az-btn-outline" type="button">Export</button>
+            <button class="az-btn az-btn-primary" type="button">New order</button>
+          </div>
+        </div>
+
+        <section class="az-content-section" aria-labelledby="summary-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="summary-title">Summary</h2>
+              <p class="az-content-section-description">Grid with auto-fit columns.</p>
+            </div>
+          </div>
+          <div class="az-grid az-grid-fit">
+            <div class="az-stat">
+              <span class="az-stat-label">Open orders</span>
+              <span class="az-stat-value">1,284</span>
+            </div>
+            <div class="az-stat">
+              <span class="az-stat-label">Pending approval</span>
+              <span class="az-stat-value">96</span>
+            </div>
+            <div class="az-stat">
+              <span class="az-stat-label">Late</span>
+              <span class="az-stat-value">12</span>
+            </div>
+            <div class="az-stat">
+              <span class="az-stat-label">Revenue</span>
+              <span class="az-stat-value">$48.2k</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" aria-labelledby="form-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="form-title">Row and columns</h2>
+              <p class="az-content-section-description">
+                12 columns: full width on small screens, 8 and 4 from the medium breakpoint.
+              </p>
+            </div>
+            <div class="az-content-section-actions">
+              <button class="az-btn az-btn-sm" type="button">Edit</button>
+            </div>
+          </div>
+          <div class="az-row">
+            <div class="az-col-12 az-md-col-8">
+              <div class="az-field">
+                <label class="az-field-label" for="customer">Customer</label>
+                <input class="az-control" id="customer" type="text" value="Acme Ltd." />
+              </div>
+            </div>
+            <div class="az-col-12 az-md-col-4">
+              <div class="az-field">
+                <label class="az-field-label" for="code">Code</label>
+                <input class="az-control" id="code" type="text" value="AC-001" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" aria-labelledby="split-title">
+          <div class="az-content-section-header">
+            <h2 class="az-content-section-title" id="split-title">Split layout and stack</h2>
+          </div>
+          <div class="az-split-layout">
+            <div class="az-split-layout-aside">
+              <ul class="az-list-group">
+                <li class="az-list-group-item" aria-current="true">Order #1001</li>
+                <li class="az-list-group-item">Order #1002</li>
+                <li class="az-list-group-item">Order #1003</li>
+              </ul>
+            </div>
+            <div class="az-split-layout-main">
+              <div class="az-stack">
+                <dl class="az-key-value">
+                  <dt class="az-key-value-key">Customer</dt>
+                  <dd class="az-key-value-value">Acme Ltd.</dd>
+                  <dt class="az-key-value-key">Status</dt>
+                  <dd class="az-key-value-value">Pending approval</dd>
+                </dl>
+                <div class="az-stack az-stack-horizontal az-stack-sm">
+                  <button class="az-btn az-btn-primary az-btn-sm" type="button">Approve</button>
+                  <button class="az-btn az-btn-sm" type="button">Reject</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="az-offcanvas az-offcanvas-start az-offcanvas-sm" id="mobile-menu" hidden>
+      <div class="az-offcanvas-panel">
+        <div class="az-offcanvas-header">
+          <h2 class="az-offcanvas-title">Menu</h2>
+          <button class="az-btn az-btn-ghost az-btn-sm" data-az-dismiss aria-label="Close">
+            ×
+          </button>
+        </div>
+        <nav class="az-offcanvas-body" aria-label="Main">
+          <ul class="az-navigation-menu">
+            <li><a class="az-navigation-menu-link" href="#" aria-current="page">Orders</a></li>
+            <li><a class="az-navigation-menu-link" href="#">Customers</a></li>
+            <li><a class="az-navigation-menu-link" href="#">Reports</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <script type="module">
+      import "/src/auto.ts";
+
+      document.getElementById("toggle-theme").addEventListener("click", () => {
+        const root = document.documentElement;
+        root.dataset.azTheme = root.dataset.azTheme === "dark" ? "light" : "dark";
+      });
+    </script>
+  </body>
+</html>

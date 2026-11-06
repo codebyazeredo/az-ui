@@ -1,0 +1,27 @@
+.az-split-layout {
+  --az-split-layout-gap: var(--az-spacing-6);
+  --az-split-layout-aside-width: 20rem;
+  --az-split-layout-main-min-width: 24rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--az-split-layout-gap);
+}
+
+.az-split-layout-aside {
+  flex: 1 1 var(--az-split-layout-aside-width);
+  min-width: 0;
+}
+
+.az-split-layout-main {
+  flex: 999 1 var(--az-split-layout-main-min-width);
+  min-width: 0;
+}
+
+.az-split-layout-sm {
+  --az-split-layout-gap: var(--az-spacing-3);
+}
+
+.az-split-layout-lg {
+  --az-split-layout-gap: var(--az-spacing-8);
+}

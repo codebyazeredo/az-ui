@@ -1,0 +1,46 @@
+.az-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--az-spacing-2);
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  font-size: var(--az-font-size-sm);
+  color: var(--az-text-secondary);
+  list-style: none;
+}
+
+.az-breadcrumb-item {
+  display: flex;
+  gap: var(--az-spacing-2);
+  align-items: center;
+}
+
+.az-breadcrumb-item + .az-breadcrumb-item::before {
+  width: var(--az-spacing-1);
+  height: var(--az-spacing-1);
+  content: "";
+  border: solid var(--az-text-muted);
+  border-width: 1px 1px 0 0;
+  transform: rotate(45deg);
+}
+
+.az-breadcrumb-item a {
+  color: var(--az-color-primary-text);
+  text-decoration: none;
+}
+
+.az-breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+.az-breadcrumb-item a:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: var(--az-focus-ring-offset);
+  border-radius: var(--az-radius-sm);
+}
+
+.az-breadcrumb-item[aria-current="page"] {
+  font-weight: var(--az-font-weight-medium);
+  color: var(--az-text-primary);
+}

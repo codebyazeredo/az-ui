@@ -1,0 +1,34 @@
+.az-content-section + .az-content-section {
+  padding-top: var(--az-spacing-6);
+  margin-top: var(--az-spacing-6);
+  border-top: var(--az-border-width) solid var(--az-color-border);
+}
+
+.az-content-section-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--az-spacing-2) var(--az-spacing-4);
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--az-spacing-3);
+}
+
+.az-content-section-title {
+  margin: 0;
+  font-size: var(--az-font-size-base);
+  font-weight: var(--az-font-weight-semibold);
+  color: var(--az-text-primary);
+}
+
+.az-content-section-description {
+  margin: var(--az-spacing-1) 0 0;
+  font-size: var(--az-font-size-sm);
+  color: var(--az-text-secondary);
+}
+
+.az-content-section-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--az-spacing-2);
+  align-items: center;
+}

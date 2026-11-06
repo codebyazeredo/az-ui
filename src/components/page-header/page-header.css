@@ -1,0 +1,36 @@
+.az-page-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--az-spacing-3) var(--az-spacing-4);
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: var(--az-spacing-4);
+  margin-bottom: var(--az-spacing-4);
+  border-bottom: var(--az-border-width) solid var(--az-color-border);
+}
+
+.az-page-header-main {
+  flex: 1 1 20rem;
+  min-width: 0;
+}
+
+.az-page-header-title {
+  margin: 0;
+  font-size: var(--az-font-size-xl);
+  font-weight: var(--az-font-weight-semibold);
+  line-height: var(--az-line-height-tight);
+  color: var(--az-text-primary);
+}
+
+.az-page-header-description {
+  margin: var(--az-spacing-1) 0 0;
+  font-size: var(--az-font-size-md);
+  color: var(--az-text-secondary);
+}
+
+.az-page-header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--az-spacing-2);
+  align-items: center;
+}

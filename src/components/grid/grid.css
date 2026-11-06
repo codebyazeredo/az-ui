@@ -1,0 +1,20 @@
+.az-grid {
+  --az-grid-gap: var(--az-spacing-4);
+  --az-grid-min-width: 16rem;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--az-grid-gap);
+}
+
+.az-grid-fit {
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--az-grid-min-width), 100%), 1fr));
+}
+
+.az-grid-sm {
+  --az-grid-gap: var(--az-spacing-2);
+}
+
+.az-grid-lg {
+  --az-grid-gap: var(--az-spacing-6);
+}
