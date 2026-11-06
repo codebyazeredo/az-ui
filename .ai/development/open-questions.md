@@ -8,7 +8,8 @@ Na Fase 1: Q-02 → D-022 · Q-18 parcialmente (ESM somente, CJS adiado) → D-0
 
 Na Fase 3: Q-14 (Notification, Command Menu, Context Menu) → D-044 · Q-08 → D-040 · Q-13 → D-043 (sem biblioteca de ícones). Q-07 (`window.AZUI`) segue aberta.
 
-Na Fase 4: Q-14 (Sortable Table, Search, Table Actions, Row Selection, Status Indicator, Key Value, List Group e formulários avançados) → D-046 a D-048. As demais atribuições de Q-14 (Fase 5) seguem abertas.
+Na Fase 4: Q-14 (Sortable Table, Search, Table Actions, Row Selection, Status Indicator, Key Value, List Group e formulários avançados) → D-046 a D-048. 
+Na Fase 5: Q-14 (Breadcrumb, Content Section, Split Layout, Row/Column/Flex) → D-051 a D-053. Q-14 está totalmente atribuída.
 
 Na Fase 2: Q-05 → D-034 · Q-06 → D-035 · Q-15 → D-036 (multi-select e file ficam para a Fase 4).
 

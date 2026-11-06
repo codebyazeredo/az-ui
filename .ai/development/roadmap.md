@@ -2,7 +2,7 @@
 
 Fonte: `specifications.md` §15 (complementado com itens da §6 que estavam fora das fases, ver Q-14). **Este é o painel de controle do projeto**: marcar `[x]` ao concluir, na mesma tarefa.
 
-Fase atual: **5 — Layouts**, não iniciada (Fase 4 validada em 2026-11-06). Pendente da Fase 3: revisão com leitor de tela e validação de Notification, Command Menu e Context Menu (Q-14).
+Fase atual: **6 — Documentação**, não iniciada (Fase 5 validada em 2026-11-06). Pendente da Fase 3: revisão com leitor de tela e validação de Notification, Command Menu e Context Menu (Q-14).
 
 | Fase | Nome | Status |
 |---|---|---|
@@ -11,7 +11,7 @@ Fase atual: **5 — Layouts**, não iniciada (Fase 4 validada em 2026-11-06). Pe
 | 2 | Componentes básicos | Concluída |
 | 3 | Componentes interativos | Concluída, exceto validação dos itens Q-14 |
 | 4 | Dados e avançados | Concluída |
-| 5 | Layouts | Não iniciada |
+| 5 | Layouts | Concluída |
 | 6 | Documentação | Não iniciada |
 | 7 | Distribuição | Não iniciada |
 
@@ -85,8 +85,12 @@ Pendências que dependem da criação do repositório no GitHub (não bloqueiam 
 
 ## Fase 5 — Layouts
 
-- [ ] Container · Grid · Stack · Sidebar · Navbar · Page Header · Navigation Menu.
-- [ ] (Q-14) Breadcrumb · Content Section · Split Layout · Row/Column/Flex.
+- [x] Container · Grid · Stack · Sidebar · Navbar · Page Header · Navigation Menu (somente CSS, D-052, D-053).
+- [x] (Q-14) Breadcrumb · Content Section · Split Layout · Row/Column/Flex (D-051); Flex coberto pelos utilitários existentes.
+- [x] `examples/layouts.html` e `docs/components/layouts.md`.
+- [x] typecheck, lint, format:check e 399 testes passando em 2026-11-06 (build não executado).
+- [x] `examples/layouts.html` conferida no navegador nos temas claro e escuro e em largura mobile (menu em Offcanvas), sem erros no console.
+- [x] Validação da fase pelo mantenedor (2026-11-06).
 
 ## Fase 6 — Documentação
 

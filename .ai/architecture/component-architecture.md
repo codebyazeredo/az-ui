@@ -14,6 +14,8 @@ Tipo 3 (Fase 3): `context-menu`, `command-menu`, `notification`, `modal`, `offca
 
 Fase 4 (dados): somente CSS — `progress`, `empty-state`, `stat`, `status-indicator`, `key-value`, `list-group`, `timeline`, `toolbar`, `search`, `filter`; CSS + comportamento — `table` (CSS da tabela, ordenação, seleção e ações por linha, mais a classe `DataTable`), `pagination` (`Pagination`) `field` (`Counter`) `select` (`Select`) e `file-upload` (`FileUpload`). Ver D-046 a D-050.
 
+Fase 5 (layouts): somente CSS — `container`, `stack`, `grid`, `row`, `split-layout`, `page-header`, `content-section`, `breadcrumb`, `navigation-menu`, `navbar` e `sidebar`. Ver D-051 a D-053.
+
 Implementados na Fase 2: `button`, `badge`, `alert`, `spinner`, `skeleton`, `divider`, `card`, `avatar` e os blocos de formulário `field`, `control` (input, textarea, select), `check` (checkbox, radio) e `switch`. Cada um tem `src/components/<nome>/<nome>.css`, importado em `src/styles/styles.css`; o teste `tests/components/components.test.ts` valida o import, o prefixo `az-` e a ausência de cores literais e `!important`.
 
 ## Estrutura proposta por componente
