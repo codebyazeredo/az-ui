@@ -8,6 +8,8 @@ Na Fase 1: Q-02 → D-022 · Q-18 parcialmente (ESM somente, CJS adiado) → D-0
 
 Na Fase 3: Q-14 (Notification, Command Menu, Context Menu) → D-044 · Q-08 → D-040 · Q-13 → D-043 (sem biblioteca de ícones). Q-07 (`window.AZUI`) segue aberta.
 
+Na Fase 4: Q-14 (Sortable Table, Search, Table Actions, Row Selection, Status Indicator, Key Value, List Group e formulários avançados) → D-046 a D-048. As demais atribuições de Q-14 (Fase 5) seguem abertas.
+
 Na Fase 2: Q-05 → D-034 · Q-06 → D-035 · Q-15 → D-036 (multi-select e file ficam para a Fase 4).
 
 Linhas abaixo resolvidas permanecem como histórico.
@@ -32,6 +34,7 @@ Linhas abaixo resolvidas permanecem como histórico.
 | Q-16 | 1 | Sim | **Ferramentas não previstas**: ESLint, Prettier, Stylelint, versão do Node, indentação de TS/CSS (global do mantenedor diz 2 espaços JS/CSS). | Node LTS atual; ESLint + Prettier + Stylelint como devDependencies; 2 espaços. Instalação só com autorização. |
 | Q-17 | 0 | Sim | **Licenças e nome**: `LICENSE` do projeto indefinida; licenças das fontes não verificadas; `az-ui` no npm não verificado. | MIT para o projeto; fontes (verificar OFL 1.1 de cada uma) com licença incluída; checar o nome antes da Fase 7 (idealmente já). |
 | Q-18 | 1 | Não | **Granularidade de imports**: CSS por componente e saída CJS. | `styles.css` único + entradas por componente em JS; CSS por componente opcional na Fase 7; CJS apenas se houver necessidade comprovada. |
+| Q-19 | Após a Fase 7 | Não | **Ícones**: um framework de UI deveria oferecer ícones. Hoje os componentes usam caracteres (`×`, `‹`, `›`, `↑`) e formas em CSS (D-043). | Avaliar depois de concluídas as fases: conjunto SVG próprio ou biblioteca leve com licença compatível, sem dependência obrigatória e com importação por ícone. Reabre Q-13. |
 
 ## Como usar
 

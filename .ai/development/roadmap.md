@@ -2,7 +2,7 @@
 
 Fonte: `specifications.md` §15 (complementado com itens da §6 que estavam fora das fases, ver Q-14). **Este é o painel de controle do projeto**: marcar `[x]` ao concluir, na mesma tarefa.
 
-Fase atual: **3 — Componentes interativos**, reaberta em 2026-11-06 para incluir Notification, Command Menu e Context Menu (Q-14); aguardando revisão com leitor de tela e validação desses três (Fases 0 e 1 concluídas em 2026-11-04)
+Fase atual: **5 — Layouts**, não iniciada (Fase 4 validada em 2026-11-06). Pendente da Fase 3: revisão com leitor de tela e validação de Notification, Command Menu e Context Menu (Q-14).
 
 | Fase | Nome | Status |
 |---|---|---|
@@ -10,7 +10,7 @@ Fase atual: **3 — Componentes interativos**, reaberta em 2026-11-06 para inclu
 | 1 | Fundação | Concluída (validada); restam configurações do GitHub |
 | 2 | Componentes básicos | Concluída |
 | 3 | Componentes interativos | Concluída, exceto validação dos itens Q-14 |
-| 4 | Dados e avançados | Não iniciada |
+| 4 | Dados e avançados | Concluída |
 | 5 | Layouts | Não iniciada |
 | 6 | Documentação | Não iniciada |
 | 7 | Distribuição | Não iniciada |
@@ -76,9 +76,12 @@ Pendências que dependem da criação do repositório no GitHub (não bloqueiam 
 
 ## Fase 4 — Dados e avançados
 
-- [ ] Table · DataTable · Pagination · Filter · Timeline · Progress · Empty State · Stat · Toolbar.
-- [ ] (Q-14) Sortable Table, Search, Table Actions, Row Selection, Status Indicator, Key Value, List Group — confirmar fase.
-- [ ] (Q-14) Formulários avançados: file, range, multi-select, input group, contador.
+- [x] Table · DataTable · Pagination · Filter · Timeline · Progress · Empty State · Stat · Toolbar (D-046, D-047).
+- [x] (Q-14) Sortable Table, Search, Table Actions, Row Selection, Status Indicator, Key Value, List Group (D-046).
+- [x] (Q-14) Formulários avançados: file, range, multi-select, input group, contador (D-048).
+- [x] Select e multi-select próprios (`Select`, D-049) e `FileUpload` (D-050); 376 testes passando; `examples/data.html` conferida no navegador.
+- [x] typecheck, lint, format:check e 342 testes passando em 2026-11-06. Build rodado pelo mantenedor; `examples/data.html` conferida no navegador nos temas claro e escuro, sem erros no console.
+- [x] Validação da fase pelo mantenedor (2026-11-06).
 
 ## Fase 5 — Layouts
 
@@ -98,7 +101,44 @@ Pendências que dependem da criação do repositório no GitHub (não bloqueiam 
 ## Futuro (fora do escopo atual)
 
 - Adaptador PHP (`AZForm`) como pacote separado.
+- Biblioteca de ícones própria (Q-19), a avaliar depois de concluídas as fases; hoje os componentes usam caracteres e formas em CSS (D-043).
 
 ## Suporte para uso
 
 - Todos os frameworks frontend e com as linguagens mais populares, Exemplo: React, Next.js, Vue.js, Angular, Svelte, Astro, SvelteKit, Nuxt, Preact, SolidJS, além de outros fortemente usados na indústria.
+
+## Para ver após a conclusão da Fase 6 (antes da distribuição)
+
+O mercado corporativo ("enterprise") tem demandas muito específicas que a maioria dos frameworks genéricos não atende de fábrica.
+Para que o seu framework se destaque e realmente resolva as dores de grandes empresas, foque em cinco pilares fundamentais:
+
+1. Acessibilidade (A11y) Rigorosa
+
+Empresas sofrem processos pesados e multas se seus sistemas não forem acessíveis.
+• Foco total em WCAG 2.1/2.2: Garanta conformidade com os níveis AA ou AAA de fábrica.
+• Navegação por teclado: Todos os componentes complexos (como modais, abas e menus suspensos) devem ser 100% operáveis via teclado.
+• Atributos ARIA: Deixe os papéis (roles) e estados ARIA configurados dinamicamente.
+
+2. Alta Densidade de Dados
+
+Diferente de sites de marketing ou redes sociais, sistemas corporativos precisam exibir o máximo de informação útil com o mínimo de rolagem.
+• Componentes compactos: Crie variantes "dense" ou "compact" para tabelas (data tables), formulários e botões.
+• Grades complexas: O sistema de grid e os layouts de página precisam suportar dashboards cheios de gráficos e painéis colapsáveis.
+
+3. Foco em Formulários e Validações Complexas
+
+O dia a dia do desenvolvimento enterprise é criar telas com dezenas de campos de entrada de dados.
+• Estados de formulário: Componentes nativos para estados de erro, aviso (warning), sucesso, carregamento (loading) e desabilitado.
+• Componentes corporativos padrão: Inclua nativamente seletores de data/hora complexos (com intervalos), campos de busca com autocompletar e seletores de arquivos por arrastar e soltar.
+
+4. Internacionalização (i18n) e Temas (White-label)
+
+Grandes empresas operam globalmente e costumam criar múltiplos produtos internos com marcas diferentes.
+• Suporte a RTL (Right-to-Left): Código preparado para idiomas como árabe e hebraico.
+• Design Tokens fortes: Use variáveis CSS (CSS Variables) robustas para que a empresa possa mudar todas as cores, fontes e arredondamentos (border-radius) para bater com a identidade visual dela em minutos.
+
+5. Estabilidade e Ciclo de Vida Longo (LTS)
+
+Empresas odeiam atualizar um framework e descobrir que metade das telas quebrou (breaking changes).
+• Versionamento Semântico (SemVer): Seja extremamente rígido com atualizações.
+• Garantia de Retrocompatibilidade: Ofereça suporte de longo prazo (LTS) para versões antigas.

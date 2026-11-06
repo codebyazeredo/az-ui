@@ -4,7 +4,7 @@ Fonte: `specifications.md` §5. Um dos principais diferenciais da biblioteca. St
 
 ## Métodos
 
-`AZUI.Form.input` (genérico, com `type`) e especializados: `text`, `email`, `password`, `number`, `date`, `textarea`, `select`, `checkbox`, `radio`, `switch`. Campos futuros (search, datetime-local, time, file, range, multi-select) seguem o mesmo padrão.
+`AZUI.Form.input` (genérico, com `type`) e especializados: `text`, `email`, `password`, `number`, `date`, `textarea`, `select`, `checkbox`, `radio`, `switch`. Fase 4: `multiselect` (`value: string[]`), `file` (sem `value`), `range`, `prefix`/`suffix` (input group) e `maxLength`/`counter` (D-048). Campos futuros (search, datetime-local, time) seguem o mesmo padrão.
 
 Agrupamento: `AZUI.Form.group({ label, fields: [...] })`, gerando estrutura semântica (`fieldset` + `legend`).
 
