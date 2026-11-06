@@ -5,6 +5,3 @@ fonts
 .ai
 package-lock.json
 src/styles/utilities/utilities.generated.css
-
-site/docs
-dist-site

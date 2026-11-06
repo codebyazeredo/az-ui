@@ -33,7 +33,3 @@ Thumbs.db
 
 # Gerado por scripts/generate-utilities.mjs
 src/styles/utilities/utilities.generated.css
-
-# Gerado por scripts/build-docs.mjs e pelo build do site
-site/docs/
-dist-site/
