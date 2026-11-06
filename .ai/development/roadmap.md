@@ -94,10 +94,11 @@ Pendências que dependem da criação do repositório no GitHub (não bloqueiam 
 
 ## Fase 6 — Documentação
 
-- [x] Site de documentação em `site/` (Vite multipágina própria, D-055): landing, catálogo de componentes com exemplos ao vivo, catálogo de ícones, instalação, primeiros passos, fundamentos, API JavaScript e personalização.
-- [x] Seções de integração (PHP, frameworks), acessibilidade e versionamento/roadmap.
-- [x] Quatro telas de exemplo completas em `site/examples/`; pasta `examples/` removida.
-- [x] `docs:build`, `typecheck` e `lint` passando; site conferido no navegador (landing, catálogo, telas de exemplo, ícones, busca Ctrl+K) sem erros no console (2026-11-06). Pendentes: `format:check` (rodar `npm run format`), testes de largura mobile e conferência no tema claro das telas de exemplo.
+- [x] Documentação em Markdown (`docs/`): instalação, primeiros passos, fundamentos, componentes, API, personalização, acessibilidade, PHP, frameworks e versionamento (D-055).
+- [x] `README.md` profissional com capturas de tela.
+- [x] `examples/` refeita: componentes, formulários, dados, overlays e modais, ícones e quatro telas completas.
+- [x] `typecheck`, `lint` e `format:check` passando; exemplos conferidos no navegador (2026-11-06).
+- [ ] Site público: projeto separado, fora deste repositório.
 - [ ] Validação da fase pelo mantenedor.
 
 ## Fase 7 — Distribuição

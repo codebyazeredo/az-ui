@@ -1,10 +1,8 @@
 # Documentação — AZ UI
 
-Ferramenta: site estático próprio em `site/` (Vite multipágina, feito com a própria AZ UI), alimentado pelos arquivos Markdown de `docs/` (D-055). Fonte: `specifications.md` §13.
+Ferramenta: Markdown em `docs/` (fonte única da referência pública) e páginas vivas em `examples/` (D-055). O site de documentação será um projeto separado.
 
-Comandos: `npm run docs:dev` (servidor local), `npm run docs:build` (site em `dist-site/`), `npm run docs:generate` (Markdown para páginas em `site/docs/`, gerado e ignorado pelo git).
-
-Os blocos ```` ```html ```` dos Markdown são renderizados ao vivo com o código logo abaixo; `html source` mostra só o código e `html preview` só o resultado. Telas de exemplo completas ficam em `site/examples/`, a landing em `site/index.html` e o catálogo de ícones em `site/icons.html`. A navegação fica em `site/assets/nav.ts`: toda página nova entra ali.
+`examples/` é servido por `npm run dev` (Vite). `examples/index.html` lista as páginas: componentes, formulários, dados, overlays e modais, ícones e telas completas (`examples/screens/`). Os exemplos usam `/src/...` diretamente.
 
 ## Regras
 
@@ -42,7 +40,7 @@ Introdução · Instalação · Primeiros passos · Design System · Cores · Ti
 
 ## Catálogo
 
-O catálogo é o próprio site (Fase 6). As páginas `examples/` por fase foram substituídas por ele.
+O catálogo visual são as páginas de `examples/`; um site público próprio fica para um projeto separado.
 
 ## Arquivos de contexto vs. documentação
 

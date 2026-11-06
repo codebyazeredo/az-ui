@@ -6,7 +6,9 @@ Based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic 
 
 ### Added
 
-- Documentation site (Phase 6) in `site/`, built with AZ UI itself: landing page, component catalog with live examples generated from `docs/`, icon catalog, installation, quick start, foundations, customization, accessibility, PHP and framework guides, versioning and roadmap, and four complete example screens. Scripts: `docs:dev`, `docs:build`, `docs:generate`, `docs:preview`.
+- `Modal` is draggable by its header by default (`draggable` option; it stays within the viewport and recenters on every open).
+- Live example pages in `examples/` served by `npm run dev`: components, forms, data, overlays and modals, icons and four complete screens (dashboard, orders, order form, sign in).
+- Documentation (Phase 6): foundations, getting started, customization, accessibility, PHP and framework guides, and versioning pages in `docs/`, plus screenshots in `docs/images/`.
 - Rewritten `README.md`.
 - Icon set: 253 SVG icons in 13 categories (including `logistics`) on a 24×24 grid with `currentColor`, exposed as `AZUI.Icon` (`create`, `sprite`, `names`, `categories`), `az-icon` styles and a catalog in `examples/icons.html`.
 - Layout components (Phase 5): Container, Stack, Grid, Row/Column (12 columns with responsive `az-{breakpoint}-col-N` and `grid-cols-N` utilities), Split Layout, Page Header, Content Section, Breadcrumb, Navigation Menu (vertical, horizontal and collapsible groups), Navbar and Sidebar, all CSS only.
@@ -24,5 +26,5 @@ Based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic 
 
 ### Changed
 
-- The `examples/` pages were replaced by the documentation site; `npm run dev` was removed in favor of `npm run docs:dev`.
+- `az-sidebar-sticky` now stretches to the bottom of the viewport (`height` instead of `max-height`).
 - `Pagination`, `Datepicker`, `FileUpload` and `Toast` render SVG icons instead of text characters (`‹`, `›`, `↑`, `×`).
