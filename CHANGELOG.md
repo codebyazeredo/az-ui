@@ -6,6 +6,7 @@ Based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic 
 
 ### Added
 
+- Icon set: 253 SVG icons in 13 categories (including `logistics`) on a 24×24 grid with `currentColor`, exposed as `AZUI.Icon` (`create`, `sprite`, `names`, `categories`), `az-icon` styles and a catalog in `examples/icons.html`.
 - Layout components (Phase 5): Container, Stack, Grid, Row/Column (12 columns with responsive `az-{breakpoint}-col-N` and `grid-cols-N` utilities), Split Layout, Page Header, Content Section, Breadcrumb, Navigation Menu (vertical, horizontal and collapsible groups), Navbar and Sidebar, all CSS only.
 - `FileUpload` component: drop zone and file list for `<input type="file">` with thumbnails, type, size and count validation, removal and progress/error reporting. `AZUI.Form.file` accepts `maxSize` and `maxFiles`.
 - `Select` component: custom dropdown list for `<select>` and `<select multiple>` (chips for multiple) that keeps the native element synchronized. `AZUI.Form.select` and `multiselect` use it with `az-ui/auto`.
@@ -18,3 +19,7 @@ Based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic 
 - `sm` and `lg` size modifiers for Button, Badge, Alert, Card, Spinner, Avatar, form controls, checkbox, radio and switch (`size` option in `AZUI.Form`).
 - Declarative form API `AZUI.Form` (`text`, `email`, `password`, `number`, `date`, `input`, `textarea`, `select`, `checkbox`, `radio`, `switch`, `group`, `render`), exported from the package with its types.
 - Foundations (Phase 1): color, typography, spacing, border, shadow, motion and z-index tokens; light and dark themes; Inter (default), IBM Plex Sans and Source Sans 3 fonts; opt-in reset (`.az-body`); CSS utilities with responsive variants; ESM build with types, CSS and fonts.
+
+### Changed
+
+- `Pagination`, `Datepicker`, `FileUpload` and `Toast` render SVG icons instead of text characters (`‹`, `›`, `↑`, `×`).

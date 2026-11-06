@@ -20,7 +20,7 @@ Verde: sucesso. Amarelo: atenção. Vermelho: erro/crítico. Azul: informação 
 
 ## Ícones
 
-Biblioteca leve com imports individuais, sem fonte de ícones pesada. Ícones funcionais, discretos e consistentes. Definição pendente (Q-13).
+Conjunto próprio de SVG (`AZUI.Icon`, D-054), sem fonte de ícones. Ícones funcionais, discretos e consistentes; traço 1,5px em grade 24×24 com `currentColor`.
 
 ## Microinterações
 

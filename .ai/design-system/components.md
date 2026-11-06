@@ -35,5 +35,5 @@ Container · Grid · Row · Column · Stack · Flex · Page Header · Toolbar ·
 ## Regras de uso
 
 - Card só quando há separação lógica de conteúdo; evitar card dentro de card.
-- Ícones apenas funcionais (estratégia em Q-13).
+- Ícones apenas funcionais, do conjunto próprio `AZUI.Icon` (D-054).
 - Microinterações discretas; respeitar `prefers-reduced-motion`.

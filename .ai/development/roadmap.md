@@ -105,7 +105,6 @@ Pendências que dependem da criação do repositório no GitHub (não bloqueiam 
 ## Futuro (fora do escopo atual)
 
 - Adaptador PHP (`AZForm`) como pacote separado.
-- Biblioteca de ícones própria (Q-19), a avaliar depois de concluídas as fases; hoje os componentes usam caracteres e formas em CSS (D-043).
 
 ## Suporte para uso
 
