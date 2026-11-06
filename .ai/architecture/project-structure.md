@@ -14,10 +14,10 @@ az-ui/
 │   ├── api/                 # form, components, index.ts (API declarativa)
 │   └── index.ts
 ├── fonts/                   # inter/, ibm-plex-sans/, source-sans-3/ (+ licenças)
-├── docs/                    # VitePress
-├── examples/
+├── docs/                    # Markdown consumido pelo site (fonte única da documentação)
+├── site/                    # site de documentação (Vite multipágina): landing, telas de exemplo, runtime em assets/
 ├── tests/                   # espelha src/
-├── scripts/
+├── scripts/                 # generate-utilities, build-css, build-docs
 ├── package.json  tsconfig.json  vite.config.ts  postcss.config.js
 ```
 
@@ -30,7 +30,7 @@ az-ui/
 | `components` | Markup/CSS/TS de cada componente | Valores de design literais |
 | `javascript` | Núcleo de ciclo de vida, DOM e eventos | Conhecimento de componentes específicos |
 | `api` | Construção declarativa de elementos | Estilos |
-| `docs` / `examples` | Consumo da biblioteca como usuário externo | Código da biblioteca |
+| `docs` / `site` | Consumo da biblioteca como usuário externo | Código da biblioteca |
 
 ## Estrutura de um componente
 

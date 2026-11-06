@@ -1,6 +1,10 @@
 # Documentação — AZ UI
 
-Ferramenta: **VitePress**, em `docs/`. Fonte: `specifications.md` §13.
+Ferramenta: site estático próprio em `site/` (Vite multipágina, feito com a própria AZ UI), alimentado pelos arquivos Markdown de `docs/` (D-055). Fonte: `specifications.md` §13.
+
+Comandos: `npm run docs:dev` (servidor local), `npm run docs:build` (site em `dist-site/`), `npm run docs:generate` (Markdown para páginas em `site/docs/`, gerado e ignorado pelo git).
+
+Os blocos ```` ```html ```` dos Markdown são renderizados ao vivo com o código logo abaixo; `html source` mostra só o código e `html preview` só o resultado. Telas de exemplo completas ficam em `site/examples/`, a landing em `site/index.html` e o catálogo de ícones em `site/icons.html`. A navegação fica em `site/assets/nav.ts`: toda página nova entra ali.
 
 ## Regras
 
@@ -38,7 +42,7 @@ Introdução · Instalação · Primeiros passos · Design System · Cores · Ti
 
 ## Catálogo
 
-Catálogo visual interativo dos componentes (Fase 6). Antes disso, `examples/` com páginas HTML simples por fase.
+O catálogo é o próprio site (Fase 6). As páginas `examples/` por fase foram substituídas por ele.
 
 ## Arquivos de contexto vs. documentação
 

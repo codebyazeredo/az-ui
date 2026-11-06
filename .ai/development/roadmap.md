@@ -2,7 +2,7 @@
 
 Fonte: `specifications.md` §15 (complementado com itens da §6 que estavam fora das fases, ver Q-14). **Este é o painel de controle do projeto**: marcar `[x]` ao concluir, na mesma tarefa.
 
-Fase atual: **6 — Documentação**, não iniciada (Fase 5 validada em 2026-11-06). Pendente da Fase 3: revisão com leitor de tela e validação de Notification, Command Menu e Context Menu (Q-14).
+Fase atual: **6 — Documentação**, implementada e aguardando validação (Fase 5 validada em 2026-11-06). Pendente da Fase 3: revisão com leitor de tela e validação de Notification, Command Menu e Context Menu (Q-14).
 
 | Fase | Nome | Status |
 |---|---|---|
@@ -12,7 +12,7 @@ Fase atual: **6 — Documentação**, não iniciada (Fase 5 validada em 2026-11-
 | 3 | Componentes interativos | Concluída, exceto validação dos itens Q-14 |
 | 4 | Dados e avançados | Concluída |
 | 5 | Layouts | Concluída |
-| 6 | Documentação | Não iniciada |
+| 6 | Documentação | Implementada, aguardando validação |
 | 7 | Distribuição | Não iniciada |
 
 ## Fase 0 — Pré-desenvolvimento
@@ -94,8 +94,11 @@ Pendências que dependem da criação do repositório no GitHub (não bloqueiam 
 
 ## Fase 6 — Documentação
 
-- [ ] VitePress · catálogo de componentes · exemplos · instalação · API · personalização.
-- [ ] Seções de integração (PHP, frameworks) e acessibilidade.
+- [x] Site de documentação em `site/` (Vite multipágina própria, D-055): landing, catálogo de componentes com exemplos ao vivo, catálogo de ícones, instalação, primeiros passos, fundamentos, API JavaScript e personalização.
+- [x] Seções de integração (PHP, frameworks), acessibilidade e versionamento/roadmap.
+- [x] Quatro telas de exemplo completas em `site/examples/`; pasta `examples/` removida.
+- [x] `docs:build`, `typecheck` e `lint` passando; site conferido no navegador (landing, catálogo, telas de exemplo, ícones, busca Ctrl+K) sem erros no console (2026-11-06). Pendentes: `format:check` (rodar `npm run format`), testes de largura mobile e conferência no tema claro das telas de exemplo.
+- [ ] Validação da fase pelo mantenedor.
 
 ## Fase 7 — Distribuição
 
