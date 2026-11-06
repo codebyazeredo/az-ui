@@ -1,5 +1,5 @@
 import { classNames, escapeHtml } from "./html";
-import type { AttributeValue, FormFieldOptions } from "./types";
+import type { AttributeValue, CounterOptions, FormFieldOptions } from "./types";
 
 interface FieldFrame {
   id: string;
@@ -8,6 +8,7 @@ interface FieldFrame {
   required?: boolean;
   helpText?: string;
   error?: string;
+  counter?: string;
 }
 
 export function resolveFieldId(
@@ -24,19 +25,45 @@ export function resolveFieldId(
 
 function describedBy(
   id: string,
-  options: Pick<FormFieldOptions, "helpText" | "error">,
+  options: Pick<FormFieldOptions, "helpText" | "error"> & CounterOptions,
 ): string | undefined {
-  const ids = [options.helpText && `${id}-help`, options.error && `${id}-error`].filter(Boolean);
+  const ids = [
+    options.helpText && `${id}-help`,
+    options.error && `${id}-error`,
+    options.counter && `${id}-counter`,
+  ].filter(Boolean);
   return ids.length > 0 ? ids.join(" ") : undefined;
 }
 
+function counterAttributes(
+  options: CounterOptions,
+  id: string,
+): Record<string, AttributeValue | undefined> {
+  if (options.counter && !options.maxLength) {
+    throw new Error('AZUI.Form: "maxLength" is required when "counter" is enabled.');
+  }
+
+  return {
+    maxlength: options.maxLength,
+    "data-az-component": options.counter ? "counter" : undefined,
+    "data-az-target": options.counter ? `#${id}-counter` : undefined,
+  };
+}
+
+export function renderCounter(options: CounterOptions, id: string, length: number): string {
+  if (!options.counter) return "";
+
+  return `<p class="az-field-counter" id="${escapeHtml(id)}-counter">${length} / ${options.maxLength}</p>`;
+}
+
 export function baseControlAttributes(
-  options: FormFieldOptions,
+  options: FormFieldOptions & CounterOptions,
   id: string,
   className: string,
 ): Record<string, AttributeValue | undefined> {
   return {
     ...options.attributes,
+    ...counterAttributes(options, id),
     class: classNames(className, options.className),
     id,
     name: options.name,
@@ -58,5 +85,5 @@ export function renderFieldFrame(frame: FieldFrame): string {
     ? `<p class="az-field-error" id="${escapeHtml(frame.id)}-error">${escapeHtml(frame.error)}</p>`
     : "";
 
-  return `<div class="az-field">${label}${frame.control}${help}${error}</div>`;
+  return `<div class="az-field">${label}${frame.control}${frame.counter ?? ""}${help}${error}</div>`;
 }

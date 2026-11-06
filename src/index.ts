@@ -5,6 +5,16 @@ export type { CommandMenuOptions } from "./components/command-menu";
 export { ContextMenu } from "./components/context-menu";
 export type { ContextMenuOptions } from "./components/context-menu";
 export { NotificationPanel } from "./components/notification";
+export { Counter } from "./components/field";
+export type { CounterOptions } from "./components/field";
+export { Pagination } from "./components/pagination";
+export type {
+  PaginationConfig,
+  PaginationLabels,
+  PaginationOptions,
+} from "./components/pagination";
+export { DataTable } from "./components/table";
+export type { DataTableOptions } from "./components/table";
 export { Datepicker } from "./components/datepicker";
 export type {
   DatepickerConfig,
@@ -18,6 +28,14 @@ export { Offcanvas } from "./components/offcanvas";
 export type { OffcanvasOptions } from "./components/offcanvas";
 export { Popover } from "./components/popover";
 export type { PopoverOptions } from "./components/popover";
+export { FileUpload } from "./components/file-upload";
+export type {
+  FileUploadConfig,
+  FileUploadLabels,
+  FileUploadOptions,
+} from "./components/file-upload";
+export { Select } from "./components/select";
+export type { SelectOptions } from "./components/select";
 export { Tabs } from "./components/tabs";
 export { Toast } from "./components/toast";
 export type { ToastContent, ToastOptions, ToastVariant } from "./components/toast";

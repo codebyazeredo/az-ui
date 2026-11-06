@@ -1,0 +1,175 @@
+.az-file-upload-native {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  min-height: 0;
+  padding: 0;
+  pointer-events: none;
+  border: 0;
+  opacity: 0;
+}
+
+.az-file-upload {
+  position: relative;
+}
+
+.az-file-upload-zone {
+  display: flex;
+  flex-direction: column;
+  gap: var(--az-spacing-1);
+  align-items: center;
+  padding: var(--az-spacing-5) var(--az-spacing-4);
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--az-color-surface-muted);
+  border: var(--az-border-width) dashed var(--az-color-border-strong);
+  border-radius: var(--az-radius-md);
+  transition:
+    border-color var(--az-duration-fast) var(--az-easing-standard),
+    background-color var(--az-duration-fast) var(--az-easing-standard);
+}
+
+.az-file-upload-zone:hover {
+  border-color: var(--az-color-primary);
+}
+
+.az-file-upload-zone:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: var(--az-focus-ring-offset);
+}
+
+.az-file-upload-zone-active {
+  background-color: color-mix(in srgb, var(--az-color-primary) 8%, var(--az-color-surface));
+  border-style: solid;
+  border-color: var(--az-color-primary);
+}
+
+.az-file-upload-zone[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: var(--az-opacity-disabled);
+}
+
+.az-file-upload-icon {
+  display: grid;
+  place-items: center;
+  width: var(--az-spacing-8);
+  height: var(--az-spacing-8);
+  margin-bottom: var(--az-spacing-1);
+  font-size: var(--az-font-size-lg);
+  color: var(--az-color-primary-text);
+  background-color: color-mix(in srgb, var(--az-color-primary) 12%, var(--az-color-surface));
+  border-radius: 50%;
+}
+
+.az-file-upload-prompt {
+  margin: 0;
+  font-size: var(--az-font-size-md);
+  color: var(--az-text-primary);
+}
+
+.az-file-upload-browse {
+  font-weight: var(--az-font-weight-medium);
+  color: var(--az-color-primary-text);
+  text-decoration: underline;
+}
+
+.az-file-upload-hint {
+  margin: 0;
+  font-size: var(--az-font-size-sm);
+  color: var(--az-text-secondary);
+}
+
+.az-file-upload-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--az-spacing-2);
+  padding: 0;
+  margin: var(--az-spacing-2) 0 0;
+  list-style: none;
+}
+
+.az-file-upload-list:empty {
+  display: none;
+}
+
+.az-file-upload-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--az-spacing-2) var(--az-spacing-3);
+  align-items: center;
+  padding: var(--az-spacing-2) var(--az-spacing-3);
+  background-color: var(--az-color-surface);
+  border: var(--az-border-width) solid var(--az-color-border);
+  border-radius: var(--az-radius-md);
+}
+
+.az-file-upload-item-error {
+  border-color: var(--az-color-danger);
+}
+
+.az-file-upload-item > .az-progress {
+  grid-column: 1 / -1;
+}
+
+.az-file-upload-thumb {
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: var(--az-spacing-8);
+  height: var(--az-spacing-8);
+  font-size: var(--az-font-size-xs);
+  font-weight: var(--az-font-weight-semibold);
+  color: var(--az-text-secondary);
+  object-fit: cover;
+  background-color: var(--az-color-surface-muted);
+  border: var(--az-border-width) solid var(--az-color-border);
+  border-radius: var(--az-radius-sm);
+}
+
+.az-file-upload-info {
+  min-width: 0;
+}
+
+.az-file-upload-name {
+  overflow: hidden;
+  font-size: var(--az-font-size-md);
+  font-weight: var(--az-font-weight-medium);
+  color: var(--az-text-primary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.az-file-upload-meta {
+  font-size: var(--az-font-size-sm);
+  color: var(--az-text-secondary);
+}
+
+.az-file-upload-error {
+  font-size: var(--az-font-size-sm);
+  color: var(--az-color-danger-text);
+}
+
+.az-file-upload-remove {
+  display: grid;
+  place-items: center;
+  width: var(--az-spacing-6);
+  height: var(--az-spacing-6);
+  padding: 0;
+  font: inherit;
+  font-size: var(--az-font-size-lg);
+  color: var(--az-text-secondary);
+  cursor: pointer;
+  background: none;
+  border: 0;
+  border-radius: var(--az-radius-sm);
+}
+
+.az-file-upload-remove:hover {
+  color: var(--az-color-danger-text);
+  background-color: var(--az-color-surface-muted);
+}
+
+.az-file-upload-remove:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: var(--az-focus-ring-offset);
+}

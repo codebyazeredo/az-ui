@@ -1,0 +1,11 @@
+.az-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--az-spacing-2);
+  align-items: center;
+  padding: var(--az-spacing-2) 0;
+}
+
+.az-toolbar-spacer {
+  flex: 1;
+}

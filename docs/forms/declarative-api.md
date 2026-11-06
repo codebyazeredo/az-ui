@@ -18,13 +18,13 @@ document.querySelector("form")?.append(field);
 
 ## Methods
 
-| Method                                              | Returns       | Notes                                                                 |
-| --------------------------------------------------- | ------------- | --------------------------------------------------------------------- |
-| `text`, `email`, `password`, `number`, `date`       | `HTMLElement` | Shortcuts for `input`.                                                |
-| `input({ type, ... })`                              | `HTMLElement` | Generic input.                                                        |
-| `textarea`, `select`, `checkbox`, `radio`, `switch` | `HTMLElement` | One field wrapped in `az-field`.                                      |
-| `group({ label, fields })`                          | `HTMLElement` | `<fieldset>` with `<legend>`. `fields` are definitions with a `type`. |
-| `render(definition)`                                | `string`      | Same markup as a string. Needs no DOM, so it works in Node and SSR.   |
+| Method                                                                              | Returns       | Notes                                                                 |
+| ----------------------------------------------------------------------------------- | ------------- | --------------------------------------------------------------------- |
+| `text`, `email`, `password`, `number`, `date`                                       | `HTMLElement` | Shortcuts for `input`.                                                |
+| `input({ type, ... })`                                                              | `HTMLElement` | Generic input.                                                        |
+| `textarea`, `select`, `multiselect`, `file`, `range`, `checkbox`, `radio`, `switch` | `HTMLElement` | One field wrapped in `az-field`.                                      |
+| `group({ label, fields })`                                                          | `HTMLElement` | `<fieldset>` with `<legend>`. `fields` are definitions with a `type`. |
+| `render(definition)`                                                                | `string`      | Same markup as a string. Needs no DOM, so it works in Node and SSR.   |
 
 `render` takes a definition, which is the options object plus `type`:
 
@@ -48,13 +48,18 @@ Shared by all fields (`FormFieldOptions`):
 
 Text-like fields (`ControlFieldOptions`) also accept `placeholder`, `readonly` and `size` (`"sm" | "md" | "lg"`). The selects ignore `readonly`.
 
-| Field                | Extra options                                                                            |
-| -------------------- | ---------------------------------------------------------------------------------------- |
-| input                | `value: string \| number`                                                                |
-| `textarea`           | `value`, `rows`                                                                          |
-| `select`             | `options: { value, label, disabled? }[]`, `value`, `placeholder` (disabled first option) |
-| `checkbox`, `switch` | `value?`, `checked`, `size`                                                              |
-| `radio`              | `value` (required), `checked`, `size`                                                    |
+| Field                | Extra options                                                                                            |
+| -------------------- | -------------------------------------------------------------------------------------------------------- |
+| input                | `value: string \| number`, `prefix`, `suffix` (input group), `maxLength`, `counter`                      |
+| `textarea`           | `value`, `rows`, `maxLength`, `counter`                                                                  |
+| `select`             | `options: { value, label, disabled? }[]`, `value`, `placeholder` (disabled first option)                 |
+| `multiselect`        | `options` (as `select`), `value: string[]`; ignores `placeholder` and `readonly`                         |
+| `file`               | `accept`, `multiple`, `maxSize`, `maxFiles` ([FileUpload](../components/file-upload.md)); has no `value` |
+| `range`              | `min`, `max`, `step`, `value: number`                                                                    |
+| `checkbox`, `switch` | `value?`, `checked`, `size`                                                                              |
+| `radio`              | `value` (required), `checked`, `size`                                                                    |
+
+`counter: true` requires `maxLength`; it renders a `.az-field-counter` linked with `aria-describedby` and initializes the `Counter` behavior (`az-ui/auto` or `new Counter(control)`).
 
 ## Security
 

@@ -3,10 +3,13 @@ import { renderField } from "./render";
 import type {
   CheckboxDefinition,
   FieldOptions,
+  FileDefinition,
   FormFieldDefinition,
   GroupDefinition,
   InputDefinition,
+  MultiSelectDefinition,
   RadioDefinition,
+  RangeDefinition,
   SelectDefinition,
   SwitchDefinition,
   TextareaDefinition,
@@ -28,6 +31,10 @@ export const Form = {
   textarea: (options: FieldOptions<TextareaDefinition>) =>
     createField({ ...options, type: "textarea" }),
   select: (options: FieldOptions<SelectDefinition>) => createField({ ...options, type: "select" }),
+  multiselect: (options: FieldOptions<MultiSelectDefinition>) =>
+    createField({ ...options, type: "multiselect" }),
+  file: (options: FieldOptions<FileDefinition>) => createField({ ...options, type: "file" }),
+  range: (options: FieldOptions<RangeDefinition>) => createField({ ...options, type: "range" }),
   checkbox: (options: FieldOptions<CheckboxDefinition>) =>
     createField({ ...options, type: "checkbox" }),
   radio: (options: FieldOptions<RadioDefinition>) => createField({ ...options, type: "radio" }),

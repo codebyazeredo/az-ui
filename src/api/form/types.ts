@@ -16,18 +16,25 @@ export interface FormFieldOptions {
   attributes?: Record<string, AttributeValue>;
 }
 
+export interface CounterOptions {
+  maxLength?: number;
+  counter?: boolean;
+}
+
 export interface ControlFieldOptions extends FormFieldOptions {
   placeholder?: string;
   readonly?: boolean;
   size?: ControlSize;
 }
 
-export interface InputDefinition extends ControlFieldOptions {
+export interface InputDefinition extends ControlFieldOptions, CounterOptions {
   type: InputType;
   value?: string | number;
+  prefix?: string;
+  suffix?: string;
 }
 
-export interface TextareaDefinition extends ControlFieldOptions {
+export interface TextareaDefinition extends ControlFieldOptions, CounterOptions {
   type: "textarea";
   value?: string;
   rows?: number;
@@ -43,6 +50,31 @@ export interface SelectDefinition extends Omit<ControlFieldOptions, "readonly"> 
   type: "select";
   options: SelectOption[];
   value?: string;
+}
+
+export interface MultiSelectDefinition extends Omit<
+  ControlFieldOptions,
+  "readonly" | "placeholder"
+> {
+  type: "multiselect";
+  options: SelectOption[];
+  value?: string[];
+}
+
+export interface FileDefinition extends Omit<ControlFieldOptions, "readonly" | "placeholder"> {
+  type: "file";
+  accept?: string;
+  multiple?: boolean;
+  maxSize?: number;
+  maxFiles?: number;
+}
+
+export interface RangeDefinition extends Omit<ControlFieldOptions, "readonly" | "placeholder"> {
+  type: "range";
+  min?: number;
+  max?: number;
+  step?: number;
+  value?: number;
 }
 
 export interface CheckableFieldOptions extends FormFieldOptions {
@@ -76,6 +108,13 @@ export interface GroupDefinition {
 }
 
 export type FormFieldDefinition =
-  InputDefinition | TextareaDefinition | SelectDefinition | CheckableDefinition | GroupDefinition;
+  | InputDefinition
+  | TextareaDefinition
+  | SelectDefinition
+  | MultiSelectDefinition
+  | FileDefinition
+  | RangeDefinition
+  | CheckableDefinition
+  | GroupDefinition;
 
 export type FieldOptions<Definition extends { type: string }> = Omit<Definition, "type">;

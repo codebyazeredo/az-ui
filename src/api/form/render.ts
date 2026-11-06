@@ -1,3 +1,4 @@
+import { renderFile, renderMultiSelect, renderRange } from "./advanced-controls";
 import { renderCheckable } from "./check-controls";
 import { escapeHtml, renderAttributes } from "./html";
 import { renderInput, renderSelect, renderTextarea } from "./text-controls";
@@ -25,6 +26,12 @@ export function renderField(definition: FormFieldDefinition): string {
       return renderTextarea(definition);
     case "select":
       return renderSelect(definition);
+    case "multiselect":
+      return renderMultiSelect(definition);
+    case "file":
+      return renderFile(definition);
+    case "range":
+      return renderRange(definition);
     case "checkbox":
     case "radio":
     case "switch":

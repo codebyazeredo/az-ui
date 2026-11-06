@@ -1,0 +1,21 @@
+.az-search {
+  position: relative;
+  display: block;
+}
+
+.az-search::before {
+  position: absolute;
+  top: 50%;
+  left: var(--az-spacing-3);
+  width: var(--az-spacing-2);
+  height: var(--az-spacing-2);
+  pointer-events: none;
+  content: "";
+  border: var(--az-border-width) solid var(--az-text-muted);
+  border-radius: 50%;
+  transform: translateY(-60%);
+}
+
+.az-search .az-control {
+  padding-left: var(--az-spacing-8);
+}

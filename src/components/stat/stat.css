@@ -1,0 +1,31 @@
+.az-stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--az-spacing-1);
+}
+
+.az-stat-label {
+  font-size: var(--az-font-size-sm);
+  color: var(--az-text-secondary);
+}
+
+.az-stat-value {
+  font-size: var(--az-font-size-2xl);
+  font-weight: var(--az-font-weight-semibold);
+  line-height: var(--az-line-height-tight);
+  color: var(--az-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.az-stat-trend {
+  font-size: var(--az-font-size-sm);
+  color: var(--az-text-secondary);
+}
+
+.az-stat-trend-up {
+  color: var(--az-color-success-text);
+}
+
+.az-stat-trend-down {
+  color: var(--az-color-danger-text);
+}

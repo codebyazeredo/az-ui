@@ -6,6 +6,10 @@ Based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic 
 
 ### Added
 
+- `FileUpload` component: drop zone and file list for `<input type="file">` with thumbnails, type, size and count validation, removal and progress/error reporting. `AZUI.Form.file` accepts `maxSize` and `maxFiles`.
+- `Select` component: custom dropdown list for `<select>` and `<select multiple>` (chips for multiple) that keeps the native element synchronized. `AZUI.Form.select` and `multiselect` use it with `az-ui/auto`.
+- Data components (Phase 4): Table (sortable headers, row selection, row actions, sizes, loading and empty states), `DataTable` (client-side sorting, search, pagination and selection with cancelable events for server-side data), `Pagination`, Progress, Empty State, Stat, Status Indicator, Key Value, List Group, Timeline, Toolbar, Search and Filter.
+- Advanced form fields in `AZUI.Form` and CSS: `multiselect`, `file`, `range`, input group (`prefix`, `suffix`) and character counter (`maxLength`, `counter`, `Counter` class).
 - AI context matrix in `.ai/` and project control files (pre-development).
 - Basic components (Phase 2): Button, Badge, Alert, Spinner, Skeleton, Divider, Card, Avatar and form fields (input, textarea, select, checkbox, radio, switch) as CSS included in `az-ui/styles.css`.
 - Context menu, command menu (`Ctrl/Cmd+K`) and notification panel (`NotificationPanel`) components.

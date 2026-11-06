@@ -1,0 +1,28 @@
+.az-empty-state {
+  display: flex;
+  flex-direction: column;
+  gap: var(--az-spacing-2);
+  align-items: center;
+  padding: var(--az-spacing-8) var(--az-spacing-4);
+  color: var(--az-text-secondary);
+  text-align: center;
+}
+
+.az-empty-state-title {
+  margin: 0;
+  font-size: var(--az-font-size-base);
+  font-weight: var(--az-font-weight-semibold);
+  color: var(--az-text-primary);
+}
+
+.az-empty-state-text {
+  max-width: var(--az-max-width-sm);
+  margin: 0;
+  font-size: var(--az-font-size-md);
+}
+
+.az-empty-state-actions {
+  display: flex;
+  gap: var(--az-spacing-2);
+  margin-top: var(--az-spacing-2);
+}

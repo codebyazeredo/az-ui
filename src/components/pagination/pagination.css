@@ -1,0 +1,47 @@
+.az-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--az-spacing-1);
+  align-items: center;
+  margin: 0;
+  list-style: none;
+}
+
+.az-pagination-item {
+  box-sizing: border-box;
+  min-width: var(--az-control-height-md);
+  height: var(--az-control-height-md);
+  padding: 0 var(--az-spacing-2);
+  font-family: inherit;
+  font-size: var(--az-font-size-md);
+  color: var(--az-text-primary);
+  cursor: pointer;
+  background-color: var(--az-color-surface);
+  border: var(--az-border-width) solid var(--az-color-border-strong);
+  border-radius: var(--az-radius-sm);
+}
+
+.az-pagination-item:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: var(--az-focus-ring-offset);
+}
+
+.az-pagination-item[aria-current="page"] {
+  color: var(--az-text-inverse);
+  background-color: var(--az-color-primary);
+  border-color: var(--az-color-primary);
+}
+
+.az-pagination-item:disabled {
+  cursor: not-allowed;
+  opacity: var(--az-opacity-disabled);
+}
+
+.az-pagination-item:hover:not(:disabled, [aria-current="page"]) {
+  background-color: var(--az-color-surface-muted);
+}
+
+.az-pagination-ellipsis {
+  padding: 0 var(--az-spacing-1);
+  color: var(--az-text-muted);
+}

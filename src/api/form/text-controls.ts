@@ -1,4 +1,9 @@
-import { baseControlAttributes, renderFieldFrame, resolveFieldId } from "./field-frame";
+import {
+  baseControlAttributes,
+  renderCounter,
+  renderFieldFrame,
+  resolveFieldId,
+} from "./field-frame";
 import { escapeHtml, renderAttributes } from "./html";
 import type {
   ControlFieldOptions,
@@ -29,7 +34,21 @@ export function renderInput(definition: InputDefinition): string {
     readonly: definition.readonly,
   });
 
-  return renderFieldFrame({ ...definition, id, control: `<input${attributes}>` });
+  return renderFieldFrame({
+    ...definition,
+    id,
+    control: renderInputGroup(definition, `<input${attributes}>`),
+    counter: renderCounter(definition, id, String(definition.value ?? "").length),
+  });
+}
+
+function renderInputGroup(definition: InputDefinition, input: string): string {
+  if (!definition.prefix && !definition.suffix) return input;
+
+  const addon = (text?: string): string =>
+    text ? `<span class="az-input-group-text">${escapeHtml(text)}</span>` : "";
+
+  return `<div class="az-input-group">${addon(definition.prefix)}${input}${addon(definition.suffix)}</div>`;
 }
 
 export function renderTextarea(definition: TextareaDefinition): string {
@@ -47,6 +66,7 @@ export function renderTextarea(definition: TextareaDefinition): string {
     ...definition,
     id,
     control: `<textarea${attributes}>\n${content}</textarea>`,
+    counter: renderCounter(definition, id, (definition.value ?? "").length),
   });
 }
 
@@ -62,9 +82,10 @@ function renderOption(option: SelectOption, selectedValue: string | undefined): 
 
 export function renderSelect(definition: SelectDefinition): string {
   const id = resolveFieldId(definition);
-  const attributes = renderAttributes(
-    baseControlAttributes(definition, id, controlClass(definition, " az-select")),
-  );
+  const attributes = renderAttributes({
+    ...baseControlAttributes(definition, id, controlClass(definition, " az-select")),
+    "data-az-component": "select",
+  });
   const placeholder = definition.placeholder
     ? `<option value=""${definition.value === undefined ? " selected" : ""} disabled>${escapeHtml(definition.placeholder)}</option>`
     : "";

@@ -44,3 +44,11 @@
 .az-fieldset-legend {
   margin-bottom: var(--az-spacing-2);
 }
+
+.az-field-counter {
+  margin: 0;
+  font-size: var(--az-font-size-sm);
+  color: var(--az-text-muted);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}

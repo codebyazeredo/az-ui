@@ -1,0 +1,54 @@
+.az-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--az-spacing-3);
+  align-items: flex-end;
+  padding: var(--az-spacing-3);
+  background-color: var(--az-color-surface-muted);
+  border: var(--az-border-width) solid var(--az-color-border);
+  border-radius: var(--az-radius-md);
+}
+
+.az-filter .az-field {
+  margin-bottom: 0;
+}
+
+.az-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--az-spacing-2);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.az-filter-chip {
+  display: inline-flex;
+  gap: var(--az-spacing-2);
+  align-items: center;
+  padding: 0 var(--az-spacing-2);
+  font-size: var(--az-font-size-sm);
+  line-height: var(--az-spacing-6);
+  color: var(--az-text-primary);
+  background-color: var(--az-color-surface);
+  border: var(--az-border-width) solid var(--az-color-border-strong);
+  border-radius: var(--az-radius-sm);
+}
+
+.az-filter-chip-remove {
+  padding: 0;
+  font: inherit;
+  color: var(--az-text-secondary);
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+
+.az-filter-chip-remove:hover {
+  color: var(--az-color-danger-text);
+}
+
+.az-filter-chip-remove:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: var(--az-focus-ring-offset);
+}

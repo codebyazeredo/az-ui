@@ -1,0 +1,112 @@
+.az-table-wrap {
+  overflow-x: auto;
+  background-color: var(--az-color-surface);
+  border: var(--az-border-width) solid var(--az-color-border);
+  border-radius: var(--az-radius-md);
+}
+
+.az-table {
+  --az-table-cell-padding-y: var(--az-spacing-2);
+  --az-table-cell-padding-x: var(--az-spacing-3);
+
+  width: 100%;
+  font-size: var(--az-font-size-md);
+  color: var(--az-text-primary);
+  border-collapse: collapse;
+}
+
+.az-table th,
+.az-table td {
+  padding: var(--az-table-cell-padding-y) var(--az-table-cell-padding-x);
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: var(--az-border-width) solid var(--az-color-border);
+}
+
+.az-table thead th {
+  font-size: var(--az-font-size-sm);
+  font-weight: var(--az-font-weight-semibold);
+  color: var(--az-text-secondary);
+  white-space: nowrap;
+  background-color: var(--az-color-surface-muted);
+}
+
+.az-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.az-table-striped tbody tr:nth-child(even) {
+  background-color: var(--az-color-surface-muted);
+}
+
+.az-table-hover tbody tr:hover {
+  background-color: var(--az-color-surface-muted);
+}
+
+.az-table tbody tr[aria-selected="true"] {
+  background-color: color-mix(in srgb, var(--az-color-primary) 8%, var(--az-color-surface));
+}
+
+.az-table .az-table-numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.az-table .az-table-select {
+  width: var(--az-spacing-10);
+}
+
+.az-table .az-table-actions {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.az-table-sort {
+  display: inline-flex;
+  gap: var(--az-spacing-1);
+  align-items: center;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+
+.az-table-sort::after {
+  width: 0;
+  height: 0;
+  content: "";
+  border: var(--az-spacing-1) solid transparent;
+  border-top-color: currentcolor;
+  opacity: 0.35;
+}
+
+.az-table-sort:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: var(--az-focus-ring-offset);
+}
+
+th[aria-sort="ascending"] .az-table-sort::after,
+th[aria-sort="descending"] .az-table-sort::after {
+  opacity: 1;
+}
+
+th[aria-sort="ascending"] .az-table-sort::after {
+  margin-top: calc(var(--az-spacing-1) * -2);
+  border-color: transparent transparent currentcolor;
+}
+
+.az-table-wrap[aria-busy="true"] .az-table tbody {
+  opacity: var(--az-opacity-disabled);
+}
+
+.az-table-sm {
+  --az-table-cell-padding-y: var(--az-spacing-1);
+  --az-table-cell-padding-x: var(--az-spacing-2);
+}
+
+.az-table-lg {
+  --az-table-cell-padding-y: var(--az-spacing-3);
+  --az-table-cell-padding-x: var(--az-spacing-4);
+}

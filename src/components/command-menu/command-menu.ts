@@ -1,5 +1,6 @@
 import { Overlay } from "../../javascript/core/overlay";
 import type { OverlayOptions } from "../../javascript/core/overlay";
+import { normalizeText } from "../../javascript/dom/normalize-text";
 import { ensureId } from "../../javascript/dom/unique-id";
 
 export interface CommandMenuOptions extends OverlayOptions {
@@ -7,10 +8,6 @@ export interface CommandMenuOptions extends OverlayOptions {
 }
 
 const ITEM_SELECTOR = ".az-command-menu-item";
-
-function normalize(text: string): string {
-  return text.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
-}
 
 export class CommandMenu extends Overlay {
   private readonly input: HTMLInputElement;
@@ -100,9 +97,9 @@ export class CommandMenu extends Overlay {
   }
 
   private filter(): void {
-    const query = normalize(this.input.value.trim());
+    const query = normalizeText(this.input.value.trim());
     for (const item of this.getItems()) {
-      item.hidden = !normalize(item.textContent ?? "").includes(query);
+      item.hidden = !normalizeText(item.textContent ?? "").includes(query);
     }
 
     const visible = this.getVisibleItems();

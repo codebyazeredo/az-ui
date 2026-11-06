@@ -1,0 +1,41 @@
+.az-progress {
+  --az-progress-height: var(--az-spacing-2);
+  --az-progress-tone: var(--az-color-primary);
+
+  height: var(--az-progress-height);
+  overflow: hidden;
+  background-color: var(--az-color-border);
+  border-radius: var(--az-radius-sm);
+}
+
+.az-progress-bar {
+  height: 100%;
+  background-color: var(--az-progress-tone);
+  transition: width var(--az-duration-base) var(--az-easing-standard);
+}
+
+.az-progress-success {
+  --az-progress-tone: var(--az-color-success);
+}
+
+.az-progress-warning {
+  --az-progress-tone: var(--az-color-warning);
+}
+
+.az-progress-danger {
+  --az-progress-tone: var(--az-color-danger);
+}
+
+.az-progress-sm {
+  --az-progress-height: var(--az-spacing-1);
+}
+
+.az-progress-lg {
+  --az-progress-height: var(--az-spacing-4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .az-progress-bar {
+    transition: none;
+  }
+}
