@@ -23,14 +23,14 @@ AZ UI gives corporate, administrative and management systems one consistent inte
 
 ## Why AZ UI
 
-| Need                        | What AZ UI does                                                                                          |
-| --------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Need                        | What AZ UI does                                                                                         |
+| --------------------------- | ------------------------------------------------------------------------------------------------------- |
 | Screens full of data        | Dense defaults (32px controls, 15px type) and a `DataTable` with sorting, search, pagination, selection |
 | Forms with dozens of fields | Validation states, select and multi-select, datepicker, file upload, character counter, declarative API |
-| One look across products    | Every color, size and radius is a CSS token. Rebrand globally or per section by overriding tokens        |
-| Accessibility obligations   | WCAG 2.2 AA target: semantic HTML, visible focus, keyboard operation, focus management, reduced motion   |
-| Mixed technology stacks     | No framework dependency: PHP and Twig templates, React, Vue, Angular, Svelte, plain HTML                 |
-| Predictable upgrades        | Semantic Versioning and a documented public API                                                          |
+| One look across products    | Every color, size and radius is a CSS token. Rebrand globally or per section by overriding tokens       |
+| Accessibility obligations   | WCAG 2.2 AA target: semantic HTML, visible focus, keyboard operation, focus management, reduced motion  |
+| Mixed technology stacks     | No framework dependency: PHP and Twig templates, React, Vue, Angular, Svelte, plain HTML                |
+| Predictable upgrades        | Semantic Versioning and a documented public API                                                         |
 
 ## Screens
 
@@ -57,7 +57,7 @@ AZ UI gives corporate, administrative and management systems one consistent inte
 
 | Area                    | Components                                                                                                                            |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| Foundations             | Color scales, typography (Inter, IBM Plex Sans, Source Sans 3), spacing, borders, shadows, motion, layers, breakpoints, utilities      |
+| Foundations             | Color scales, typography (Inter, IBM Plex Sans, Source Sans 3), spacing, borders, shadows, motion, layers, breakpoints, utilities     |
 | Themes                  | Light and dark, selected with `data-az-theme` and scoped to any element                                                               |
 | Basic                   | Button, Badge, Alert, Avatar, Card, Divider, Skeleton, Spinner and 253 icons                                                          |
 | Forms                   | Input, textarea, select, multi-select, checkbox, radio, switch, range, file upload, datepicker, input group, counter, `AZUI.Form`     |
