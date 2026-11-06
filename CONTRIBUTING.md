@@ -14,7 +14,7 @@ Requires Node.js 22 or later.
 
 ```bash
 npm install
-npm run dev     # local server; open /examples/foundations.html
+npm run docs:dev   # documentation site with live examples
 npm run build   # dist/: ESM, types, CSS and fonts
 npm test
 npm run lint
