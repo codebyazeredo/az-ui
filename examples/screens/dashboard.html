@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en" data-az-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Operations dashboard — AZ UI example</title>
+    <meta
+      name="description"
+      content="A dashboard built only with AZ UI: stats, table, progress and timeline."
+    />
+    <script>
+      (function () {
+        var theme = localStorage.getItem("az-examples-theme");
+        document.documentElement.dataset.azTheme =
+          theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      })();
+    </script>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/src/styles/styles.css" />
+    <link rel="stylesheet" href="/examples/shared.css" />
+  </head>
+  <body class="az-body">
+    <header class="az-navbar az-navbar-sticky">
+      <button
+        class="az-btn az-btn-ghost az-btn-sm az-md-d-none"
+        type="button"
+        data-az-toggle="offcanvas"
+        data-az-target="#mobile-menu"
+      >
+        Menu
+      </button>
+      <a class="az-navbar-brand" href="dashboard.html">Acme Operations</a>
+      <div class="az-navbar-actions">
+        <a class="az-btn az-btn-ghost az-btn-sm" href="../index.html">All examples</a>
+        <button class="az-btn az-btn-sm" type="button" data-example-theme-toggle>
+          Toggle theme
+        </button>
+        <span class="az-avatar az-avatar-sm" role="img" aria-label="Signed in as Ana Souza"
+          >AS</span
+        >
+      </div>
+    </header>
+
+    <div class="az-d-flex">
+      <aside
+        class="az-sidebar az-sidebar-sticky az-d-none az-md-d-flex"
+        style="--az-sidebar-offset: 2.5rem"
+      >
+        <nav class="az-sidebar-body" aria-label="Main">
+          <ul class="az-navigation-menu">
+            <li class="az-navigation-menu-heading">Operations</li>
+            <li>
+              <a class="az-navigation-menu-link" href="dashboard.html" aria-current="page"
+                >Dashboard</a
+              >
+            </li>
+            <li><a class="az-navigation-menu-link" href="orders.html">Orders</a></li>
+            <li><a class="az-navigation-menu-link" href="order-form.html">New order</a></li>
+            <li class="az-navigation-menu-heading">Account</li>
+            <li><a class="az-navigation-menu-link" href="sign-in.html">Sign in</a></li>
+          </ul>
+        </nav>
+        <div class="az-sidebar-footer az-text-sm az-text-muted">Example data only</div>
+      </aside>
+
+      <main class="az-container az-container-fluid az-py-3 az-min-w-0" id="main">
+        <nav aria-label="Breadcrumb">
+          <ol class="az-breadcrumb">
+            <li class="az-breadcrumb-item"><a href="dashboard.html">Operations</a></li>
+            <li class="az-breadcrumb-item" aria-current="page">Dashboard</li>
+          </ol>
+        </nav>
+
+        <div class="az-page-header az-mt-2">
+          <div class="az-page-header-main">
+            <h1 class="az-page-header-title">Operations dashboard</h1>
+            <p class="az-page-header-description">Fulfilment and approvals for the last 7 days.</p>
+          </div>
+          <div class="az-page-header-actions">
+            <button class="az-btn az-btn-outline" type="button">Export</button>
+            <a class="az-btn az-btn-primary" href="order-form.html">New order</a>
+          </div>
+        </div>
+
+        <div class="az-alert az-alert-warning az-mb-3" role="status">
+          3 orders need approval before 18:00 today.
+        </div>
+
+        <section class="az-content-section" aria-labelledby="summary-title">
+          <div class="az-content-section-header">
+            <h2 class="az-content-section-title" id="summary-title">Summary</h2>
+          </div>
+          <div class="az-grid az-grid-fit">
+            <div class="az-stat">
+              <span class="az-stat-label">Open orders</span>
+              <span class="az-stat-value">1,284</span>
+              <span class="az-stat-trend az-stat-trend-up">+4.2% this week</span>
+            </div>
+            <div class="az-stat">
+              <span class="az-stat-label">Pending approval</span>
+              <span class="az-stat-value">96</span>
+              <span class="az-stat-trend az-stat-trend-down">-1.8% this week</span>
+            </div>
+            <div class="az-stat">
+              <span class="az-stat-label">Late deliveries</span>
+              <span class="az-stat-value">12</span>
+              <span class="az-stat-trend az-stat-trend-down">+3 since Monday</span>
+            </div>
+            <div class="az-stat">
+              <span class="az-stat-label">Revenue</span>
+              <span class="az-stat-value">$48.2k</span>
+              <span class="az-stat-trend az-stat-trend-up">+6.9% this week</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="az-row az-mt-3">
+          <div class="az-col-12 az-lg-col-8">
+            <section class="az-content-section" aria-labelledby="recent-title">
+              <div class="az-content-section-header">
+                <h2 class="az-content-section-title" id="recent-title">Recent orders</h2>
+                <div class="az-content-section-actions">
+                  <a class="az-btn az-btn-sm" href="orders.html">View all</a>
+                </div>
+              </div>
+              <div class="az-table-wrap">
+                <table class="az-table az-table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Order</th>
+                      <th scope="col">Customer</th>
+                      <th scope="col" class="az-table-numeric">Total</th>
+                      <th scope="col">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>#1042</td>
+                      <td>Acme Ltd.</td>
+                      <td class="az-table-numeric">$4,820.00</td>
+                      <td><span class="az-badge az-badge-success">Approved</span></td>
+                    </tr>
+                    <tr>
+                      <td>#1041</td>
+                      <td>Northwind Traders</td>
+                      <td class="az-table-numeric">$1,150.40</td>
+                      <td><span class="az-badge az-badge-warning">Pending</span></td>
+                    </tr>
+                    <tr>
+                      <td>#1040</td>
+                      <td>Globex Corp.</td>
+                      <td class="az-table-numeric">$9,300.00</td>
+                      <td><span class="az-badge az-badge-danger">Late</span></td>
+                    </tr>
+                    <tr>
+                      <td>#1039</td>
+                      <td>Initech</td>
+                      <td class="az-table-numeric">$2,210.75</td>
+                      <td><span class="az-badge az-badge-success">Approved</span></td>
+                    </tr>
+                    <tr>
+                      <td>#1038</td>
+                      <td>Umbrella Logistics</td>
+                      <td class="az-table-numeric">$640.00</td>
+                      <td><span class="az-badge az-badge-warning">Pending</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+
+          <div class="az-col-12 az-lg-col-4">
+            <section class="az-content-section" aria-labelledby="fulfilment-title">
+              <div class="az-content-section-header">
+                <h2 class="az-content-section-title" id="fulfilment-title">Fulfilment</h2>
+              </div>
+              <div class="az-stack">
+                <div>
+                  <p class="az-text-sm az-m-0 az-mb-1">Shipped on time · 92%</p>
+                  <div
+                    class="az-progress az-progress-success"
+                    role="progressbar"
+                    aria-valuenow="92"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-label="Shipped on time"
+                  >
+                    <div class="az-progress-bar" style="width: 92%"></div>
+                  </div>
+                </div>
+                <div>
+                  <p class="az-text-sm az-m-0 az-mb-1">Invoiced · 74%</p>
+                  <div
+                    class="az-progress"
+                    role="progressbar"
+                    aria-valuenow="74"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-label="Invoiced"
+                  >
+                    <div class="az-progress-bar" style="width: 74%"></div>
+                  </div>
+                </div>
+              </div>
+              <h3 class="az-text-md az-fw-semibold az-mt-3">Activity</h3>
+              <ol class="az-timeline">
+                <li class="az-timeline-item az-timeline-success">
+                  <div class="az-timeline-title">Order #1042 approved</div>
+                  <div class="az-timeline-time">Nov 6, 10:42</div>
+                </li>
+                <li class="az-timeline-item az-timeline-primary">
+                  <div class="az-timeline-title">Invoice issued for #1039</div>
+                  <div class="az-timeline-time">Nov 5, 16:10</div>
+                </li>
+                <li class="az-timeline-item">
+                  <div class="az-timeline-title">Order #1038 created</div>
+                  <div class="az-timeline-time">Nov 4, 09:00</div>
+                </li>
+              </ol>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="az-offcanvas az-offcanvas-start az-offcanvas-sm" id="mobile-menu" hidden>
+      <div class="az-offcanvas-panel">
+        <div class="az-offcanvas-header">
+          <h2 class="az-offcanvas-title">Menu</h2>
+          <button
+            class="az-btn az-btn-ghost az-btn-sm"
+            type="button"
+            data-az-dismiss
+            aria-label="Close menu"
+          >
+            Close
+          </button>
+        </div>
+        <nav class="az-offcanvas-body" aria-label="Main">
+          <ul class="az-navigation-menu">
+            <li>
+              <a class="az-navigation-menu-link" href="dashboard.html" aria-current="page"
+                >Dashboard</a
+              >
+            </li>
+            <li><a class="az-navigation-menu-link" href="orders.html">Orders</a></li>
+            <li><a class="az-navigation-menu-link" href="order-form.html">New order</a></li>
+            <li><a class="az-navigation-menu-link" href="sign-in.html">Sign in</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <script type="module" src="/examples/shared.ts"></script>
+  </body>
+</html>

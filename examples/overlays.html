@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="en" data-az-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Overlays and modals — AZ UI examples</title>
+    <meta
+      name="description"
+      content="Modals, side panels, menus, tooltips, popovers and notifications."
+    />
+    <script>
+      (function () {
+        var theme = localStorage.getItem("az-examples-theme");
+        document.documentElement.dataset.azTheme =
+          theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      })();
+    </script>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/src/styles/styles.css" />
+    <link rel="stylesheet" href="/examples/shared.css" />
+  </head>
+  <body class="az-body">
+    <header class="az-navbar az-navbar-sticky">
+      <a class="az-navbar-brand" href="index.html">AZ UI examples</a>
+      <nav class="az-navbar-nav example-nav" aria-label="Examples">
+        <ul class="az-navigation-menu az-navigation-menu-horizontal">
+          <li><a class="az-navigation-menu-link" href="components.html">Components</a></li>
+          <li><a class="az-navigation-menu-link" href="forms.html">Forms</a></li>
+          <li><a class="az-navigation-menu-link" href="data.html">Data</a></li>
+          <li>
+            <a class="az-navigation-menu-link" href="overlays.html" aria-current="page"
+              >Overlays and modals</a
+            >
+          </li>
+          <li><a class="az-navigation-menu-link" href="icons.html">Icons</a></li>
+          <li><a class="az-navigation-menu-link" href="screens/dashboard.html">Screens</a></li>
+        </ul>
+      </nav>
+      <div class="az-navbar-actions">
+        <button class="az-btn az-btn-sm" type="button" data-example-theme-toggle>
+          Toggle theme
+        </button>
+      </div>
+    </header>
+
+    <div class="az-d-flex">
+      <aside
+        class="az-sidebar az-sidebar-sticky az-d-none az-md-d-flex"
+        style="--az-sidebar-offset: 2.5rem"
+      >
+        <nav class="az-sidebar-body" aria-label="On this page">
+          <ul class="az-navigation-menu">
+            <li class="az-navigation-menu-heading">On this page</li>
+            <li><a class="az-navigation-menu-link" href="#modals">Modals</a></li>
+            <li><a class="az-navigation-menu-link" href="#offcanvas">Offcanvas</a></li>
+            <li><a class="az-navigation-menu-link" href="#toast">Toast</a></li>
+            <li><a class="az-navigation-menu-link" href="#dropdown">Dropdown</a></li>
+            <li><a class="az-navigation-menu-link" href="#tooltip">Tooltip</a></li>
+            <li><a class="az-navigation-menu-link" href="#popover">Popover</a></li>
+            <li><a class="az-navigation-menu-link" href="#notification">Notification panel</a></li>
+            <li><a class="az-navigation-menu-link" href="#command-menu">Command menu</a></li>
+            <li><a class="az-navigation-menu-link" href="#context-menu">Context menu</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="az-container az-container-fluid az-py-3 az-min-w-0">
+        <div class="az-page-header">
+          <div class="az-page-header-main">
+            <h1 class="az-page-header-title">Overlays and modals</h1>
+            <p class="az-page-header-description">
+              Modals, side panels, menus, tooltips, popovers and notifications.
+            </p>
+          </div>
+        </div>
+
+        <section class="az-content-section" id="modals" aria-labelledby="modals-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="modals-title">Modals</h2>
+              <p class="az-content-section-description">
+                Dialogs that interrupt the user: sizes, forms, long content, guarded closing and
+                static backdrop.
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Sizes</h3>
+            <div class="example-preview">
+              <button
+                class="az-btn"
+                type="button"
+                data-az-toggle="modal"
+                data-az-target="#modal-sm"
+              >
+                Small
+              </button>
+              <button
+                class="az-btn"
+                type="button"
+                data-az-toggle="modal"
+                data-az-target="#modal-default"
+              >
+                Default
+              </button>
+              <button
+                class="az-btn"
+                type="button"
+                data-az-toggle="modal"
+                data-az-target="#modal-lg"
+              >
+                Large
+              </button>
+
+              <div class="az-modal az-modal-sm" id="modal-sm" hidden>
+                <div class="az-modal-dialog">
+                  <div class="az-modal-header"><h2 class="az-modal-title">Small modal</h2></div>
+                  <div class="az-modal-body">Short confirmations fit in 24rem.</div>
+                  <div class="az-modal-footer">
+                    <button class="az-btn" type="button" data-az-dismiss>Close</button>
+                  </div>
+                </div>
+              </div>
+              <div class="az-modal" id="modal-default" hidden>
+                <div class="az-modal-dialog">
+                  <div class="az-modal-header"><h2 class="az-modal-title">Default modal</h2></div>
+                  <div class="az-modal-body">
+                    The default width is 32rem. Focus stays inside until the modal closes.
+                  </div>
+                  <div class="az-modal-footer">
+                    <button class="az-btn" type="button" data-az-dismiss>Close</button>
+                  </div>
+                </div>
+              </div>
+              <div class="az-modal az-modal-lg" id="modal-lg" hidden>
+                <div class="az-modal-dialog">
+                  <div class="az-modal-header"><h2 class="az-modal-title">Large modal</h2></div>
+                  <div class="az-modal-body">
+                    Large modals (48rem) suit forms and previews with more content.
+                  </div>
+                  <div class="az-modal-footer">
+                    <button class="az-btn" type="button" data-az-dismiss>Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Confirm a destructive action</h3>
+            <div class="example-preview">
+              <button
+                class="az-btn az-btn-danger"
+                type="button"
+                data-az-toggle="modal"
+                data-az-target="#modal-delete"
+              >
+                Delete customer
+              </button>
+
+              <div class="az-modal az-modal-sm" id="modal-delete" hidden>
+                <div class="az-modal-dialog">
+                  <div class="az-modal-header">
+                    <h2 class="az-modal-title">Delete customer</h2>
+                    <button
+                      class="az-btn az-btn-ghost az-btn-sm"
+                      type="button"
+                      data-az-dismiss
+                      aria-label="Close"
+                    >
+                      ×
+                    </button>
+                  </div>
+                  <div class="az-modal-body">
+                    Acme Ltd. and its 14 orders will be removed. This action cannot be undone.
+                  </div>
+                  <div class="az-modal-footer">
+                    <button class="az-btn" type="button" data-az-dismiss>Cancel</button>
+                    <button class="az-btn az-btn-danger" type="button" data-az-dismiss>
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Form inside a modal</h3>
+            <div class="example-preview">
+              <button
+                class="az-btn az-btn-primary"
+                type="button"
+                data-az-toggle="modal"
+                data-az-target="#modal-form"
+              >
+                New customer
+              </button>
+
+              <div class="az-modal" id="modal-form" hidden>
+                <form class="az-modal-dialog" id="customer-form">
+                  <div class="az-modal-header">
+                    <h2 class="az-modal-title">New customer</h2>
+                    <button
+                      class="az-btn az-btn-ghost az-btn-sm"
+                      type="button"
+                      data-az-dismiss
+                      aria-label="Close"
+                    >
+                      ×
+                    </button>
+                  </div>
+                  <div class="az-modal-body az-stack">
+                    <div class="az-field">
+                      <label class="az-field-label az-field-label-required" for="customer-name"
+                        >Name</label
+                      >
+                      <input
+                        class="az-control"
+                        id="customer-name"
+                        name="name"
+                        type="text"
+                        required
+                      />
+                    </div>
+                    <div class="az-field">
+                      <label class="az-field-label" for="customer-segment">Segment</label>
+                      <select
+                        class="az-control az-select"
+                        id="customer-segment"
+                        name="segment"
+                        data-az-component="select"
+                      >
+                        <option value="smb">Small business</option>
+                        <option value="mid">Mid-market</option>
+                        <option value="enterprise">Enterprise</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="az-modal-footer">
+                    <button class="az-btn" type="button" data-az-dismiss>Cancel</button>
+                    <button class="az-btn az-btn-primary" type="submit">Save customer</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Long content</h3>
+            <div class="example-preview">
+              <button
+                class="az-btn"
+                type="button"
+                data-az-toggle="modal"
+                data-az-target="#modal-long"
+              >
+                Terms of service
+              </button>
+
+              <div class="az-modal" id="modal-long" hidden>
+                <div class="az-modal-dialog">
+                  <div class="az-modal-header">
+                    <h2 class="az-modal-title">Terms of service</h2>
+                  </div>
+                  <div class="az-modal-body az-stack">
+                    <p class="az-m-0">
+                      Section 1. The service is provided as described in the order form, and both
+                      parties agree to the terms of use, data processing and support described in
+                      this agreement.
+                    </p>
+                    <p class="az-m-0">
+                      Section 2. The service is provided as described in the order form, and both
+                      parties agree to the terms of use, data processing and support described in
+                      this agreement.
+                    </p>
+                    <p class="az-m-0">
+                      Section 3. The service is provided as described in the order form, and both
+                      parties agree to the terms of use, data processing and support described in
+                      this agreement.
+                    </p>
+                    <p class="az-m-0">
+                      Section 4. The service is provided as described in the order form, and both
+                      parties agree to the terms of use, data processing and support described in
+                      this agreement.
+                    </p>
+                    <p class="az-m-0">
+                      Section 5. The service is provided as described in the order form, and both
+                      parties agree to the terms of use, data processing and support described in
+                      this agreement.
+                    </p>
+                    <p class="az-m-0">
+                      Section 6. The service is provided as described in the order form, and both
+                      parties agree to the terms of use, data processing and support described in
+                      this agreement.
+                    </p>
+                    <p class="az-m-0">
+                      Section 7. The service is provided as described in the order form, and both
+                      parties agree to the terms of use, data processing and support described in
+                      this agreement.
+                    </p>
+                    <p class="az-m-0">
+                      Section 8. The service is provided as described in the order form, and both
+                      parties agree to the terms of use, data processing and support described in
+                      this agreement.
+                    </p>
+                    <p class="az-m-0">
+                      Section 9. The service is provided as described in the order form, and both
+                      parties agree to the terms of use, data processing and support described in
+                      this agreement.
+                    </p>
+                    <p class="az-m-0">
+                      Section 10. The service is provided as described in the order form, and both
+                      parties agree to the terms of use, data processing and support described in
+                      this agreement.
+                    </p>
+                    <p class="az-m-0">
+                      Section 11. The service is provided as described in the order form, and both
+                      parties agree to the terms of use, data processing and support described in
+                      this agreement.
+                    </p>
+                    <p class="az-m-0">
+                      Section 12. The service is provided as described in the order form, and both
+                      parties agree to the terms of use, data processing and support described in
+                      this agreement.
+                    </p>
+                  </div>
+                  <div class="az-modal-footer">
+                    <button class="az-btn az-btn-primary" type="button" data-az-dismiss>
+                      Accept
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Guarded closing (cancelable event)</h3>
+            <div class="example-preview">
+              <button
+                class="az-btn"
+                type="button"
+                data-az-toggle="modal"
+                data-az-target="#modal-unsaved"
+              >
+                Write a note
+              </button>
+
+              <div class="az-modal" id="modal-unsaved" hidden>
+                <div class="az-modal-dialog">
+                  <div class="az-modal-header"><h2 class="az-modal-title">Internal note</h2></div>
+                  <div class="az-modal-body">
+                    <div class="az-field">
+                      <label class="az-field-label" for="note-text">Note</label>
+                      <textarea class="az-control az-textarea" id="note-text" rows="3"></textarea>
+                      <p class="az-field-help">
+                        Closing is blocked while the note has text. Save it to close.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="az-modal-footer">
+                    <button class="az-btn" type="button" data-az-dismiss>Close</button>
+                    <button class="az-btn az-btn-primary" type="button" id="note-save">
+                      Save note
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Static backdrop</h3>
+            <div class="example-preview">
+              <button
+                class="az-btn"
+                type="button"
+                data-az-toggle="modal"
+                data-az-target="#modal-static"
+              >
+                Open
+              </button>
+
+              <div class="az-modal az-modal-sm" id="modal-static" hidden>
+                <div class="az-modal-dialog">
+                  <div class="az-modal-header"><h2 class="az-modal-title">Session expired</h2></div>
+                  <div class="az-modal-body">
+                    Backdrop click and Escape are disabled. The user must choose an action.
+                  </div>
+                  <div class="az-modal-footer">
+                    <button class="az-btn az-btn-primary" type="button" data-az-dismiss>
+                      Sign in again
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" id="offcanvas" aria-labelledby="offcanvas-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="offcanvas-title">Offcanvas</h2>
+              <p class="az-content-section-description">
+                Side panels for filters, details and navigation.
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Placement and size</h3>
+            <div class="example-preview">
+              <button
+                class="az-btn"
+                type="button"
+                data-az-toggle="offcanvas"
+                data-az-target="#panel-end"
+              >
+                Filters (end)
+              </button>
+              <button
+                class="az-btn"
+                type="button"
+                data-az-toggle="offcanvas"
+                data-az-target="#panel-start"
+              >
+                Menu (start, small)
+              </button>
+              <button
+                class="az-btn"
+                type="button"
+                data-az-toggle="offcanvas"
+                data-az-target="#panel-lg"
+              >
+                Details (large)
+              </button>
+
+              <div class="az-offcanvas" id="panel-end" hidden>
+                <div class="az-offcanvas-panel">
+                  <div class="az-offcanvas-header">
+                    <h2 class="az-offcanvas-title">Filters</h2>
+                    <button
+                      class="az-btn az-btn-ghost az-btn-sm"
+                      type="button"
+                      data-az-dismiss
+                      aria-label="Close"
+                    >
+                      ×
+                    </button>
+                  </div>
+                  <div class="az-offcanvas-body az-stack">
+                    <div class="az-field">
+                      <label class="az-field-label" for="panel-status">Status</label>
+                      <select
+                        class="az-control az-select"
+                        id="panel-status"
+                        data-az-component="select"
+                      >
+                        <option>All</option>
+                        <option>Approved</option>
+                        <option>Pending</option>
+                      </select>
+                    </div>
+                    <div class="az-check">
+                      <input class="az-check-input" id="panel-late" type="checkbox" />
+                      <label class="az-check-label" for="panel-late">Only late orders</label>
+                    </div>
+                  </div>
+                  <div class="az-offcanvas-footer">
+                    <button class="az-btn" type="button" data-az-dismiss>Cancel</button>
+                    <button class="az-btn az-btn-primary" type="button" data-az-dismiss>
+                      Apply
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="az-offcanvas az-offcanvas-start az-offcanvas-sm" id="panel-start" hidden>
+                <div class="az-offcanvas-panel">
+                  <div class="az-offcanvas-header">
+                    <h2 class="az-offcanvas-title">Menu</h2>
+                    <button
+                      class="az-btn az-btn-ghost az-btn-sm"
+                      type="button"
+                      data-az-dismiss
+                      aria-label="Close"
+                    >
+                      ×
+                    </button>
+                  </div>
+                  <nav class="az-offcanvas-body" aria-label="Menu">
+                    <ul class="az-navigation-menu">
+                      <li>
+                        <a class="az-navigation-menu-link" href="#" aria-current="page">Orders</a>
+                      </li>
+                      <li><a class="az-navigation-menu-link" href="#">Customers</a></li>
+                      <li><a class="az-navigation-menu-link" href="#">Reports</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              <div class="az-offcanvas az-offcanvas-lg" id="panel-lg" hidden>
+                <div class="az-offcanvas-panel">
+                  <div class="az-offcanvas-header">
+                    <h2 class="az-offcanvas-title">Order #1042</h2>
+                    <button
+                      class="az-btn az-btn-ghost az-btn-sm"
+                      type="button"
+                      data-az-dismiss
+                      aria-label="Close"
+                    >
+                      ×
+                    </button>
+                  </div>
+                  <div class="az-offcanvas-body">
+                    <dl class="az-key-value">
+                      <dt class="az-key-value-key">Customer</dt>
+                      <dd class="az-key-value-value">Acme Ltd.</dd>
+                      <dt class="az-key-value-key">Total</dt>
+                      <dd class="az-key-value-value">$4,820.00</dd>
+                      <dt class="az-key-value-key">Status</dt>
+                      <dd class="az-key-value-value">
+                        <span class="az-badge az-badge-success">Approved</span>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" id="toast" aria-labelledby="toast-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="toast-title">Toast</h2>
+              <p class="az-content-section-description">
+                Temporary notifications created from code.
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Variants</h3>
+            <div class="example-preview">
+              <button class="az-btn" type="button" data-toast="success">Success</button>
+              <button class="az-btn" type="button" data-toast="info">Info</button>
+              <button class="az-btn" type="button" data-toast="warning">Warning</button>
+              <button class="az-btn" type="button" data-toast="danger">
+                Danger (stays until closed)
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" id="dropdown" aria-labelledby="dropdown-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="dropdown-title">Dropdown</h2>
+              <p class="az-content-section-description">Menu of actions opened from a button.</p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Example</h3>
+            <div class="example-preview">
+              <div class="az-dropdown" data-az-component="dropdown">
+                <button class="az-btn az-dropdown-toggle">Actions</button>
+                <div class="az-dropdown-menu" hidden>
+                  <a class="az-dropdown-item" href="/edit">Edit</a>
+                  <button class="az-dropdown-item">Duplicate</button>
+                  <hr class="az-dropdown-divider" />
+                  <button class="az-dropdown-item" disabled>Archive</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" id="tooltip" aria-labelledby="tooltip-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="tooltip-title">Tooltip</h2>
+              <p class="az-content-section-description">
+                Short helper text shown on hover and focus.
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Example</h3>
+            <div class="example-preview">
+              <button class="az-btn" data-az-component="tooltip" data-az-content="Export to CSV">
+                Export
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" id="popover" aria-labelledby="popover-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="popover-title">Popover</h2>
+              <p class="az-content-section-description">
+                Contextual panel opened from a button, with room for text and actions.
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Example</h3>
+            <div class="example-preview">
+              <button class="az-btn" data-az-component="popover" data-az-target="#help">
+                Details
+              </button>
+
+              <div class="az-popover" id="help" hidden>
+                <h3 class="az-popover-title">Billing cycle</h3>
+                <p>Invoices are issued on the first business day.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" id="notification" aria-labelledby="notification-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="notification-title">Notification panel</h2>
+              <p class="az-content-section-description">
+                Persistent list of notifications opened from a button, with an unread counter. For
+                temporary messages use a Toast. The class is named NotificationPanel to avoid
+                clashing with the browser Notification API.
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Example</h3>
+            <div class="example-preview">
+              <div class="az-notification" data-az-component="notification">
+                <button class="az-btn az-notification-toggle">
+                  Notifications <span class="az-notification-count"></span>
+                </button>
+                <div class="az-popover az-notification-panel" hidden>
+                  <div class="az-notification-header">
+                    <h2 class="az-notification-title">Notifications</h2>
+                    <button class="az-btn az-btn-ghost az-btn-sm" data-az-notification-read-all>
+                      Mark all as read
+                    </button>
+                  </div>
+                  <ul class="az-notification-list">
+                    <li class="az-notification-item az-notification-item-unread">
+                      <a class="az-notification-link" href="/orders/12">
+                        Order 12 was approved
+                        <span class="az-notification-time">5 min ago</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <p class="az-notification-empty" hidden>No notifications</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" id="command-menu" aria-labelledby="command-menu-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="command-menu-title">Command menu</h2>
+              <p class="az-content-section-description">
+                Searchable list of commands opened with Ctrl+K / Cmd+K. Built on the same overlay as
+                Modal.
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Example</h3>
+            <div class="example-preview">
+              <button class="az-btn" data-az-toggle="command-menu" data-az-target="#commands">
+                Search…
+              </button>
+
+              <div class="az-command-menu" id="commands" data-az-component="command-menu" hidden>
+                <div class="az-command-menu-panel" aria-label="Command menu">
+                  <input
+                    class="az-command-menu-input"
+                    placeholder="Type a command"
+                    aria-label="Search commands"
+                  />
+                  <div class="az-command-menu-list">
+                    <button class="az-command-menu-item" data-az-command="orders">
+                      Open orders
+                    </button>
+                    <a class="az-command-menu-item" href="/customers" data-az-command="customers"
+                      >Customers</a
+                    >
+                  </div>
+                  <p class="az-command-menu-empty" hidden>No results</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" id="context-menu" aria-labelledby="context-menu-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="context-menu-title">Context menu</h2>
+              <p class="az-content-section-description">
+                Menu of actions that opens at the pointer on right click (or the keyboard context
+                key) over an area. It reuses the item styles of the Dropdown.
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Example</h3>
+            <div class="example-preview">
+              <div data-az-component="context-menu" data-az-menu="#row-menu">
+                Right click this row
+              </div>
+
+              <div class="az-context-menu" id="row-menu" hidden>
+                <button class="az-dropdown-item">Open</button>
+                <button class="az-dropdown-item" disabled>Rename</button>
+                <hr class="az-dropdown-divider" />
+                <button class="az-dropdown-item">Delete</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/examples/shared.ts"></script>
+    <script type="module">
+      import { Modal, Toast } from "/src/index.ts";
+
+      const TOAST_CONTENT = {
+        success: { title: "Saved", message: "Customer updated." },
+        info: { title: "Heads up", message: "A new version is available." },
+        warning: { title: "Check the data", message: "3 orders have no delivery date." },
+        danger: { title: "Connection lost", message: "Changes are not being saved.", duration: 0 },
+      };
+
+      document.querySelectorAll("[data-toast]").forEach((button) => {
+        const variant = button.dataset.toast;
+        button.addEventListener("click", () => Toast.show({ ...TOAST_CONTENT[variant], variant }));
+      });
+
+      const noteModal = new Modal("#modal-unsaved");
+      const noteText = document.getElementById("note-text");
+      let noteSaved = false;
+
+      document.getElementById("note-save").addEventListener("click", () => {
+        noteSaved = true;
+        noteModal.hide();
+        noteText.value = "";
+        Toast.show({ title: "Saved", message: "Note added to the order.", variant: "success" });
+      });
+
+      document.getElementById("modal-unsaved").addEventListener("az:modal:hide", (event) => {
+        if (noteText.value.trim() && !noteSaved) {
+          event.preventDefault();
+          Toast.show({ message: "Save the note before closing.", variant: "warning" });
+        }
+        noteSaved = false;
+      });
+
+      new Modal("#modal-static", { closeOnBackdrop: false, closeOnEscape: false });
+
+      document.getElementById("customer-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        Toast.show({ title: "Saved", message: "Customer created.", variant: "success" });
+        document.querySelector("#modal-form [data-az-dismiss]").click();
+      });
+    </script>
+  </body>
+</html>

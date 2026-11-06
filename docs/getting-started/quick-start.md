@@ -74,5 +74,5 @@ modal.show();
 ## Where to go next
 
 - Browse the component catalog in the sidebar. Each page lists classes, options, events, states and accessibility notes.
-- Open the example screens to see complete pages: a [dashboard](../../examples/dashboard.html), an [orders list](../../examples/orders.html) and an [order form](../../examples/order-form.html).
+- Open the example screens to see complete pages: a [dashboard](../../examples/screens/dashboard.html), an [orders list](../../examples/screens/orders.html) and an [order form](../../examples/screens/order-form.html).
 - Read [Customization](../guides/customization.md) to apply your brand with tokens.

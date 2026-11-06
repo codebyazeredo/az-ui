@@ -1,6 +1,6 @@
 # Icon
 
-Built-in set of 253 functional SVG icons on a 24×24 grid with a 1.5px stroke. Icons use `currentColor`, so they follow the text color of their parent. Browse and copy every icon in the [icon catalog](../../icons.html).
+Built-in set of 253 functional SVG icons on a 24×24 grid with a 1.5px stroke. Icons use `currentColor`, so they follow the text color of their parent. The full catalog is in [`examples/icons.html`](../../examples/icons.html).
 
 ## Example
 

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" data-az-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Icons — AZ UI examples</title>
+    <meta
+      name="description"
+      content="Built-in icon set on a 24×24 grid. Click an icon to copy its name."
+    />
+    <script>
+      (function () {
+        var theme = localStorage.getItem("az-examples-theme");
+        document.documentElement.dataset.azTheme =
+          theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      })();
+    </script>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/src/styles/styles.css" />
+    <link rel="stylesheet" href="/examples/shared.css" />
+  </head>
+  <body class="az-body">
+    <header class="az-navbar az-navbar-sticky">
+      <a class="az-navbar-brand" href="index.html">AZ UI examples</a>
+      <nav class="az-navbar-nav example-nav" aria-label="Examples">
+        <ul class="az-navigation-menu az-navigation-menu-horizontal">
+          <li><a class="az-navigation-menu-link" href="components.html">Components</a></li>
+          <li><a class="az-navigation-menu-link" href="forms.html">Forms</a></li>
+          <li><a class="az-navigation-menu-link" href="data.html">Data</a></li>
+          <li><a class="az-navigation-menu-link" href="overlays.html">Overlays and modals</a></li>
+          <li>
+            <a class="az-navigation-menu-link" href="icons.html" aria-current="page">Icons</a>
+          </li>
+          <li><a class="az-navigation-menu-link" href="screens/dashboard.html">Screens</a></li>
+        </ul>
+      </nav>
+      <div class="az-navbar-actions">
+        <button class="az-btn az-btn-sm" type="button" data-example-theme-toggle>
+          Toggle theme
+        </button>
+      </div>
+    </header>
+
+    <div class="az-d-flex">
+      <aside
+        class="az-sidebar az-sidebar-sticky az-d-none az-md-d-flex"
+        style="--az-sidebar-offset: 2.5rem"
+      >
+        <nav class="az-sidebar-body" aria-label="On this page">
+          <ul class="az-navigation-menu">
+            <li class="az-navigation-menu-heading">On this page</li>
+            <li><a class="az-navigation-menu-link" href="#catalog">Catalog</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="az-container az-container-fluid az-py-3 az-min-w-0">
+        <div class="az-page-header">
+          <div class="az-page-header-main">
+            <h1 class="az-page-header-title">Icons</h1>
+            <p class="az-page-header-description">
+              Built-in icon set on a 24×24 grid. Click an icon to copy its name.
+            </p>
+          </div>
+        </div>
+
+        <section class="az-content-section" id="catalog" aria-labelledby="catalog-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="catalog-title">Catalog</h2>
+            </div>
+          </div>
+          <div class="az-field example-filter">
+            <label class="az-field-label" for="icon-filter">Filter icons</label>
+            <input class="az-control" id="icon-filter" type="search" placeholder="Search by name" />
+          </div>
+          <p class="az-text-sm az-text-muted" id="icon-status" role="status"></p>
+          <div id="icon-catalog"></div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/examples/shared.ts"></script>
+    <script type="module">
+      import { AZUI } from "/src/index.ts";
+
+      const { Icon } = AZUI;
+      const catalog = document.getElementById("icon-catalog");
+      const filter = document.getElementById("icon-filter");
+      const status = document.getElementById("icon-status");
+
+      function createButton(name) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "icon-item";
+        button.dataset.name = name;
+        button.append(Icon.create(name), name);
+        return button;
+      }
+
+      const sections = Object.entries(Icon.categories).map(([category, names]) => {
+        const section = document.createElement("section");
+        const heading = document.createElement("h3");
+        const grid = document.createElement("div");
+        heading.className = "example-title icon-heading";
+        heading.textContent = category + " (" + names.length + ")";
+        grid.className = "icon-grid";
+        grid.append(...names.map(createButton));
+        section.append(heading, grid);
+        return section;
+      });
+      catalog.append(...sections);
+      status.textContent = Icon.names.length + " icons";
+
+      filter.addEventListener("input", () => {
+        const term = filter.value.trim().toLowerCase();
+        let visible = 0;
+        for (const section of sections) {
+          let inSection = 0;
+          for (const button of section.querySelectorAll(".icon-item")) {
+            button.hidden = !button.dataset.name.includes(term);
+            if (!button.hidden) inSection += 1;
+          }
+          section.hidden = inSection === 0;
+          visible += inSection;
+        }
+        status.textContent = visible === 0 ? "No icons match the filter" : visible + " icons";
+      });
+
+      catalog.addEventListener("click", async (event) => {
+        const button = event.target.closest(".icon-item");
+        if (!button) return;
+        try {
+          await navigator.clipboard.writeText(button.dataset.name);
+          status.textContent = 'Copied "' + button.dataset.name + '"';
+        } catch {
+          status.textContent = 'The browser blocked copying "' + button.dataset.name + '"';
+        }
+      });
+    </script>
+  </body>
+</html>

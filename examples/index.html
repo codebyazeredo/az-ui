@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" data-az-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Overview — AZ UI examples</title>
+    <meta name="description" content="Live example pages for AZ UI components." />
+    <script>
+      (function () {
+        var theme = localStorage.getItem("az-examples-theme");
+        document.documentElement.dataset.azTheme =
+          theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      })();
+    </script>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/src/styles/styles.css" />
+    <link rel="stylesheet" href="/examples/shared.css" />
+  </head>
+  <body class="az-body">
+    <header class="az-navbar az-navbar-sticky">
+      <a class="az-navbar-brand" href="index.html">AZ UI examples</a>
+      <nav class="az-navbar-nav example-nav" aria-label="Examples">
+        <ul class="az-navigation-menu az-navigation-menu-horizontal">
+          <li><a class="az-navigation-menu-link" href="components.html">Components</a></li>
+          <li><a class="az-navigation-menu-link" href="forms.html">Forms</a></li>
+          <li><a class="az-navigation-menu-link" href="data.html">Data</a></li>
+          <li><a class="az-navigation-menu-link" href="overlays.html">Overlays and modals</a></li>
+          <li><a class="az-navigation-menu-link" href="icons.html">Icons</a></li>
+          <li><a class="az-navigation-menu-link" href="screens/dashboard.html">Screens</a></li>
+        </ul>
+      </nav>
+      <div class="az-navbar-actions">
+        <button class="az-btn az-btn-sm" type="button" data-example-theme-toggle>
+          Toggle theme
+        </button>
+      </div>
+    </header>
+
+    <main class="az-container az-container-md az-py-3">
+      <div class="az-page-header">
+        <div class="az-page-header-main">
+          <h1 class="az-page-header-title">AZ UI examples</h1>
+          <p class="az-page-header-description">
+            Live pages built only with the library. Switch the theme and resize the window.
+          </p>
+        </div>
+      </div>
+      <ul class="az-list-group">
+        <li class="az-list-group-item">
+          <a href="components.html"><strong>Components</strong></a
+          ><br /><span class="az-text-sm az-text-muted"
+            >Buttons, badges, alerts, avatars, cards, accordion, tabs and loading states.</span
+          >
+        </li>
+        <li class="az-list-group-item">
+          <a href="forms.html"><strong>Forms</strong></a
+          ><br /><span class="az-text-sm az-text-muted"
+            >Fields, validation, select, datepicker, file upload and the declarative API.</span
+          >
+        </li>
+        <li class="az-list-group-item">
+          <a href="data.html"><strong>Data</strong></a
+          ><br /><span class="az-text-sm az-text-muted"
+            >Table with sorting, search and pagination, stats, progress, timeline and more.</span
+          >
+        </li>
+        <li class="az-list-group-item">
+          <a href="overlays.html"><strong>Overlays and modals</strong></a
+          ><br /><span class="az-text-sm az-text-muted"
+            >Modal sizes, forms, guarded closing, offcanvas, toasts, menus, tooltips and
+            popovers.</span
+          >
+        </li>
+        <li class="az-list-group-item">
+          <a href="icons.html"><strong>Icons</strong></a
+          ><br /><span class="az-text-sm az-text-muted">The 253 built-in icons, searchable.</span>
+        </li>
+        <li class="az-list-group-item">
+          <a href="screens/dashboard.html"><strong>Screens</strong></a
+          ><br /><span class="az-text-sm az-text-muted"
+            >Complete pages: dashboard, orders list, order form and sign in.</span
+          >
+        </li>
+      </ul>
+    </main>
+    <script type="module" src="/examples/shared.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en" data-az-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Components — AZ UI examples</title>
+    <meta
+      name="description"
+      content="Basic building blocks: actions, feedback, content and disclosure."
+    />
+    <script>
+      (function () {
+        var theme = localStorage.getItem("az-examples-theme");
+        document.documentElement.dataset.azTheme =
+          theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      })();
+    </script>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/src/styles/styles.css" />
+    <link rel="stylesheet" href="/examples/shared.css" />
+  </head>
+  <body class="az-body">
+    <header class="az-navbar az-navbar-sticky">
+      <a class="az-navbar-brand" href="index.html">AZ UI examples</a>
+      <nav class="az-navbar-nav example-nav" aria-label="Examples">
+        <ul class="az-navigation-menu az-navigation-menu-horizontal">
+          <li>
+            <a class="az-navigation-menu-link" href="components.html" aria-current="page"
+              >Components</a
+            >
+          </li>
+          <li><a class="az-navigation-menu-link" href="forms.html">Forms</a></li>
+          <li><a class="az-navigation-menu-link" href="data.html">Data</a></li>
+          <li><a class="az-navigation-menu-link" href="overlays.html">Overlays and modals</a></li>
+          <li><a class="az-navigation-menu-link" href="icons.html">Icons</a></li>
+          <li><a class="az-navigation-menu-link" href="screens/dashboard.html">Screens</a></li>
+        </ul>
+      </nav>
+      <div class="az-navbar-actions">
+        <button class="az-btn az-btn-sm" type="button" data-example-theme-toggle>
+          Toggle theme
+        </button>
+      </div>
+    </header>
+
+    <div class="az-d-flex">
+      <aside
+        class="az-sidebar az-sidebar-sticky az-d-none az-md-d-flex"
+        style="--az-sidebar-offset: 2.5rem"
+      >
+        <nav class="az-sidebar-body" aria-label="On this page">
+          <ul class="az-navigation-menu">
+            <li class="az-navigation-menu-heading">On this page</li>
+            <li><a class="az-navigation-menu-link" href="#button">Button</a></li>
+            <li><a class="az-navigation-menu-link" href="#badge">Badge</a></li>
+            <li><a class="az-navigation-menu-link" href="#alert">Alert</a></li>
+            <li><a class="az-navigation-menu-link" href="#avatar">Avatar</a></li>
+            <li><a class="az-navigation-menu-link" href="#card">Card</a></li>
+            <li><a class="az-navigation-menu-link" href="#divider">Divider</a></li>
+            <li><a class="az-navigation-menu-link" href="#spinner">Spinner</a></li>
+            <li><a class="az-navigation-menu-link" href="#skeleton">Skeleton</a></li>
+            <li><a class="az-navigation-menu-link" href="#accordion">Accordion</a></li>
+            <li><a class="az-navigation-menu-link" href="#tabs">Tabs</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="az-container az-container-fluid az-py-3 az-min-w-0">
+        <div class="az-page-header">
+          <div class="az-page-header-main">
+            <h1 class="az-page-header-title">Components</h1>
+            <p class="az-page-header-description">
+              Basic building blocks: actions, feedback, content and disclosure.
+            </p>
+          </div>
+        </div>
+
+        <section class="az-content-section" id="button" aria-labelledby="button-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="button-title">Button</h2>
+              <p class="az-content-section-description">
+                Action element. CSS only; use a native &lt;button&gt; (or &lt;a&gt; for navigation).
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Example</h3>
+            <div class="example-preview">
+              <button class="az-btn az-btn-primary" type="button">Save</button>
+              <button class="az-btn" type="button">Cancel</button>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">States</h3>
+            <div class="example-preview">
+              <button class="az-btn az-btn-primary az-btn-loading" type="button" aria-busy="true">
+                <span class="az-spinner az-spinner-sm" aria-hidden="true"></span>Saving
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" id="badge" aria-labelledby="badge-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="badge-title">Badge</h2>
+              <p class="az-content-section-description">
+                Compact indicator of category or status. CSS only.
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Example</h3>
+            <div class="example-preview">
+              <span class="az-badge az-badge-success">Active</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" id="alert" aria-labelledby="alert-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="alert-title">Alert</h2>
+              <p class="az-content-section-description">
+                Contextual message about the result of an action or the state of a page. CSS only.
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Example</h3>
+            <div class="example-preview">
+              <div class="az-alert az-alert-danger" role="alert">
+                <p class="az-alert-title">Payment failed</p>
+                The card was declined.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" id="avatar" aria-labelledby="avatar-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="avatar-title">Avatar</h2>
+              <p class="az-content-section-description">
+                Visual representation of a person or entity: initials or an image. CSS only.
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Example</h3>
+            <div class="example-preview">
+              <span class="az-avatar">MA</span>
+              <span class="az-avatar az-avatar-lg"
+                ><img class="az-avatar-image" src="/user.jpg" alt="Matheus Azeredo"
+              /></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" id="card" aria-labelledby="card-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="card-title">Card</h2>
+              <p class="az-content-section-description">
+                Container for logically related content. CSS only.
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Example</h3>
+            <div class="example-preview">
+              <section class="az-card">
+                <div class="az-card-header">Customer</div>
+                <div class="az-card-body">Acme Industries</div>
+                <div class="az-card-footer">
+                  <button class="az-btn az-btn-primary az-btn-sm" type="button">Open</button>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" id="divider" aria-labelledby="divider-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="divider-title">Divider</h2>
+              <p class="az-content-section-description">
+                Visual separator between groups of content. CSS only.
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Example</h3>
+            <div class="example-preview">
+              <hr class="az-divider" />
+
+              <div class="az-d-flex">
+                <span>Edit</span>
+                <span
+                  class="az-divider az-divider-vertical"
+                  role="separator"
+                  aria-orientation="vertical"
+                ></span>
+                <span>Delete</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" id="spinner" aria-labelledby="spinner-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="spinner-title">Spinner</h2>
+              <p class="az-content-section-description">
+                Loading indicator. CSS only. It uses currentColor, so it follows the text color of
+                its parent.
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Example</h3>
+            <div class="example-preview">
+              <span class="az-spinner" role="status" aria-label="Loading"></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" id="skeleton" aria-labelledby="skeleton-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="skeleton-title">Skeleton</h2>
+              <p class="az-content-section-description">
+                Placeholder for content that is loading. CSS only. Set the size with utilities or
+                inline styles.
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Example</h3>
+            <div class="example-preview">
+              <div aria-hidden="true">
+                <div class="az-skeleton az-skeleton-text" style="width: 60%"></div>
+                <div class="az-skeleton az-skeleton-circle" style="width: 32px"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" id="accordion" aria-labelledby="accordion-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="accordion-title">Accordion</h2>
+              <p class="az-content-section-description">
+                Expandable and collapsible sections. CSS only, built on the native &lt;details&gt;
+                element, so it needs no JavaScript.
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Example</h3>
+            <div class="example-preview">
+              <div class="az-accordion">
+                <details class="az-accordion-item" name="faq" open>
+                  <summary class="az-accordion-header">Payment terms</summary>
+                  <div class="az-accordion-body">Net 30 days.</div>
+                </details>
+                <details class="az-accordion-item" name="faq">
+                  <summary class="az-accordion-header">Late fees</summary>
+                  <div class="az-accordion-body">2% per month.</div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" id="tabs" aria-labelledby="tabs-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="tabs-title">Tabs</h2>
+              <p class="az-content-section-description">
+                Navigation between related panels. Tabs and panels are paired by order.
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Example</h3>
+            <div class="example-preview">
+              <div class="az-tabs" data-az-component="tabs">
+                <div class="az-tabs-list">
+                  <button class="az-tabs-tab">Details</button>
+                  <button class="az-tabs-tab">History</button>
+                </div>
+                <div class="az-tabs-panel">Customer details…</div>
+                <div class="az-tabs-panel">Change history…</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/examples/shared.ts"></script>
+  </body>
+</html>

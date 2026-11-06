@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en" data-az-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data — AZ UI examples</title>
+    <meta
+      name="description"
+      content="Tables with sorting, search and pagination, plus the components that summarize data."
+    />
+    <script>
+      (function () {
+        var theme = localStorage.getItem("az-examples-theme");
+        document.documentElement.dataset.azTheme =
+          theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      })();
+    </script>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/src/styles/styles.css" />
+    <link rel="stylesheet" href="/examples/shared.css" />
+  </head>
+  <body class="az-body">
+    <header class="az-navbar az-navbar-sticky">
+      <a class="az-navbar-brand" href="index.html">AZ UI examples</a>
+      <nav class="az-navbar-nav example-nav" aria-label="Examples">
+        <ul class="az-navigation-menu az-navigation-menu-horizontal">
+          <li><a class="az-navigation-menu-link" href="components.html">Components</a></li>
+          <li><a class="az-navigation-menu-link" href="forms.html">Forms</a></li>
+          <li><a class="az-navigation-menu-link" href="data.html" aria-current="page">Data</a></li>
+          <li><a class="az-navigation-menu-link" href="overlays.html">Overlays and modals</a></li>
+          <li><a class="az-navigation-menu-link" href="icons.html">Icons</a></li>
+          <li><a class="az-navigation-menu-link" href="screens/dashboard.html">Screens</a></li>
+        </ul>
+      </nav>
+      <div class="az-navbar-actions">
+        <button class="az-btn az-btn-sm" type="button" data-example-theme-toggle>
+          Toggle theme
+        </button>
+      </div>
+    </header>
+
+    <div class="az-d-flex">
+      <aside
+        class="az-sidebar az-sidebar-sticky az-d-none az-md-d-flex"
+        style="--az-sidebar-offset: 2.5rem"
+      >
+        <nav class="az-sidebar-body" aria-label="On this page">
+          <ul class="az-navigation-menu">
+            <li class="az-navigation-menu-heading">On this page</li>
+            <li><a class="az-navigation-menu-link" href="#table">Table and DataTable</a></li>
+            <li><a class="az-navigation-menu-link" href="#pagination">Pagination</a></li>
+            <li>
+              <a class="az-navigation-menu-link" href="#data-display"
+                >Data display: Progress, Stat, Status Indicator, Key Value, List Group, Timeline,
+                Empty State</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="az-container az-container-fluid az-py-3 az-min-w-0">
+        <div class="az-page-header">
+          <div class="az-page-header-main">
+            <h1 class="az-page-header-title">Data</h1>
+            <p class="az-page-header-description">
+              Tables with sorting, search and pagination, plus the components that summarize data.
+            </p>
+          </div>
+        </div>
+
+        <section class="az-content-section" id="table" aria-labelledby="table-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="table-title">Table and DataTable</h2>
+              <p class="az-content-section-description">
+                az-table is the CSS for data tables: sortable headers, row selection, row actions,
+                sizes and a loading state. DataTable adds client-side sorting, search, pagination
+                and selection on top of the same markup. Rows are always written by the consumer, so
+                data can come from anywhere (server, API, static HTML).
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Example</h3>
+            <div class="example-preview">
+              <input class="az-control" id="people-search" placeholder="Search" />
+
+              <div
+                class="az-table-wrap"
+                data-az-component="datatable"
+                data-az-search="#people-search"
+                data-az-pagination="#people-pages"
+                data-az-page-size="10"
+              >
+                <table class="az-table az-table-hover">
+                  <thead>
+                    <tr>
+                      <th class="az-table-select">
+                        <span class="az-check"
+                          ><input
+                            class="az-check-input"
+                            type="checkbox"
+                            aria-label="Select all"
+                            data-az-select-all
+                        /></span>
+                      </th>
+                      <th><button class="az-table-sort" type="button">Name</button></th>
+                      <th class="az-table-numeric" data-az-sort-type="number">
+                        <button class="az-table-sort" type="button">Age</button>
+                      </th>
+                      <th class="az-table-actions" aria-label="Actions"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <span class="az-check"
+                          ><input
+                            class="az-check-input"
+                            type="checkbox"
+                            aria-label="Select row"
+                            data-az-select-row
+                        /></span>
+                      </td>
+                      <td>Ana</td>
+                      <td class="az-table-numeric" data-az-sort-value="30">30 years</td>
+                      <td class="az-table-actions">
+                        <button class="az-btn az-btn-ghost az-btn-sm" type="button">Edit</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="az-table-empty" hidden>
+                  <div class="az-empty-state">
+                    <p class="az-empty-state-title">No records found</p>
+                  </div>
+                </div>
+              </div>
+              <nav id="people-pages" class="az-pagination"></nav>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" id="pagination" aria-labelledby="pagination-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="pagination-title">Pagination</h2>
+              <p class="az-content-section-description">
+                Page navigation. The component renders the buttons; the consumer decides what each
+                page shows, so it works with client data and with server-side paging.
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Example</h3>
+            <div class="example-preview">
+              <nav
+                class="az-pagination"
+                id="pages"
+                data-az-component="pagination"
+                data-az-total="250"
+                data-az-page-size="25"
+              ></nav>
+            </div>
+          </div>
+        </section>
+
+        <section class="az-content-section" id="data-display" aria-labelledby="data-display-title">
+          <div class="az-content-section-header">
+            <div>
+              <h2 class="az-content-section-title" id="data-display-title">
+                Data display: Progress, Stat, Status Indicator, Key Value, List Group, Timeline,
+                Empty State
+              </h2>
+              <p class="az-content-section-description">
+                CSS-only building blocks for dashboards and detail screens.
+              </p>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Progress</h3>
+            <div class="example-preview">
+              <div
+                class="az-progress az-progress-success"
+                role="progressbar"
+                aria-valuenow="60"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-label="Upload"
+              >
+                <div class="az-progress-bar" style="width: 60%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Stat</h3>
+            <div class="example-preview">
+              <div class="az-stat">
+                <span class="az-stat-label">Open orders</span>
+                <span class="az-stat-value">1,284</span>
+                <span class="az-stat-trend az-stat-trend-up">+4.2% this week</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Status Indicator</h3>
+            <div class="example-preview">
+              <span class="az-status az-status-success">Active</span>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Key Value</h3>
+            <div class="example-preview">
+              <dl class="az-key-value">
+                <dt class="az-key-value-key">Customer</dt>
+                <dd class="az-key-value-value">Acme Ltd.</dd>
+                <dt class="az-key-value-key">Status</dt>
+                <dd class="az-key-value-value">Active</dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">List Group</h3>
+            <div class="example-preview">
+              <ul class="az-list-group">
+                <li class="az-list-group-item" aria-current="true">Overview</li>
+                <li class="az-list-group-item">History</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Timeline</h3>
+            <div class="example-preview">
+              <ol class="az-timeline">
+                <li class="az-timeline-item az-timeline-success">
+                  <div class="az-timeline-title">Order approved</div>
+                  <div class="az-timeline-time">Nov 6, 10:42</div>
+                  <p class="az-timeline-text">Approved by finance.</p>
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="example">
+            <h3 class="example-title">Empty State</h3>
+            <div class="example-preview">
+              <div class="az-empty-state">
+                <p class="az-empty-state-title">No records found</p>
+                <p class="az-empty-state-text">Try changing the filters.</p>
+                <div class="az-empty-state-actions">
+                  <button class="az-btn az-btn-primary" type="button">Clear filters</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/examples/shared.ts"></script>
+  </body>
+</html>
