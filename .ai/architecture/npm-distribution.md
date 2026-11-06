@@ -6,7 +6,7 @@ Fonte: `specifications.md` §12 e §4.2–4.5. Status: **rascunho** — fechar n
 
 ```text
 dist/
-├── index.js  index.d.ts  foundations/…d.ts
+├── index.js  auto.js  <chunk>.js  index.d.ts  auto.d.ts  foundations/…d.ts   # auto.js: az-ui/auto
 ├── styles.css                    # tokens, temas, reset/base opt-in, fonte Inter, utilitários
 └── fonts/
     ├── ibm-plex-sans.css  source-sans-3.css
@@ -31,7 +31,7 @@ import { AZUI, Button, Modal, DataTable } from "az-ui";
 
 Campos exigidos: `name`, `version`, `description`, `license`, `exports`, `main`, `module`, `types`, `files`, `sideEffects`.
 
-- `sideEffects`: listar apenas os arquivos CSS; JS livre de efeito colateral na importação (Q-08).
+- `sideEffects`: os arquivos CSS e `./dist/auto.js`; o resto do JS é livre de efeito colateral na importação (D-040).
 - `files`: somente `dist/` e `fonts/` com licenças; nada de código de desenvolvimento.
 - `exports` com condições `types`, `import` e, se necessário, `require` (Q-18).
 

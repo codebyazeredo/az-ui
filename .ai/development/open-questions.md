@@ -6,6 +6,8 @@ Levantadas na leitura de `specifications.md`. Cada item tem **proposta padrão**
 
 Na Fase 1: Q-02 → D-022 · Q-18 parcialmente (ESM somente, CJS adiado) → D-025. Q-07 e Q-08 seguem para quando existir JavaScript de componentes.
 
+Na Fase 3: Q-08 → D-040 · Q-13 → D-043 (sem biblioteca de ícones). Q-07 (`window.AZUI`) segue aberta.
+
 Na Fase 2: Q-05 → D-034 · Q-06 → D-035 · Q-15 → D-036 (multi-select e file ficam para a Fase 4).
 
 Linhas abaixo resolvidas permanecem como histórico.

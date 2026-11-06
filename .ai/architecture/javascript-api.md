@@ -1,6 +1,6 @@
 # API JavaScript — AZ UI
 
-Fonte: `specifications.md` §8. Status: **contrato de intenção**; nada implementado.
+Fonte: `specifications.md` §8. Status: **implementado na Fase 3** (D-040 a D-043); a documentação pública está em `docs/javascript/overview.md`.
 
 ## Requisitos
 
@@ -40,3 +40,5 @@ A documentação deve explicar quando usar atributos HTML e quando usar a API pr
 | `events` | Delegação e remoção de eventos |
 
 Cada componente interativo usa o `core`; nenhum reimplementa o ciclo de vida.
+
+Implementação: `core/component.ts` (classe base) e `core/overlay.ts` (base de Modal e Offcanvas); `dom/` tem `resolve-element`, `unique-id`, `focus`, `scroll-lock`, `dismiss`, `position` e `markup-to-element`. A inicialização automática está em `src/auto.ts` (fora de `javascript/` porque conhece os componentes).

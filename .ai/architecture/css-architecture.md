@@ -8,7 +8,7 @@ Status: **rascunho** — fechar na Fase 1.
 
 ## Nomenclatura de componentes (D-035)
 
-`az-<bloco>` para o componente, `az-<bloco>-<modificador-ou-parte>` para variantes, tamanhos e partes (`az-btn-primary`, `az-btn-sm`, `az-card-header`). Sem `__` e `--`. Propriedades locais: `--az-<componente>-*`. Cores de status derivam dos tokens por `color-mix` (D-038). Os componentes são importados em `styles.css` depois do reset e antes dos utilitários.
+`az-<bloco>` para o componente, `az-<bloco>-<modificador-ou-parte>` para variantes, tamanhos e partes (`az-btn-primary`, `az-btn-sm`, `az-card-header`). Sem `__` e `--`. Propriedades locais: `--az-<componente>-*`. Componentes sobrepostos usam os tokens de `z-index` e ficam ocultos pelo atributo `hidden` (regra `[hidden] { display: none }` quando o componente define `display`). Cores de status derivam dos tokens por `color-mix` (D-038). Os componentes são importados em `styles.css` depois do reset e antes dos utilitários.
 
 ## Camadas (ordem de carregamento)
 

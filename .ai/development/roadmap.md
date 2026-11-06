@@ -2,14 +2,14 @@
 
 Fonte: `specifications.md` §15 (complementado com itens da §6 que estavam fora das fases, ver Q-14). **Este é o painel de controle do projeto**: marcar `[x]` ao concluir, na mesma tarefa.
 
-Fase atual: **2 — Componentes básicos**, concluída e validada em 2026-11-06 (Fases 0 e 1 concluídas em 2026-11-04)
+Fase atual: **3 — Componentes interativos**, implementada em 2026-11-06 e aguardando validação do mantenedor (Fase 2 concluída e validada em 2026-11-06) (Fases 0 e 1 concluídas em 2026-11-04)
 
 | Fase | Nome | Status |
 |---|---|---|
 | 0 | Pré-desenvolvimento | Concluída |
 | 1 | Fundação | Concluída (validada); restam configurações do GitHub |
 | 2 | Componentes básicos | Concluída |
-| 3 | Componentes interativos | Não iniciada |
+| 3 | Componentes interativos | Implementada; validação pendente |
 | 4 | Dados e avançados | Não iniciada |
 | 5 | Layouts | Não iniciada |
 | 6 | Documentação | Não iniciada |
@@ -66,8 +66,12 @@ Pendências que dependem da criação do repositório no GitHub (não bloqueiam 
 
 ## Fase 3 — Componentes interativos
 
-- [ ] Modal · Dropdown · Tooltip · Popover · Tabs · Toast · Accordion · Offcanvas.
-- [ ] Datepicker.
+- [x] Modal · Dropdown · Tooltip · Popover · Tabs · Toast · Accordion · Offcanvas (D-040 a D-043).
+- [x] Datepicker.
+- [x] Núcleo JS (`Component`, `Overlay`, utilitários de DOM) e entrada `az-ui/auto`.
+- [x] typecheck, lint, format:check, build e 250 testes passando; `examples/interactive.html` conferida no navegador (2026-11-06).
+- [ ] Revisão manual com leitor de tela (exigida para componentes interativos em `conventions/accessibility.md`).
+- [ ] Validação da fase pelo mantenedor.
 - [ ] (Q-14) Notification · Command Menu · Context Menu — fase a definir.
 
 ## Fase 4 — Dados e avançados
