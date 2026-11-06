@@ -7,4 +7,7 @@ Based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic 
 ### Added
 
 - AI context matrix in `.ai/` and project control files (pre-development).
+- Basic components (Phase 2): Button, Badge, Alert, Spinner, Skeleton, Divider, Card, Avatar and form fields (input, textarea, select, checkbox, radio, switch) as CSS included in `az-ui/styles.css`.
+- `sm` and `lg` size modifiers for Button, Badge, Alert, Card, Spinner, Avatar, form controls, checkbox, radio and switch (`size` option in `AZUI.Form`).
+- Declarative form API `AZUI.Form` (`text`, `email`, `password`, `number`, `date`, `input`, `textarea`, `select`, `checkbox`, `radio`, `switch`, `group`, `render`), exported from the package with its types.
 - Foundations (Phase 1): color, typography, spacing, border, shadow, motion and z-index tokens; light and dark themes; Inter (default), IBM Plex Sans and Source Sans 3 fonts; opt-in reset (`.az-body`); CSS utilities with responsive variants; ESM build with types, CSS and fonts.
