@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en" data-az-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AZ UI — Component library and Design System for enterprise web applications</title>
+    <meta
+      name="description"
+      content="AZ UI is a framework-independent component library and Design System for corporate, administrative and enterprise web applications: tables, forms, layouts, themes and accessible overlays."
+    />
+    <script>
+      (function () {
+        var theme = localStorage.getItem("az-docs-theme");
+        document.documentElement.dataset.azTheme =
+          theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      })();
+    </script>
+    <script type="module" src="/assets/landing.ts"></script>
+  </head>
+  <body class="az-body">
+    <main id="docs-content">
+      <section class="landing-hero">
+        <div class="landing-hero-copy">
+          <h1 class="landing-title">The interface layer for enterprise applications</h1>
+          <p class="landing-lead">
+            Tables, forms, layouts and accessible overlays that stay consistent across hundreds of
+            screens. Plain CSS and TypeScript, light and dark themes, and no framework required.
+          </p>
+          <div class="az-stack az-stack-horizontal">
+            <a class="az-btn az-btn-primary az-btn-lg" href="docs/getting-started/installation.html"
+              >Get started</a
+            >
+            <a class="az-btn az-btn-lg" href="docs/components/button.html">Browse components</a>
+          </div>
+          <figure class="docs-code landing-install" data-language="bash">
+            <button class="az-btn az-btn-ghost az-btn-sm docs-copy" type="button">Copy</button>
+            <pre><code>npm install az-ui</code></pre>
+          </figure>
+          <p class="az-text-sm az-text-muted">
+            Pre-release <code>0.1</code>. The npm package is not published yet; see
+            <a href="docs/guides/versioning.html">status and roadmap</a>.
+          </p>
+        </div>
+
+        <div class="landing-window" role="group" aria-label="Live example built with AZ UI">
+          <div class="landing-window-bar">Orders — built with AZ UI components</div>
+          <div class="landing-window-body">
+            <div class="az-grid az-grid-cols-3 az-gap-3">
+              <div class="az-stat">
+                <span class="az-stat-label">Open orders</span>
+                <span class="az-stat-value">1,284</span>
+                <span class="az-stat-trend az-stat-trend-up">+4.2% this week</span>
+              </div>
+              <div class="az-stat">
+                <span class="az-stat-label">Pending</span>
+                <span class="az-stat-value">96</span>
+                <span class="az-stat-trend az-stat-trend-down">-1.8% this week</span>
+              </div>
+              <div class="az-stat">
+                <span class="az-stat-label">Late</span>
+                <span class="az-stat-value">12</span>
+              </div>
+            </div>
+
+            <div class="az-toolbar az-mt-3">
+              <div class="az-search landing-search">
+                <input
+                  class="az-control az-control-sm"
+                  type="search"
+                  placeholder="Search orders"
+                  aria-label="Search orders"
+                />
+              </div>
+              <span class="az-toolbar-spacer"></span>
+              <button class="az-btn az-btn-primary az-btn-sm" type="button">New order</button>
+            </div>
+
+            <div class="az-table-wrap">
+              <table class="az-table az-table-hover az-table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">Order</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col" class="az-table-numeric">Total</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#1042</td>
+                    <td>Acme Ltd.</td>
+                    <td class="az-table-numeric">$4,820.00</td>
+                    <td><span class="az-badge az-badge-success">Approved</span></td>
+                  </tr>
+                  <tr>
+                    <td>#1041</td>
+                    <td>Northwind</td>
+                    <td class="az-table-numeric">$1,150.40</td>
+                    <td><span class="az-badge az-badge-warning">Pending</span></td>
+                  </tr>
+                  <tr>
+                    <td>#1040</td>
+                    <td>Globex Corp.</td>
+                    <td class="az-table-numeric">$9,300.00</td>
+                    <td><span class="az-badge az-badge-danger">Late</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="landing-section" aria-labelledby="included-title">
+        <h2 class="landing-heading" id="included-title">What is included</h2>
+        <p class="landing-intro">
+          Every component below is implemented, documented with live examples and covered by
+          automated tests.
+        </p>
+        <div class="az-table-wrap">
+          <table class="az-table">
+            <thead>
+              <tr>
+                <th scope="col">Area</th>
+                <th scope="col">Components</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><a href="docs/foundations/colors.html">Foundations</a></th>
+                <td>
+                  Color scales, typography, spacing, shadows, motion, layers, breakpoints,
+                  utilities, light and dark themes
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="docs/components/button.html">Basic</a></th>
+                <td>
+                  Button, Badge, Alert, Avatar, Card, Divider, Skeleton, Spinner,
+                  <a href="icons.html">253 icons</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="docs/components/form-fields.html">Forms</a></th>
+                <td>
+                  Inputs, select and multi-select, checkbox, radio, switch, range, file upload,
+                  datepicker, counters,
+                  <a href="docs/forms/declarative-api.html">declarative form API</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <a href="docs/components/modal.html">Overlays and navigation</a>
+                </th>
+                <td>
+                  Modal, Offcanvas, Dropdown, Tooltip, Popover, Tabs, Accordion, Toast,
+                  Notification, Command menu, Context menu
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="docs/components/table.html">Data</a></th>
+                <td>
+                  Table, DataTable with sorting, search and pagination, Filter, Toolbar, Timeline,
+                  Progress, Stat, Status indicator, Key value, List group
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="docs/components/layouts.html">Layouts</a></th>
+                <td>
+                  Container, Grid, Row and Column, Stack, Split layout, Page header, Content
+                  section, Breadcrumb, Navigation menu, Navbar, Sidebar
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="landing-section" aria-labelledby="markup-title">
+        <h2 class="landing-heading" id="markup-title">Markup you can read</h2>
+        <p class="landing-intro">
+          Components are classes on native elements. What you see here is the exact code that
+          renders it.
+        </p>
+        <figure class="docs-example">
+          <div class="docs-example-preview">
+            <div class="az-field">
+              <label class="az-field-label az-field-label-required" for="landing-email"
+                >Work email</label
+              >
+              <input
+                class="az-control"
+                id="landing-email"
+                type="email"
+                aria-invalid="true"
+                aria-describedby="landing-email-error"
+              />
+              <p class="az-field-error" id="landing-email-error">
+                Enter an address like ana@acme.com
+              </p>
+            </div>
+            <button class="az-btn az-btn-primary" type="button">Save changes</button>
+          </div>
+          <div class="docs-code" data-language="html">
+            <button class="az-btn az-btn-ghost az-btn-sm docs-copy" type="button">Copy</button>
+            <pre><code>&lt;div class="az-field"&gt;
+  &lt;label class="az-field-label az-field-label-required" for="email"&gt;Work email&lt;/label&gt;
+  &lt;input class="az-control" id="email" type="email"
+    aria-invalid="true" aria-describedby="email-error" /&gt;
+  &lt;p class="az-field-error" id="email-error"&gt;Enter an address like ana@acme.com&lt;/p&gt;
+&lt;/div&gt;
+&lt;button class="az-btn az-btn-primary" type="button"&gt;Save changes&lt;/button&gt;</code></pre>
+          </div>
+        </figure>
+      </section>
+
+      <section class="landing-section" aria-labelledby="principles-title">
+        <h2 class="landing-heading" id="principles-title">Built for software people use all day</h2>
+        <dl class="landing-principles">
+          <div>
+            <dt>Dense by default</dt>
+            <dd>
+              Controls are 32px tall and type starts at 15px, so a screen shows more data without
+              feeling cramped. Small and large sizes exist for every control.
+            </dd>
+          </div>
+          <div>
+            <dt>Accessible by design</dt>
+            <dd>
+              Targets WCAG 2.2 AA: semantic HTML, visible focus, keyboard operation, focus
+              management in overlays and reduced motion. See the
+              <a href="docs/guides/accessibility.html">accessibility guide</a> for what is verified.
+            </dd>
+          </div>
+          <div>
+            <dt>Themeable with tokens</dt>
+            <dd>
+              Every color, size and radius is a CSS custom property. Rebrand a product, or one
+              section of a page, by overriding tokens. See
+              <a href="docs/guides/customization.html">customization</a>.
+            </dd>
+          </div>
+          <div>
+            <dt>Independent of frameworks</dt>
+            <dd>
+              Works in plain HTML, PHP templates, React, Vue, Angular and Svelte, with no runtime
+              dependencies. See the <a href="docs/guides/frameworks.html">framework guides</a>.
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="landing-section" aria-labelledby="screens-title">
+        <h2 class="landing-heading" id="screens-title">Complete screens, built only with AZ UI</h2>
+        <p class="landing-intro">
+          Four full pages made from the library and plain HTML. Open them, switch the theme and
+          resize the window.
+        </p>
+        <ul class="landing-screens">
+          <li>
+            <a href="examples/dashboard.html">Operations dashboard</a
+            ><span>Navbar, sidebar, stats, table, timeline</span>
+          </li>
+          <li>
+            <a href="examples/orders.html">Orders list</a
+            ><span>DataTable, filters, pagination, row selection</span>
+          </li>
+          <li>
+            <a href="examples/order-form.html">Order form</a
+            ><span>Form fields, datepicker, file upload, validation</span>
+          </li>
+          <li>
+            <a href="examples/sign-in.html">Sign in</a><span>Centered form with error states</span>
+          </li>
+        </ul>
+      </section>
+
+      <footer class="landing-footer">
+        <span>AZ UI · MIT License</span>
+        <nav aria-label="Footer">
+          <a href="docs/guides/versioning.html">Roadmap</a>
+          <a href="docs/getting-started/installation.html">Installation</a>
+          <a href="https://github.com/codebyazeredo/az-ui">Source</a>
+        </nav>
+      </footer>
+    </main>
+  </body>
+</html>
