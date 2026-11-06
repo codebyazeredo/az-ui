@@ -7,9 +7,12 @@ describe("public exports", () => {
     expect(Object.keys(library).sort()).toEqual([
       "AZUI",
       "BREAKPOINTS",
+      "CommandMenu",
+      "ContextMenu",
       "Datepicker",
       "Dropdown",
       "Modal",
+      "NotificationPanel",
       "Offcanvas",
       "Popover",
       "Tabs",

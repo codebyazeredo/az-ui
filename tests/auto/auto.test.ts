@@ -61,6 +61,41 @@ describe("auto initialization", () => {
     expect(overlay.hidden).toBe(true);
   });
 
+  it("initializes command menus eagerly so the shortcut works, and toggles them by trigger", () => {
+    document.body.innerHTML = `
+      <button id="trigger" data-az-toggle="command-menu" data-az-target="#cmd">Search</button>
+      <div class="az-command-menu" id="cmd" data-az-component="command-menu" hidden>
+        <div class="az-command-menu-panel" aria-label="Commands">
+          <input class="az-command-menu-input" />
+          <div class="az-command-menu-list"><button class="az-command-menu-item">Go</button></div>
+        </div>
+      </div>`;
+    initComponents();
+
+    document.dispatchEvent(new KeyboardEvent("keydown", { key: "k", ctrlKey: true }));
+    expect(document.getElementById("cmd")!.hidden).toBe(false);
+
+    document.getElementById("trigger")!.click();
+    expect(document.getElementById("cmd")!.hidden).toBe(true);
+  });
+
+  it("initializes notification panels and context menus from attributes", () => {
+    document.body.innerHTML = `
+      <div class="az-notification" data-az-component="notification">
+        <button class="az-notification-toggle">N <span class="az-notification-count"></span></button>
+        <div class="az-popover az-notification-panel" hidden>
+          <ul><li class="az-notification-item az-notification-item-unread"><button class="az-notification-link">A</button></li></ul>
+        </div>
+      </div>
+      <div id="area" data-az-component="context-menu" data-az-menu="#menu"></div>
+      <div id="menu" class="az-context-menu"><button class="az-dropdown-item">Go</button></div>`;
+
+    initComponents();
+
+    expect(document.querySelector(".az-notification-count")!.textContent).toBe("1");
+    expect(document.getElementById("menu")!.getAttribute("role")).toBe("menu");
+  });
+
   it("ignores triggers with an unknown kind or a missing target", () => {
     document.body.innerHTML = `
       <button id="a" data-az-toggle="modal" data-az-target="#missing">A</button>

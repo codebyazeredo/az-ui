@@ -1,0 +1,16 @@
+.az-context-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--az-z-dropdown);
+  min-width: 10rem;
+  padding: var(--az-spacing-1) 0;
+  background-color: var(--az-color-surface);
+  border: var(--az-border-width) solid var(--az-color-border);
+  border-radius: var(--az-radius-md);
+  box-shadow: var(--az-shadow-md);
+}
+
+.az-context-menu[hidden] {
+  display: none;
+}

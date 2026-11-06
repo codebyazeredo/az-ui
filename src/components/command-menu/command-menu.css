@@ -1,0 +1,95 @@
+.az-command-menu {
+  position: fixed;
+  inset: 0;
+  z-index: var(--az-z-modal);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 12vh var(--az-spacing-4) var(--az-spacing-4);
+  background-color: color-mix(
+    in srgb,
+    var(--az-gray-950) calc(var(--az-opacity-overlay) * 100%),
+    transparent
+  );
+}
+
+.az-command-menu[hidden] {
+  display: none;
+}
+
+.az-command-menu-panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 36rem;
+  max-height: 100%;
+  overflow: hidden;
+  color: var(--az-text-primary);
+  background-color: var(--az-color-surface);
+  border: var(--az-border-width) solid var(--az-color-border);
+  border-radius: var(--az-radius-lg);
+  box-shadow: var(--az-shadow-md);
+}
+
+.az-command-menu-panel:focus {
+  outline: none;
+}
+
+.az-command-menu-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--az-control-height-lg);
+  padding: 0 var(--az-spacing-4);
+  font-family: inherit;
+  font-size: var(--az-font-size-base);
+  color: var(--az-text-primary);
+  background: none;
+  border: 0;
+  border-bottom: var(--az-border-width) solid var(--az-color-border);
+}
+
+.az-command-menu-input:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: calc(var(--az-focus-ring-width) * -1);
+}
+
+.az-command-menu-list {
+  max-height: 20rem;
+  padding: var(--az-spacing-1) 0;
+  overflow-y: auto;
+}
+
+.az-command-menu-item {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--az-spacing-2) var(--az-spacing-4);
+  font-family: inherit;
+  font-size: var(--az-font-size-md);
+  color: var(--az-text-primary);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+
+.az-command-menu-item[hidden] {
+  display: none;
+}
+
+.az-command-menu-item[aria-selected="true"] {
+  background-color: color-mix(in srgb, var(--az-color-primary) 12%, var(--az-color-surface));
+}
+
+.az-command-menu-empty {
+  padding: var(--az-spacing-4);
+  margin: 0;
+  font-size: var(--az-font-size-md);
+  color: var(--az-text-muted);
+  text-align: center;
+}
+
+.az-command-menu-empty[hidden] {
+  display: none;
+}

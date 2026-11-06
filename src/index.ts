@@ -1,5 +1,10 @@
 export { AZUI } from "./api";
 export type * from "./api";
+export { CommandMenu } from "./components/command-menu";
+export type { CommandMenuOptions } from "./components/command-menu";
+export { ContextMenu } from "./components/context-menu";
+export type { ContextMenuOptions } from "./components/context-menu";
+export { NotificationPanel } from "./components/notification";
 export { Datepicker } from "./components/datepicker";
 export type {
   DatepickerConfig,

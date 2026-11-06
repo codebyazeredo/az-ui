@@ -32,6 +32,9 @@
 @import url("../components/tabs/tabs.css");
 @import url("../components/accordion/accordion.css");
 @import url("../components/datepicker/datepicker.css");
+@import url("../components/context-menu/context-menu.css");
+@import url("../components/command-menu/command-menu.css");
+@import url("../components/notification/notification.css");
 
 /* Utilities come last so they override components without !important. */
 @import url("./utilities/utilities.generated.css");

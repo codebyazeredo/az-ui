@@ -1,6 +1,9 @@
+import { CommandMenu } from "./components/command-menu";
+import { ContextMenu } from "./components/context-menu";
 import { Datepicker } from "./components/datepicker";
 import { Dropdown } from "./components/dropdown";
 import { Modal } from "./components/modal";
+import { NotificationPanel } from "./components/notification";
 import { Offcanvas } from "./components/offcanvas";
 import { Popover } from "./components/popover";
 import { Tabs } from "./components/tabs";
@@ -9,14 +12,18 @@ import { Component } from "./javascript/core/component";
 import { Overlay } from "./javascript/core/overlay";
 
 const COMPONENT_FACTORIES: Record<string, (element: HTMLElement) => Component> = {
+  "command-menu": (element) => new CommandMenu(element),
+  "context-menu": (element) => new ContextMenu(element),
   datepicker: (element) => new Datepicker(element),
   dropdown: (element) => new Dropdown(element),
+  notification: (element) => new NotificationPanel(element),
   popover: (element) => new Popover(element),
   tabs: (element) => new Tabs(element),
   tooltip: (element) => new Tooltip(element),
 };
 
 const OVERLAY_FACTORIES: Record<string, (element: HTMLElement) => Overlay> = {
+  "command-menu": (element) => new CommandMenu(element),
   modal: (element) => new Modal(element),
   offcanvas: (element) => new Offcanvas(element),
 };
