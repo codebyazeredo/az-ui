@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en" data-az-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interactive components — AZ UI</title>
+    <link rel="stylesheet" href="/src/styles/styles.css" />
+  </head>
+  <body class="az-body">
+    <main class="az-p-4" style="max-width: var(--az-max-width-lg); margin: 0 auto">
+      <div class="az-d-flex az-gap-3 az-mb-3">
+        <h1 class="az-text-lg az-fw-semibold az-m-0">Interactive components</h1>
+        <button class="az-btn az-btn-sm" id="toggle-theme" type="button">Toggle theme</button>
+      </div>
+
+      <h2 class="az-text-md az-fw-semibold">Modal, offcanvas, toast</h2>
+      <div class="az-d-flex az-flex-wrap az-gap-2">
+        <button class="az-btn az-btn-danger" data-az-toggle="modal" data-az-target="#confirm">
+          Delete…
+        </button>
+        <button class="az-btn" data-az-toggle="offcanvas" data-az-target="#filters">Filters</button>
+        <button class="az-btn az-btn-primary" id="toast-success">Success toast</button>
+        <button class="az-btn" id="toast-danger">Danger toast</button>
+      </div>
+
+      <h2 class="az-text-md az-fw-semibold az-mt-3">Dropdown, tooltip, popover</h2>
+      <div class="az-d-flex az-flex-wrap az-align-center az-gap-2">
+        <div class="az-dropdown" data-az-component="dropdown">
+          <button class="az-btn az-dropdown-toggle" type="button">Actions</button>
+          <div class="az-dropdown-menu" hidden>
+            <a class="az-dropdown-item" href="#edit">Edit</a>
+            <button class="az-dropdown-item" type="button">Duplicate</button>
+            <hr class="az-dropdown-divider" />
+            <button class="az-dropdown-item" type="button" disabled>Archive</button>
+          </div>
+        </div>
+        <button
+          class="az-btn"
+          type="button"
+          data-az-component="tooltip"
+          data-az-content="Export the list to CSV"
+        >
+          Hover me
+        </button>
+        <button
+          class="az-btn"
+          type="button"
+          data-az-component="popover"
+          data-az-target="#help"
+          data-az-placement="right"
+        >
+          Details
+        </button>
+      </div>
+      <div class="az-popover" id="help" hidden>
+        <h3 class="az-popover-title">Billing cycle</h3>
+        <p class="az-m-0">Invoices are issued on the first business day.</p>
+      </div>
+
+      <h2 class="az-text-md az-fw-semibold az-mt-3">Tabs</h2>
+      <div class="az-tabs" data-az-component="tabs">
+        <div class="az-tabs-list">
+          <button class="az-tabs-tab" type="button">Details</button>
+          <button class="az-tabs-tab" type="button">History</button>
+          <button class="az-tabs-tab" type="button">Notes</button>
+        </div>
+        <div class="az-tabs-panel">Customer details.</div>
+        <div class="az-tabs-panel">Change history.</div>
+        <div class="az-tabs-panel">Internal notes.</div>
+      </div>
+
+      <h2 class="az-text-md az-fw-semibold az-mt-3">Accordion</h2>
+      <div class="az-accordion">
+        <details class="az-accordion-item" name="faq" open>
+          <summary class="az-accordion-header">Payment terms</summary>
+          <div class="az-accordion-body">Net 30 days.</div>
+        </details>
+        <details class="az-accordion-item" name="faq">
+          <summary class="az-accordion-header">Late fees</summary>
+          <div class="az-accordion-body">2% per month.</div>
+        </details>
+      </div>
+
+      <h2 class="az-text-md az-fw-semibold az-mt-3">Datepicker</h2>
+      <div style="max-width: 14rem">
+        <input
+          class="az-control"
+          aria-label="Due date"
+          placeholder="YYYY-MM-DD"
+          value="2026-03-10"
+          data-az-component="datepicker"
+        />
+      </div>
+    </main>
+
+    <div class="az-modal az-modal-sm" id="confirm" hidden>
+      <div class="az-modal-dialog">
+        <div class="az-modal-header">
+          <h2 class="az-modal-title">Delete customer</h2>
+          <button class="az-btn az-btn-ghost az-btn-sm" data-az-dismiss aria-label="Close">
+            ×
+          </button>
+        </div>
+        <div class="az-modal-body">This action cannot be undone.</div>
+        <div class="az-modal-footer">
+          <button class="az-btn" data-az-dismiss>Cancel</button>
+          <button class="az-btn az-btn-danger" data-az-dismiss>Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="az-offcanvas" id="filters" hidden>
+      <div class="az-offcanvas-panel">
+        <div class="az-offcanvas-header">
+          <h2 class="az-offcanvas-title">Filters</h2>
+          <button class="az-btn az-btn-ghost az-btn-sm" data-az-dismiss aria-label="Close">
+            ×
+          </button>
+        </div>
+        <div class="az-offcanvas-body">
+          <label class="az-field-label" for="status">Status</label>
+          <select class="az-control az-select" id="status">
+            <option>Active</option>
+            <option>Archived</option>
+          </select>
+        </div>
+        <div class="az-offcanvas-footer">
+          <button class="az-btn az-btn-primary" data-az-dismiss>Apply</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import "/src/auto.ts";
+      import { Toast } from "/src/index.ts";
+
+      document.getElementById("toast-success").addEventListener("click", () => {
+        Toast.show({ title: "Saved", message: "Customer updated.", variant: "success" });
+      });
+      document.getElementById("toast-danger").addEventListener("click", () => {
+        Toast.show({ message: "Connection lost.", variant: "danger", duration: 0 });
+      });
+      document.getElementById("toggle-theme").addEventListener("click", () => {
+        const root = document.documentElement;
+        root.dataset.azTheme = root.dataset.azTheme === "dark" ? "light" : "dark";
+      });
+    </script>
+  </body>
+</html>

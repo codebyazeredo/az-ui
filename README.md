@@ -7,7 +7,7 @@ Component library and Design System for enterprise web applications, independent
 
 ## Status
 
-Phase 1 (Foundations) and Phase 2 (basic components and the declarative form API) are implemented. Interactive components (Modal, Dropdown, Tabs...) do not exist yet. Docs: [`docs/components/`](docs/components) and [`docs/forms/declarative-api.md`](docs/forms/declarative-api.md); live demo in `examples/components.html`. Project context lives in [`.ai/`](.ai/README.md) and progress in [`.ai/development/roadmap.md`](.ai/development/roadmap.md).
+Phase 1 (Foundations) and Phase 2 (basic components and the declarative form API) are implemented. Phase 3 (interactive components: Modal, Offcanvas, Dropdown, Tooltip, Popover, Tabs, Toast, Accordion, Datepicker) is implemented; usage is in [`docs/javascript/overview.md`](docs/javascript/overview.md) and `examples/interactive.html`. Docs: [`docs/components/`](docs/components) and [`docs/forms/declarative-api.md`](docs/forms/declarative-api.md); live demo in `examples/components.html`. Project context lives in [`.ai/`](.ai/README.md) and progress in [`.ai/development/roadmap.md`](.ai/development/roadmap.md).
 
 ## Usage (foundations)
 
