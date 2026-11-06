@@ -1,6 +1,6 @@
 # Layouts
 
-CSS-only building blocks to compose full screens. A complete page is shown in `examples/layouts.html`.
+CSS-only building blocks to compose full screens. Complete pages built with these components are in the [example screens](../../examples/dashboard.html).
 
 ## Container
 
@@ -124,7 +124,7 @@ Compact vertical list of links, with an accent bar on the current page, optional
 
 ## Navbar
 
-```html
+```html source
 <header class="az-navbar az-navbar-sticky">
   <a class="az-navbar-brand" href="/">Acme</a>
   <nav class="az-navbar-nav" aria-label="Sections">
@@ -140,7 +140,7 @@ Compact top bar (2.5rem) on the surface color, with a thin bottom border, brand,
 
 ## Sidebar
 
-```html
+```html source
 <div class="az-d-flex">
   <aside class="az-sidebar az-sidebar-sticky" style="--az-sidebar-offset: 2.5rem">
     <div class="az-sidebar-header">Orders</div>
