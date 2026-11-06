@@ -1,0 +1,50 @@
+.az-accordion {
+  overflow: hidden;
+  color: var(--az-text-primary);
+  background-color: var(--az-color-surface);
+  border: var(--az-border-width) solid var(--az-color-border);
+  border-radius: var(--az-radius-md);
+}
+
+.az-accordion-item + .az-accordion-item {
+  border-top: var(--az-border-width) solid var(--az-color-border);
+}
+
+.az-accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--az-spacing-3) var(--az-spacing-4);
+  font-size: var(--az-font-size-md);
+  font-weight: var(--az-font-weight-semibold);
+  cursor: pointer;
+}
+
+.az-accordion-header::after {
+  width: var(--az-spacing-2);
+  height: var(--az-spacing-2);
+  content: "";
+  border: solid currentcolor;
+  border-width: 0 2px 2px 0;
+  transition: transform var(--az-duration-fast) var(--az-easing-standard);
+  transform: rotate(45deg);
+}
+
+.az-accordion-item[open] > .az-accordion-header::after {
+  transform: rotate(-135deg);
+}
+
+.az-accordion-header:hover {
+  background-color: var(--az-color-surface-muted);
+}
+
+.az-accordion-header:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: calc(var(--az-focus-ring-width) * -1);
+}
+
+.az-accordion-body {
+  padding: var(--az-spacing-3) var(--az-spacing-4);
+  font-size: var(--az-font-size-md);
+  border-top: var(--az-border-width) solid var(--az-color-border);
+}

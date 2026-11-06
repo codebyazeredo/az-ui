@@ -23,6 +23,15 @@
 @import url("../components/control/control.css");
 @import url("../components/check/check.css");
 @import url("../components/switch/switch.css");
+@import url("../components/modal/modal.css");
+@import url("../components/offcanvas/offcanvas.css");
+@import url("../components/toast/toast.css");
+@import url("../components/dropdown/dropdown.css");
+@import url("../components/tooltip/tooltip.css");
+@import url("../components/popover/popover.css");
+@import url("../components/tabs/tabs.css");
+@import url("../components/accordion/accordion.css");
+@import url("../components/datepicker/datepicker.css");
 
 /* Utilities come last so they override components without !important. */
 @import url("./utilities/utilities.generated.css");

@@ -1,0 +1,15 @@
+.az-tooltip {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--az-z-tooltip);
+  max-width: 16rem;
+  padding: var(--az-spacing-1) var(--az-spacing-2);
+  font-size: var(--az-font-size-xs);
+  line-height: var(--az-line-height-normal);
+  color: var(--az-white);
+  pointer-events: none;
+  background-color: var(--az-gray-900);
+  border: var(--az-border-width) solid var(--az-gray-700);
+  border-radius: var(--az-radius-sm);
+}

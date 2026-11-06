@@ -1,0 +1,27 @@
+.az-popover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--az-z-popover);
+  max-width: 20rem;
+  padding: var(--az-spacing-3);
+  font-size: var(--az-font-size-md);
+  color: var(--az-text-primary);
+  background-color: var(--az-color-surface);
+  border: var(--az-border-width) solid var(--az-color-border);
+  border-radius: var(--az-radius-md);
+  box-shadow: var(--az-shadow-md);
+}
+
+.az-popover[hidden] {
+  display: none;
+}
+
+.az-popover:focus {
+  outline: none;
+}
+
+.az-popover-title {
+  margin: 0 0 var(--az-spacing-1);
+  font-weight: var(--az-font-weight-semibold);
+}
