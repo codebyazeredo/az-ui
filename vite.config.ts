@@ -4,9 +4,9 @@ export default defineConfig({
   build: {
     outDir: "dist",
     lib: {
-      entry: "src/index.ts",
+      entry: { index: "src/index.ts", auto: "src/auto.ts" },
       formats: ["es"],
-      fileName: "index",
+      fileName: (_format, entryName) => `${entryName}.js`,
     },
   },
   test: {

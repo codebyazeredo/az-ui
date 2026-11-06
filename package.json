@@ -13,6 +13,10 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
+    "./auto": {
+      "types": "./dist/auto.d.ts",
+      "import": "./dist/auto.js"
+    },
     "./styles.css": "./dist/styles.css",
     "./fonts/ibm-plex-sans.css": "./dist/fonts/ibm-plex-sans.css",
     "./fonts/source-sans-3.css": "./dist/fonts/source-sans-3.css",
@@ -22,7 +26,8 @@
     "dist"
   ],
   "sideEffects": [
-    "*.css"
+    "*.css",
+    "./dist/auto.js"
   ],
   "engines": {
     "node": ">=22"

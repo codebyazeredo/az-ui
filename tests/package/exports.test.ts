@@ -3,8 +3,19 @@ import * as library from "../../src";
 import { readProjectFile } from "../helpers/css";
 
 describe("public exports", () => {
-  it("exports AZUI and BREAKPOINTS at this stage", () => {
-    expect(Object.keys(library).sort()).toEqual(["AZUI", "BREAKPOINTS"]);
+  it("exports AZUI, BREAKPOINTS and the interactive components", () => {
+    expect(Object.keys(library).sort()).toEqual([
+      "AZUI",
+      "BREAKPOINTS",
+      "Datepicker",
+      "Dropdown",
+      "Modal",
+      "Offcanvas",
+      "Popover",
+      "Tabs",
+      "Toast",
+      "Tooltip",
+    ]);
   });
 
   it("exposes the declarative form API under AZUI.Form", () => {
@@ -36,6 +47,7 @@ describe("public exports", () => {
 
     expect(Object.keys(packageExports)).toEqual([
       ".",
+      "./auto",
       "./styles.css",
       "./fonts/ibm-plex-sans.css",
       "./fonts/source-sans-3.css",
