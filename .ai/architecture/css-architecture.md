@@ -6,6 +6,10 @@ Status: **rascunho** — fechar na Fase 1.
 
 `src/styles/styles.css` importa, nesta ordem: tokens de `foundations/`, temas, `reset/reset.css`, `base/body.css` e `utilities/utilities.generated.css`. Reset e base valem apenas dentro de `.az-body` (D-021). Utilitários são gerados por `scripts/generate-utilities.mjs` (D-024). O build (`scripts/build-css.mjs`) inlina os imports e reescreve os `url()` das fontes.
 
+## Nomenclatura de componentes (D-035)
+
+`az-<bloco>` para o componente, `az-<bloco>-<modificador-ou-parte>` para variantes, tamanhos e partes (`az-btn-primary`, `az-btn-sm`, `az-card-header`). Sem `__` e `--`. Propriedades locais: `--az-<componente>-*`. Cores de status derivam dos tokens por `color-mix` (D-038). Os componentes são importados em `styles.css` depois do reset e antes dos utilitários.
+
 ## Camadas (ordem de carregamento)
 
 1. Tokens (`foundations`) — Custom Properties em `:root`.

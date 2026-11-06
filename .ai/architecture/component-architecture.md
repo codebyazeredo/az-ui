@@ -1,6 +1,6 @@
 # Arquitetura de componentes — AZ UI
 
-Status: **rascunho** — fechar antes da Fase 2 e registrar em `development/decisions.md`.
+Status: **fechado para componentes somente CSS e campos de formulário** (D-034 a D-038). O contrato do tipo 3 segue em rascunho até a Fase 3.
 
 ## Tipos de componente
 
@@ -8,7 +8,9 @@ Status: **rascunho** — fechar antes da Fase 2 e registrar em `development/deci
 2. **CSS + construtor declarativo** (campos de formulário): classes + função em `src/api`.
 3. **CSS + comportamento** (Modal, Dropdown, Tabs...): classes + classe TS com ciclo de vida.
 
-Quais componentes têm classe JS exportada (por exemplo, `Button`) está em aberto (Q-06).
+Somente o tipo 3 tem classe JS exportada (D-035). Button e demais componentes da Fase 2 são somente CSS.
+
+Implementados na Fase 2: `button`, `badge`, `alert`, `spinner`, `skeleton`, `divider`, `card`, `avatar` e os blocos de formulário `field`, `control` (input, textarea, select), `check` (checkbox, radio) e `switch`. Cada um tem `src/components/<nome>/<nome>.css`, importado em `src/styles/styles.css`; o teste `tests/components/components.test.ts` valida o import, o prefixo `az-` e a ausência de cores literais e `!important`.
 
 ## Estrutura proposta por componente
 

@@ -46,6 +46,10 @@ Cada componente estende essa base com sua própria interface (ex.: `SelectOption
 - `disabled` e `readonly` com estados visuais distintos.
 - Sem validação de negócio: a biblioteca só apresenta erros fornecidos pelo consumidor.
 
+## Implementação (Fase 2)
+
+Em `src/api/form/`. Os tipos reais (D-036) diferem do contrato de intenção acima: `value` e `checked` ficam em cada definição, e `placeholder`, `readonly` e `size` pertencem a `ControlFieldOptions`. `render()` recebe uma definição com `type` e retorna string sem DOM (D-034). Ids e erros em D-037. Documentação pública: `docs/forms/declarative-api.md`.
+
 ## PHP
 
 Adaptador `AZForm::text([...])` é pacote separado, opcional e **fora da primeira fase**. O contrato de opções deve ser serializável (arrays/JSON) para facilitar esse adaptador.

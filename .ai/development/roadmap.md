@@ -2,13 +2,13 @@
 
 Fonte: `specifications.md` §15 (complementado com itens da §6 que estavam fora das fases, ver Q-14). **Este é o painel de controle do projeto**: marcar `[x]` ao concluir, na mesma tarefa.
 
-Fase atual: **2 — Componentes básicos**, ainda não iniciada (Fases 0 e 1 concluídas em 2026-11-04)
+Fase atual: **2 — Componentes básicos**, concluída e validada em 2026-11-06 (Fases 0 e 1 concluídas em 2026-11-04)
 
 | Fase | Nome | Status |
 |---|---|---|
 | 0 | Pré-desenvolvimento | Concluída |
 | 1 | Fundação | Concluída (validada); restam configurações do GitHub |
-| 2 | Componentes básicos | Não iniciada |
+| 2 | Componentes básicos | Concluída |
 | 3 | Componentes interativos | Não iniciada |
 | 4 | Dados e avançados | Não iniciada |
 | 5 | Layouts | Não iniciada |
@@ -55,9 +55,14 @@ Pendências que dependem da criação do repositório no GitHub (não bloqueiam 
 
 ## Fase 2 — Componentes básicos
 
-- [ ] Button · Badge · Alert · Spinner · Skeleton · Divider · Card · Avatar.
-- [ ] Formulários básicos (inputs, textarea, select, checkbox, radio, switch, estados, help/erro).
-- [ ] API declarativa de formulários (`AZUI.Form.*`, `render()`, `group()`).
+- [x] Button · Badge · Alert · Spinner · Skeleton · Divider · Card · Avatar (CSS, docs em `docs/components/`).
+- [x] Formulários básicos (inputs, textarea, select, checkbox, radio, switch, estados, help/erro).
+- [x] API declarativa de formulários (`AZUI.Form.*`, `render()`, `group()`), D-034 a D-037.
+- [x] Exemplo `examples/components.html`.
+- [x] `npm run typecheck`, `lint`, `format:check` e `npm test` (136 testes) passando em 2026-11-06.
+- [x] `examples/components.html` conferida no navegador nos temas claro e escuro, sem erros no console (2026-11-06).
+- [x] Tamanhos `sm`/`lg` padronizados em todos os componentes com densidade (D-039).
+- [x] Validação da fase pelo mantenedor (2026-11-06).
 
 ## Fase 3 — Componentes interativos
 

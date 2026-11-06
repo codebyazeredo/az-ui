@@ -34,4 +34,4 @@ az-ui/
 
 ## Estrutura de um componente
 
-A definir em `component-architecture.md` antes da Fase 2 (arquivos por componente: estilo, comportamento, tipos, índice, testes, documentação).
+Ver `component-architecture.md`. Componentes somente CSS têm apenas `src/components/<nome>/<nome>.css`; a documentação fica em `docs/components/<nome>.md`.
