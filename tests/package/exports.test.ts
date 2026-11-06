@@ -3,8 +3,26 @@ import * as library from "../../src";
 import { readProjectFile } from "../helpers/css";
 
 describe("public exports", () => {
-  it("exports only BREAKPOINTS at this stage", () => {
-    expect(Object.keys(library)).toEqual(["BREAKPOINTS"]);
+  it("exports AZUI and BREAKPOINTS at this stage", () => {
+    expect(Object.keys(library).sort()).toEqual(["AZUI", "BREAKPOINTS"]);
+  });
+
+  it("exposes the declarative form API under AZUI.Form", () => {
+    expect(Object.keys(library.AZUI.Form).sort()).toEqual([
+      "checkbox",
+      "date",
+      "email",
+      "group",
+      "input",
+      "number",
+      "password",
+      "radio",
+      "render",
+      "select",
+      "switch",
+      "text",
+      "textarea",
+    ]);
   });
 
   it("defines the official breakpoints", () => {
