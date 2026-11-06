@@ -57,6 +57,60 @@
         <p class="az-m-0">Invoices are issued on the first business day.</p>
       </div>
 
+      <h2 class="az-text-md az-fw-semibold az-mt-3">Notifications, command menu, context menu</h2>
+      <div class="az-d-flex az-flex-wrap az-align-center az-gap-2">
+        <div class="az-notification" data-az-component="notification">
+          <button class="az-btn az-notification-toggle" type="button">
+            Notifications <span class="az-notification-count"></span>
+          </button>
+          <div class="az-popover az-notification-panel" hidden>
+            <div class="az-notification-header">
+              <h2 class="az-notification-title">Notifications</h2>
+              <button
+                class="az-btn az-btn-ghost az-btn-sm"
+                type="button"
+                data-az-notification-read-all
+              >
+                Mark all as read
+              </button>
+            </div>
+            <ul class="az-notification-list">
+              <li class="az-notification-item az-notification-item-unread">
+                <a class="az-notification-link" href="#order-12">
+                  Order 12 was approved <span class="az-notification-time">5 min ago</span>
+                </a>
+              </li>
+              <li class="az-notification-item az-notification-item-unread">
+                <a class="az-notification-link" href="#invoice-7">
+                  Invoice 7 is overdue <span class="az-notification-time">2 h ago</span>
+                </a>
+              </li>
+              <li class="az-notification-item">
+                <a class="az-notification-link" href="#report">
+                  Monthly report is ready <span class="az-notification-time">Yesterday</span>
+                </a>
+              </li>
+            </ul>
+            <p class="az-notification-empty" hidden>No notifications</p>
+          </div>
+        </div>
+        <button
+          class="az-btn"
+          type="button"
+          data-az-toggle="command-menu"
+          data-az-target="#commands"
+        >
+          Search… (Ctrl+K)
+        </button>
+        <div
+          class="az-p-3 az-border az-rounded-md"
+          data-az-component="context-menu"
+          data-az-menu="#row-menu"
+        >
+          Right click this area
+        </div>
+      </div>
+
       <h2 class="az-text-md az-fw-semibold az-mt-3">Tabs</h2>
       <div class="az-tabs" data-az-component="tabs">
         <div class="az-tabs-list">
@@ -107,6 +161,35 @@
           <button class="az-btn az-btn-danger" data-az-dismiss>Delete</button>
         </div>
       </div>
+    </div>
+
+    <div class="az-command-menu" id="commands" data-az-component="command-menu" hidden>
+      <div class="az-command-menu-panel" aria-label="Command menu">
+        <input
+          class="az-command-menu-input"
+          placeholder="Type a command"
+          aria-label="Search commands"
+        />
+        <div class="az-command-menu-list">
+          <button class="az-command-menu-item" type="button" data-az-command="orders">
+            Open orders
+          </button>
+          <button class="az-command-menu-item" type="button" data-az-command="customers">
+            Customers
+          </button>
+          <button class="az-command-menu-item" type="button" data-az-command="settings">
+            Configurações
+          </button>
+        </div>
+        <p class="az-command-menu-empty" hidden>No results</p>
+      </div>
+    </div>
+
+    <div class="az-context-menu" id="row-menu" hidden>
+      <button class="az-dropdown-item" type="button">Open</button>
+      <button class="az-dropdown-item" type="button" disabled>Rename</button>
+      <hr class="az-dropdown-divider" />
+      <button class="az-dropdown-item" type="button">Delete</button>
     </div>
 
     <div class="az-offcanvas" id="filters" hidden>

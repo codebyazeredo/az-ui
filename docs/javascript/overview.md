@@ -43,11 +43,11 @@ The main entry has no side effects. To initialize components from HTML attribute
 import "az-ui/auto";
 ```
 
-| Attribute                                                                  | Effect                                                        |
-| -------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| `data-az-component="tabs \| dropdown \| tooltip \| popover \| datepicker"` | Creates the component on that element when the page is ready. |
-| `data-az-toggle="modal \| offcanvas"` and `data-az-target="#id"`           | Clicking the element toggles the target.                      |
-| `data-az-dismiss`                                                          | Inside a modal or offcanvas, closes it.                       |
+| Attribute                                                                                                                  | Effect                                                        |
+| -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| `data-az-component="tabs \| dropdown \| tooltip \| popover \| datepicker \| notification \| context-menu \| command-menu"` | Creates the component on that element when the page is ready. |
+| `data-az-toggle="modal \| offcanvas \| command-menu"` and `data-az-target="#id"`                                           | Clicking the element toggles the target.                      |
+| `data-az-dismiss`                                                                                                          | Inside a modal or offcanvas, closes it.                       |
 
 For content added later, call `initComponents(container)` (exported by `az-ui/auto`).
 
