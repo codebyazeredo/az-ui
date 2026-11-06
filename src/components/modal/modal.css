@@ -75,3 +75,13 @@
   border-top: var(--az-border-width) solid var(--az-color-border);
   border-radius: 0 0 var(--az-radius-lg) var(--az-radius-lg);
 }
+
+.az-modal-dialog[data-az-draggable] .az-modal-header {
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.az-modal-dialog[data-az-draggable] .az-modal-header:active {
+  cursor: grabbing;
+}

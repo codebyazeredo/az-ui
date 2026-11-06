@@ -1,6 +1,6 @@
 # Layouts
 
-CSS-only building blocks to compose full screens. Complete pages built with these components are in the [example screens](../../examples/dashboard.html).
+CSS-only building blocks to compose full screens. Complete pages built with these components are in the [example screens](../../examples/screens/dashboard.html).
 
 ## Container
 
@@ -151,7 +151,7 @@ Compact top bar (2.5rem) on the surface color, with a thin bottom border, brand,
 </div>
 ```
 
-Fixed-width column on the surface color (15rem; `az-sidebar-sm` 12rem, `az-sidebar-lg` 18rem) that scrolls its body. `az-sidebar-sticky` keeps it in view; set `--az-sidebar-offset` to the height of a sticky navbar. Header and footer are optional.
+Fixed-width column on the surface color (15rem; `az-sidebar-sm` 12rem, `az-sidebar-lg` 18rem) that scrolls its body. `az-sidebar-sticky` keeps it in view and stretches it to the bottom of the viewport; set `--az-sidebar-offset` to the height of a sticky navbar. Header and footer are optional.
 
 To hide it, set the `hidden` attribute (the content expands) or hide it below a breakpoint with `az-d-none az-md-d-flex`. Without an icon set, there is no icon-only collapsed mode yet.
 

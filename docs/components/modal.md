@@ -33,10 +33,11 @@ modal.show();
 
 ## Options
 
-| Option            | Default | Description                             |
-| ----------------- | ------- | --------------------------------------- |
-| `closeOnBackdrop` | `true`  | Click on the backdrop closes the modal. |
-| `closeOnEscape`   | `true`  | `Escape` closes the modal.              |
+| Option            | Default | Description                                                     |
+| ----------------- | ------- | --------------------------------------------------------------- |
+| `closeOnBackdrop` | `true`  | Click on the backdrop closes the modal.                         |
+| `closeOnEscape`   | `true`  | `Escape` closes the modal.                                      |
+| `draggable`       | `true`  | The header moves the dialog around the screen with the pointer. |
 
 ## Methods and events
 
@@ -49,6 +50,10 @@ modal.show();
 ## Accessibility
 
 The dialog gets `role="dialog"`, `aria-modal="true"` and `aria-labelledby` pointing to `az-modal-title`. Focus moves to the first focusable element, stays inside while open and returns to the opener on close. Page scroll is locked while open.
+
+## Moving the dialog
+
+By default the dialog can be dragged by its header (not by buttons or links inside it) and stays inside the viewport. It returns to the center every time it opens. Dragging is a pointer enhancement: the modal never needs to be moved to be used. Pass `draggable: false` to keep it fixed.
 
 ## Notes
 

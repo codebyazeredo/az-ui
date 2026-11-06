@@ -27,7 +27,7 @@
   position: sticky;
   top: var(--az-sidebar-offset);
   align-self: flex-start;
-  max-height: calc(100vh - var(--az-sidebar-offset));
+  height: calc(100vh - var(--az-sidebar-offset));
 }
 
 .az-sidebar-header,
