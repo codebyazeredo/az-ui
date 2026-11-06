@@ -4,6 +4,8 @@ import { trapTabKey } from "../../javascript/dom/focus";
 import { positionFloating } from "../../javascript/dom/position";
 import { resolveElement } from "../../javascript/dom/resolve-element";
 import { uniqueId } from "../../javascript/dom/unique-id";
+import { Icon } from "../icon";
+import type { IconName } from "../icon";
 import {
   addDays,
   addMonths,
@@ -154,9 +156,9 @@ export class Datepicker extends Component<DatepickerOptions> {
     const header = document.createElement("div");
     header.className = "az-datepicker-header";
     header.append(
-      this.createNavButton("‹", labels.previousMonth, -1),
+      this.createNavButton("chevron-left", labels.previousMonth, -1),
       title,
-      this.createNavButton("›", labels.nextMonth, 1),
+      this.createNavButton("chevron-right", labels.nextMonth, 1),
     );
 
     const weekdays = new Intl.DateTimeFormat(locale, { weekday: "narrow" });
@@ -187,11 +189,11 @@ export class Datepicker extends Component<DatepickerOptions> {
     return { popup, title, body };
   }
 
-  private createNavButton(symbol: string, label: string, monthDelta: number): HTMLButtonElement {
+  private createNavButton(icon: IconName, label: string, monthDelta: number): HTMLButtonElement {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "az-btn az-btn-ghost az-btn-sm";
-    button.textContent = symbol;
+    button.append(Icon.create(icon));
     button.setAttribute("aria-label", label);
     button.dataset.azMonthDelta = String(monthDelta);
 

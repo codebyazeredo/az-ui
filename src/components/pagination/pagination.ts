@@ -1,5 +1,6 @@
 import { Component } from "../../javascript/core/component";
 import { resolveElement } from "../../javascript/dom/resolve-element";
+import { Icon } from "../icon";
 
 export interface PaginationLabels {
   navigation: string;
@@ -123,18 +124,28 @@ export class Pagination extends Component<PaginationOptions> {
   private render(): void {
     const { labels } = this.options;
     const items = [
-      this.createButton("‹", this.current - 1, labels.previous, this.current === 1),
+      this.createButton(
+        Icon.create("chevron-left"),
+        this.current - 1,
+        labels.previous,
+        this.current === 1,
+      ),
       ...visiblePages(this.current, this.pageCount).map((page) =>
         page === null ? this.createEllipsis() : this.createPageButton(page),
       ),
-      this.createButton("›", this.current + 1, labels.next, this.current === this.pageCount),
+      this.createButton(
+        Icon.create("chevron-right"),
+        this.current + 1,
+        labels.next,
+        this.current === this.pageCount,
+      ),
     ];
 
     this.element.replaceChildren(...items);
   }
 
   private createButton(
-    text: string,
+    content: string | Node,
     page: number,
     label: string,
     disabled: boolean,
@@ -142,7 +153,7 @@ export class Pagination extends Component<PaginationOptions> {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "az-pagination-item";
-    button.textContent = text;
+    button.append(content);
     button.disabled = disabled;
     button.dataset.azPage = String(page);
     button.setAttribute("aria-label", label);

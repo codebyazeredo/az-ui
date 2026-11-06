@@ -1,4 +1,5 @@
 import { Component } from "../../javascript/core/component";
+import { Icon } from "../icon";
 
 export type ToastVariant = "info" | "success" | "warning" | "danger";
 
@@ -52,7 +53,7 @@ function createToastElement(content: ToastContent): HTMLElement {
   close.className = "az-toast-close";
   close.setAttribute("data-az-dismiss", "");
   close.setAttribute("aria-label", content.closeLabel ?? "Close");
-  close.textContent = "×";
+  close.append(Icon.create("close", { size: "sm" }));
 
   element.append(text, close);
 

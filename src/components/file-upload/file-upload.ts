@@ -1,6 +1,7 @@
 import { Component } from "../../javascript/core/component";
 import { resolveElement } from "../../javascript/dom/resolve-element";
 import { ensureId } from "../../javascript/dom/unique-id";
+import { Icon } from "../icon";
 import { fileExtension, fillTemplate, formatSize, matchesAccept } from "./file-rules";
 
 export interface FileUploadLabels {
@@ -177,7 +178,9 @@ export class FileUpload extends Component<FileUploadOptions> {
     const { labels } = this.options;
     const prompt = createElement("p", "az-file-upload-prompt", `${labels.prompt} `);
     prompt.append(createElement("span", "az-file-upload-browse", labels.browse));
-    this.zone.append(createElement("span", "az-file-upload-icon", "↑"), prompt);
+    const icon = createElement("span", "az-file-upload-icon");
+    icon.append(Icon.create("upload"));
+    this.zone.append(icon, prompt);
     const hint = this.createHint();
     if (hint) this.zone.append(createElement("p", "az-file-upload-hint", hint));
 
@@ -237,7 +240,8 @@ export class FileUpload extends Component<FileUploadOptions> {
       createElement("div", "az-file-upload-name", file.name),
       createElement("div", "az-file-upload-meta", formatSize(file.size)),
     );
-    const remove = createElement("button", "az-file-upload-remove", "×");
+    const remove = createElement("button", "az-file-upload-remove");
+    remove.append(Icon.create("close", { size: "sm" }));
     remove.setAttribute("type", "button");
     remove.setAttribute(
       "aria-label",

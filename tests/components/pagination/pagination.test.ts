@@ -19,7 +19,10 @@ describe("Pagination", () => {
   it("renders previous, pages with ellipsis and next", () => {
     render({ page: 5 });
 
-    expect(labels()).toEqual(["‹", "1", "…", "4", "5", "6", "…", "10", "›"]);
+    expect(labels()).toEqual(["", "1", "…", "4", "5", "6", "…", "10", ""]);
+    const buttons = document.querySelectorAll(".az-pagination-item");
+    expect(buttons[0]!.querySelector("svg.az-icon")).not.toBeNull();
+    expect(buttons[buttons.length - 1]!.querySelector("svg.az-icon")).not.toBeNull();
     expect(document.querySelector('[aria-current="page"]')!.textContent).toBe("5");
     expect(document.getElementById("pages")!.getAttribute("aria-label")).toBe("Pagination");
   });
