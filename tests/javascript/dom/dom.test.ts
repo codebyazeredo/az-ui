@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { onDismiss } from "../../../src/javascript/dom/dismiss";
 import { getFocusable } from "../../../src/javascript/dom/focus";
-import { positionFloating } from "../../../src/javascript/dom/position";
+import { positionAtPoint, positionFloating } from "../../../src/javascript/dom/position";
 import { lockScroll } from "../../../src/javascript/dom/scroll-lock";
 import { ensureId, uniqueId } from "../../../src/javascript/dom/unique-id";
 
@@ -109,5 +109,29 @@ describe("unique ids", () => {
     expect(ensureId(element, "az")).toBe(element.id);
     element.id = "mine";
     expect(ensureId(element, "az")).toBe("mine");
+  });
+});
+
+describe("positionAtPoint", () => {
+  it("places the element at the point and keeps it inside the viewport", () => {
+    Object.defineProperty(document.documentElement, "clientWidth", {
+      value: 1000,
+      configurable: true,
+    });
+    Object.defineProperty(document.documentElement, "clientHeight", {
+      value: 800,
+      configurable: true,
+    });
+    const floating = document.createElement("div");
+    vi.spyOn(floating, "getBoundingClientRect").mockReturnValue(new DOMRect(0, 0, 200, 100));
+
+    positionAtPoint(floating, 300, 400);
+    expect([floating.style.left, floating.style.top]).toEqual(["300px", "400px"]);
+
+    positionAtPoint(floating, 950, 790);
+    expect([floating.style.left, floating.style.top]).toEqual(["792px", "692px"]);
+
+    positionAtPoint(floating, -50, -10);
+    expect([floating.style.left, floating.style.top]).toEqual(["8px", "8px"]);
   });
 });

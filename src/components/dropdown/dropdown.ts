@@ -1,8 +1,12 @@
 import { Component } from "../../javascript/core/component";
 import { onDismiss } from "../../javascript/dom/dismiss";
+import {
+  MENU_ITEM_SELECTOR,
+  focusMenuItem,
+  getMenuItems,
+  handleMenuNavigation,
+} from "../../javascript/dom/menu";
 import { ensureId } from "../../javascript/dom/unique-id";
-
-const ITEM_SELECTOR = '.az-dropdown-item:not(:disabled):not([aria-disabled="true"])';
 
 export class Dropdown extends Component {
   private readonly toggleButton: HTMLElement;
@@ -34,11 +38,11 @@ export class Dropdown extends Component {
       if (event.key !== "ArrowDown" && event.key !== "ArrowUp") return;
       event.preventDefault();
       this.show();
-      this.focusItem(event.key === "ArrowDown" ? "first" : "last");
+      focusMenuItem(getMenuItems(this.menu), event.key === "ArrowDown" ? "first" : "last");
     });
     this.listen(this.menu, "keydown", (event) => this.handleMenuKey(event));
     this.listen(this.menu, "click", (event) => {
-      if (event.target instanceof Element && event.target.closest(ITEM_SELECTOR)) {
+      if (event.target instanceof Element && event.target.closest(MENU_ITEM_SELECTOR)) {
         this.hide();
         this.toggleButton.focus();
       }
@@ -89,44 +93,14 @@ export class Dropdown extends Component {
     this.removeDismiss = null;
   }
 
-  private getItems(): HTMLElement[] {
-    return [...this.menu.querySelectorAll<HTMLElement>(ITEM_SELECTOR)];
-  }
-
-  private focusItem(position: "first" | "last" | number): void {
-    const items = this.getItems();
-    const index = position === "first" ? 0 : position === "last" ? items.length - 1 : position;
-    items[index]?.focus();
-  }
-
   private handleMenuKey(event: KeyboardEvent): void {
-    const items = this.getItems();
-    const current = items.findIndex((item) => item === document.activeElement);
+    if (handleMenuNavigation(event, getMenuItems(this.menu))) return;
 
-    switch (event.key) {
-      case "ArrowDown":
-        event.preventDefault();
-        this.focusItem((current + 1) % items.length);
-        break;
-      case "ArrowUp":
-        event.preventDefault();
-        this.focusItem((current - 1 + items.length) % items.length);
-        break;
-      case "Home":
-        event.preventDefault();
-        this.focusItem("first");
-        break;
-      case "End":
-        event.preventDefault();
-        this.focusItem("last");
-        break;
-      case "Escape":
-        this.hide();
-        this.toggleButton.focus();
-        break;
-      case "Tab":
-        this.hide();
-        break;
+    if (event.key === "Escape") {
+      this.hide();
+      this.toggleButton.focus();
+    } else if (event.key === "Tab") {
+      this.hide();
     }
   }
 }

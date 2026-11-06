@@ -47,3 +47,12 @@ export function positionFloating(
 
   return resolved;
 }
+
+export function positionAtPoint(floating: HTMLElement, x: number, y: number, margin = 8): void {
+  const { width, height } = floating.getBoundingClientRect();
+  const maxLeft = Math.max(margin, document.documentElement.clientWidth - width - margin);
+  const maxTop = Math.max(margin, document.documentElement.clientHeight - height - margin);
+
+  floating.style.left = `${Math.min(Math.max(x, margin), maxLeft)}px`;
+  floating.style.top = `${Math.min(Math.max(y, margin), maxTop)}px`;
+}

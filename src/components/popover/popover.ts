@@ -6,7 +6,7 @@ import { resolveElement } from "../../javascript/dom/resolve-element";
 import { ensureId } from "../../javascript/dom/unique-id";
 
 export interface PopoverOptions {
-  target: string;
+  target: string | HTMLElement;
   placement: Placement;
 }
 
@@ -30,11 +30,11 @@ export class Popover extends Component<PopoverOptions> {
   constructor(trigger: string | HTMLElement, options: Partial<PopoverOptions> = {}) {
     super("popover", trigger, resolveOptions(trigger, options));
 
-    const popover = this.options.target
-      ? document.querySelector<HTMLElement>(this.options.target)
-      : null;
-    if (!popover) {
-      throw new Error(`AZUI: popover content "${this.options.target}" was not found.`);
+    const { target } = this.options;
+    const popover =
+      typeof target === "string" && target ? document.querySelector<HTMLElement>(target) : target;
+    if (!popover || typeof popover === "string") {
+      throw new Error(`AZUI: popover content "${String(target)}" was not found.`);
     }
     this.popover = popover;
 
