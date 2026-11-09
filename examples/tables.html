@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en" data-az-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tables — AZ UI examples</title>
+    <meta
+      name="description"
+      content="Resizable, fixed and reorderable columns, sortable rows, expandable rows, inline editing, tree grid, CSV export and a virtual table."
+    />
+    <script>
+      (function () {
+        var theme = localStorage.getItem("az-examples-theme");
+        document.documentElement.dataset.azTheme =
+          theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      })();
+    </script>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/src/styles/styles.css" />
+    <link rel="stylesheet" href="/examples/shared.css" />
+  </head>
+  <body class="az-body">
+    <header class="az-navbar az-navbar-sticky">
+      <a class="az-navbar-brand" href="index.html">AZ UI examples</a>
+      <nav class="az-navbar-nav example-nav" aria-label="Examples">
+        <ul class="az-navigation-menu az-navigation-menu-horizontal">
+          <li><a class="az-navigation-menu-link" href="components.html">Components</a></li>
+          <li><a class="az-navigation-menu-link" href="forms.html">Forms</a></li>
+          <li><a class="az-navigation-menu-link" href="data.html">Data</a></li>
+          <li><a class="az-navigation-menu-link" href="overlays.html">Overlays and modals</a></li>
+          <li><a class="az-navigation-menu-link" href="interaction.html">Interaction</a></li>
+          <li><a class="az-navigation-menu-link" href="entry.html">Data entry</a></li>
+          <li>
+            <a class="az-navigation-menu-link" href="tables.html" aria-current="page">Tables</a>
+          </li>
+          <li><a class="az-navigation-menu-link" href="icons.html">Icons</a></li>
+          <li><a class="az-navigation-menu-link" href="screens/dashboard.html">Screens</a></li>
+        </ul>
+      </nav>
+      <div class="az-navbar-actions">
+        <button class="az-btn az-btn-sm" type="button" data-example-theme-toggle>
+          Toggle theme
+        </button>
+      </div>
+    </header>
+
+    <main class="az-container az-container-md az-py-3">
+      <div class="az-page-header">
+        <div class="az-page-header-main">
+          <h1 class="az-page-header-title">Tables</h1>
+          <p class="az-page-header-description">
+            Heavy-duty table features that compose with the same markup. Everything works with the
+            keyboard.
+          </p>
+        </div>
+      </div>
+
+      <section class="az-mb-3" aria-labelledby="columns-title">
+        <h2 id="columns-title">Resizable and fixed columns</h2>
+        <p class="az-text-sm az-text-muted">
+          Drag the edge of a header (or focus it and use the arrow keys). The first column stays in
+          view while you scroll sideways.
+        </p>
+        <div class="az-table-wrap">
+          <table
+            class="az-table az-table-hover"
+            style="width: 64rem"
+            data-az-component="tablecolumns"
+          >
+            <thead>
+              <tr>
+                <th data-az-sticky data-az-resizable style="width: 8rem">Order</th>
+                <th data-az-resizable style="width: 14rem">Customer</th>
+                <th data-az-resizable style="width: 12rem">Carrier</th>
+                <th data-az-resizable style="width: 12rem">Route</th>
+                <th data-az-resizable style="width: 10rem">Delivery</th>
+                <th class="az-table-numeric" style="width: 8rem">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1001</td>
+                <td>Acme Logistics</td>
+                <td>North Freight</td>
+                <td>Santos - Campinas</td>
+                <td>2026-11-12</td>
+                <td class="az-table-numeric">1,500.00</td>
+              </tr>
+              <tr>
+                <td>1002</td>
+                <td>Atlas Transport</td>
+                <td>Blue Line</td>
+                <td>Campinas - Curitiba</td>
+                <td>2026-11-13</td>
+                <td class="az-table-numeric">980.50</td>
+              </tr>
+              <tr>
+                <td>1003</td>
+                <td>Baltic Freight</td>
+                <td>Fast Cargo</td>
+                <td>Santos - Recife</td>
+                <td>2026-11-20</td>
+                <td class="az-table-numeric">4,210.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="az-mb-3" aria-labelledby="reorder-title">
+        <h2 id="reorder-title">Reorder rows and columns, export CSV</h2>
+        <p class="az-text-sm az-text-muted">
+          Drag the handle to move a row, drag a header (or use Alt + arrows) to move a column.
+        </p>
+        <div class="az-toolbar az-mb-2">
+          <button
+            class="az-btn az-btn-sm"
+            type="button"
+            data-az-export-csv="#reorder-table"
+            data-az-filename="picking.csv"
+          >
+            Export CSV
+          </button>
+        </div>
+        <div class="az-table-wrap">
+          <table
+            id="reorder-table"
+            class="az-table az-table-hover"
+            data-az-component="columnreorder"
+          >
+            <thead>
+              <tr>
+                <th class="az-table-handle" aria-label="Move"></th>
+                <th data-az-reorderable>Task</th>
+                <th data-az-reorderable>Dock</th>
+                <th data-az-reorderable>Owner</th>
+              </tr>
+            </thead>
+            <tbody
+              data-az-component="sortable"
+              data-az-items="tr"
+              data-az-handle=".az-table-handle"
+            >
+              <tr>
+                <td class="az-table-handle" aria-hidden="true">::</td>
+                <td>Pick order 1042</td>
+                <td>D-03</td>
+                <td>Ana</td>
+              </tr>
+              <tr>
+                <td class="az-table-handle" aria-hidden="true">::</td>
+                <td>Pack order 1043</td>
+                <td>D-01</td>
+                <td>Bruno</td>
+              </tr>
+              <tr>
+                <td class="az-table-handle" aria-hidden="true">::</td>
+                <td>Label order 1044</td>
+                <td>D-02</td>
+                <td>Carla</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="az-mb-3" aria-labelledby="expand-title">
+        <h2 id="expand-title">Expandable rows</h2>
+        <div class="az-table-wrap">
+          <table class="az-table az-table-hover" data-az-component="rowexpand">
+            <thead>
+              <tr>
+                <th class="az-table-select" aria-label="Details"></th>
+                <th>Order</th>
+                <th>Customer</th>
+                <th class="az-table-numeric">Items</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <button
+                    class="az-table-expand"
+                    type="button"
+                    data-az-expand
+                    aria-label="Show details of order 1001"
+                  ></button>
+                </td>
+                <td>1001</td>
+                <td>Acme Logistics</td>
+                <td class="az-table-numeric">3</td>
+              </tr>
+              <tr class="az-table-detail">
+                <td colspan="4">12 pallets of electronics, 3 of toys. Carrier: North Freight.</td>
+              </tr>
+              <tr>
+                <td>
+                  <button
+                    class="az-table-expand"
+                    type="button"
+                    data-az-expand
+                    aria-label="Show details of order 1002"
+                  ></button>
+                </td>
+                <td>1002</td>
+                <td>Atlas Transport</td>
+                <td class="az-table-numeric">1</td>
+              </tr>
+              <tr class="az-table-detail">
+                <td colspan="4">Refrigerated load, 4 C. Delivery window 08:00 to 12:00.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="az-mb-3" aria-labelledby="edit-title">
+        <h2 id="edit-title">Inline editing</h2>
+        <p class="az-text-sm az-text-muted">
+          Double click or press Enter on a quantity. Enter confirms, Escape cancels. Negative values
+          are refused.
+        </p>
+        <div class="az-table-wrap">
+          <table id="edit-table" class="az-table az-table-hover" data-az-component="tableedit">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Location</th>
+                <th class="az-table-numeric">Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pallet A</td>
+                <td data-az-edit="text">A-01-02</td>
+                <td class="az-table-numeric" data-az-edit="number">120</td>
+              </tr>
+              <tr>
+                <td>Pallet B</td>
+                <td data-az-edit="text">A-01-03</td>
+                <td class="az-table-numeric" data-az-edit="number">45</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="az-field-help" id="edit-log" aria-live="polite">No edits yet.</p>
+      </section>
+
+      <section class="az-mb-3" aria-labelledby="treegrid-title">
+        <h2 id="treegrid-title">Tree grid</h2>
+        <p class="az-text-sm az-text-muted">
+          Arrow keys expand, collapse and move; Home and End jump.
+        </p>
+        <div class="az-table-wrap">
+          <table
+            class="az-table az-table-hover"
+            data-az-component="treegrid"
+            aria-label="Warehouse locations"
+          >
+            <thead>
+              <tr>
+                <th>Location</th>
+                <th class="az-table-numeric">Pallets</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-az-level="1" aria-expanded="true">
+                <td>Warehouse 1</td>
+                <td class="az-table-numeric">240</td>
+              </tr>
+              <tr data-az-level="2" aria-expanded="true">
+                <td>Aisle A</td>
+                <td class="az-table-numeric">150</td>
+              </tr>
+              <tr data-az-level="3">
+                <td>Rack A-01</td>
+                <td class="az-table-numeric">80</td>
+              </tr>
+              <tr data-az-level="3">
+                <td>Rack A-02</td>
+                <td class="az-table-numeric">70</td>
+              </tr>
+              <tr data-az-level="2">
+                <td>Aisle B</td>
+                <td class="az-table-numeric">90</td>
+              </tr>
+              <tr data-az-level="3">
+                <td>Rack B-01</td>
+                <td class="az-table-numeric">90</td>
+              </tr>
+              <tr data-az-level="1">
+                <td>Warehouse 2</td>
+                <td class="az-table-numeric">60</td>
+              </tr>
+              <tr data-az-level="2">
+                <td>Aisle C</td>
+                <td class="az-table-numeric">60</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="az-mb-3" aria-labelledby="virtual-title">
+        <h2 id="virtual-title">Virtual table (10 000 rows)</h2>
+        <div class="az-toolbar az-mb-2">
+          <button class="az-btn az-btn-sm" type="button" id="virtual-jump">Go to row 5 000</button>
+          <span class="az-text-sm az-text-muted" id="virtual-status"></span>
+        </div>
+        <div id="virtual" class="az-table-wrap az-table-virtual" style="height: 18rem">
+          <table class="az-table az-table-hover">
+            <thead>
+              <tr>
+                <th style="width: 8rem">Order</th>
+                <th>Customer</th>
+                <th class="az-table-numeric" style="width: 10rem">Total</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/examples/shared.ts"></script>
+    <script type="module">
+      import { VirtualTable } from "/src/index.ts";
+
+      const customers = ["Acme Logistics", "Atlas Transport", "Baltic Freight", "Beacon Supply"];
+      const ROW_COUNT = 10000;
+      const status = document.getElementById("virtual-status");
+
+      const table = new VirtualTable("#virtual", {
+        rowCount: ROW_COUNT,
+        rowHeight: 41,
+        renderRow(index) {
+          const row = document.createElement("tr");
+          const total = ((index * 37) % 5000) + 0.5;
+          const cells = [
+            String(1000 + index),
+            customers[index % customers.length],
+            total.toLocaleString("en", { minimumFractionDigits: 2 }),
+          ];
+          cells.forEach((text, column) => {
+            const cell = document.createElement("td");
+            cell.textContent = text;
+            if (column === 2) cell.className = "az-table-numeric";
+            row.append(cell);
+          });
+          return row;
+        },
+      });
+
+      const updateStatus = () => {
+        const { start, end } = table.range;
+        status.textContent = `Rows in the DOM: ${end - start} of ${ROW_COUNT} (${start + 1} to ${end})`;
+      };
+      document.getElementById("virtual").addEventListener("scroll", updateStatus);
+      document.getElementById("virtual-jump").addEventListener("click", () => {
+        table.scrollToRow(4999);
+        updateStatus();
+      });
+      updateStatus();
+
+      document.getElementById("edit-table").addEventListener("az:tableedit:commit", (event) => {
+        const { newValue, oldValue, cell } = event.detail;
+        const log = document.getElementById("edit-log");
+        if (cell.dataset.azEdit === "number" && Number(newValue) < 0) {
+          event.preventDefault();
+          log.textContent = `Refused: ${newValue} is negative (kept ${oldValue}).`;
+          return;
+        }
+        log.textContent = `Changed ${oldValue} to ${newValue}.`;
+      });
+    </script>
+  </body>
+</html>
