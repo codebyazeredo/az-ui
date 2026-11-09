@@ -6,6 +6,7 @@ Based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic 
 
 ### Added
 
+- Interaction components (Enterprise phase, batch 1): `Collapse`, `Sortable` (native drag and drop between lists of a group, with keyboard and screen reader support), composable `Kanban` (optional lanes, per-column card limit, cancelable `az:kanban:move`), `Tree`, `Stepper` and `Splitter`, with `examples/interaction.html`.
 - `Modal` is draggable by its header by default (`draggable` option; it stays within the viewport and recenters on every open).
 - Live example pages in `examples/` served by `npm run dev`: components, forms, data, overlays and modals, icons and four complete screens (dashboard, orders, order form, sign in).
 - Documentation (Phase 6): foundations, getting started, customization, accessibility, PHP and framework guides, and versioning pages in `docs/`, plus screenshots in `docs/images/`.
