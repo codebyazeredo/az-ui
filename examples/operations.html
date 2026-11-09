@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en" data-az-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Operations — AZ UI examples</title>
+    <meta
+      name="description"
+      content="Draggable dashboard widgets, a delivery calendar, a dock scheduler and a project Gantt chart."
+    />
+    <script>
+      (function () {
+        var theme = localStorage.getItem("az-examples-theme");
+        document.documentElement.dataset.azTheme =
+          theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      })();
+    </script>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/src/styles/styles.css" />
+    <link rel="stylesheet" href="/examples/shared.css" />
+  </head>
+  <body class="az-body">
+    <header class="az-navbar az-navbar-sticky">
+      <a class="az-navbar-brand" href="index.html">AZ UI examples</a>
+      <nav class="az-navbar-nav example-nav" aria-label="Examples">
+        <ul class="az-navigation-menu az-navigation-menu-horizontal">
+          <li><a class="az-navigation-menu-link" href="components.html">Components</a></li>
+          <li><a class="az-navigation-menu-link" href="forms.html">Forms</a></li>
+          <li><a class="az-navigation-menu-link" href="data.html">Data</a></li>
+          <li><a class="az-navigation-menu-link" href="overlays.html">Overlays and modals</a></li>
+          <li><a class="az-navigation-menu-link" href="interaction.html">Interaction</a></li>
+          <li><a class="az-navigation-menu-link" href="entry.html">Data entry</a></li>
+          <li><a class="az-navigation-menu-link" href="tables.html">Tables</a></li>
+          <li>
+            <a class="az-navigation-menu-link" href="operations.html" aria-current="page"
+              >Operations</a
+            >
+          </li>
+          <li><a class="az-navigation-menu-link" href="icons.html">Icons</a></li>
+          <li><a class="az-navigation-menu-link" href="screens/dashboard.html">Screens</a></li>
+        </ul>
+      </nav>
+      <div class="az-navbar-actions">
+        <button class="az-btn az-btn-sm" type="button" data-example-theme-toggle>
+          Toggle theme
+        </button>
+      </div>
+    </header>
+
+    <main class="az-container az-container-md az-py-3">
+      <div class="az-page-header">
+        <div class="az-page-header-main">
+          <h1 class="az-page-header-title">Operations</h1>
+          <p class="az-page-header-description">
+            Widgets, calendar, dock schedule and project timeline. Everything is built from data and
+            works with the keyboard; the events below each section show what the user changed.
+          </p>
+        </div>
+      </div>
+
+      <section class="az-mb-3" aria-labelledby="widgets-title">
+        <h2 id="widgets-title">Dashboard widgets</h2>
+        <p class="az-text-sm az-text-muted">
+          Drag a card to move it; drag the edge or use the arrow keys on its handle to change its
+          width. The layout is saved in this browser.
+        </p>
+        <div id="panel" class="az-widget-grid">
+          <section
+            class="az-widget"
+            data-az-widget="open"
+            data-az-span="1"
+            data-az-title="Open orders"
+          >
+            <div class="az-stat">
+              <span class="az-stat-label">Open orders</span>
+              <span class="az-stat-value">1,284</span>
+              <span class="az-stat-trend az-stat-trend-up">+4.2% this week</span>
+            </div>
+          </section>
+          <section
+            class="az-widget"
+            data-az-widget="late"
+            data-az-span="1"
+            data-az-title="Late deliveries"
+          >
+            <div class="az-stat">
+              <span class="az-stat-label">Late deliveries</span>
+              <span class="az-stat-value">37</span>
+              <span class="az-stat-trend az-stat-trend-down">-12% this week</span>
+            </div>
+          </section>
+          <section
+            class="az-widget"
+            data-az-widget="docks"
+            data-az-span="2"
+            data-az-title="Dock usage"
+          >
+            <div class="az-stat">
+              <span class="az-stat-label">Dock usage</span>
+              <span class="az-stat-value">78%</span>
+            </div>
+            <div
+              class="az-progress"
+              role="progressbar"
+              aria-label="Dock usage"
+              aria-valuenow="78"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div class="az-progress-bar" style="width: 78%"></div>
+            </div>
+          </section>
+          <section
+            class="az-widget"
+            data-az-widget="notes"
+            data-az-span="3"
+            data-az-title="Shift notes"
+          >
+            <strong>Shift notes</strong>
+            <p class="az-text-sm az-text-muted">
+              Dock 2 is closed until 14:00. Two trucks are waiting for customs clearance.
+            </p>
+          </section>
+        </div>
+        <p class="az-field-help" id="panel-log" aria-live="polite">Layout not changed yet.</p>
+        <button class="az-btn az-btn-sm" type="button" id="panel-reset">Reset layout</button>
+      </section>
+
+      <section class="az-mb-3" aria-labelledby="calendar-title">
+        <h2 id="calendar-title">Delivery calendar</h2>
+        <div id="calendar"></div>
+        <p class="az-field-help" id="calendar-log" aria-live="polite">Click a day or a delivery.</p>
+      </section>
+
+      <section class="az-mb-3" aria-labelledby="scheduler-title">
+        <h2 id="scheduler-title">Dock schedule</h2>
+        <p class="az-text-sm az-text-muted">
+          Drag a block to move it between docks and times, drag its right edge to change the
+          duration, click an empty slot to create. With the keyboard: arrows move, Shift + arrows
+          resize. Overlapping the same dock is refused, and moving to 14:00 on "Dock 2" is refused
+          by the page on purpose.
+        </p>
+        <div id="scheduler"></div>
+        <p class="az-field-help" id="scheduler-log" aria-live="polite">No changes yet.</p>
+      </section>
+
+      <section class="az-mb-3" aria-labelledby="gantt-title">
+        <h2 id="gantt-title">Project timeline</h2>
+        <div class="az-toolbar az-mb-2">
+          <button class="az-btn az-btn-sm" type="button" id="gantt-day">Days</button>
+          <button class="az-btn az-btn-sm" type="button" id="gantt-week">Weeks</button>
+          <button class="az-btn az-btn-sm" type="button" id="gantt-today">Go to today</button>
+        </div>
+        <div id="gantt" style="--az-gantt-max-height: 22rem"></div>
+        <p class="az-field-help" id="gantt-log" aria-live="polite">No changes yet.</p>
+      </section>
+    </main>
+
+    <script type="module" src="/examples/shared.ts"></script>
+    <script type="module">
+      import { Calendar, Gantt, Scheduler, WidgetGrid } from "/src/index.ts";
+
+      const pad = (value) => String(value).padStart(2, "0");
+      const isoDate = (offset) => {
+        const date = new Date();
+        date.setDate(date.getDate() + offset);
+        return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+      };
+      const log = (id, text) => {
+        document.getElementById(id).textContent = text;
+      };
+
+      /* Widgets */
+      const panel = document.getElementById("panel");
+      const grid = new WidgetGrid("#panel", { columns: 4 });
+      const STORAGE_KEY = "az-examples-panel";
+      const defaultLayout = grid.layout;
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "null");
+        if (Array.isArray(saved)) grid.setLayout(saved);
+      } catch {
+        localStorage.removeItem(STORAGE_KEY);
+      }
+      panel.addEventListener("az:widgetgrid:change", (event) => {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(event.detail.layout));
+        log(
+          "panel-log",
+          "Layout: " + event.detail.layout.map((item) => `${item.id} (${item.span})`).join(", "),
+        );
+      });
+      document.getElementById("panel-reset").addEventListener("click", () => {
+        grid.setLayout(defaultLayout);
+        localStorage.removeItem(STORAGE_KEY);
+        log("panel-log", "Layout reset.");
+      });
+
+      /* Calendar */
+      const calendar = new Calendar("#calendar", { firstDayOfWeek: 1, maxEventsPerDay: 2 });
+      calendar.setEvents([
+        { id: "1001", date: isoDate(0), title: "Acme - dock 3", variant: "success" },
+        { id: "1002", date: isoDate(0), title: "Atlas - dock 1" },
+        { id: "1003", date: isoDate(0), title: "Baltic - dock 2", variant: "warning" },
+        { id: "1004", date: isoDate(2), title: "Beacon - dock 1", variant: "info" },
+        { id: "1005", date: isoDate(5), title: "Acme - dock 2", variant: "danger" },
+        { id: "1006", date: isoDate(9), title: "Andes - dock 3" },
+      ]);
+      const calendarRoot = document.getElementById("calendar");
+      calendarRoot.addEventListener("az:calendar:select", (event) =>
+        log("calendar-log", "Day: " + event.detail.date),
+      );
+      calendarRoot.addEventListener("az:calendar:eventclick", (event) =>
+        log("calendar-log", "Delivery " + event.detail.event.id + ": " + event.detail.event.title),
+      );
+      calendarRoot.addEventListener("az:calendar:navigate", (event) =>
+        log("calendar-log", `Month: ${event.detail.year}-${pad(event.detail.month + 1)}`),
+      );
+
+      /* Scheduler */
+      const today = isoDate(0);
+      const scheduler = new Scheduler("#scheduler", {
+        date: today,
+        startHour: 6,
+        endHour: 18,
+        slotMinutes: 30,
+        resources: [
+          { id: "d1", label: "Dock 1" },
+          { id: "d2", label: "Dock 2" },
+          { id: "d3", label: "Dock 3" },
+        ],
+        events: [
+          {
+            id: "t1",
+            resource: "d1",
+            start: `${today}T07:00`,
+            end: `${today}T08:30`,
+            title: "Acme - unload",
+            variant: "success",
+          },
+          {
+            id: "t2",
+            resource: "d1",
+            start: `${today}T09:00`,
+            end: `${today}T10:00`,
+            title: "Atlas - load",
+          },
+          {
+            id: "t3",
+            resource: "d2",
+            start: `${today}T08:00`,
+            end: `${today}T09:30`,
+            title: "Baltic - unload",
+            variant: "warning",
+          },
+          {
+            id: "t4",
+            resource: "d3",
+            start: `${today}T10:30`,
+            end: `${today}T12:00`,
+            title: "Beacon - load",
+            variant: "info",
+          },
+        ],
+      });
+      const schedulerRoot = document.getElementById("scheduler");
+      schedulerRoot.addEventListener("az:scheduler:move", (event) => {
+        const { event: before, resource, start, end } = event.detail;
+        if (resource === "d2" && start.endsWith("T14:00")) {
+          event.preventDefault();
+          log("scheduler-log", "Refused: Dock 2 is closed at 14:00.");
+          return;
+        }
+        log(
+          "scheduler-log",
+          `${before.title} moved to ${resource}, ${start.slice(11)} to ${end.slice(11)}`,
+        );
+      });
+      schedulerRoot.addEventListener("az:scheduler:resize", (event) =>
+        log(
+          "scheduler-log",
+          `${event.detail.event.title} now ends at ${event.detail.end.slice(11)}`,
+        ),
+      );
+      schedulerRoot.addEventListener("az:scheduler:create", (event) => {
+        const { resource, start, end } = event.detail;
+        scheduler.setEvents([
+          ...scheduler.events,
+          { id: "n" + Date.now(), resource, start, end, title: "New booking" },
+        ]);
+        log("scheduler-log", `Created on ${resource}: ${start.slice(11)} to ${end.slice(11)}`);
+      });
+      schedulerRoot.addEventListener("az:scheduler:select", (event) =>
+        log("scheduler-log", "Selected: " + event.detail.event.title),
+      );
+
+      /* Gantt */
+      const gantt = new Gantt("#gantt", {
+        tasks: [
+          {
+            id: "plan",
+            name: "Plan routes",
+            start: isoDate(-4),
+            end: isoDate(-1),
+            progress: 100,
+            variant: "success",
+          },
+          {
+            id: "book",
+            name: "Book carriers",
+            start: isoDate(0),
+            end: isoDate(3),
+            progress: 60,
+            dependsOn: ["plan"],
+          },
+          {
+            id: "load",
+            name: "Load trucks",
+            start: isoDate(4),
+            end: isoDate(6),
+            progress: 10,
+            dependsOn: ["book"],
+          },
+          {
+            id: "ship",
+            name: "Ship",
+            start: isoDate(7),
+            end: isoDate(12),
+            dependsOn: ["load"],
+            variant: "info",
+          },
+          {
+            id: "invoice",
+            name: "Invoice",
+            start: isoDate(13),
+            end: isoDate(14),
+            dependsOn: ["ship"],
+            variant: "warning",
+          },
+        ],
+      });
+      const ganttRoot = document.getElementById("gantt");
+      const reportGantt = (event) => {
+        const { task, start, end } = event.detail;
+        log("gantt-log", `${task.name}: ${start} to ${end} (dependent tasks were not moved)`);
+      };
+      ganttRoot.addEventListener("az:gantt:move", reportGantt);
+      ganttRoot.addEventListener("az:gantt:resize", reportGantt);
+      ganttRoot.addEventListener("az:gantt:select", (event) =>
+        log("gantt-log", "Selected: " + event.detail.task.name),
+      );
+      document.getElementById("gantt-day").addEventListener("click", () => gantt.setZoom("day"));
+      document.getElementById("gantt-week").addEventListener("click", () => gantt.setZoom("week"));
+      document.getElementById("gantt-today").addEventListener("click", () => gantt.scrollToToday());
+      gantt.scrollToToday();
+    </script>
+  </body>
+</html>
