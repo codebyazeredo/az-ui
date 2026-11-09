@@ -48,3 +48,5 @@ Focus an item and press `Space` or `Enter` to grab it. `ArrowUp`/`ArrowDown` mov
 ## Notes
 
 Keep an empty list tall enough to be a drop target (`az-sortable` sets a minimum height). Native drag and drop is limited on touch screens; the keyboard alternative stays available.
+
+The `items` option is also available as `data-az-items` (for example `tr` on a `<tbody>`, see [Table](table.md)).

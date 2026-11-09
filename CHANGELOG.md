@@ -6,6 +6,7 @@ Based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic 
 
 ### Added
 
+- Table components (Enterprise phase, batch 3): `tableToCsv`/`downloadCsv` (with formula-injection protection and `data-az-export-csv`), row reordering through `Sortable` on `<tbody>` (`data-az-items`), `RowExpand`, `TableEdit`, `TableColumns` (resizable and fixed columns), `ColumnReorder`, `TreeGrid` and the data-driven `VirtualTable`, with `examples/tables.html`.
 - Data entry components (Enterprise phase, batch 2): `Mask` (pattern in `data-az-mask`, e.g. `99/99/9999`), `TagInput`, `Combobox` (local options or an async `source` with debounce and stale-response protection), `DualListbox` (on `<select multiple>`, reusing `Sortable`), `DateRange` (two linked `Datepicker`s; `Datepicker.setLimits`) and `BarcodeInput`, with `examples/entry.html`. Time uses the native `<input type="time">`.
 - Interaction components (Enterprise phase, batch 1): `Collapse`, `Sortable` (native drag and drop between lists of a group, with keyboard and screen reader support), composable `Kanban` (optional lanes, per-column card limit, cancelable `az:kanban:move`), `Tree`, `Stepper` and `Splitter`, with `examples/interaction.html`.
 - `Modal` is draggable by its header by default (`draggable` option; it stays within the viewport and recenters on every open).

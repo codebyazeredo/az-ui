@@ -109,6 +109,21 @@ Other attributes: `data-az-sort-type="number"` on a `<th>` sorts that column num
 
 For server-side data, cancel `sort` and `search`, fetch, replace the `<tbody>` and call `refresh()`; use [Pagination](./pagination.md) directly and its `az:pagination:change` event instead of the `pagination` option.
 
+## Reordering rows
+
+Use [Sortable](sortable.md) on the `<tbody>`, with `data-az-items="tr"`, to let users drag rows. Put a handle column first with `az-table-handle` and set `data-az-handle` so only the handle starts a drag. Listen to `az:sortable:drop` and save the new order.
+
+```html
+<tbody data-az-component="sortable" data-az-items="tr" data-az-handle=".az-table-handle">
+  <tr>
+    <td class="az-table-handle" aria-hidden="true">::</td>
+    <td>Pick order 1042</td>
+  </tr>
+</tbody>
+```
+
+Rows are also focusable: `Space` grabs, the arrows move, `Enter` drops and `Escape` cancels.
+
 ## States
 
 Hover, selected (`aria-selected`), sorted (`aria-sort`), loading (`aria-busy="true"` dims the body) and empty.
