@@ -33,7 +33,50 @@ Cada lote tem seu próprio design detalhado e validação antes do próximo.
 3. **Tabelas pesadas**: edição inline, colunas fixas e redimensionáveis, reordenação de colunas e linhas, linhas expansíveis, rolagem virtual, exportação CSV, Tree Grid.
 4. **Operação**: Calendar/Scheduler, Gantt, painel de widgets arrastáveis.
 
-## Lote 2 — design (proposta, aguardando aprovação)
+## Lote 3 — design (aprovado, D-061)
+
+Contexto: `DataTable` trabalha sobre o DOM (as linhas são escritas pelo consumidor e a ordenação move `<tr>`). O lote 3 não infla o `DataTable`: cada recurso é um componente pequeno que se compõe com a mesma marcação. Todos ficam em `src/components/table/` (que já tem `table.css`), eventos `az:<nome>:<evento>`, teclado e ARIA completos.
+
+### Exportação CSV
+
+- Função `tableToCsv(table, options)` que devolve o texto e `downloadCsv(table, filename, options)` que baixa o arquivo.
+- Respeita colunas ocultas (`setColumnVisible`), pode limitar às linhas selecionadas, escapa aspas, vírgulas e quebras de linha. Delimitador padrão `,` e opção de BOM UTF-8 para o Excel abrir acentos corretamente (decisão do assistente).
+
+### Reordenar linhas
+
+- Sem componente novo: o `Sortable` do lote 1 já reordena `<tr>` num `<tbody>` (`items: "tr"`). O lote só acrescenta `data-az-items` ao auto-init do `Sortable` e a classe `az-table-handle` para a coluna da alça.
+
+### Linhas expansíveis (`RowExpand`)
+
+- Botão de expandir na linha; a linha de detalhe (`tr.az-table-detail`) logo abaixo aparece e some, com `aria-expanded` e `aria-controls`. Evento `az:rowexpand:toggle`.
+- Limitação (decisão do assistente): não se combina com a ordenação e a paginação do `DataTable` nesta versão, que tratariam a linha de detalhe como linha comum.
+
+### Edição inline (`TableEdit`)
+
+- Duplo clique ou `Enter` numa célula editável (`data-az-edit="text|number"`) troca o conteúdo por um campo; `Enter` confirma, `Escape` cancela, sair do campo confirma.
+- Evento cancelável `az:tableedit:commit` com célula, linha, coluna, valor antigo e novo: o sistema valida e salva; cancelar devolve o valor antigo. O componente não grava dados.
+
+### Colunas (`TableColumns`)
+
+- Redimensionar por arraste e teclado (alça no cabeçalho, `role="separator"`), com largura mínima.
+- Colunas fixas (sticky) no início, com o deslocamento calculado pelas larguras das colunas fixas anteriores.
+- Reordenar colunas arrastando o cabeçalho e por teclado, movendo as células de todas as linhas.
+- Eventos `az:tablecolumns:resize` e `az:tablecolumns:reorder`.
+
+### Tree Grid (`TreeGrid`)
+
+- Tabela hierárquica (padrão ARIA `treegrid`): linhas com `data-az-level`, setas expandem e recolhem os filhos, `aria-expanded`, `aria-level`. Mesma limitação do `RowExpand` quanto ao `DataTable`.
+
+### Rolagem virtual (`VirtualTable`)
+
+- Para milhares de linhas: modelo orientado a dados, diferente do `DataTable`. O consumidor informa `rowCount`, `rowHeight` e `renderRow(index)`; só as linhas visíveis (mais uma margem) existem no DOM, com linhas espaçadoras acima e abaixo, `aria-rowcount` e `aria-rowindex`.
+- Métodos `setRowCount`, `refresh` e `scrollToRow`. Ordenação e filtro ficam com o consumidor (dados em memória ou servidor).
+
+### Fora do escopo do lote
+
+Agrupamento de linhas, totais/rodapé calculados, edição em lote, células mescladas e cabeçalho fixo com várias linhas.
+
+## Lote 2 — design (aprovado, D-059)
 
 Princípio: todo componente mantém o valor num campo nativo (`<input>` ou `<select>`), para o envio de formulário e o `AZUI.Form` continuarem funcionando. Teclado completo, `az-` no CSS, eventos `az:<nome>:<evento>`.
 

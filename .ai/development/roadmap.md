@@ -108,7 +108,7 @@ Design em `enterprise-phase-design.md` (D-057). Um lote por vez, com validação
 
 - [x] Lote 1 — Base de interação: Collapse · Sortable · Kanban · Tree View · Stepper · Splitter. Implementado (`examples/interaction.html` conferida no navegador); testes unitários escritos mas **ainda não executados**; sem validação do mantenedor e sem revisão com leitor de tela.
 - [x] Lote 2 (D-059) — Entrada de dados: Combobox · Dual Listbox · Tag Input · máscaras · intervalo de datas · hora (campo nativo) · código de barras. Implementado (`examples/entry.html` conferida no navegador); typecheck, lint, format:check e 601 testes passando em 2026-11-09; sem validação do mantenedor.
-- [ ] Lote 3 — Tabelas pesadas: edição inline · colunas fixas/redimensionáveis · reordenação · linhas expansíveis · rolagem virtual · exportação CSV · Tree Grid.
+- [x] Lote 3 (D-061) — Tabelas pesadas: exportação CSV · reordenar linhas · RowExpand · TableEdit · TableColumns · ColumnReorder · TreeGrid · VirtualTable. Implementado (`examples/tables.html` conferida no navegador); typecheck, lint, format:check e 698 testes passando em 2026-11-09; sem validação do mantenedor.
 - [ ] Lote 4 — Operação: Calendar/Scheduler · Gantt · painel de widgets arrastáveis.
 
 ## Fase 7 — Distribuição
