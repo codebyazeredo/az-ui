@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { Datepicker } from "../../../src/components/datepicker";
+import { Component } from "../../../src/javascript/core/component";
 import type { DatepickerConfig } from "../../../src/components/datepicker";
 
 function render(value = "2026-03-10", config: DatepickerConfig = {}): HTMLInputElement {
@@ -193,5 +194,31 @@ describe("Datepicker", () => {
     expect(document.querySelector(".az-datepicker")).toBeNull();
     expect(input.hasAttribute("aria-haspopup")).toBe(false);
     expect(input.hasAttribute("aria-controls")).toBe(false);
+  });
+});
+
+describe("Datepicker.setLimits", () => {
+  it("disables the days outside the new limits on the next open", () => {
+    const input = render("2026-03-10");
+    const picker = Component.find("datepicker", input) as Datepicker;
+
+    picker.setLimits({ min: "2026-03-08", max: "2026-03-12" });
+    input.click();
+
+    expect(day("2026-03-07").disabled).toBe(true);
+    expect(day("2026-03-08").disabled).toBe(false);
+    expect(day("2026-03-12").disabled).toBe(false);
+    expect(day("2026-03-13").disabled).toBe(true);
+  });
+
+  it("removes a limit with an empty string and keeps the other one", () => {
+    const input = render("2026-03-10", { min: "2026-03-08", max: "2026-03-12" });
+    const picker = Component.find("datepicker", input) as Datepicker;
+
+    picker.setLimits({ min: "" });
+    input.click();
+
+    expect(day("2026-03-01").disabled).toBe(false);
+    expect(day("2026-03-13").disabled).toBe(true);
   });
 });

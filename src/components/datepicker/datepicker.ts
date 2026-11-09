@@ -61,8 +61,8 @@ function resolveOptions(target: string | HTMLElement, config: DatepickerConfig):
 
 export class Datepicker extends Component<DatepickerOptions> {
   private readonly input: HTMLInputElement;
-  private readonly minDate: Date | null;
-  private readonly maxDate: Date | null;
+  private minDate: Date | null;
+  private maxDate: Date | null;
   private parts: CalendarParts | null = null;
   private focusedDate = new Date();
   private removeDismiss: (() => void) | null = null;
@@ -114,6 +114,11 @@ export class Datepicker extends Component<DatepickerOptions> {
 
     this.close();
     this.emit("hidden");
+  }
+
+  setLimits(limits: { min?: string; max?: string }): void {
+    if (limits.min !== undefined) this.minDate = parseIsoDate(limits.min);
+    if (limits.max !== undefined) this.maxDate = parseIsoDate(limits.max);
   }
 
   override destroy(): void {

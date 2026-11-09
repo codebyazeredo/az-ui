@@ -40,6 +40,9 @@
 @import url("../components/tree/tree.css");
 @import url("../components/stepper/stepper.css");
 @import url("../components/splitter/splitter.css");
+@import url("../components/tag-input/tag-input.css");
+@import url("../components/combobox/combobox.css");
+@import url("../components/dual-listbox/dual-listbox.css");
 @import url("../components/datepicker/datepicker.css");
 @import url("../components/context-menu/context-menu.css");
 @import url("../components/command-menu/command-menu.css");

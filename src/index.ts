@@ -2,13 +2,23 @@ export { AZUI } from "./api";
 export type * from "./api";
 export { Collapse } from "./components/collapse";
 export type { CollapseOptions } from "./components/collapse";
+export { Combobox } from "./components/combobox";
+export type {
+  ComboboxConfig,
+  ComboboxLabels,
+  ComboboxOption,
+  ComboboxOptions,
+  ComboboxSource,
+} from "./components/combobox";
 export { CommandMenu } from "./components/command-menu";
 export type { CommandMenuOptions } from "./components/command-menu";
 export { ContextMenu } from "./components/context-menu";
 export type { ContextMenuOptions } from "./components/context-menu";
 export { NotificationPanel } from "./components/notification";
-export { Counter } from "./components/field";
-export type { CounterOptions } from "./components/field";
+export { BarcodeInput, Counter } from "./components/field";
+export type { BarcodeOptions, CounterOptions } from "./components/field";
+export { Mask } from "./components/field";
+export type { MaskOptions } from "./components/field";
 export { Pagination } from "./components/pagination";
 export type {
   PaginationConfig,
@@ -17,13 +27,15 @@ export type {
 } from "./components/pagination";
 export { DataTable } from "./components/table";
 export type { DataTableOptions } from "./components/table";
-export { Datepicker } from "./components/datepicker";
+export { DateRange, Datepicker } from "./components/datepicker";
 export type {
   DatepickerConfig,
   DatepickerLabels,
   DatepickerOptions,
 } from "./components/datepicker";
 export { Dropdown } from "./components/dropdown";
+export { DualListbox } from "./components/dual-listbox";
+export type { DualListboxLabels, DualListboxOptions } from "./components/dual-listbox";
 export type { IconCategory, IconName, IconOptions, IconSize } from "./components/icon";
 export { Modal } from "./components/modal";
 export type { ModalOptions } from "./components/modal";
@@ -52,6 +64,8 @@ export type {
   SortableLabels,
   SortableOptions,
 } from "./components/sortable";
+export { TagInput } from "./components/tag-input";
+export type { TagInputLabels, TagInputOptions } from "./components/tag-input";
 export { Tabs } from "./components/tabs";
 export { Toast } from "./components/toast";
 export type { ToastContent, ToastOptions, ToastVariant } from "./components/toast";
