@@ -164,7 +164,10 @@ export class Sortable extends Component<SortableOptions> {
   }
 
   private accepts(origin: Sortable): boolean {
-    return origin === this || (this.options.group !== undefined && origin.options.group === this.options.group);
+    return (
+      origin === this ||
+      (this.options.group !== undefined && origin.options.group === this.options.group)
+    );
   }
 
   private itemOf(target: EventTarget | null): HTMLElement | null {
@@ -295,7 +298,8 @@ export class Sortable extends Component<SortableOptions> {
 
   private resolveSteps(key: string): { within: number; across: number } {
     const rtl = this.element.closest("[dir]")?.getAttribute("dir") === "rtl";
-    const horizontal = key === "ArrowRight" ? (rtl ? -1 : 1) : key === "ArrowLeft" ? (rtl ? 1 : -1) : 0;
+    const horizontal =
+      key === "ArrowRight" ? (rtl ? -1 : 1) : key === "ArrowLeft" ? (rtl ? 1 : -1) : 0;
     const vertical = key === "ArrowDown" ? 1 : key === "ArrowUp" ? -1 : 0;
 
     return this.direction === "vertical"

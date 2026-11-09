@@ -13,8 +13,7 @@ function render(groupB = "tasks", direction = ""): { a: Sortable; b: Sortable } 
   for (const [id, top] of Object.entries(TOPS)) {
     const item = document.getElementById(id);
     if (item) {
-      item.getBoundingClientRect = () =>
-        ({ top, left: 0, width: 100, height: 100 }) as DOMRect;
+      item.getBoundingClientRect = () => ({ top, left: 0, width: 100, height: 100 }) as DOMRect;
     }
   }
 

@@ -20,9 +20,9 @@ Add `az-splitter-vertical` to stack the panes. The container needs a height when
 
 ## Events
 
-| Event                 | `detail`            |
-| --------------------- | ------------------- |
-| `az:splitter:resize`  | `size` (percentage) |
+| Event                | `detail`            |
+| -------------------- | ------------------- |
+| `az:splitter:resize` | `size` (percentage) |
 
 ## Keyboard
 

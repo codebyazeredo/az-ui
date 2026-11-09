@@ -20,8 +20,7 @@ export function insertionIndex(
   const pointer = direction === "vertical" ? point.y : point.x;
 
   return boxes.filter((box) => {
-    const midpoint =
-      direction === "vertical" ? box.top + box.height / 2 : box.left + box.width / 2;
+    const midpoint = direction === "vertical" ? box.top + box.height / 2 : box.left + box.width / 2;
     return midpoint < pointer;
   }).length;
 }

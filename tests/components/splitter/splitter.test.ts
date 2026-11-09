@@ -24,7 +24,9 @@ function render(extraClass = "", wrapper = ""): Splitter {
 function press(key: string, shiftKey = false): void {
   document
     .getElementById("handle")!
-    .dispatchEvent(new KeyboardEvent("keydown", { key, shiftKey, bubbles: true, cancelable: true }));
+    .dispatchEvent(
+      new KeyboardEvent("keydown", { key, shiftKey, bubbles: true, cancelable: true }),
+    );
 }
 
 afterEach(() => {
@@ -45,9 +47,7 @@ describe("Splitter", () => {
   it("uses a horizontal separator for stacked panes", () => {
     render("az-splitter-vertical");
 
-    expect(document.getElementById("handle")!.getAttribute("aria-orientation")).toBe(
-      "horizontal",
-    );
+    expect(document.getElementById("handle")!.getAttribute("aria-orientation")).toBe("horizontal");
   });
 
   it("resize clamps to the minimum sizes", () => {

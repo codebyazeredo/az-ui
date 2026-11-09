@@ -59,12 +59,12 @@
   transform: translate(-70%, -70%) rotate(-45deg);
 }
 
-.az-tree-item[aria-expanded="true"] > .az-tree-toggle::before {
-  transform: translate(-50%, -80%) rotate(45deg);
-}
-
 [dir="rtl"] .az-tree-toggle::before {
   transform: translate(70%, -70%) rotate(135deg);
+}
+
+.az-tree-item[aria-expanded="true"] > .az-tree-toggle::before {
+  transform: translate(-50%, -80%) rotate(45deg);
 }
 
 [dir="rtl"] .az-tree-item[aria-expanded="true"] > .az-tree-toggle::before {

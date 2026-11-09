@@ -23,7 +23,9 @@ export class Tree extends Component {
       item.prepend(this.createToggle());
     }
 
-    const initial = this.element.querySelector<HTMLElement>('[role="treeitem"][aria-selected="true"]');
+    const initial = this.element.querySelector<HTMLElement>(
+      '[role="treeitem"][aria-selected="true"]',
+    );
     if (initial) this.selectedItem = initial;
     (this.selectedItem ?? this.visibleItems()[0])?.setAttribute("tabindex", "0");
 

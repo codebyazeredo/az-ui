@@ -19,13 +19,13 @@ const sortable = new Sortable("#tasks", { group: "tasks", handle: ".grip" });
 
 ## Options
 
-| Option      | Type                           | Default      | Purpose                                                      |
-| ----------- | ------------------------------ | ------------ | ------------------------------------------------------------ |
-| `group`     | `string`                       | none         | Lists with the same group exchange items. Without it, the list only reorders. |
-| `handle`    | `string`                       | whole item   | CSS selector; dragging starts only from it.                  |
-| `items`     | `string`                       | `*`          | CSS selector for the direct children that can be moved.      |
-| `direction` | `"vertical" \| "horizontal"`   | `"vertical"` | Axis used to find the drop position.                         |
-| `labels`    | `Partial<SortableLabels>`      | English      | Screen reader messages (`{position}` and `{total}` available). |
+| Option      | Type                         | Default      | Purpose                                                                       |
+| ----------- | ---------------------------- | ------------ | ----------------------------------------------------------------------------- |
+| `group`     | `string`                     | none         | Lists with the same group exchange items. Without it, the list only reorders. |
+| `handle`    | `string`                     | whole item   | CSS selector; dragging starts only from it.                                   |
+| `items`     | `string`                     | `*`          | CSS selector for the direct children that can be moved.                       |
+| `direction` | `"vertical" \| "horizontal"` | `"vertical"` | Axis used to find the drop position.                                          |
+| `labels`    | `Partial<SortableLabels>`    | English      | Screen reader messages (`{position}` and `{total}` available).                |
 
 ## Methods
 
@@ -33,11 +33,11 @@ const sortable = new Sortable("#tasks", { group: "tasks", handle: ".grip" });
 
 ## Events
 
-| Event                 | Cancelable | `detail`                                          |
-| --------------------- | ---------- | ------------------------------------------------- |
-| `az:sortable:start`   | no         | `item`, `from`, `to`, `fromIndex`, `toIndex`      |
-| `az:sortable:drop`    | yes        | same; emitted on the destination list             |
-| `az:sortable:cancel`  | no         | same; the item is back at its origin              |
+| Event                | Cancelable | `detail`                                     |
+| -------------------- | ---------- | -------------------------------------------- |
+| `az:sortable:start`  | no         | `item`, `from`, `to`, `fromIndex`, `toIndex` |
+| `az:sortable:drop`   | yes        | same; emitted on the destination list        |
+| `az:sortable:cancel` | no         | same; the item is back at its origin         |
 
 Calling `preventDefault()` on `az:sortable:drop` returns the item to where it started. Dropping an item at its own position emits nothing.
 

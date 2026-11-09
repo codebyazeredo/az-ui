@@ -25,20 +25,20 @@ Branches start collapsed; add `aria-expanded="true"` to start one open. Children
 
 ## Events
 
-| Event             | `detail`             | When                          |
-| ----------------- | -------------------- | ----------------------------- |
-| `az:tree:toggle`  | `item`, `expanded`   | A branch opens or closes.     |
-| `az:tree:select`  | `item`               | An item becomes selected.     |
+| Event            | `detail`           | When                      |
+| ---------------- | ------------------ | ------------------------- |
+| `az:tree:toggle` | `item`, `expanded` | A branch opens or closes. |
+| `az:tree:select` | `item`             | An item becomes selected. |
 
 ## Keyboard
 
-| Key                       | Action                                                         |
-| ------------------------- | -------------------------------------------------------------- |
-| `ArrowDown` / `ArrowUp`   | Next / previous visible item.                                  |
-| `ArrowRight`              | Expand a collapsed branch; on an open one, go to its first child. |
-| `ArrowLeft`               | Collapse an open branch; otherwise go to the parent.           |
-| `Home` / `End`            | First / last visible item.                                     |
-| `Enter` / `Space`         | Select the item.                                               |
+| Key                     | Action                                                            |
+| ----------------------- | ----------------------------------------------------------------- |
+| `ArrowDown` / `ArrowUp` | Next / previous visible item.                                     |
+| `ArrowRight`            | Expand a collapsed branch; on an open one, go to its first child. |
+| `ArrowLeft`             | Collapse an open branch; otherwise go to the parent.              |
+| `Home` / `End`          | First / last visible item.                                        |
+| `Enter` / `Space`       | Select the item.                                                  |
 
 `ArrowLeft` and `ArrowRight` swap in `dir="rtl"`. Clicking the arrow toggles a branch; clicking the label selects it.
 

@@ -49,12 +49,6 @@
   color: var(--az-text-primary);
 }
 
-.az-stepper-step[aria-current="step"][data-state] .az-stepper-marker {
-  color: var(--az-text-inverse);
-  background-color: var(--az-color-primary);
-  border-color: var(--az-color-primary);
-}
-
 .az-stepper-step[aria-current="step"] .az-stepper-label {
   font-weight: var(--az-font-weight-semibold);
 }
@@ -73,6 +67,12 @@
 
 .az-stepper-step[data-state="error"] .az-stepper-label {
   color: var(--az-color-danger-text);
+}
+
+.az-stepper-step[aria-current="step"][data-state] .az-stepper-marker {
+  color: var(--az-text-inverse);
+  background-color: var(--az-color-primary);
+  border-color: var(--az-color-primary);
 }
 
 .az-stepper-vertical .az-stepper-list {

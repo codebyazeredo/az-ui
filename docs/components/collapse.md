@@ -7,7 +7,7 @@ Shows and hides a block of content from one or more triggers. For a group of rel
 ```html
 <button data-az-toggle="collapse" data-az-target="#shipment-details">Shipment details</button>
 
-<div id="shipment-details" hidden>Carrier, route and delivery window.</div>
+<div class="az-collapse" id="shipment-details" hidden>Carrier, route and delivery window.</div>
 ```
 
 With `az-ui/auto`, the trigger works without JavaScript. Without it:
@@ -21,9 +21,9 @@ collapse.toggle();
 
 ## Options
 
-| Option | Type      | Default             | Purpose                                                  |
-| ------ | --------- | ------------------- | -------------------------------------------------------- |
-| `open` | `boolean` | follows the markup  | Initial state. Without it, the `hidden` attribute rules. |
+| Option | Type      | Default            | Purpose                                                  |
+| ------ | --------- | ------------------ | -------------------------------------------------------- |
+| `open` | `boolean` | follows the markup | Initial state. Without it, the `hidden` attribute rules. |
 
 ## Methods and properties
 
@@ -31,12 +31,12 @@ collapse.toggle();
 
 ## Events
 
-| Event               | Cancelable | When                       |
-| ------------------- | ---------- | -------------------------- |
-| `az:collapse:show`  | yes        | Before opening.            |
-| `az:collapse:shown` | no         | After opening.             |
-| `az:collapse:hide`  | yes        | Before closing.            |
-| `az:collapse:hidden`| no         | After closing.             |
+| Event                | Cancelable | When            |
+| -------------------- | ---------- | --------------- |
+| `az:collapse:show`   | yes        | Before opening. |
+| `az:collapse:shown`  | no         | After opening.  |
+| `az:collapse:hide`   | yes        | Before closing. |
+| `az:collapse:hidden` | no         | After closing.  |
 
 ## Accessibility
 

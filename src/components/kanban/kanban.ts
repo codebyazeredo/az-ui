@@ -31,7 +31,8 @@ export class Kanban extends Component {
     const group = ensureId(this.element, "az-kanban");
     this.sortables = lists.map((list) => new Sortable(list, { group, items: CARD_SELECTOR }));
 
-    const onDrop = (event: Event): void => this.handleDrop(event as CustomEvent<SortableEventDetail>);
+    const onDrop = (event: Event): void =>
+      this.handleDrop(event as CustomEvent<SortableEventDetail>);
     this.element.addEventListener("az:sortable:drop", onDrop);
     this.track(() => this.element.removeEventListener("az:sortable:drop", onDrop));
 

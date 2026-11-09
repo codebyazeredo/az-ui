@@ -31,19 +31,19 @@ Panels are optional; when present there must be one per step. Add `az-stepper-ve
 
 ## Methods and properties
 
-| Member                       | Purpose                                                                |
-| ---------------------------- | ---------------------------------------------------------------------- |
-| `current`                    | Index of the current step.                                             |
-| `go(index)`                  | Returns `false` for an invalid or current index, or a prevented change. |
-| `next()` / `previous()`      | Same, relative to the current step.                                    |
-| `setState(index, state)`     | `"pending"`, `"complete"` or `"error"`, shown on the step marker.      |
-| `destroy()`                  | Restores the markup.                                                   |
+| Member                   | Purpose                                                                 |
+| ------------------------ | ----------------------------------------------------------------------- |
+| `current`                | Index of the current step.                                              |
+| `go(index)`              | Returns `false` for an invalid or current index, or a prevented change. |
+| `next()` / `previous()`  | Same, relative to the current step.                                     |
+| `setState(index, state)` | `"pending"`, `"complete"` or `"error"`, shown on the step marker.       |
+| `destroy()`              | Restores the markup.                                                    |
 
 ## Events
 
-| Event                 | Cancelable | `detail`       |
-| --------------------- | ---------- | -------------- |
-| `az:stepper:change`   | yes        | `from`, `to`   |
+| Event               | Cancelable | `detail`     |
+| ------------------- | ---------- | ------------ |
+| `az:stepper:change` | yes        | `from`, `to` |
 
 Call `preventDefault()` to block the change, for example while the current step has invalid fields.
 

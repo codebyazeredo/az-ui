@@ -19,7 +19,9 @@ export class Stepper extends Component {
       throw new Error("AZUI: stepper requires at least one .az-stepper-step.");
     }
     if (this.panels.length > 0 && this.panels.length !== this.steps.length) {
-      throw new Error("AZUI: stepper requires the same number of .az-stepper-step and .az-stepper-panel.");
+      throw new Error(
+        "AZUI: stepper requires the same number of .az-stepper-step and .az-stepper-panel.",
+      );
     }
 
     const initial = this.steps.findIndex((step) => step.getAttribute("aria-current") === "step");
