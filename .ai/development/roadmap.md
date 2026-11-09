@@ -13,6 +13,7 @@ Fase atual: **6 — Documentação**, implementada e aguardando validação (Fas
 | 4 | Dados e avançados | Concluída |
 | 5 | Layouts | Concluída |
 | 6 | Documentação | Implementada, aguardando validação |
+| Enterprise | Componentes para sistemas corporativos (D-057) | Em andamento: lote 1 implementado, aguardando validação |
 | 7 | Distribuição | Não iniciada |
 
 ## Fase 0 — Pré-desenvolvimento
@@ -100,6 +101,15 @@ Pendências que dependem da criação do repositório no GitHub (não bloqueiam 
 - [x] `typecheck`, `lint` e `format:check` passando; exemplos conferidos no navegador (2026-11-06).
 - [ ] Site público: projeto separado, fora deste repositório.
 - [ ] Validação da fase pelo mantenedor.
+
+## Fase Enterprise
+
+Design em `enterprise-phase-design.md` (D-057). Um lote por vez, com validação do mantenedor antes do próximo.
+
+- [x] Lote 1 — Base de interação: Collapse · Sortable · Kanban · Tree View · Stepper · Splitter. Implementado (`examples/interaction.html` conferida no navegador); testes unitários escritos mas **ainda não executados**; sem validação do mantenedor e sem revisão com leitor de tela.
+- [ ] Lote 2 — Entrada de dados: Combobox · Dual Listbox · Tag Input · máscaras · intervalo de datas · hora · código de barras.
+- [ ] Lote 3 — Tabelas pesadas: edição inline · colunas fixas/redimensionáveis · reordenação · linhas expansíveis · rolagem virtual · exportação CSV · Tree Grid.
+- [ ] Lote 4 — Operação: Calendar/Scheduler · Gantt · painel de widgets arrastáveis.
 
 ## Fase 7 — Distribuição
 
