@@ -65,6 +65,7 @@ AZ UI gives corporate, administrative and management systems one consistent inte
 | Data                    | Table, DataTable, Pagination, Filter, Search, Toolbar, Timeline, Progress, Stat, Status indicator, Key value, List group, Empty state |
 | Layouts                 | Container, Grid, Row and Column, Stack, Split layout, Page header, Content section, Breadcrumb, Navigation menu, Navbar, Sidebar      |
 | Interaction             | Collapse, Sortable (drag and drop), Kanban, Tree, Stepper, Splitter                                                                   |
+| Data entry              | Mask, Tag input, Combobox, Dual listbox, Date range, Barcode input                                                                    |
 
 ## Quick start
 

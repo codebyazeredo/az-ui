@@ -78,6 +78,14 @@ new Counter("#bio", { target: "#bio-counter" });
 
 The field needs `maxlength`, otherwise `Counter` throws. The text is updated on every `input`; `destroy()` stops it.
 
+## Time
+
+Use the native `<input type="time">` with `az-control`; it follows the same height, border and theme as the other fields and gives each device its own time picker, so AZ UI ships no time component. For dates, see [Datepicker](datepicker.md) and [Date range](date-range.md).
+
+```html
+<input class="az-control" type="time" value="08:30" />
+```
+
 ## States
 
 Default, hover, focus, disabled (dimmed, `not-allowed` cursor), readonly (muted background and dashed border), invalid and valid.
