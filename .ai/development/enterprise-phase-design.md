@@ -33,6 +33,48 @@ Cada lote tem seu próprio design detalhado e validação antes do próximo.
 3. **Tabelas pesadas**: edição inline, colunas fixas e redimensionáveis, reordenação de colunas e linhas, linhas expansíveis, rolagem virtual, exportação CSV, Tree Grid.
 4. **Operação**: Calendar/Scheduler, Gantt, painel de widgets arrastáveis.
 
+## Lote 2 — design (proposta, aguardando aprovação)
+
+Princípio: todo componente mantém o valor num campo nativo (`<input>` ou `<select>`), para o envio de formulário e o `AZUI.Form` continuarem funcionando. Teclado completo, `az-` no CSS, eventos `az:<nome>:<evento>`.
+
+### Máscara
+
+- Padrão informado pelo desenvolvedor no atributo `data-az-mask`, por exemplo `data-az-mask="99/99/9999"` (decisão do mantenedor: padrão genérico, sem formatos fixos; o nome `data-az-mask` em vez de `mask` é decisão do assistente, por seguir o padrão `data-az-*`).
+- Símbolos: `9` dígito, `a` letra, `*` letra ou dígito; qualquer outro caractere é literal.
+- Formata ao digitar e ao colar, apaga literais com Backspace sem travar e mantém o cursor na posição certa.
+- `rawValue` devolve só os caracteres digitados, sem os literais; evento `az:mask:complete` quando o padrão é preenchido.
+- Fora desta versão (decisão do assistente): moeda e número com separadores (precisam de regra própria, não de padrão fixo) e atalhos nomeados como `cpf`; o desenvolvedor usa o padrão (`999.999.999-99`).
+
+### Combobox
+
+- Campo de texto com lista filtrável (padrão ARIA combobox). Opções locais ou uma função assíncrona de busca, com debounce, estado de carregando e de sem resultados (decisão do assistente).
+- O valor escolhido fica em um campo nativo; eventos `az:combobox:search` e `az:combobox:select`.
+
+### Dual Listbox
+
+- Duas listas (disponíveis e selecionados) com busca em cada lado, mover um ou todos e reordenar os selecionados. Reaproveita o `Sortable`, então também se arrasta entre as listas.
+- Mantém um `<select multiple>` sincronizado; evento `az:duallistbox:change` com os valores.
+
+### Tag Input
+
+- Digitar e pressionar Enter ou vírgula cria o chip; Backspace remove o último. Evento `az:taginput:add` cancelável para validar.
+
+### Intervalo de datas
+
+- Componente `DateRange` sobre dois campos (início e fim), reaproveitando o calendário do `Datepicker`; valores ISO, como no Datepicker; fim nunca antes do início.
+
+### Hora
+
+- Sem componente novo: o `<input type="time">` nativo cobre; o lote só garante o estilo consistente (decisão do assistente).
+
+### Código de barras
+
+- Campo que distingue leitor (teclas muito rápidas terminadas em Enter) de digitação humana e emite `az:barcode:scan` com o código; digitação lenta segue normal.
+
+### Fora do escopo do lote
+
+Moeda e número formatados; atalhos de máscara nomeados; carregamento de opções paginado no Combobox.
+
 ## Lote 1 — design
 
 ### Sortable (núcleo)
