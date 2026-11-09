@@ -33,6 +33,37 @@ Cada lote tem seu próprio design detalhado e validação antes do próximo.
 3. **Tabelas pesadas**: edição inline, colunas fixas e redimensionáveis, reordenação de colunas e linhas, linhas expansíveis, rolagem virtual, exportação CSV, Tree Grid.
 4. **Operação**: Calendar/Scheduler, Gantt, painel de widgets arrastáveis.
 
+## Lote 4 — design (aprovado, D-063)
+
+Contexto: os quatro componentes são orientados a dados (o consumidor informa recursos, eventos, tarefas ou widgets e o componente desenha e emite eventos); nenhum grava nada. Reaproveitam o que já existe: calendário do `Datepicker` (`buildMonthGrid`), arraste por ponteiro (padrão do `Splitter`) e o `Sortable`. Cada um em `src/components/<nome>/` com `<nome>.css`. Horários são strings locais `YYYY-MM-DDTHH:mm` (decisão do assistente: sem fuso horário), com um módulo pequeno compartilhado em `src/javascript/time/`.
+
+### WidgetGrid (painel de widgets)
+
+- Grade em que cada widget ocupa 1 a N colunas. Reordena por arraste e teclado (via `Sortable`) e redimensiona a largura por uma alça (ponteiro e setas). Posicionamento por fluxo, sem coordenadas livres (decisão do assistente: cobre painéis de gestão sem a complexidade de um GridStack).
+- `layout` (lista de `{ id, span }` na ordem atual) e `setLayout(layout)` para o sistema salvar e restaurar o painel de cada usuário. Evento `az:widgetgrid:change`.
+
+### Calendar (visão mensal)
+
+- Mês com eventos como etiquetas por dia (agenda de entregas): navegação por mês e hoje, clique no dia (`az:calendar:select`) e no evento (`az:calendar:eventclick`), "+N mais" quando o dia tem muitos eventos. Teclado como no calendário do `Datepicker`.
+- `setEvents(events)`, `setMonth(date)`. Semana começa em `firstDayOfWeek` e `locale` via `Intl`, como o `Datepicker`.
+
+### Scheduler (agenda por recurso)
+
+- Linha do tempo de um dia com recursos nas linhas (docas, veículos, equipes) e horas nas colunas (`startHour`, `endHour`, `slotMinutes`). Eventos são blocos posicionados pelo horário.
+- Arrastar um bloco o move entre recursos e horários (com encaixe no `slotMinutes`); arrastar a borda direita muda a duração; clicar num espaço vazio emite `az:scheduler:create`. Teclado: o bloco é focável, setas movem por slot e `Shift`+setas mudam a duração; `Enter` abre (`az:scheduler:select`).
+- Conflitos: por padrão dois eventos do mesmo recurso não se sobrepõem (`allowOverlap: false`); o movimento que causaria sobreposição é recusado. Eventos cancelávei: `az:scheduler:move`, `az:scheduler:resize`.
+- Só visão de um dia (`setDate`); sem eventos recorrentes (decisão do assistente).
+
+### Gantt
+
+- Tabela de tarefas à esquerda (nome, início, fim) e barras na linha do tempo à direita, com escala em dias ou semanas (`zoom`), linha de "hoje", barra de progresso e dependências fim-início desenhadas em SVG.
+- Arrastar a barra move a tarefa; arrastar as bordas muda início ou fim; teclado como no Scheduler (setas movem por dia, `Shift`+setas mudam a duração). Eventos cancelávei `az:gantt:move` e `az:gantt:resize`.
+- Mover uma tarefa **não** reagenda as dependentes automaticamente: o sistema decide pelo evento (decisão do assistente). Progresso é só de leitura nesta versão.
+
+### Fora do escopo do lote
+
+Eventos recorrentes, fusos horários, visões de semana e de vários dias no Scheduler, caminho crítico e nivelamento de recursos, edição de progresso no Gantt, posicionamento livre de widgets e desfazer/refazer.
+
 ## Lote 3 — design (aprovado, D-061)
 
 Contexto: `DataTable` trabalha sobre o DOM (as linhas são escritas pelo consumidor e a ordenação move `<tr>`). O lote 3 não infla o `DataTable`: cada recurso é um componente pequeno que se compõe com a mesma marcação. Todos ficam em `src/components/table/` (que já tem `table.css`), eventos `az:<nome>:<evento>`, teclado e ARIA completos.
