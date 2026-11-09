@@ -25,8 +25,23 @@ export type {
   PaginationLabels,
   PaginationOptions,
 } from "./components/pagination";
-export { DataTable } from "./components/table";
-export type { DataTableOptions } from "./components/table";
+export {
+  ColumnReorder,
+  DataTable,
+  RowExpand,
+  TableColumns,
+  TableEdit,
+  TreeGrid,
+  VirtualTable,
+  downloadCsv,
+  tableToCsv,
+} from "./components/table";
+export type {
+  CsvOptions,
+  CsvRows,
+  DataTableOptions,
+  VirtualTableOptions,
+} from "./components/table";
 export { DateRange, Datepicker } from "./components/datepicker";
 export type {
   DatepickerConfig,

@@ -110,3 +110,185 @@ th[aria-sort="ascending"] .az-table-sort::after {
   --az-table-cell-padding-y: var(--az-spacing-3);
   --az-table-cell-padding-x: var(--az-spacing-4);
 }
+
+.az-table .az-table-handle {
+  width: var(--az-spacing-6);
+  color: var(--az-text-muted);
+  text-align: center;
+  cursor: grab;
+}
+
+.az-table-expand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--az-spacing-6);
+  height: var(--az-spacing-6);
+  padding: 0;
+  color: var(--az-text-muted);
+  cursor: pointer;
+  background: none;
+  border: 0;
+  border-radius: var(--az-radius-sm);
+}
+
+.az-table-expand::before {
+  width: var(--az-spacing-2);
+  height: var(--az-spacing-2);
+  content: "";
+  border: solid currentcolor;
+  border-width: 0 2px 2px 0;
+  transition: transform var(--az-duration-fast) var(--az-easing-standard);
+  transform: rotate(-45deg);
+}
+
+[dir="rtl"] .az-table-expand::before {
+  transform: rotate(135deg);
+}
+
+.az-table-expand[aria-expanded="true"]::before {
+  transform: rotate(45deg);
+}
+
+.az-table-expand:hover {
+  color: var(--az-text-primary);
+}
+
+.az-table-expand:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: var(--az-focus-ring-offset);
+}
+
+.az-table tbody tr.az-table-detail > td {
+  background-color: var(--az-color-surface-muted);
+}
+
+.az-table td.az-table-editing {
+  padding-top: var(--az-spacing-1);
+  padding-bottom: var(--az-spacing-1);
+}
+
+.az-table td[data-az-edit] {
+  cursor: text;
+}
+
+.az-table td[data-az-edit]:hover {
+  background-color: var(--az-color-surface-muted);
+}
+
+.az-table td[data-az-edit]:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: calc(var(--az-focus-ring-width) * -1);
+}
+
+.az-table-fixed {
+  table-layout: fixed;
+}
+
+.az-table th[data-az-resizable],
+.az-table th[data-az-reorderable] {
+  position: relative;
+}
+
+.az-table-resize {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-end: 0;
+  width: var(--az-spacing-2);
+  cursor: col-resize;
+  touch-action: none;
+}
+
+.az-table-resize:hover,
+.az-table-resize:focus-visible {
+  background-color: var(--az-color-primary);
+  outline: none;
+}
+
+.az-table .az-table-sticky {
+  position: sticky;
+  z-index: 1;
+  background-color: var(--az-color-surface);
+}
+
+.az-table thead .az-table-sticky {
+  background-color: var(--az-color-surface-muted);
+}
+
+.az-table th[data-az-reorderable] {
+  cursor: grab;
+}
+
+.az-table th[data-az-reorderable]:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: calc(var(--az-focus-ring-width) * -1);
+}
+
+.az-table th.az-table-column-dragging {
+  opacity: var(--az-opacity-disabled);
+}
+
+.az-treegrid-toggle {
+  position: relative;
+  display: inline-block;
+  width: var(--az-spacing-4);
+  height: 1lh;
+  margin-inline-end: var(--az-spacing-1);
+  vertical-align: bottom;
+}
+
+.az-table tr[aria-level] > :first-child {
+  padding-inline-start: calc(
+    var(--az-table-cell-padding-x) + var(--az-treegrid-level, 0) * var(--az-spacing-4)
+  );
+}
+
+.az-table tr[aria-level]:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: calc(var(--az-focus-ring-width) * -1);
+}
+
+.az-table tr[aria-expanded] .az-treegrid-toggle {
+  cursor: pointer;
+}
+
+.az-table tr[aria-expanded] .az-treegrid-toggle::before {
+  position: absolute;
+  top: 50%;
+  inset-inline-start: 50%;
+  width: var(--az-spacing-2);
+  height: var(--az-spacing-2);
+  content: "";
+  border: solid currentcolor;
+  border-width: 0 2px 2px 0;
+  transition: transform var(--az-duration-fast) var(--az-easing-standard);
+  transform: translate(-70%, -70%) rotate(-45deg);
+}
+
+.az-table tr[aria-expanded="true"] .az-treegrid-toggle::before {
+  transform: translate(-50%, -80%) rotate(45deg);
+}
+
+[dir="rtl"] .az-table tr[aria-expanded] .az-treegrid-toggle::before {
+  transform: translate(70%, -70%) rotate(135deg);
+}
+
+[dir="rtl"] .az-table tr[aria-expanded="true"] .az-treegrid-toggle::before {
+  transform: translate(50%, -80%) rotate(45deg);
+}
+
+.az-table-wrap .az-table tbody tr.az-table-spacer td {
+  padding: 0;
+  border: 0;
+}
+
+.az-table-virtual {
+  overflow-y: auto;
+}
+
+.az-table-virtual thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: var(--az-color-surface-muted);
+}

@@ -11,7 +11,16 @@ import { NotificationPanel } from "./components/notification";
 import { Offcanvas } from "./components/offcanvas";
 import { Pagination } from "./components/pagination";
 import { Popover } from "./components/popover";
-import { DataTable } from "./components/table";
+import {
+  ColumnReorder,
+  DataTable,
+  RowExpand,
+  TableColumns,
+  TableEdit,
+  TreeGrid,
+  downloadCsv,
+  type CsvRows,
+} from "./components/table";
 import { FileUpload } from "./components/file-upload";
 import { Kanban } from "./components/kanban";
 import { Sortable } from "./components/sortable";
@@ -28,6 +37,7 @@ import { Overlay } from "./javascript/core/overlay";
 const COMPONENT_FACTORIES: Record<string, (element: HTMLElement) => Component> = {
   collapse: (element) => new Collapse(element),
   barcode: (element) => new BarcodeInput(element),
+  columnreorder: (element) => new ColumnReorder(element),
   combobox: (element) => new Combobox(element),
   "command-menu": (element) => new CommandMenu(element),
   "context-menu": (element) => new ContextMenu(element),
@@ -42,19 +52,24 @@ const COMPONENT_FACTORIES: Record<string, (element: HTMLElement) => Component> =
   notification: (element) => new NotificationPanel(element),
   pagination: (element) => new Pagination(element),
   popover: (element) => new Popover(element),
+  rowexpand: (element) => new RowExpand(element),
   fileupload: (element) => new FileUpload(element),
   select: (element) => new Select(element),
   sortable: (element) =>
     new Sortable(element, {
       group: element.dataset.azGroup,
       handle: element.dataset.azHandle,
+      items: element.dataset.azItems,
     }),
   splitter: (element) => new Splitter(element),
   stepper: (element) => new Stepper(element),
+  tablecolumns: (element) => new TableColumns(element),
+  tableedit: (element) => new TableEdit(element),
   tabs: (element) => new Tabs(element),
   taginput: (element) => new TagInput(element),
   tree: (element) => new Tree(element),
   tooltip: (element) => new Tooltip(element),
+  treegrid: (element) => new TreeGrid(element),
 };
 
 const OVERLAY_FACTORIES: Record<string, (element: HTMLElement) => Overlay> = {
@@ -96,11 +111,26 @@ function toggleOverlay(trigger: HTMLElement): void {
   overlay.toggle();
 }
 
+const CSV_ROWS: CsvRows[] = ["all", "visible", "selected"];
+
+function exportCsv(trigger: HTMLElement): void {
+  const selector = trigger.dataset.azExportCsv ?? "";
+  const target = selector ? document.querySelector(selector) : null;
+  const table = target instanceof HTMLTableElement ? target : target?.querySelector("table");
+  if (!table) throw new Error(`AZUI: no table found for data-az-export-csv="${selector}".`);
+
+  const rows = CSV_ROWS.find((value) => value === trigger.dataset.azRows);
+  downloadCsv(table, trigger.dataset.azFilename ?? "table.csv", { rows });
+}
+
 document.addEventListener("click", (event) => {
   if (!(event.target instanceof Element)) return;
 
   const trigger = event.target.closest<HTMLElement>("[data-az-toggle]");
   if (trigger) toggleOverlay(trigger);
+
+  const exportTrigger = event.target.closest<HTMLElement>("[data-az-export-csv]");
+  if (exportTrigger) exportCsv(exportTrigger);
 });
 
 if (document.readyState === "loading") {
