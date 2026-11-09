@@ -25,14 +25,14 @@ Dropdown list that replaces the native `<select>` and `<select multiple>` appear
 ```
 
 ```ts
-import { Select } from "az-ui";
+import { Select } from "@codebyazeredo/az-ui";
 
 const select = new Select("#country", { placeholder: "Choose…" });
 select.value;
 select.refresh();
 ```
 
-`AZUI.Form.select` and `AZUI.Form.multiselect` already render `data-az-component="select"`; import `az-ui/auto` or create the instance yourself.
+`AZUI.Form.select` and `AZUI.Form.multiselect` already render `data-az-component="select"`; import `@codebyazeredo/az-ui/auto` or create the instance yourself.
 
 ## Options
 

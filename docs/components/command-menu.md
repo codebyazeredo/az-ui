@@ -24,7 +24,7 @@ Searchable list of commands opened with `Ctrl+K` / `Cmd+K`. Built on the same ov
 ```
 
 ```ts
-import { CommandMenu } from "az-ui";
+import { CommandMenu } from "@codebyazeredo/az-ui";
 
 const menu = new CommandMenu("#commands", { shortcut: "k" });
 document.addEventListener("az:command-menu:select", (event) => {
@@ -39,7 +39,7 @@ document.addEventListener("az:command-menu:select", (event) => {
 | `shortcut`                         | `"k"`   | Key used with `Ctrl` or `Cmd`. `null` disables the shortcut. |
 | `closeOnBackdrop`, `closeOnEscape` | `true`  | Same as Modal.                                               |
 
-The shortcut only works once the menu is initialized, so use `data-az-component="command-menu"` (with `az-ui/auto`) or create it on page load.
+The shortcut only works once the menu is initialized, so use `data-az-component="command-menu"` (with `@codebyazeredo/az-ui/auto`) or create it on page load.
 
 ## Behavior
 

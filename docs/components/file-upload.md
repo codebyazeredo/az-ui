@@ -22,7 +22,7 @@ The native input stays in the DOM (hidden) and its `files` are kept in sync with
 ```
 
 ```ts
-import { FileUpload } from "az-ui";
+import { FileUpload } from "@codebyazeredo/az-ui";
 
 const upload = new FileUpload("#attachments", { maxSize: 5 * 1024 * 1024, maxFiles: 3 });
 

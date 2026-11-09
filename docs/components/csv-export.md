@@ -13,14 +13,14 @@ Turns an HTML table into a CSV file, for "Export" buttons. It reads the table as
 ```
 
 ```ts
-import { downloadCsv, tableToCsv } from "az-ui";
+import { downloadCsv, tableToCsv } from "@codebyazeredo/az-ui";
 
 const table = document.querySelector("#orders");
 const text = tableToCsv(table, { rows: "selected" });
 downloadCsv(table, "orders.csv", { delimiter: ";" });
 ```
 
-With `az-ui/auto`, a click on `[data-az-export-csv]` (a selector for the `<table>` or an element containing it) downloads the file. `data-az-filename` sets the name (default `table.csv`) and `data-az-rows` the rows (`all`, `visible` or `selected`).
+With `@codebyazeredo/az-ui/auto`, a click on `[data-az-export-csv]` (a selector for the `<table>` or an element containing it) downloads the file. `data-az-filename` sets the name (default `table.csv`) and `data-az-rows` the rows (`all`, `visible` or `selected`).
 
 ## Options
 

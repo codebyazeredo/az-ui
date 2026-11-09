@@ -34,12 +34,12 @@ Compact, legible type for data-heavy screens. The base size is 15px; controls an
 
 Three families are bundled, all under the SIL Open Font License. Only Inter is loaded by default.
 
-| Family        | How to use                                                                  |
-| ------------- | --------------------------------------------------------------------------- |
-| Inter         | Default. Included in `az-ui/styles.css`.                                    |
-| IBM Plex Sans | `import "az-ui/fonts/ibm-plex-sans.css"`, then add `az-font-ibm-plex-sans`. |
-| Source Sans 3 | `import "az-ui/fonts/source-sans-3.css"`, then add `az-font-source-sans-3`. |
-| System        | Add `az-font-system`. Downloads nothing.                                    |
+| Family        | How to use                                                                                 |
+| ------------- | ------------------------------------------------------------------------------------------ |
+| Inter         | Default. Included in `@codebyazeredo/az-ui/styles.css`.                                    |
+| IBM Plex Sans | `import "@codebyazeredo/az-ui/fonts/ibm-plex-sans.css"`, then add `az-font-ibm-plex-sans`. |
+| Source Sans 3 | `import "@codebyazeredo/az-ui/fonts/source-sans-3.css"`, then add `az-font-source-sans-3`. |
+| System        | Add `az-font-system`. Downloads nothing.                                                   |
 
 Add the font class to `<body>` (or any container) to switch the whole page:
 

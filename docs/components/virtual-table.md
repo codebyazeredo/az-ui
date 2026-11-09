@@ -20,7 +20,7 @@ Shows thousands of rows without slowing the page: only the rows in view (plus a 
 ```
 
 ```ts
-import { VirtualTable } from "az-ui";
+import { VirtualTable } from "@codebyazeredo/az-ui";
 
 const orders = loadOrders(); // 10 000 items
 

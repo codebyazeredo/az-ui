@@ -9,7 +9,7 @@ Inicialização manual · inicialização automática opcional · event delegati
 ## Uso programático
 
 ```ts
-import { Modal } from "az-ui";
+import { Modal } from "@codebyazeredo/az-ui";
 
 const modal = new Modal("#modal");
 modal.show();

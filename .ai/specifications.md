@@ -400,8 +400,8 @@ Criar classes e imports específicos para as alternativas.
 Exemplo esperado:
 
 ```ts
-import "az-ui/styles.css";
-import "az-ui/fonts/ibm-plex-sans.css";
+import "@codebyazeredo/az-ui/styles.css";
+import "@codebyazeredo/az-ui/fonts/ibm-plex-sans.css";
 ```
 
 O sistema deve permitir também utilizar uma fonte externa ou já instalada, sem exigir os arquivos da AZ UI.
@@ -929,7 +929,7 @@ A arquitetura JavaScript deve oferecer:
 Exemplo de API:
 
 ```ts
-import { Modal } from "az-ui";
+import { Modal } from "@codebyazeredo/az-ui";
 
 const modal = new Modal("#modal");
 
@@ -1092,7 +1092,7 @@ Acessibilidade não deve ser adicionada posteriormente como correção. Deve faz
 O pacote principal será:
 
 ```bash
-npm install az-ui
+npm install @codebyazeredo/az-ui
 ```
 
 Também deve funcionar com pnpm, yarn e bun.
@@ -1100,20 +1100,20 @@ Também deve funcionar com pnpm, yarn e bun.
 Preparar exports públicos para:
 
 ```ts
-import "az-ui/styles.css";
+import "@codebyazeredo/az-ui/styles.css";
 
 import {
     AZUI,
     Button,
     Modal,
     DataTable
-} from "az-ui";
+} from "@codebyazeredo/az-ui";
 ```
 
 Preparar também imports específicos quando fizer sentido:
 
 ```ts
-import "az-ui/fonts/ibm-plex-sans.css";
+import "@codebyazeredo/az-ui/fonts/ibm-plex-sans.css";
 ```
 
 O `package.json` deve contemplar:
@@ -1140,7 +1140,7 @@ O build deve produzir:
 
 Evitar publicar arquivos de desenvolvimento desnecessários.
 
-O nome `az-ui` deve ser verificado no npm antes da primeira publicação.
+O pacote é publicado como `@codebyazeredo/az-ui` (D-065): o nome `az-ui` foi recusado pelo npm por similaridade com `azui`.
 
 Não publicar automaticamente.
 

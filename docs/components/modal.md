@@ -25,7 +25,7 @@ Dialog window that requires attention. Behavior comes from the `Modal` class.
 ```
 
 ```ts
-import { Modal } from "az-ui";
+import { Modal } from "@codebyazeredo/az-ui";
 
 const modal = new Modal("#confirm", { closeOnBackdrop: false });
 modal.show();

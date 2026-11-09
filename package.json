@@ -1,5 +1,5 @@
 {
-  "name": "az-ui",
+  "name": "@codebyazeredo/az-ui",
   "version": "0.1.0",
   "description": "Component library and Design System for enterprise web applications, independent of frameworks.",
   "author": "Matheus Azeredo (codebyazeredo)",
@@ -43,6 +43,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "sideEffects": [
     "*.css",
     "./dist/auto.js"

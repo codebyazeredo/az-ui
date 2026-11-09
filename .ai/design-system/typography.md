@@ -31,7 +31,7 @@ Papel de cada tamanho (corpo, controles, tabelas, títulos): a definir (Q-11).
 ## Personalização
 
 - Sobrescrever `--az-font-family` no projeto consumidor.
-- Imports de alternativas: `az-ui/fonts/ibm-plex-sans.css`, `az-ui/fonts/source-sans-3.css`.
+- Imports de alternativas: `@codebyazeredo/az-ui/fonts/ibm-plex-sans.css`, `@codebyazeredo/az-ui/fonts/source-sans-3.css`.
 - Permitir fonte externa ou já instalada sem exigir os arquivos da AZ UI.
 
 ## Regras

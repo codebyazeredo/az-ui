@@ -55,20 +55,20 @@ Show the message your API or validator returns in the field, and keep it linked 
 
 ## Interactive components
 
-Initialize them from attributes with `az-ui/auto`, bundled once with Vite, esbuild or any bundler, and loaded with a `<script type="module">` tag. Server-rendered markup does not need to change.
+Initialize them from attributes with `@codebyazeredo/az-ui/auto`, bundled once with Vite, esbuild or any bundler, and loaded with a `<script type="module">` tag. Server-rendered markup does not need to change.
 
 ```html source
 <script type="module" src="/assets/app.js"></script>
 ```
 
 ```ts
-import "az-ui/auto";
+import "@codebyazeredo/az-ui/auto";
 ```
 
 For content your server returns later (for example an HTML fragment loaded with `fetch`), initialize it after inserting:
 
 ```ts
-import { initComponents } from "az-ui/auto";
+import { initComponents } from "@codebyazeredo/az-ui/auto";
 
 container.innerHTML = await response.text();
 initComponents(container);

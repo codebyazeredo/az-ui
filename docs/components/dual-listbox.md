@@ -14,7 +14,7 @@ Two lists, "Available" and "Selected", for choosing several items from a long se
 ```
 
 ```ts
-import { DualListbox } from "az-ui";
+import { DualListbox } from "@codebyazeredo/az-ui";
 
 const box = new DualListbox("#carriers", { labels: { available: "Carriers" } });
 box.values; // ["blue"]

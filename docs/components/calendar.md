@@ -9,7 +9,7 @@ A month view with events on their days, for delivery schedules, shifts or any li
 ```
 
 ```ts
-import { Calendar } from "az-ui";
+import { Calendar } from "@codebyazeredo/az-ui";
 
 const calendar = new Calendar("#deliveries", { locale: "pt-BR", firstDayOfWeek: 1 });
 

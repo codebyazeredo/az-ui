@@ -16,7 +16,7 @@ Menu of actions that opens at the pointer on right click (or the keyboard contex
 ```
 
 ```ts
-import { ContextMenu } from "az-ui";
+import { ContextMenu } from "@codebyazeredo/az-ui";
 
 const menu = new ContextMenu("#row", { menu: "#row-menu" });
 ```

@@ -9,7 +9,7 @@ A project timeline: a task list on the left and a bar per task on a day or week 
 ```
 
 ```ts
-import { Gantt } from "az-ui";
+import { Gantt } from "@codebyazeredo/az-ui";
 
 const gantt = new Gantt("#project", {
   zoom: "day",

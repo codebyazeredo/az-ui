@@ -14,7 +14,7 @@ Calendar attached to a text input. The value is always an ISO date (`YYYY-MM-DD`
 ```
 
 ```ts
-import { Datepicker } from "az-ui";
+import { Datepicker } from "@codebyazeredo/az-ui";
 
 new Datepicker("#due-date", { locale: "pt-BR", firstDayOfWeek: 1, max: "2026-12-31" });
 ```

@@ -5,7 +5,7 @@ Temporary notification. Created from code; the toast is built with the DOM API, 
 ## Example
 
 ```ts
-import { Toast } from "az-ui";
+import { Toast } from "@codebyazeredo/az-ui";
 
 Toast.show({ title: "Saved", message: "Customer updated.", variant: "success" });
 Toast.show({ message: "Connection lost.", variant: "danger", duration: 0 });

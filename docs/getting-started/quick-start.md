@@ -33,7 +33,7 @@ The same field can be generated from a definition with the [declarative form API
 
 ## 3. An interactive component
 
-With `az-ui/auto` imported once, attributes are enough to open a modal. The component adds the dialog role and ARIA attributes itself.
+With `@codebyazeredo/az-ui/auto` imported once, attributes are enough to open a modal. The component adds the dialog role and ARIA attributes itself.
 
 ```html
 <button
@@ -62,7 +62,7 @@ With `az-ui/auto` imported once, attributes are enough to open a modal. The comp
 For options, events and `show()`/`hide()`, use the class instead:
 
 ```ts
-import { Modal } from "az-ui";
+import { Modal } from "@codebyazeredo/az-ui";
 
 const modal = new Modal("#quick-modal");
 document.addEventListener("az:modal:hide", (event) => {

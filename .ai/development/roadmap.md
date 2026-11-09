@@ -24,7 +24,7 @@ Fase atual: **6 — Documentação**, implementada e aguardando validação (Fas
 - [x] Licenças das fontes pré-verificadas (OFL 1.1, D-020). Confirmar o `LICENSE.txt` oficial de cada repositório no momento de baixar os arquivos (Fase 1).
 - [x] Fontes em `fonts/`: Inter 4.1 e Source Sans 3 (4 pesos WOFF2 + licença). Subset latino ainda não aplicado (~110 KB por arquivo).
 - [x] IBM Plex Sans em `fonts/ibm-plex-sans/` (Fontsource, subset latino, ~23 KB por peso). Inter e Source Sans 3 ainda são completas (~110 KB); avaliar subset latino na Fase 1.
-- [x] Nome `az-ui` livre no npm em 2026-11-04 (D-019); reconferir antes de publicar.
+- [x] Nome `az-ui` livre no npm em 2026-11-04 (D-019), mas recusado na publicação (similar a `azui`); o pacote será `@codebyazeredo/az-ui` (D-065).
 - [x] Arquivo `LICENSE` (MIT, D-013) criado na raiz.
 - [x] Git inicializado pelo mantenedor.
 - [x] Validação do mantenedor para iniciar a Fase 1 (2026-11-04).
@@ -69,7 +69,7 @@ Pendências que dependem da criação do repositório no GitHub (não bloqueiam 
 
 - [x] Modal · Dropdown · Tooltip · Popover · Tabs · Toast · Accordion · Offcanvas (D-040 a D-043).
 - [x] Datepicker.
-- [x] Núcleo JS (`Component`, `Overlay`, utilitários de DOM) e entrada `az-ui/auto`.
+- [x] Núcleo JS (`Component`, `Overlay`, utilitários de DOM) e entrada `@codebyazeredo/az-ui/auto`.
 - [x] typecheck, lint, format:check, build e 250 testes passando; `examples/interactive.html` conferida no navegador (2026-11-06).
 - [x] Revisão manual com leitor de tela feita pelo mantenedor (2026-11-06).
 - [x] Validação da fase pelo mantenedor (2026-11-06).

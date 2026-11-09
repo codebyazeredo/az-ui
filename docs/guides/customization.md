@@ -4,7 +4,7 @@ AZ UI is customized with tokens, not with overrides of component selectors. Chan
 
 ## Apply your brand color
 
-Override the semantic tokens after importing `az-ui/styles.css`. Define them for both themes so dark mode keeps its contrast.
+Override the semantic tokens after importing `@codebyazeredo/az-ui/styles.css`. Define them for both themes so dark mode keeps its contrast.
 
 ```css
 :root,
@@ -62,7 +62,7 @@ Every component reads these tokens, so the change is global. See [Spacing and to
 
 - Override tokens. Do not write selectors such as `.az-btn { … }` to restyle components; they depend on internal structure that can change between minor versions.
 - Do not use `!important`. Utilities already come last in the cascade.
-- Load your overrides after `az-ui/styles.css`.
+- Load your overrides after `@codebyazeredo/az-ui/styles.css`.
 - Keep the focus ring visible. If you change its color, keep 3:1 contrast against the background.
 - Prefer a modifier class of your own (`.my-toolbar`) that sets tokens over copying component CSS.
 

@@ -6,7 +6,7 @@ AZ UI é uma biblioteca de componentes e Design System voltada à construção d
 
 O objetivo é facilitar o desenvolvimento de interfaces profissionais por meio de componentes reutilizáveis, APIs declarativas, estilos consistentes e ferramentas independentes de frameworks.
 
-Pacote npm: `az-ui`.
+Pacote npm: `@codebyazeredo/az-ui`.
 
 Prefixo CSS: `az-`.
 

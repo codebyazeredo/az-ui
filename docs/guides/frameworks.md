@@ -6,7 +6,7 @@ AZ UI does not depend on any framework. Styles are plain CSS classes, and intera
 
 ## Rules that apply everywhere
 
-- Import `az-ui/styles.css` once, in the application entry point.
+- Import `@codebyazeredo/az-ui/styles.css` once, in the application entry point.
 - Create interactive components only in the browser, after the element is in the DOM (`useEffect`, `onMounted`, `onMount`, `ngAfterViewInit`).
 - Call `destroy()` when the element is removed. One element can have only one instance of a component.
 - Do not let two systems own the same element. Let the framework render the markup and let AZ UI add behavior and ARIA attributes.
@@ -16,8 +16,8 @@ AZ UI does not depend on any framework. Styles are plain CSS classes, and intera
 
 ```tsx
 import { useEffect, useRef } from "react";
-import { Modal } from "az-ui";
-import "az-ui/styles.css";
+import { Modal } from "@codebyazeredo/az-ui";
+import "@codebyazeredo/az-ui/styles.css";
 
 export function ConfirmDelete() {
   const modalElement = useRef<HTMLDivElement>(null);
@@ -61,7 +61,7 @@ Import the CSS in the root layout. Components that create AZ UI instances must b
 
 ```tsx
 // app/layout.tsx
-import "az-ui/styles.css";
+import "@codebyazeredo/az-ui/styles.css";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -79,7 +79,7 @@ Add `"use client"` to the top of files like the React example above.
 ```vue
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount, ref } from "vue";
-import { Modal } from "az-ui";
+import { Modal } from "@codebyazeredo/az-ui";
 
 const modalElement = ref<HTMLElement | null>(null);
 let modal: Modal | null = null;
@@ -96,13 +96,13 @@ onBeforeUnmount(() => modal?.destroy());
 </template>
 ```
 
-In Nuxt, register the stylesheet in `nuxt.config.ts` with `css: ["az-ui/styles.css"]`. `onMounted` already runs only in the browser.
+In Nuxt, register the stylesheet in `nuxt.config.ts` with `css: ["@codebyazeredo/az-ui/styles.css"]`. `onMounted` already runs only in the browser.
 
 ## Angular
 
 ```ts
 import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from "@angular/core";
-import { Modal } from "az-ui";
+import { Modal } from "@codebyazeredo/az-ui";
 
 @Component({
   selector: "app-confirm",
@@ -132,7 +132,7 @@ Add `"node_modules/az-ui/dist/styles.css"` to the `styles` array of `angular.jso
 ```svelte
 <script lang="ts">
   import { onMount } from "svelte";
-  import { Modal } from "az-ui";
+  import { Modal } from "@codebyazeredo/az-ui";
 
   let dialog: HTMLElement;
   let modal: Modal;
@@ -147,7 +147,7 @@ Add `"node_modules/az-ui/dist/styles.css"` to the `styles` array of `angular.jso
 <div class="az-modal" bind:this={dialog} hidden>…</div>
 ```
 
-In SvelteKit, import `az-ui/styles.css` in `src/routes/+layout.svelte`.
+In SvelteKit, import `@codebyazeredo/az-ui/styles.css` in `src/routes/+layout.svelte`.
 
 ## Other frameworks
 

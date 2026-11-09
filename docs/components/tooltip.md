@@ -9,7 +9,7 @@ Short helper text shown on hover and focus.
 ```
 
 ```ts
-import { Tooltip } from "az-ui";
+import { Tooltip } from "@codebyazeredo/az-ui";
 
 new Tooltip("#export", { content: "Export to CSV", placement: "bottom" });
 ```

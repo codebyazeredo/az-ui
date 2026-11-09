@@ -25,8 +25,8 @@ Avaliar `@layer` para garantir essa ordem (depende do baseline de navegadores, Q
 
 | Import | Conteúdo |
 |---|---|
-| `az-ui/styles.css` | Tokens, tema, reset, layout, componentes, utilitários, fonte padrão (Inter) |
-| `az-ui/fonts/<familia>.css` | `@font-face` da alternativa |
+| `@codebyazeredo/az-ui/styles.css` | Tokens, tema, reset, layout, componentes, utilitários, fonte padrão (Inter) |
+| `@codebyazeredo/az-ui/fonts/<familia>.css` | `@font-face` da alternativa |
 | CSS por componente | Em avaliação (Q-18) |
 
 ## Utilitários

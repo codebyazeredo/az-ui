@@ -16,7 +16,7 @@ Navigation between related panels. Tabs and panels are paired by order.
 ```
 
 ```ts
-import { Tabs } from "az-ui";
+import { Tabs } from "@codebyazeredo/az-ui";
 
 const tabs = new Tabs(".az-tabs");
 tabs.select(1);

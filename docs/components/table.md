@@ -60,7 +60,7 @@
 ```
 
 ```ts
-import { DataTable } from "az-ui";
+import { DataTable } from "@codebyazeredo/az-ui";
 
 const table = new DataTable("#people", {
   search: "#people-search",

@@ -1,6 +1,6 @@
 # Installation
 
-AZ UI is shipped as the npm package `az-ui`: ES modules, TypeScript declarations, one stylesheet and optional fonts. It has no runtime dependencies and does not require any framework.
+AZ UI is shipped as the npm package `@codebyazeredo/az-ui`: ES modules, TypeScript declarations, one stylesheet and optional fonts. It has no runtime dependencies and does not require any framework.
 
 > **Not published yet.** The package name is reserved for the first release. Until then, build it from the repository with `npm run build` and install the generated tarball with `npm pack`.
 
@@ -13,7 +13,7 @@ AZ UI is shipped as the npm package `az-ui`: ES modules, TypeScript declarations
 ## Install
 
 ```bash
-npm install az-ui
+npm install @codebyazeredo/az-ui
 ```
 
 The package works with npm, pnpm, yarn and bun.
@@ -23,7 +23,7 @@ The package works with npm, pnpm, yarn and bun.
 Import the stylesheet once, in your application entry point.
 
 ```ts
-import "az-ui/styles.css";
+import "@codebyazeredo/az-ui/styles.css";
 ```
 
 It contains the tokens, the light and dark themes, every component, the utilities and the default font (Inter). Without a bundler, copy `node_modules/az-ui/dist/styles.css` to your public folder and link it with a `<link>` tag.
@@ -48,23 +48,23 @@ It contains the tokens, the light and dark themes, every component, the utilitie
 Interactive components (Modal, Dropdown, Tabs, Datepicker and so on) are classes. Import only the ones you use:
 
 ```ts
-import { Modal, Tabs } from "az-ui";
+import { Modal, Tabs } from "@codebyazeredo/az-ui";
 ```
 
 Or initialize components from HTML attributes with the optional entry:
 
 ```ts
-import "az-ui/auto";
+import "@codebyazeredo/az-ui/auto";
 ```
 
-Importing `az-ui` has no side effects, so unused components are removed by tree shaking. See the [JavaScript API](../javascript/overview.md).
+Importing `@codebyazeredo/az-ui` has no side effects, so unused components are removed by tree shaking. See the [JavaScript API](../javascript/overview.md).
 
 ## Choose a font
 
 Inter is the default. Other families are opt-in, so nothing is downloaded unless you ask for it:
 
 ```ts
-import "az-ui/fonts/ibm-plex-sans.css";
+import "@codebyazeredo/az-ui/fonts/ibm-plex-sans.css";
 ```
 
 Then add the matching class (`az-font-ibm-plex-sans`) to the element that should use it. The same pattern works for `source-sans-3`. Use `az-font-system` to rely on the system font and download nothing. Details in [Typography](../foundations/typography.md).

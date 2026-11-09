@@ -10,7 +10,7 @@ Dar à AZ UI o conjunto mais completo possível de componentes prontos para sist
 
 - Cobrir estrutura (collapse, tree, stepper, splitter), arrastar e soltar, seleção avançada, entrada de dados com máscaras e tabelas pesadas.
 - Kanban para tarefas e andamento de equipe, **montado conforme a necessidade do cliente**.
-- Seguir o padrão existente: classe `Component`, entrada `az-ui/auto`, API declarativa por atributos, tokens, temas claro e escuro, docs e exemplos.
+- Seguir o padrão existente: classe `Component`, entrada `@codebyazeredo/az-ui/auto`, API declarativa por atributos, tokens, temas claro e escuro, docs e exemplos.
 
 ## Fora do escopo
 

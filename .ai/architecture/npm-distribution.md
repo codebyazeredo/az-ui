@@ -6,7 +6,7 @@ Fonte: `specifications.md` §12 e §4.2–4.5. Status: **rascunho** — fechar n
 
 ```text
 dist/
-├── index.js  auto.js  <chunk>.js  index.d.ts  auto.d.ts  foundations/…d.ts   # auto.js: az-ui/auto
+├── index.js  auto.js  <chunk>.js  index.d.ts  auto.d.ts  foundations/…d.ts   # auto.js: @codebyazeredo/az-ui/auto
 ├── styles.css                    # tokens, temas, reset/base opt-in, fonte Inter, utilitários
 └── fonts/
     ├── ibm-plex-sans.css  source-sans-3.css
@@ -17,14 +17,14 @@ dist/
 
 ## Pacote
 
-`az-ui`. Funciona com npm, pnpm, yarn e bun. Disponibilidade do nome no npm deve ser verificada antes da primeira publicação (Q-17). **Não publicar sem autorização explícita.**
+`@codebyazeredo/az-ui` (D-065; `az-ui` foi recusado pelo npm por similaridade com `azui`). Funciona com npm, pnpm, yarn e bun. Disponibilidade do nome no npm deve ser verificada antes da primeira publicação (Q-17). **Não publicar sem autorização explícita.**
 
 ## Imports públicos alvo
 
 ```ts
-import "az-ui/styles.css";
-import "az-ui/fonts/ibm-plex-sans.css";
-import { AZUI, Button, Modal, DataTable } from "az-ui";
+import "@codebyazeredo/az-ui/styles.css";
+import "@codebyazeredo/az-ui/fonts/ibm-plex-sans.css";
+import { AZUI, Button, Modal, DataTable } from "@codebyazeredo/az-ui";
 ```
 
 ## `package.json`

@@ -17,7 +17,7 @@ A dashboard of widgets (indicators, lists, charts you provide) that users can re
 ```
 
 ```ts
-import { WidgetGrid } from "az-ui";
+import { WidgetGrid } from "@codebyazeredo/az-ui";
 
 const grid = new WidgetGrid("#panel");
 

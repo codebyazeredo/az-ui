@@ -14,7 +14,7 @@ A text field with a list of suggestions, for choosing customers, products or add
 ```
 
 ```ts
-import { Combobox } from "az-ui";
+import { Combobox } from "@codebyazeredo/az-ui";
 
 new Combobox("#customer", {
   source: async (query, signal) => {

@@ -14,7 +14,7 @@ Contextual panel opened from a button, with room for text and actions.
 ```
 
 ```ts
-import { Popover } from "az-ui";
+import { Popover } from "@codebyazeredo/az-ui";
 
 new Popover("#details-button", { target: "#help", placement: "right" });
 ```

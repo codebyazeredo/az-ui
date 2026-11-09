@@ -3,7 +3,7 @@
 `AZUI.Form` builds the field markup described in [Form fields](../components/form-fields.md) from option objects.
 
 ```ts
-import { AZUI } from "az-ui";
+import { AZUI } from "@codebyazeredo/az-ui";
 
 const field = AZUI.Form.email({
   name: "email",
@@ -59,7 +59,7 @@ Text-like fields (`ControlFieldOptions`) also accept `placeholder`, `readonly` a
 | `checkbox`, `switch` | `value?`, `checked`, `size`                                                                              |
 | `radio`              | `value` (required), `checked`, `size`                                                                    |
 
-`counter: true` requires `maxLength`; it renders a `.az-field-counter` linked with `aria-describedby` and initializes the `Counter` behavior (`az-ui/auto` or `new Counter(control)`).
+`counter: true` requires `maxLength`; it renders a `.az-field-counter` linked with `aria-describedby` and initializes the `Counter` behavior (`@codebyazeredo/az-ui/auto` or `new Counter(control)`).
 
 ## Security
 

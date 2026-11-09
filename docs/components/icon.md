@@ -5,7 +5,7 @@ Built-in set of 253 functional SVG icons on a 24×24 grid with a 1.5px stroke. I
 ## Example
 
 ```ts
-import { AZUI } from "az-ui";
+import { AZUI } from "@codebyazeredo/az-ui";
 
 const icon = AZUI.Icon.create("search", { size: "lg", label: "Search" });
 button.append(icon);

@@ -15,7 +15,7 @@ Page navigation. The component renders the buttons; the consumer decides what ea
 ```
 
 ```ts
-import { Pagination } from "az-ui";
+import { Pagination } from "@codebyazeredo/az-ui";
 
 const pagination = new Pagination("#pages", { total: 250, pageSize: 25 });
 document.addEventListener("az:pagination:change", (event) => {

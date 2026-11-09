@@ -30,7 +30,7 @@ Persistent list of notifications opened from a button, with an unread counter. F
 ```
 
 ```ts
-import { NotificationPanel } from "az-ui";
+import { NotificationPanel } from "@codebyazeredo/az-ui";
 
 const panel = new NotificationPanel(".az-notification");
 panel.markAllAsRead();

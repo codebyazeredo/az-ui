@@ -71,7 +71,7 @@ CSS for inputs, textarea, select, multi-select, file, range, input group, checkb
 ```
 
 ```ts
-import { Counter } from "az-ui";
+import { Counter } from "@codebyazeredo/az-ui";
 
 new Counter("#bio", { target: "#bio-counter" });
 ```

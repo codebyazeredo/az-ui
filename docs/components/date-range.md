@@ -10,7 +10,7 @@ Links two date fields (start and end) so the end can never be before the start. 
 ```
 
 ```ts
-import { DateRange } from "az-ui";
+import { DateRange } from "@codebyazeredo/az-ui";
 
 const range = new DateRange("#from", "#to", { locale: "pt-BR" });
 range.start; // "2026-03-10"

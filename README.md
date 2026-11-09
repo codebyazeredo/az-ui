@@ -18,7 +18,7 @@ Plain CSS and TypeScript. No framework required.
 
 AZ UI gives corporate, administrative and management systems one consistent interface layer: dense tables, long forms, dashboards, accessible overlays and full page layouts. Components are classes on native HTML elements, with TypeScript behavior where interaction is needed, so it fits server-rendered templates, single-page apps and every major framework.
 
-- npm package: `az-ui` (not published yet) · CSS prefix `az-` · JavaScript namespace `AZUI`
+- npm package: `@codebyazeredo/az-ui` (not published yet) · CSS prefix `az-` · JavaScript namespace `AZUI`
 - MIT licensed · pre-release `0.x` · TypeScript types included · zero runtime dependencies
 
 ## Why AZ UI
@@ -72,12 +72,12 @@ AZ UI gives corporate, administrative and management systems one consistent inte
 ## Quick start
 
 ```bash
-npm install az-ui
+npm install @codebyazeredo/az-ui
 ```
 
 ```ts
-import "az-ui/styles.css";
-import "az-ui/auto"; // optional: initializes components from data-az-* attributes
+import "@codebyazeredo/az-ui/styles.css";
+import "@codebyazeredo/az-ui/auto"; // optional: initializes components from data-az-* attributes
 ```
 
 Components are classes on native elements:
@@ -100,7 +100,7 @@ Components are classes on native elements:
 Interactive components share one lifecycle (`show`, `hide`, `destroy`) and emit cancelable events:
 
 ```ts
-import { Modal } from "az-ui";
+import { Modal } from "@codebyazeredo/az-ui";
 
 const modal = new Modal("#confirm");
 document.addEventListener("az:modal:hide", (event) => {
@@ -112,7 +112,7 @@ modal.show();
 Forms can be described instead of written:
 
 ```ts
-import { AZUI } from "az-ui";
+import { AZUI } from "@codebyazeredo/az-ui";
 
 form.append(
   AZUI.Form.email({ name: "email", label: "Work email", required: true }),

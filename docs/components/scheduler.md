@@ -9,7 +9,7 @@ A one-day schedule by resource: docks, vehicles, teams or rooms in the rows and 
 ```
 
 ```ts
-import { Scheduler } from "az-ui";
+import { Scheduler } from "@codebyazeredo/az-ui";
 
 const schedule = new Scheduler("#docks", {
   date: "2026-11-10",

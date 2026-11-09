@@ -20,7 +20,7 @@ Sequential steps for wizards, such as an order form split into customer, items a
 ```
 
 ```ts
-import { Stepper } from "az-ui";
+import { Stepper } from "@codebyazeredo/az-ui";
 
 const stepper = new Stepper("#order-steps");
 stepper.setState(0, "complete");

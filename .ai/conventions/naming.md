@@ -11,7 +11,7 @@
 | Arquivos | kebab-case | `data-table.ts` |
 | Diretórios | kebab-case | `ibm-plex-sans/` |
 | Namespace JavaScript | `AZUI` | `AZUI.Form.text()` |
-| Pacote npm | `az-ui` | `import "az-ui/styles.css"` |
+| Pacote npm | `az-ui` | `import "@codebyazeredo/az-ui/styles.css"` |
 | Família tipográfica (CSS) | `AZ ` + nome | `"AZ Inter"` |
 
 ## Regras

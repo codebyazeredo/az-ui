@@ -9,7 +9,7 @@ Formats an `<input>` while the user types, from a pattern you write. It also for
 ```
 
 ```ts
-import { Mask } from "az-ui";
+import { Mask } from "@codebyazeredo/az-ui";
 
 const mask = new Mask("#document", { pattern: "999.999.999-99" });
 mask.rawValue; // "12345678901"

@@ -28,7 +28,7 @@ A documentação mostra a usabilidade de cada componente com exemplos práticos:
 
 - Cada exemplo é **renderizado ao vivo** (usando a própria AZ UI) e vem acompanhado do **código-fonte** logo abaixo, com botão de copiar.
 - Um exemplo por variação, tamanho e estado (default, hover/focus quando demonstrável, disabled, invalid, loading...).
-- Exemplos mínimos e copiáveis: o trecho mostrado funciona sozinho em uma página que importe `az-ui/styles.css`.
+- Exemplos mínimos e copiáveis: o trecho mostrado funciona sozinho em uma página que importe `@codebyazeredo/az-ui/styles.css`.
 - Abas ou blocos para as formas de uso: HTML, TypeScript/API programática e atributos `data-az-*`.
 - Tabelas de propriedades/opções, eventos e métodos por componente.
 - Exemplos de composição em cenários reais (listagem com filtros, formulário extenso, tela de detalhe).

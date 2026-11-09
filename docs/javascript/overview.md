@@ -1,9 +1,9 @@
 # JavaScript API
 
-Interactive components are classes exported by `az-ui`. Each one wraps an element, adds behavior and ARIA attributes, and can be removed with `destroy()`.
+Interactive components are classes exported by `@codebyazeredo/az-ui`. Each one wraps an element, adds behavior and ARIA attributes, and can be removed with `destroy()`.
 
 ```ts
-import { Modal } from "az-ui";
+import { Modal } from "@codebyazeredo/az-ui";
 
 const modal = new Modal("#modal"); // selector or HTMLElement
 modal.show();
@@ -40,7 +40,7 @@ document.addEventListener("az:modal:hide", (event) => {
 The main entry has no side effects. To initialize components from HTML attributes, import the optional entry once:
 
 ```ts
-import "az-ui/auto";
+import "@codebyazeredo/az-ui/auto";
 ```
 
 | Attribute                                                                                                                  | Effect                                                        |
@@ -49,7 +49,7 @@ import "az-ui/auto";
 | `data-az-toggle="modal \| offcanvas \| command-menu"` and `data-az-target="#id"`                                           | Clicking the element toggles the target.                      |
 | `data-az-dismiss`                                                                                                          | Inside a modal or offcanvas, closes it.                       |
 
-For content added later, call `initComponents(container)` (exported by `az-ui/auto`).
+For content added later, call `initComponents(container)` (exported by `@codebyazeredo/az-ui/auto`).
 
 Use attributes for static pages and the class API when you need `show()`, events or options. Both can be mixed: `Component.find` is used internally, so an instance created in code is reused by the attributes.
 

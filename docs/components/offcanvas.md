@@ -22,7 +22,7 @@ Side panel over the page, for filters, details or navigation. Same behavior as [
 ```
 
 ```ts
-import { Offcanvas } from "az-ui";
+import { Offcanvas } from "@codebyazeredo/az-ui";
 
 new Offcanvas("#filters").show();
 ```

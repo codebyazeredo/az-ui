@@ -10,10 +10,10 @@ Shows and hides a block of content from one or more triggers. For a group of rel
 <div class="az-collapse" id="shipment-details" hidden>Carrier, route and delivery window.</div>
 ```
 
-With `az-ui/auto`, the trigger works without JavaScript. Without it:
+With `@codebyazeredo/az-ui/auto`, the trigger works without JavaScript. Without it:
 
 ```ts
-import { Collapse } from "az-ui";
+import { Collapse } from "@codebyazeredo/az-ui";
 
 const collapse = new Collapse("#shipment-details", { open: true });
 collapse.toggle();

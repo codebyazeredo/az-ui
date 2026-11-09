@@ -1,6 +1,6 @@
 # Utilities
 
-Single-purpose classes for layout and spacing, generated from the tokens. Utilities load last in `az-ui/styles.css`, so they override component styles without `!important`.
+Single-purpose classes for layout and spacing, generated from the tokens. Utilities load last in `@codebyazeredo/az-ui/styles.css`, so they override component styles without `!important`.
 
 ```html
 <div class="az-d-flex az-flex-column az-md-flex-row az-gap-3">

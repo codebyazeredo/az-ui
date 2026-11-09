@@ -17,7 +17,7 @@ Menu of actions opened from a button.
 ```
 
 ```ts
-import { Dropdown } from "az-ui";
+import { Dropdown } from "@codebyazeredo/az-ui";
 
 const dropdown = new Dropdown(".az-dropdown");
 ```

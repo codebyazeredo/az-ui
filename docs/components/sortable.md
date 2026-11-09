@@ -12,7 +12,7 @@ Reorders the children of a list by drag and drop, and moves them between lists o
 ```
 
 ```ts
-import { Sortable } from "az-ui";
+import { Sortable } from "@codebyazeredo/az-ui";
 
 const sortable = new Sortable("#tasks", { group: "tasks", handle: ".grip" });
 ```

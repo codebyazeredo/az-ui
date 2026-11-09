@@ -9,7 +9,7 @@ Tells a barcode reader apart from a person typing. USB and Bluetooth readers beh
 ```
 
 ```ts
-import { BarcodeInput } from "az-ui";
+import { BarcodeInput } from "@codebyazeredo/az-ui";
 
 const field = document.querySelector("#scan");
 new BarcodeInput(field, { maxInterval: 80 });
