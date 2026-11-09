@@ -1,5 +1,7 @@
 export { AZUI } from "./api";
 export type * from "./api";
+export { Collapse } from "./components/collapse";
+export type { CollapseOptions } from "./components/collapse";
 export { CommandMenu } from "./components/command-menu";
 export type { CommandMenuOptions } from "./components/command-menu";
 export { ContextMenu } from "./components/context-menu";
@@ -37,6 +39,19 @@ export type {
 } from "./components/file-upload";
 export { Select } from "./components/select";
 export type { SelectOptions } from "./components/select";
+export { Kanban } from "./components/kanban";
+export type { KanbanMoveDetail } from "./components/kanban";
+export { Splitter } from "./components/splitter";
+export { Stepper } from "./components/stepper";
+export type { StepState } from "./components/stepper";
+export { Tree } from "./components/tree";
+export { Sortable } from "./components/sortable";
+export type {
+  SortableDirection,
+  SortableEventDetail,
+  SortableLabels,
+  SortableOptions,
+} from "./components/sortable";
 export { Tabs } from "./components/tabs";
 export { Toast } from "./components/toast";
 export type { ToastContent, ToastOptions, ToastVariant } from "./components/toast";

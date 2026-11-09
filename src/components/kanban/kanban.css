@@ -1,0 +1,75 @@
+.az-kanban {
+  display: flex;
+  flex-direction: column;
+  gap: var(--az-spacing-4);
+  overflow-x: auto;
+}
+
+.az-kanban-lane {
+  display: flex;
+  gap: var(--az-spacing-3);
+  align-items: flex-start;
+}
+
+.az-kanban:not(:has(.az-kanban-lane)) {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--az-spacing-3);
+}
+
+.az-kanban-lane-title {
+  position: sticky;
+  left: 0;
+  flex: 0 0 8rem;
+  margin: 0;
+  font-size: var(--az-font-size-md);
+  font-weight: var(--az-font-weight-semibold);
+}
+
+.az-kanban-column {
+  display: flex;
+  flex: 0 0 18rem;
+  flex-direction: column;
+  min-width: 0;
+  background-color: var(--az-color-surface-muted);
+  border: var(--az-border-width) solid var(--az-color-border);
+  border-radius: var(--az-radius-md);
+}
+
+.az-kanban-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--az-spacing-2) var(--az-spacing-3);
+  font-weight: var(--az-font-weight-semibold);
+  border-bottom: var(--az-border-width) solid var(--az-color-border);
+}
+
+.az-kanban-count {
+  font-size: var(--az-font-size-sm);
+  font-weight: var(--az-font-weight-normal);
+  color: var(--az-text-muted);
+}
+
+.az-kanban-column-full .az-kanban-count {
+  font-weight: var(--az-font-weight-semibold);
+  color: var(--az-color-warning-text);
+}
+
+.az-kanban-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--az-spacing-2);
+  min-height: var(--az-spacing-8);
+  padding: var(--az-spacing-2);
+}
+
+.az-kanban-card {
+  padding: var(--az-spacing-2) var(--az-spacing-3);
+  color: var(--az-text-primary);
+  background-color: var(--az-color-surface);
+  border: var(--az-border-width) solid var(--az-color-border);
+  border-radius: var(--az-radius-md);
+  box-shadow: var(--az-shadow-sm);
+}

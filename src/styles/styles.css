@@ -34,6 +34,11 @@
 @import url("../components/popover/popover.css");
 @import url("../components/tabs/tabs.css");
 @import url("../components/accordion/accordion.css");
+@import url("../components/sortable/sortable.css");
+@import url("../components/kanban/kanban.css");
+@import url("../components/tree/tree.css");
+@import url("../components/stepper/stepper.css");
+@import url("../components/splitter/splitter.css");
 @import url("../components/datepicker/datepicker.css");
 @import url("../components/context-menu/context-menu.css");
 @import url("../components/command-menu/command-menu.css");

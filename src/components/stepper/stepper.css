@@ -1,0 +1,88 @@
+.az-stepper-list {
+  display: flex;
+  gap: var(--az-spacing-2);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.az-stepper-step {
+  display: flex;
+  flex: 1;
+  gap: var(--az-spacing-2);
+  align-items: center;
+  min-width: 0;
+  color: var(--az-text-muted);
+}
+
+.az-stepper-step + .az-stepper-step::before {
+  flex: 1;
+  min-width: var(--az-spacing-4);
+  height: var(--az-border-width);
+  content: "";
+  background-color: var(--az-color-border-strong);
+}
+
+.az-stepper-marker {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--az-spacing-6);
+  height: var(--az-spacing-6);
+  font-size: var(--az-font-size-sm);
+  font-weight: var(--az-font-weight-semibold);
+  color: var(--az-text-secondary);
+  background-color: var(--az-color-surface);
+  border: var(--az-border-width) solid var(--az-color-border-strong);
+  border-radius: 50%;
+}
+
+.az-stepper-label {
+  overflow: hidden;
+  font-size: var(--az-font-size-md);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.az-stepper-step[aria-current="step"] {
+  color: var(--az-text-primary);
+}
+
+.az-stepper-step[aria-current="step"][data-state] .az-stepper-marker {
+  color: var(--az-text-inverse);
+  background-color: var(--az-color-primary);
+  border-color: var(--az-color-primary);
+}
+
+.az-stepper-step[aria-current="step"] .az-stepper-label {
+  font-weight: var(--az-font-weight-semibold);
+}
+
+.az-stepper-step[data-state="complete"] .az-stepper-marker {
+  color: var(--az-text-inverse);
+  background-color: var(--az-color-success);
+  border-color: var(--az-color-success);
+}
+
+.az-stepper-step[data-state="error"] .az-stepper-marker {
+  color: var(--az-text-inverse);
+  background-color: var(--az-color-danger);
+  border-color: var(--az-color-danger);
+}
+
+.az-stepper-step[data-state="error"] .az-stepper-label {
+  color: var(--az-color-danger-text);
+}
+
+.az-stepper-vertical .az-stepper-list {
+  flex-direction: column;
+}
+
+.az-stepper-vertical .az-stepper-step + .az-stepper-step::before {
+  display: none;
+}
+
+.az-stepper-panel {
+  padding-block: var(--az-spacing-4);
+}

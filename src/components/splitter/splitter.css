@@ -1,0 +1,52 @@
+.az-splitter {
+  display: flex;
+  min-height: 10rem;
+  overflow: hidden;
+  border: var(--az-border-width) solid var(--az-color-border);
+  border-radius: var(--az-radius-md);
+}
+
+.az-splitter > :not(.az-splitter-handle) {
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+}
+
+.az-splitter > :first-child {
+  flex: none;
+}
+
+.az-splitter > :last-child {
+  flex: 1 1 0;
+}
+
+.az-splitter-handle {
+  flex: none;
+  width: var(--az-spacing-2);
+  touch-action: none;
+  cursor: col-resize;
+  background-color: var(--az-color-surface-muted);
+  border-inline: var(--az-border-width) solid var(--az-color-border);
+}
+
+.az-splitter-handle:hover,
+.az-splitter-handle:focus-visible {
+  background-color: var(--az-color-border-strong);
+}
+
+.az-splitter-handle:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: calc(var(--az-focus-ring-width) * -1);
+}
+
+.az-splitter-vertical {
+  flex-direction: column;
+}
+
+.az-splitter-vertical > .az-splitter-handle {
+  width: auto;
+  height: var(--az-spacing-2);
+  cursor: row-resize;
+  border-block: var(--az-border-width) solid var(--az-color-border);
+  border-inline: 0;
+}
