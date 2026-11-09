@@ -6,8 +6,8 @@
 Plain CSS and TypeScript. No framework required.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/images/dashboard-dark.png" />
-  <img src="docs/images/dashboard-light.png" alt="Operations dashboard built only with AZ UI: summary stats, orders table, progress bars and activity timeline" width="900" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/codebyazeredo/az-ui/master/docs/images/dashboard-dark.png" />
+  <img src="https://raw.githubusercontent.com/codebyazeredo/az-ui/master/docs/images/dashboard-light.png" alt="Operations dashboard built only with AZ UI: summary stats, orders table, progress bars and activity timeline" width="900" />
 </picture>
 
 <sub>A complete screen built only with AZ UI components, in the light and dark themes.</sub>
@@ -38,15 +38,15 @@ AZ UI gives corporate, administrative and management systems one consistent inte
   <tr>
     <td width="50%">
       <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="docs/images/orders-dark.png" />
-        <img src="docs/images/orders-light.png" alt="Orders table with search, sortable columns, row selection, status badges and pagination" />
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/codebyazeredo/az-ui/master/docs/images/orders-dark.png" />
+        <img src="https://raw.githubusercontent.com/codebyazeredo/az-ui/master/docs/images/orders-light.png" alt="Orders table with search, sortable columns, row selection, status badges and pagination" />
       </picture>
       <br /><sub><b>Data table</b>: search, sorting, selection and pagination.</sub>
     </td>
     <td width="50%">
       <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="docs/images/order-form-dark.png" />
-        <img src="docs/images/order-form-light.png" alt="Order form with validation error, select, datepicker, character counter, file upload and switch" />
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/codebyazeredo/az-ui/master/docs/images/order-form-dark.png" />
+        <img src="https://raw.githubusercontent.com/codebyazeredo/az-ui/master/docs/images/order-form-light.png" alt="Order form with validation error, select, datepicker, character counter, file upload and switch" />
       </picture>
       <br /><sub><b>Forms</b>: validation, datepicker, file upload and counters.</sub>
     </td>
@@ -138,12 +138,12 @@ Override tokens, not component selectors:
 
 ## Documentation
 
-Reference for every public API lives in [`docs/`](docs):
+Reference for every public API lives in [`docs/`](https://github.com/codebyazeredo/az-ui/tree/master/docs):
 
-- Components: [`docs/components/`](docs/components) (classes, options, events, states and accessibility for each one)
-- [Declarative form API](docs/forms/declarative-api.md) and [JavaScript API](docs/javascript/overview.md)
-- Foundations: [colors](docs/foundations/colors.md), [typography](docs/foundations/typography.md), [spacing and tokens](docs/foundations/spacing-and-tokens.md), [themes](docs/foundations/themes.md), [utilities](docs/foundations/utilities.md)
-- Guides: [installation](docs/getting-started/installation.md), [quick start](docs/getting-started/quick-start.md), [customization](docs/guides/customization.md), [accessibility](docs/guides/accessibility.md), [PHP and server-side](docs/guides/php.md), [frameworks](docs/guides/frameworks.md), [versioning and roadmap](docs/guides/versioning.md)
+- Components: [`docs/components/`](https://github.com/codebyazeredo/az-ui/tree/master/docs/components) (classes, options, events, states and accessibility for each one)
+- [Declarative form API](https://github.com/codebyazeredo/az-ui/blob/master/docs/forms/declarative-api.md) and [JavaScript API](https://github.com/codebyazeredo/az-ui/blob/master/docs/javascript/overview.md)
+- Foundations: [colors](https://github.com/codebyazeredo/az-ui/blob/master/docs/foundations/colors.md), [typography](https://github.com/codebyazeredo/az-ui/blob/master/docs/foundations/typography.md), [spacing and tokens](https://github.com/codebyazeredo/az-ui/blob/master/docs/foundations/spacing-and-tokens.md), [themes](https://github.com/codebyazeredo/az-ui/blob/master/docs/foundations/themes.md), [utilities](https://github.com/codebyazeredo/az-ui/blob/master/docs/foundations/utilities.md)
+- Guides: [installation](https://github.com/codebyazeredo/az-ui/blob/master/docs/getting-started/installation.md), [quick start](https://github.com/codebyazeredo/az-ui/blob/master/docs/getting-started/quick-start.md), [customization](https://github.com/codebyazeredo/az-ui/blob/master/docs/guides/customization.md), [accessibility](https://github.com/codebyazeredo/az-ui/blob/master/docs/guides/accessibility.md), [PHP and server-side](https://github.com/codebyazeredo/az-ui/blob/master/docs/guides/php.md), [frameworks](https://github.com/codebyazeredo/az-ui/blob/master/docs/guides/frameworks.md), [versioning and roadmap](https://github.com/codebyazeredo/az-ui/blob/master/docs/guides/versioning.md)
 
 ## Browser support
 
@@ -151,7 +151,7 @@ The last two versions of Chrome, Edge, Firefox, Safari and iOS Safari.
 
 ## Status
 
-Foundations, components, data components and layouts are implemented and covered by automated tests. The first npm release is planned after the documentation and distribution phases. See [Versioning and roadmap](docs/guides/versioning.md).
+Foundations, components, data components and layouts are implemented and covered by automated tests. The first npm release is planned after the documentation and distribution phases. See [Versioning and roadmap](https://github.com/codebyazeredo/az-ui/blob/master/docs/guides/versioning.md).
 
 ## Development
 
@@ -163,8 +163,8 @@ npm run typecheck
 npm run lint
 ```
 
-Project context for contributors lives in [`.ai/`](.ai/README.md). See [CONTRIBUTING.md](CONTRIBUTING.md) for the workflow and [SECURITY.md](SECURITY.md) to report vulnerabilities.
+Project context for contributors lives in [`.ai/`](https://github.com/codebyazeredo/az-ui/blob/master/.ai/README.md). See [CONTRIBUTING.md](https://github.com/codebyazeredo/az-ui/blob/master/CONTRIBUTING.md) for the workflow and [SECURITY.md](https://github.com/codebyazeredo/az-ui/blob/master/SECURITY.md) to report vulnerabilities.
 
 ## License
 
-[MIT](LICENSE). Bundled fonts keep their SIL Open Font License in `fonts/<family>/`.
+[MIT](https://github.com/codebyazeredo/az-ui/blob/master/LICENSE). Bundled fonts keep their SIL Open Font License in `fonts/<family>/`.

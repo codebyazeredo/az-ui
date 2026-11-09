@@ -4,6 +4,24 @@
   "description": "Component library and Design System for enterprise web applications, independent of frameworks.",
   "author": "Matheus Azeredo (codebyazeredo)",
   "license": "MIT",
+  "keywords": [
+    "ui",
+    "design-system",
+    "components",
+    "enterprise",
+    "css",
+    "typescript",
+    "accessible",
+    "framework-agnostic"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codebyazeredo/az-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codebyazeredo/az-ui/issues"
+  },
+  "homepage": "https://github.com/codebyazeredo/az-ui#readme",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
