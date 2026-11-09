@@ -67,6 +67,7 @@ AZ UI gives corporate, administrative and management systems one consistent inte
 | Interaction             | Collapse, Sortable (drag and drop), Kanban, Tree, Stepper, Splitter                                                                   |
 | Data entry              | Mask, Tag input, Combobox, Dual listbox, Date range, Barcode input                                                                    |
 | Tables                  | CSV export, row and column reordering, resizable and fixed columns, expandable rows, inline editing, tree grid, virtual table         |
+| Operations              | Widget grid (draggable dashboard), Calendar, Scheduler (dock schedule), Gantt                                                         |
 
 ## Quick start
 
