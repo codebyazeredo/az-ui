@@ -1,0 +1,44 @@
+.az-widget-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--az-widget-columns, 4), minmax(0, 1fr));
+  gap: var(--az-spacing-4);
+  align-items: start;
+}
+
+.az-widget {
+  position: relative;
+  grid-column: span var(--az-widget-span, 1);
+  min-width: 0;
+  padding: var(--az-spacing-4);
+  color: var(--az-text-primary);
+  cursor: grab;
+  background-color: var(--az-color-surface);
+  border: var(--az-border-width) solid var(--az-color-border);
+  border-radius: var(--az-radius-md);
+  box-shadow: var(--az-shadow-sm);
+}
+
+.az-widget:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: var(--az-focus-ring-width);
+}
+
+.az-widget-resize {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-end: 0;
+  width: var(--az-spacing-2);
+  cursor: ew-resize;
+  background-color: transparent;
+  border-radius: var(--az-radius-sm);
+  touch-action: none;
+}
+
+.az-widget-resize:focus-visible {
+  background-color: var(--az-color-primary);
+  outline: none;
+}
+
+.az-widget:hover > .az-widget-resize {
+  background-color: var(--az-color-primary);
+}

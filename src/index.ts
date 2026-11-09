@@ -1,5 +1,12 @@
 export { AZUI } from "./api";
 export type * from "./api";
+export { Calendar } from "./components/calendar";
+export type {
+  CalendarEvent,
+  CalendarLabels,
+  CalendarOptions,
+  CalendarVariant,
+} from "./components/calendar";
 export { Collapse } from "./components/collapse";
 export type { CollapseOptions } from "./components/collapse";
 export { Combobox } from "./components/combobox";
@@ -64,11 +71,33 @@ export type {
   FileUploadLabels,
   FileUploadOptions,
 } from "./components/file-upload";
+export { Scheduler } from "./components/scheduler";
+export type {
+  SchedulerEvent,
+  SchedulerLabels,
+  SchedulerOptions,
+  SchedulerResource,
+  SchedulerVariant,
+} from "./components/scheduler";
 export { Select } from "./components/select";
 export type { SelectOptions } from "./components/select";
+export { Gantt } from "./components/gantt";
+export type {
+  GanttLabels,
+  GanttOptions,
+  GanttTask,
+  GanttVariant,
+  GanttZoom,
+} from "./components/gantt";
 export { Kanban } from "./components/kanban";
 export type { KanbanMoveDetail } from "./components/kanban";
 export { Splitter } from "./components/splitter";
+export { WidgetGrid } from "./components/widget-grid";
+export type {
+  WidgetGridLabels,
+  WidgetGridOptions,
+  WidgetLayoutItem,
+} from "./components/widget-grid";
 export { Stepper } from "./components/stepper";
 export type { StepState } from "./components/stepper";
 export { Tree } from "./components/tree";

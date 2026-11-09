@@ -1,0 +1,142 @@
+.az-calendar {
+  color: var(--az-text-primary);
+}
+
+.az-calendar-header {
+  display: flex;
+  gap: var(--az-spacing-2);
+  align-items: center;
+  margin-bottom: var(--az-spacing-3);
+}
+
+.az-calendar-title {
+  flex: 1;
+  font-size: var(--az-font-size-lg);
+  font-weight: var(--az-font-weight-semibold);
+  text-transform: capitalize;
+}
+
+.az-calendar-grid {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  background-color: var(--az-color-surface);
+  border: var(--az-border-width) solid var(--az-color-border);
+}
+
+.az-calendar-grid th {
+  padding: var(--az-spacing-2);
+  font-size: var(--az-font-size-sm);
+  font-weight: var(--az-font-weight-semibold);
+  color: var(--az-text-muted);
+  text-align: start;
+  text-transform: capitalize;
+  background-color: var(--az-color-surface-muted);
+  border-bottom: var(--az-border-width) solid var(--az-color-border);
+}
+
+.az-calendar-grid td {
+  height: 6.5rem;
+  padding: var(--az-spacing-1);
+  vertical-align: top;
+  border: var(--az-border-width) solid var(--az-color-border);
+}
+
+.az-calendar-day {
+  min-width: var(--az-spacing-6);
+  height: var(--az-spacing-6);
+  padding: 0 var(--az-spacing-1);
+  font-family: inherit;
+  font-size: var(--az-font-size-sm);
+  color: var(--az-text-primary);
+  cursor: pointer;
+  background: none;
+  border: 0;
+  border-radius: var(--az-radius-sm);
+}
+
+.az-calendar-day:hover {
+  background-color: var(--az-color-border);
+}
+
+.az-calendar-day:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+}
+
+.az-calendar-day-today {
+  font-weight: var(--az-font-weight-semibold);
+  color: var(--az-text-inverse);
+  background-color: var(--az-color-primary);
+}
+
+.az-calendar-cell-outside {
+  background-color: var(--az-color-surface-muted);
+}
+
+.az-calendar-cell-outside .az-calendar-day {
+  color: var(--az-text-muted);
+}
+
+.az-calendar-events {
+  display: flex;
+  flex-direction: column;
+  gap: var(--az-spacing-1);
+  padding: 0;
+  margin: var(--az-spacing-1) 0 0;
+  list-style: none;
+}
+
+.az-calendar-event,
+.az-calendar-more {
+  display: block;
+  width: 100%;
+  padding: 0 var(--az-spacing-1);
+  overflow: hidden;
+  font-family: inherit;
+  font-size: var(--az-font-size-sm);
+  line-height: var(--az-spacing-5);
+  text-align: start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 0;
+  border-radius: var(--az-radius-sm);
+}
+
+.az-calendar-event {
+  color: var(--az-text-inverse);
+  background-color: var(--az-color-primary);
+}
+
+.az-calendar-event-success {
+  background-color: var(--az-color-success);
+}
+
+.az-calendar-event-warning {
+  color: var(--az-text-primary);
+  background-color: var(--az-color-warning);
+}
+
+.az-calendar-event-danger {
+  background-color: var(--az-color-danger);
+}
+
+.az-calendar-event-info {
+  background-color: var(--az-color-info);
+}
+
+.az-calendar-more {
+  color: var(--az-text-muted);
+  background: none;
+}
+
+.az-calendar-more:hover {
+  color: var(--az-text-primary);
+  background-color: var(--az-color-surface-muted);
+}
+
+.az-calendar-event:focus-visible,
+.az-calendar-more:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: var(--az-focus-ring-width);
+}

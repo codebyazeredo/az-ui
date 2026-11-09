@@ -1,0 +1,215 @@
+.az-gantt {
+  --az-gantt-name-width: 20rem;
+
+  position: relative;
+  color: var(--az-text-primary);
+}
+
+.az-gantt-scroll {
+  position: relative;
+  max-height: var(--az-gantt-max-height, none);
+  overflow: auto;
+  direction: ltr;
+  background-color: var(--az-color-surface);
+  border: var(--az-border-width) solid var(--az-color-border);
+  border-radius: var(--az-radius-md);
+}
+
+.az-gantt-grid {
+  position: relative;
+  min-width: max-content;
+}
+
+.az-gantt-header {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  display: flex;
+  height: var(--az-gantt-header-height);
+  background-color: var(--az-color-surface-muted);
+  border-bottom: var(--az-border-width) solid var(--az-color-border);
+}
+
+.az-gantt-row {
+  display: flex;
+  height: var(--az-gantt-row-height);
+  border-top: var(--az-border-width) solid var(--az-color-border);
+}
+
+.az-gantt-corner,
+.az-gantt-name {
+  position: sticky;
+  inset-inline-start: 0;
+  z-index: 3;
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 0 var(--az-gantt-name-width);
+  gap: var(--az-spacing-2);
+  align-items: center;
+  padding: 0 var(--az-spacing-3);
+  font-size: var(--az-font-size-sm);
+  background-color: var(--az-color-surface-muted);
+  border-inline-end: var(--az-border-width) solid var(--az-color-border);
+}
+
+.az-gantt-corner {
+  font-weight: var(--az-font-weight-semibold);
+}
+
+.az-gantt-corner > :first-child,
+.az-gantt-task-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.az-gantt-corner > :not(:first-child),
+.az-gantt-date {
+  flex: 0 0 5.5rem;
+  color: var(--az-text-muted);
+}
+
+.az-gantt-task-name {
+  font-size: var(--az-font-size-md);
+  color: var(--az-text-primary);
+}
+
+.az-gantt-timeline {
+  flex: none;
+  width: calc(var(--az-gantt-days) * var(--az-gantt-day-width));
+}
+
+.az-gantt-months,
+.az-gantt-days {
+  display: flex;
+  height: calc(var(--az-gantt-header-height) / 2);
+}
+
+.az-gantt-month,
+.az-gantt-day {
+  box-sizing: border-box;
+  flex: none;
+  padding: var(--az-spacing-1);
+  overflow: hidden;
+  font-size: var(--az-font-size-sm);
+  color: var(--az-text-muted);
+  text-transform: capitalize;
+  white-space: nowrap;
+  border-inline-start: var(--az-border-width) solid var(--az-color-border);
+}
+
+.az-gantt-track {
+  position: relative;
+  flex: none;
+  width: calc(var(--az-gantt-days) * var(--az-gantt-day-width));
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent 0,
+    transparent calc(var(--az-gantt-day-width) - var(--az-border-width)),
+    var(--az-color-border) calc(var(--az-gantt-day-width) - var(--az-border-width)),
+    var(--az-color-border) var(--az-gantt-day-width)
+  );
+}
+
+.az-gantt-bar {
+  --az-gantt-bar-color: var(--az-color-primary);
+
+  position: absolute;
+  top: var(--az-spacing-2);
+  bottom: var(--az-spacing-2);
+  box-sizing: border-box;
+  padding: 0;
+  overflow: hidden;
+  cursor: grab;
+  background-color: color-mix(in srgb, var(--az-gantt-bar-color) 30%, var(--az-color-surface));
+  border: var(--az-border-width) solid var(--az-gantt-bar-color);
+  border-radius: var(--az-radius-sm);
+}
+
+.az-gantt-bar-success {
+  --az-gantt-bar-color: var(--az-color-success);
+}
+
+.az-gantt-bar-warning {
+  --az-gantt-bar-color: var(--az-color-warning);
+}
+
+.az-gantt-bar-danger {
+  --az-gantt-bar-color: var(--az-color-danger);
+}
+
+.az-gantt-bar-info {
+  --az-gantt-bar-color: var(--az-color-info);
+}
+
+.az-gantt-bar:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: var(--az-focus-ring-width);
+}
+
+.az-gantt-progress {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  pointer-events: none;
+  background-color: var(--az-gantt-bar-color);
+}
+
+.az-gantt-handle {
+  position: absolute;
+  inset-block: 0;
+  width: var(--az-spacing-2);
+  cursor: ew-resize;
+}
+
+.az-gantt-handle-start {
+  inset-inline-start: 0;
+}
+
+.az-gantt-handle-end {
+  inset-inline-end: 0;
+}
+
+.az-gantt-overlay {
+  position: absolute;
+  inset-block: var(--az-gantt-header-height) 0;
+  inset-inline-start: var(--az-gantt-name-width);
+  z-index: 1;
+  width: calc(var(--az-gantt-days) * var(--az-gantt-day-width));
+  pointer-events: none;
+}
+
+.az-gantt-links {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  overflow: visible;
+  color: var(--az-text-muted);
+}
+
+.az-gantt-link {
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 1.5;
+}
+
+.az-gantt-today {
+  position: absolute;
+  inset-block: 0;
+  width: 2px;
+  background-color: var(--az-color-danger);
+}
+
+.az-gantt-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip-path: inset(50%);
+}

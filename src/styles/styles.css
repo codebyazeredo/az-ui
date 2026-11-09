@@ -40,6 +40,10 @@
 @import url("../components/tree/tree.css");
 @import url("../components/stepper/stepper.css");
 @import url("../components/splitter/splitter.css");
+@import url("../components/widget-grid/widget-grid.css");
+@import url("../components/calendar/calendar.css");
+@import url("../components/scheduler/scheduler.css");
+@import url("../components/gantt/gantt.css");
 @import url("../components/tag-input/tag-input.css");
 @import url("../components/combobox/combobox.css");
 @import url("../components/dual-listbox/dual-listbox.css");

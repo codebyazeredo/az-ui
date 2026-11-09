@@ -1,5 +1,6 @@
 const ISO_DATE = /^(\d{4})-(\d{2})-(\d{2})$/;
 const DAYS_IN_GRID = 42;
+const MILLISECONDS_PER_DAY = 86_400_000;
 
 export function parseIsoDate(text: string): Date | null {
   const match = ISO_DATE.exec(text.trim());
@@ -49,4 +50,11 @@ export function buildMonthGrid(year: number, month: number, firstDayOfWeek: numb
   const start = new Date(year, month, 1 - leadingDays);
 
   return Array.from({ length: DAYS_IN_GRID }, (_, index) => addDays(start, index));
+}
+
+export function diffInDays(from: Date, to: Date): number {
+  const start = Date.UTC(from.getFullYear(), from.getMonth(), from.getDate());
+  const end = Date.UTC(to.getFullYear(), to.getMonth(), to.getDate());
+
+  return Math.round((end - start) / MILLISECONDS_PER_DAY);
 }

@@ -1,0 +1,142 @@
+.az-scheduler {
+  --az-scheduler-label-width: 9rem;
+  --az-scheduler-row-height: 3rem;
+
+  position: relative;
+  color: var(--az-text-primary);
+}
+
+.az-scheduler-scroll {
+  overflow-x: auto;
+  direction: ltr;
+  background-color: var(--az-color-surface);
+  border: var(--az-border-width) solid var(--az-color-border);
+  border-radius: var(--az-radius-md);
+}
+
+.az-scheduler-header,
+.az-scheduler-row {
+  display: flex;
+  min-width: max-content;
+}
+
+.az-scheduler-row {
+  border-top: var(--az-border-width) solid var(--az-color-border);
+}
+
+.az-scheduler-corner,
+.az-scheduler-label {
+  position: sticky;
+  inset-inline-start: 0;
+  z-index: 3;
+  box-sizing: border-box;
+  flex: 0 0 var(--az-scheduler-label-width);
+  padding: var(--az-spacing-2) var(--az-spacing-3);
+  background-color: var(--az-color-surface-muted);
+  border-inline-end: var(--az-border-width) solid var(--az-color-border);
+}
+
+.az-scheduler-label {
+  display: flex;
+  align-items: center;
+  font-size: var(--az-font-size-md);
+  font-weight: var(--az-font-weight-semibold);
+}
+
+.az-scheduler-times {
+  display: flex;
+  background-color: var(--az-color-surface-muted);
+}
+
+.az-scheduler-hour {
+  box-sizing: border-box;
+  flex: none;
+  padding: var(--az-spacing-2);
+  font-size: var(--az-font-size-sm);
+  color: var(--az-text-muted);
+  border-inline-start: var(--az-border-width) solid var(--az-color-border);
+}
+
+.az-scheduler-lane {
+  position: relative;
+  flex: none;
+  width: calc(var(--az-scheduler-slots) * var(--az-scheduler-slot-width));
+  height: var(--az-scheduler-row-height);
+  cursor: cell;
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent 0,
+    transparent calc(var(--az-scheduler-slot-width) - var(--az-border-width)),
+    var(--az-color-border) calc(var(--az-scheduler-slot-width) - var(--az-border-width)),
+    var(--az-color-border) var(--az-scheduler-slot-width)
+  );
+}
+
+.az-scheduler-event {
+  position: absolute;
+  top: var(--az-spacing-1);
+  bottom: var(--az-spacing-1);
+  box-sizing: border-box;
+  padding: 0 var(--az-spacing-2);
+  overflow: hidden;
+  font-family: inherit;
+  font-size: var(--az-font-size-sm);
+  color: var(--az-text-inverse);
+  text-align: start;
+  cursor: grab;
+  background-color: var(--az-color-primary);
+  border: 0;
+  border-radius: var(--az-radius-sm);
+}
+
+.az-scheduler-event-success {
+  background-color: var(--az-color-success);
+}
+
+.az-scheduler-event-warning {
+  color: var(--az-text-primary);
+  background-color: var(--az-color-warning);
+}
+
+.az-scheduler-event-danger {
+  background-color: var(--az-color-danger);
+}
+
+.az-scheduler-event-info {
+  background-color: var(--az-color-info);
+}
+
+.az-scheduler-event:focus-visible {
+  outline: var(--az-focus-ring-width) solid var(--az-focus-ring-color);
+  outline-offset: var(--az-focus-ring-width);
+}
+
+.az-scheduler-event-title {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.az-scheduler-resize {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-end: 0;
+  width: var(--az-spacing-2);
+  cursor: ew-resize;
+  background-color: currentcolor;
+  opacity: 0.35;
+}
+
+.az-scheduler-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip-path: inset(50%);
+}
