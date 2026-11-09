@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en" data-az-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interaction — AZ UI examples</title>
+    <meta name="description" content="Collapse and sortable lists with drag and drop." />
+    <script>
+      (function () {
+        var theme = localStorage.getItem("az-examples-theme");
+        document.documentElement.dataset.azTheme =
+          theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      })();
+    </script>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/src/styles/styles.css" />
+    <link rel="stylesheet" href="/examples/shared.css" />
+  </head>
+  <body class="az-body">
+    <header class="az-navbar az-navbar-sticky">
+      <a class="az-navbar-brand" href="index.html">AZ UI examples</a>
+      <nav class="az-navbar-nav example-nav" aria-label="Examples">
+        <ul class="az-navigation-menu az-navigation-menu-horizontal">
+          <li><a class="az-navigation-menu-link" href="components.html">Components</a></li>
+          <li><a class="az-navigation-menu-link" href="forms.html">Forms</a></li>
+          <li><a class="az-navigation-menu-link" href="data.html">Data</a></li>
+          <li><a class="az-navigation-menu-link" href="overlays.html">Overlays and modals</a></li>
+          <li>
+            <a class="az-navigation-menu-link" href="interaction.html" aria-current="page"
+              >Interaction</a
+            >
+          </li>
+          <li><a class="az-navigation-menu-link" href="icons.html">Icons</a></li>
+          <li><a class="az-navigation-menu-link" href="screens/dashboard.html">Screens</a></li>
+        </ul>
+      </nav>
+      <div class="az-navbar-actions">
+        <button class="az-btn az-btn-sm" type="button" data-example-theme-toggle>
+          Toggle theme
+        </button>
+      </div>
+    </header>
+
+    <main class="az-container az-container-md az-py-3">
+      <div class="az-page-header">
+        <div class="az-page-header-main">
+          <h1 class="az-page-header-title">Interaction</h1>
+          <p class="az-page-header-description">
+            Collapse and sortable lists. Drag with the mouse, or focus an item and use Space, the
+            arrow keys, Enter and Escape.
+          </p>
+        </div>
+      </div>
+
+      <section class="az-mb-3" aria-labelledby="collapse-title">
+        <h2 id="collapse-title">Collapse</h2>
+        <div class="az-d-flex az-gap-2 az-mb-2">
+          <button class="az-btn" type="button" data-az-toggle="collapse" data-az-target="#shipment">
+            Shipment details
+          </button>
+          <button class="az-btn" type="button" data-az-toggle="collapse" data-az-target="#shipment">
+            Same content, second trigger
+          </button>
+        </div>
+        <div id="shipment" hidden>
+          <div class="az-alert az-alert-info">
+            Carrier: North Freight. Route: Santos to Campinas. Delivery window: 08:00 to 12:00.
+          </div>
+        </div>
+      </section>
+
+      <section class="az-mb-3" aria-labelledby="single-title">
+        <h2 id="single-title">Reorder a list</h2>
+        <ul
+          class="az-list-group az-sortable"
+          data-az-component="sortable"
+          aria-label="Picking priority"
+        >
+          <li class="az-list-group-item">Pick order 1042</li>
+          <li class="az-list-group-item">Pick order 1043</li>
+          <li class="az-list-group-item">Pick order 1044</li>
+          <li class="az-list-group-item">Pick order 1045</li>
+        </ul>
+      </section>
+
+      <section class="az-mb-3" aria-labelledby="group-title">
+        <h2 id="group-title">Move between lists</h2>
+        <div class="az-row">
+          <div class="az-col-6">
+            <h3 class="az-text-md">To do</h3>
+            <ul
+              class="az-list-group az-sortable"
+              data-az-component="sortable"
+              data-az-group="tasks"
+              aria-label="To do"
+            >
+              <li class="az-list-group-item">Receive inbound truck</li>
+              <li class="az-list-group-item">Count pallet 7</li>
+              <li class="az-list-group-item">Label returns</li>
+            </ul>
+          </div>
+          <div class="az-col-6">
+            <h3 class="az-text-md">Done</h3>
+            <ul
+              class="az-list-group az-sortable"
+              data-az-component="sortable"
+              data-az-group="tasks"
+              aria-label="Done"
+            >
+              <li class="az-list-group-item">Close dock 3</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="az-mb-3" aria-labelledby="kanban-title">
+        <h2 id="kanban-title">Kanban</h2>
+        <p class="az-text-sm az-text-muted">
+          "In progress" holds at most 2 cards: a third one goes back. Lanes are optional, as
+          below.
+        </p>
+        <div class="az-kanban" data-az-component="kanban" aria-label="Task board">
+          <section class="az-kanban-column">
+            <header class="az-kanban-header">
+              <span>To do</span><span class="az-kanban-count"></span>
+            </header>
+            <div class="az-kanban-list">
+              <div class="az-kanban-card">Schedule pickup 2210</div>
+              <div class="az-kanban-card">Review carrier invoice</div>
+              <div class="az-kanban-card">Update route plan</div>
+            </div>
+          </section>
+          <section class="az-kanban-column" data-az-limit="2">
+            <header class="az-kanban-header">
+              <span>In progress</span><span class="az-kanban-count"></span>
+            </header>
+            <div class="az-kanban-list">
+              <div class="az-kanban-card">Load truck 12</div>
+            </div>
+          </section>
+          <section class="az-kanban-column">
+            <header class="az-kanban-header">
+              <span>Done</span><span class="az-kanban-count"></span>
+            </header>
+            <div class="az-kanban-list"></div>
+          </section>
+        </div>
+
+        <h3 class="az-text-md az-mt-3">With lanes per person</h3>
+        <div class="az-kanban" data-az-component="kanban" aria-label="Team board">
+          <div class="az-kanban-lane">
+            <h4 class="az-kanban-lane-title">Ana</h4>
+            <section class="az-kanban-column">
+              <header class="az-kanban-header">
+                <span>To do</span><span class="az-kanban-count"></span>
+              </header>
+              <div class="az-kanban-list">
+                <div class="az-kanban-card">Count pallet 7</div>
+                <div class="az-kanban-card">Label returns</div>
+              </div>
+            </section>
+            <section class="az-kanban-column">
+              <header class="az-kanban-header">
+                <span>Done</span><span class="az-kanban-count"></span>
+              </header>
+              <div class="az-kanban-list"></div>
+            </section>
+          </div>
+          <div class="az-kanban-lane">
+            <h4 class="az-kanban-lane-title">Bruno</h4>
+            <section class="az-kanban-column">
+              <header class="az-kanban-header">
+                <span>To do</span><span class="az-kanban-count"></span>
+              </header>
+              <div class="az-kanban-list">
+                <div class="az-kanban-card">Receive inbound truck</div>
+              </div>
+            </section>
+            <section class="az-kanban-column">
+              <header class="az-kanban-header">
+                <span>Done</span><span class="az-kanban-count"></span>
+              </header>
+              <div class="az-kanban-list"></div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="az-mb-3" aria-labelledby="tree-title">
+        <h2 id="tree-title">Tree</h2>
+        <p class="az-text-sm az-text-muted">
+          Arrow keys move and expand, Home and End jump, Enter selects.
+        </p>
+        <ul class="az-tree" data-az-component="tree" aria-label="Chart of accounts">
+          <li class="az-tree-item" aria-expanded="true">
+            <span class="az-tree-label">1 Assets</span>
+            <ul>
+              <li class="az-tree-item">
+                <span class="az-tree-label">1.1 Cash</span>
+              </li>
+              <li class="az-tree-item">
+                <span class="az-tree-label">1.2 Receivables</span>
+                <ul>
+                  <li class="az-tree-item"><span class="az-tree-label">1.2.1 Domestic</span></li>
+                  <li class="az-tree-item"><span class="az-tree-label">1.2.2 Export</span></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="az-tree-item">
+            <span class="az-tree-label">2 Liabilities</span>
+            <ul>
+              <li class="az-tree-item"><span class="az-tree-label">2.1 Suppliers</span></li>
+            </ul>
+          </li>
+          <li class="az-tree-item"><span class="az-tree-label">3 Equity</span></li>
+        </ul>
+      </section>
+
+      <section class="az-mb-3" aria-labelledby="stepper-title">
+        <h2 id="stepper-title">Stepper</h2>
+        <div class="az-stepper" id="order-steps">
+          <ol class="az-stepper-list">
+            <li class="az-stepper-step">
+              <span class="az-stepper-marker">1</span><span class="az-stepper-label">Customer</span>
+            </li>
+            <li class="az-stepper-step">
+              <span class="az-stepper-marker">2</span><span class="az-stepper-label">Items</span>
+            </li>
+            <li class="az-stepper-step">
+              <span class="az-stepper-marker">3</span><span class="az-stepper-label">Review</span>
+            </li>
+          </ol>
+          <div class="az-stepper-panel">Customer name, tax id and billing address.</div>
+          <div class="az-stepper-panel">Products, quantities and prices.</div>
+          <div class="az-stepper-panel">Check everything before confirming the order.</div>
+        </div>
+        <div class="az-d-flex az-gap-2">
+          <button class="az-btn" type="button" id="step-previous">Previous</button>
+          <button class="az-btn az-btn-primary" type="button" id="step-next">Next</button>
+        </div>
+      </section>
+
+      <section class="az-mb-3" aria-labelledby="splitter-title">
+        <h2 id="splitter-title">Splitter</h2>
+        <p class="az-text-sm az-text-muted">
+          Drag the bar, or focus it and use the arrow keys, Shift, Home and End.
+        </p>
+        <div class="az-splitter" data-az-component="splitter" style="height: 12rem">
+          <div class="az-p-3" data-az-min="150">Orders list</div>
+          <div class="az-splitter-handle"></div>
+          <div class="az-p-3" data-az-min="200">Order details</div>
+        </div>
+      </section>
+
+      <section class="az-mb-3" aria-labelledby="events-title">
+        <h2 id="events-title">Events</h2>
+        <p class="az-text-sm az-text-muted">
+          Every start, drop and cancel is reported with the item and its old and new positions.
+        </p>
+        <pre id="event-log" class="az-text-sm" aria-live="off">Nothing yet.</pre>
+      </section>
+    </main>
+
+    <script type="module" src="/examples/shared.ts"></script>
+    <script type="module">
+      import { Stepper } from "/src/index.ts";
+
+      const stepper = new Stepper("#order-steps");
+      document.getElementById("step-next").addEventListener("click", () => {
+        stepper.setState(stepper.current, "complete");
+        stepper.next();
+      });
+      document.getElementById("step-previous").addEventListener("click", () => stepper.previous());
+
+      const log = document.getElementById("event-log");
+      const lines = [];
+
+      for (const name of ["start", "drop", "cancel"]) {
+        document.addEventListener(`az:sortable:${name}`, (event) => {
+          const { item, fromIndex, toIndex } = event.detail;
+          lines.unshift(`${name}: "${item.textContent}" ${fromIndex} -> ${toIndex}`);
+          log.textContent = lines.slice(0, 8).join("\n");
+        });
+      }
+    </script>
+  </body>
+</html>
