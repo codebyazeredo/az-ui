@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en" data-az-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data entry — AZ UI examples</title>
+    <meta
+      name="description"
+      content="Masks, tag input, combobox, dual listbox, date range, time and barcode fields."
+    />
+    <script>
+      (function () {
+        var theme = localStorage.getItem("az-examples-theme");
+        document.documentElement.dataset.azTheme =
+          theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      })();
+    </script>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/src/styles/styles.css" />
+    <link rel="stylesheet" href="/examples/shared.css" />
+  </head>
+  <body class="az-body">
+    <header class="az-navbar az-navbar-sticky">
+      <a class="az-navbar-brand" href="index.html">AZ UI examples</a>
+      <nav class="az-navbar-nav example-nav" aria-label="Examples">
+        <ul class="az-navigation-menu az-navigation-menu-horizontal">
+          <li><a class="az-navigation-menu-link" href="components.html">Components</a></li>
+          <li><a class="az-navigation-menu-link" href="forms.html">Forms</a></li>
+          <li><a class="az-navigation-menu-link" href="data.html">Data</a></li>
+          <li><a class="az-navigation-menu-link" href="overlays.html">Overlays and modals</a></li>
+          <li><a class="az-navigation-menu-link" href="interaction.html">Interaction</a></li>
+          <li>
+            <a class="az-navigation-menu-link" href="entry.html" aria-current="page">Data entry</a>
+          </li>
+          <li><a class="az-navigation-menu-link" href="icons.html">Icons</a></li>
+          <li><a class="az-navigation-menu-link" href="screens/dashboard.html">Screens</a></li>
+        </ul>
+      </nav>
+      <div class="az-navbar-actions">
+        <button class="az-btn az-btn-sm" type="button" data-example-theme-toggle>
+          Toggle theme
+        </button>
+      </div>
+    </header>
+
+    <main class="az-container az-container-md az-py-3">
+      <div class="az-page-header">
+        <div class="az-page-header-main">
+          <h1 class="az-page-header-title">Data entry</h1>
+          <p class="az-page-header-description">
+            Fields that format, suggest, pick and scan. Every value ends up in a native field, so
+            forms submit them as usual.
+          </p>
+        </div>
+      </div>
+
+      <form id="entry-form" class="az-stack az-gap-3" novalidate>
+        <section class="az-field" aria-labelledby="mask-title">
+          <h2 id="mask-title">Mask</h2>
+          <div class="az-row">
+            <div class="az-col-4">
+              <label class="az-field-label" for="mask-date">Date (99/99/9999)</label>
+              <input
+                id="mask-date"
+                class="az-control"
+                inputmode="numeric"
+                data-az-component="mask"
+                data-az-mask="99/99/9999"
+                placeholder="25/12/2026"
+              />
+            </div>
+            <div class="az-col-4">
+              <label class="az-field-label" for="mask-id">Tax id (999.999.999-99)</label>
+              <input
+                id="mask-id"
+                class="az-control"
+                inputmode="numeric"
+                data-az-component="mask"
+                data-az-mask="999.999.999-99"
+                placeholder="123.456.789-01"
+              />
+            </div>
+            <div class="az-col-4">
+              <label class="az-field-label" for="mask-plate">Plate (aaa-9*99)</label>
+              <input
+                id="mask-plate"
+                class="az-control"
+                data-az-component="mask"
+                data-az-mask="aaa-9*99"
+                placeholder="ABC-1D23"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="az-field" aria-labelledby="tag-title">
+          <h2 id="tag-title">Tag input</h2>
+          <label class="az-field-label" for="tags-field">Labels</label>
+          <div class="az-tag-input" data-az-component="taginput">
+            <input id="tags-field" class="az-tag-input-field" placeholder="Type and press Enter" />
+            <input type="hidden" name="labels" value="urgent,fragile" />
+          </div>
+          <p class="az-field-help">Enter or comma adds, Backspace removes the last one.</p>
+        </section>
+
+        <section class="az-field" aria-labelledby="combobox-title">
+          <h2 id="combobox-title">Combobox</h2>
+          <div class="az-row">
+            <div class="az-col-6">
+              <label class="az-field-label" for="city-local">City (local options)</label>
+              <input
+                id="city-local"
+                class="az-control"
+                name="city"
+                autocomplete="off"
+                data-az-component="combobox"
+                data-az-options='[{"value":"ssz","label":"Santos"},{"value":"sao","label":"São Paulo"},{"value":"cpq","label":"Campinas"},{"value":"rio","label":"Rio de Janeiro"},{"value":"bhz","label":"Belo Horizonte"}]'
+              />
+            </div>
+            <div class="az-col-6">
+              <label class="az-field-label" for="customer-remote"
+                >Customer (simulated search, 600 ms)</label
+              >
+              <input id="customer-remote" class="az-control" name="customer" autocomplete="off" />
+            </div>
+          </div>
+        </section>
+
+        <section class="az-field" aria-labelledby="dual-title">
+          <h2 id="dual-title">Dual listbox</h2>
+          <select id="carriers" name="carriers" multiple data-az-component="duallistbox">
+            <option value="north">North Freight</option>
+            <option value="blue" selected>Blue Line</option>
+            <option value="fast">Fast Cargo</option>
+            <option value="ocean">Ocean Express</option>
+            <option value="sky">Sky Logistics</option>
+            <option value="old" disabled>Old Carrier (inactive)</option>
+          </select>
+          <p class="az-field-help" id="dual-output">Selected: blue</p>
+        </section>
+
+        <section class="az-field" aria-labelledby="range-title">
+          <h2 id="range-title">Date range and time</h2>
+          <div class="az-row">
+            <div class="az-col-4">
+              <label class="az-field-label" for="range-from">From</label>
+              <input
+                id="range-from"
+                class="az-control"
+                placeholder="YYYY-MM-DD"
+                data-az-component="daterange"
+                data-az-end="#range-to"
+              />
+            </div>
+            <div class="az-col-4">
+              <label class="az-field-label" for="range-to">To</label>
+              <input id="range-to" class="az-control" placeholder="YYYY-MM-DD" />
+            </div>
+            <div class="az-col-4">
+              <label class="az-field-label" for="pickup-time">Pickup time</label>
+              <input id="pickup-time" class="az-control" type="time" value="08:30" />
+            </div>
+          </div>
+        </section>
+
+        <section class="az-field" aria-labelledby="barcode-title">
+          <h2 id="barcode-title">Barcode</h2>
+          <label class="az-field-label" for="scan">Scan a code</label>
+          <input
+            id="scan"
+            class="az-control"
+            data-az-component="barcode"
+            placeholder="Scan with a reader, or type fast and press Enter"
+          />
+          <p class="az-field-help">
+            Typing by hand and pressing Enter does nothing special: only fast readers count.
+          </p>
+          <pre id="scan-log" class="az-text-sm" aria-live="polite">No scans yet.</pre>
+        </section>
+      </form>
+    </main>
+
+    <script type="module" src="/examples/shared.ts"></script>
+    <script type="module">
+      import { Combobox } from "/src/index.ts";
+
+      const customers = [
+        { value: "1001", label: "Acme Logistics" },
+        { value: "1002", label: "Atlas Transport" },
+        { value: "1003", label: "Andes Cargo" },
+        { value: "1004", label: "Baltic Freight" },
+        { value: "1005", label: "Beacon Supply" },
+      ];
+
+      new Combobox("#customer-remote", {
+        source: (query, signal) =>
+          new Promise((resolve, reject) => {
+            const timer = setTimeout(() => {
+              const needle = query.toLowerCase();
+              resolve(customers.filter((c) => c.label.toLowerCase().includes(needle)));
+            }, 600);
+            signal.addEventListener("abort", () => {
+              clearTimeout(timer);
+              reject(new DOMException("Aborted", "AbortError"));
+            });
+          }),
+      });
+
+      document.getElementById("carriers").addEventListener("az:duallistbox:change", (event) => {
+        document.getElementById("dual-output").textContent =
+          "Selected: " + (event.detail.values.join(", ") || "none");
+      });
+
+      const scanLog = document.getElementById("scan-log");
+      const scans = [];
+      document.getElementById("scan").addEventListener("az:barcode:scan", (event) => {
+        scans.unshift(event.detail.code);
+        scanLog.textContent = scans.slice(0, 5).join("\n");
+      });
+
+      document.getElementById("entry-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+      });
+    </script>
+  </body>
+</html>
