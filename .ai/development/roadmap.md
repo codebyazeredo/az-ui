@@ -13,7 +13,7 @@ Fase atual: **6 — Documentação**, implementada e aguardando validação (Fas
 | 4 | Dados e avançados | Concluída |
 | 5 | Layouts | Concluída |
 | 6 | Documentação | Implementada, aguardando validação |
-| Enterprise | Componentes para sistemas corporativos (D-057) | Em andamento: lote 1 validado; lote 2 implementado, aguardando validação |
+| Enterprise | Componentes para sistemas corporativos (D-057) | Concluída (lotes 1 a 4 validados pelo mantenedor em 2026-11-09) |
 | 7 | Distribuição | Não iniciada |
 
 ## Fase 0 — Pré-desenvolvimento
@@ -106,10 +106,10 @@ Pendências que dependem da criação do repositório no GitHub (não bloqueiam 
 
 Design em `enterprise-phase-design.md` (D-057). Um lote por vez, com validação do mantenedor antes do próximo.
 
-- [x] Lote 1 — Base de interação: Collapse · Sortable · Kanban · Tree View · Stepper · Splitter. Implementado (`examples/interaction.html` conferida no navegador); testes unitários escritos mas **ainda não executados**; sem validação do mantenedor e sem revisão com leitor de tela.
-- [x] Lote 2 (D-059) — Entrada de dados: Combobox · Dual Listbox · Tag Input · máscaras · intervalo de datas · hora (campo nativo) · código de barras. Implementado (`examples/entry.html` conferida no navegador); typecheck, lint, format:check e 601 testes passando em 2026-11-09; sem validação do mantenedor.
-- [x] Lote 3 (D-061) — Tabelas pesadas: exportação CSV · reordenar linhas · RowExpand · TableEdit · TableColumns · ColumnReorder · TreeGrid · VirtualTable. Implementado (`examples/tables.html` conferida no navegador); typecheck, lint, format:check e 698 testes passando em 2026-11-09; sem validação do mantenedor.
-- [x] Lote 4 (D-063) — Operação: WidgetGrid · Calendar · Scheduler · Gantt. Implementado (`examples/operations.html` conferida no navegador); typecheck, lint (ESLint e stylelint), format:check e 824 testes passando em 2026-11-09; sem validação do mantenedor.
+- [x] Lote 1 — Base de interação: Collapse · Sortable · Kanban · Tree View · Stepper · Splitter. Implementado (`examples/interaction.html` conferida no navegador); testes unitários passando; validado pelo mantenedor (2026-11-09). e sem revisão com leitor de tela.
+- [x] Lote 2 (D-059) — Entrada de dados: Combobox · Dual Listbox · Tag Input · máscaras · intervalo de datas · hora (campo nativo) · código de barras. Implementado (`examples/entry.html` conferida no navegador); typecheck, lint, format:check e 601 testes passando em 2026-11-09; validado pelo mantenedor (2026-11-09).
+- [x] Lote 3 (D-061) — Tabelas pesadas: exportação CSV · reordenar linhas · RowExpand · TableEdit · TableColumns · ColumnReorder · TreeGrid · VirtualTable. Implementado (`examples/tables.html` conferida no navegador); typecheck, lint, format:check e 698 testes passando em 2026-11-09; validado pelo mantenedor (2026-11-09).
+- [x] Lote 4 (D-063) — Operação: WidgetGrid · Calendar · Scheduler · Gantt. Implementado (`examples/operations.html` conferida no navegador); typecheck, lint (ESLint e stylelint), format:check e 824 testes passando em 2026-11-09; validado pelo mantenedor (2026-11-09).
 
 ## Fase 7 — Distribuição
 
